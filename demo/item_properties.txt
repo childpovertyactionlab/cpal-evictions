@@ -1,0 +1,13 @@
+id - varchar
+name - text
+pvr - numeric - poverty rate
+prh - numeric - % renter homes
+mgr - numeric - median gross rent
+mpv - numeric - median property value
+rb - numeric rent burden
+mhi - numeric - median household income
+pca - numerica - % asian
+pcb - % black
+pcl - % latinx
+pcw - % nonhispanic white
+

@@ -1,0 +1,8 @@
+case_number - text
+county_id - text
+tract_id - text
+city_id - text
+date - date
+amount - numeric
+lat - numeric
+lon - numeric

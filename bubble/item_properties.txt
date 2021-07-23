@@ -1,0 +1,3 @@
+id - varchar - unique identifier for each location
+name - text - name of geographic area
+pop - numeric - population number for use with filing data
