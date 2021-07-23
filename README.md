@@ -8,3 +8,4 @@ Eviction filing data that CPAL receives from County sources or from January Advi
 Demographic data, at various geographic scales, which is used as part of the choropleth maps on our eviction tool. GeoJSON files for each year and geographic level are provided here.
 
 ## bubbles
+These GeoJSON files are the point centroids for the geographic scales mapped on our website. These are used, alongside the eviction filing data, to derive proportional symbols layered above the choropleth maps. 
