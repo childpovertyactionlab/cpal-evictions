@@ -153,4 +153,4 @@ eviction_export <- eviction_sf %>%
   full_join(., eviction_NA)
 
 # Data export to repo folder #####
-export(eviction_export, "filing data/NTX_EvictionCases.csv")
+export(eviction_export, "filing data/NTEP_eviction_cases.csv")
