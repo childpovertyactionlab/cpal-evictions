@@ -141,11 +141,20 @@ eviction_county <- get_acs(geography = "county",
 
 plot(eviction_county["rb"])
 
+eviction_council <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Council_Simple.shp") %>%
+  select(DISTRICT, geometry) %>%
+  rename(name = DISTRICT) %>%
+  mutate(name = paste("Council District", name)) %>%
+  st_transform(crs = 4269) %>%
+  ms_simplify(., keep = 0.2)
+
+
 # Export to geojson #####
 st_write(eviction_tract, "demo/NTEP_demographics_tract.geojson", delete_dsn = TRUE)
 st_write(eviction_zcta, "demo/NTEP_demographics_zip.geojson", delete_dsn = TRUE)
 st_write(eviction_place, "demo/NTEP_demographics_place.geojson", delete_dsn = TRUE)
 st_write(eviction_county, "demo/NTEP_demographics_county.geojson", delete_dsn = TRUE)
+st_write(eviction_council, "demo/NTEP_demographics_council.geojson", delete_dsn = TRUE)
 
 # BUBBLE DATA #####
 bubble_county <- eviction_county %>%
@@ -164,8 +173,13 @@ bubble_tract <- eviction_tract %>%
   select(id, name, pop) %>%
   st_point_on_surface(.)
 
+bubble_council <- eviction_council %>%
+#  select(id, name, pop) %>%
+  st_point_on_surface(.)
+
 # Export to geojson #####
 st_write(bubble_tract, "bubble/NTEP_bubble_tract.geojson", delete_dsn = TRUE)
 st_write(bubble_zcta, "bubble/NTEP_bubble_zip.geojson", delete_dsn = TRUE)
 st_write(bubble_place, "bubble/NTEP_bubble_place.geojson", delete_dsn = TRUE)
 st_write(bubble_county, "bubble/NTEP_bubble_county.geojson", delete_dsn = TRUE)
+st_write(bubble_council, "bubble/NTEP_bubble_council.geojson", delete_dsn = TRUE)

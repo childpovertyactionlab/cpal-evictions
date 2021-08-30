@@ -124,6 +124,13 @@ city_replace <- function(x) {
     ifelse(str_detect(., '(', NA, .))
 }
 
+#council districts
+dallascouncil <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Council_Simple.shp") %>%
+  select(DISTRICT, geometry) %>%
+  rename(council_id = DISTRICT) %>%
+  mutate(council_id = paste("Council District", council_id)) %>%
+  st_transform(crs = 4269)
+
 #create sf of all cases with lon/lat data
 eviction_sf <- evictioncases %>%
   filter(!is.na(city_id)) %>%
@@ -136,7 +143,8 @@ eviction_sf <- evictioncases %>%
   st_as_sf(coords = c("lon", "lat"), crs = 4269) %>%
   st_transform(crs = 4269) %>%
   mutate(lon = sf::st_coordinates(.)[,1],
-         lat = sf::st_coordinates(.)[,2])
+         lat = sf::st_coordinates(.)[,2]) %>%
+  st_join(., dallascouncil, left = TRUE)
 
 # Import geographies from tigris package #####
 ntx_tracts <- tigris::tracts(state = "TX", county = counties) %>%
