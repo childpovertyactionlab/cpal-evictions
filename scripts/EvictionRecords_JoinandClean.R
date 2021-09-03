@@ -1,7 +1,9 @@
+#### Load necessary libraries #####
 library(tidyverse)
 library(rio)
 library(sf)
-# places #####
+
+#### Generate dataframes with geometries #####
 counties <- c("Dallas County",
               "Collin County",
               "Denton County",
@@ -17,7 +19,7 @@ ntx_places <- tigris::places(state = "TX") %>%
   select(NAME, GEOID, geometry) %>%
   rename(city_id = GEOID)
 
-# functions to extract the zip code and city name from address strings #####
+#### Functions to extract the zip code and city name from address strings #####
 # extractcity function only does a partial fix of extracting city information.
 # requires tableauprep after file has been exported
 extractcity <- function(x) {
@@ -89,7 +91,7 @@ tarrant <- import("https://evictions.s3.us-east-2.amazonaws.com/tarrant-eviction
 #names(tarrant)
 #unique(tarrant$precinct_id)
 
-dallas <- import(here::here("filing data", "raw data", "DallasCounty_EvictionRecords_Master.csv")) %>%
+dallas <- import("E:/CPAL Dropbox/Data Library/Dallas County/Eviction Records/Data/Dallas County Eviction Master/DallasCounty_EvictionRecords_Master.csv") %>%
   select(case_number, court, df_city, df_zip, filed_date, amount, X, Y) %>%
   rename(date = filed_date,
          city_id = df_city,
