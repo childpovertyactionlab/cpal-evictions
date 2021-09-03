@@ -9,13 +9,13 @@ counties <- c("Dallas County",
 
 ntx_counties <- tigris::counties(state = "TX") %>%
   filter(NAMELSAD %in% counties) %>%
-  select(NAME, geometry) %>%
-  rename(county_id = NAME)
+  select(NAME, GEOID,  geometry) %>%
+  rename(county_id = GEOID)
 
 ntx_places <- tigris::places(state = "TX") %>%
   .[ntx_counties, ] %>%
-  select(NAME, geometry) %>%
-  rename(city_id = NAME)
+  select(NAME, GEOID, geometry) %>%
+  rename(city_id = GEOID)
 
 # functions to extract the zip code and city name from address strings #####
 # extractcity function only does a partial fix of extracting city information.
@@ -151,7 +151,7 @@ ntx_tracts <- tigris::tracts(state = "TX", county = counties) %>%
   select(NAMELSAD, geometry) %>%
   rename(tract_id = NAMELSAD)
 
-# Eviction data geography attribute columns ##########
+# Eviction data geography attribute  columns ##########
 eviction_export <- eviction_sf %>%
   .[ntx_counties, ] %>%
   st_join(., ntx_tracts) %>%

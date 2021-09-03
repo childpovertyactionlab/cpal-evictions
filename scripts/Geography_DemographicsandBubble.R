@@ -1,3 +1,4 @@
+#### Load needed libraries #####
 library(tidyverse)
 library(tidycensus)
 library(rio)
@@ -7,6 +8,7 @@ library(rmapshaper)
 #acs18_b <- load_variables(2019, "acs5", cache = TRUE)
 #acs18_s <- load_variables(2019, "acs5/subject", cache = TRUE)
 
+#### Import demographic variables from TidyCensus #####
 counties <- c("Dallas County", 
               "Collin County", 
               "Denton County", 
@@ -15,7 +17,6 @@ counties <- c("Dallas County",
 ntx_counties <- tigris::counties(state = "TX") %>%
   filter(NAMELSAD %in% counties)
 
-#list of the necessary variables to pull
 acs_var <- c(
   tot_pop = "B01003_001", #total population
   pop_u18 = "S0101_C01_022", #population under 18
@@ -33,7 +34,8 @@ acs_var <- c(
   rcb = "S0102_C01_105" #gross rent as a percentage of income 30% or more
 )
 
-eviction_tract <- get_acs(geography = "tract", 
+#### Tidy Census Tracts #####
+census_tract <- get_acs(geography = "tract", 
                            state = "TX",
                            county = counties,
                            variables = acs_var,
@@ -41,25 +43,28 @@ eviction_tract <- get_acs(geography = "tract",
                            survey = "acs5", 
                            output = "wide",
                            geometry = TRUE) %>%
+  mutate(AreaTract = as.numeric(st_area(.)))
+
+eviction_tract <- census_tract %>%
   transmute(id = GEOID,
-         name = NAME,
-         pop = tot_popE,
-         pvr = pop_bpE/tot_popE,
-         cpr = bp_u18E/pop_u18E,
-         prh = rohhE/thhE,
-         mgr = med_rentE,
-         mpv = med_valE,
-         mhi = med_incE,
-         rb = rcbE/100,
-         pca = as_popE/tot_popE,
-         pcb = bl_popE/tot_popE,
-         pcw = wh_popE/tot_popE,
-         pch = his_popE/tot_popE,
-         ) %>%
+            name = NAME,
+            pop = tot_popE,
+            pvr = pop_bpE/tot_popE,
+            cpr = bp_u18E/pop_u18E,
+            prh = rohhE/thhE,
+            mgr = med_rentE,
+            mpv = med_valE,
+            mhi = med_incE,
+            rb = rcbE/100,
+            pca = as_popE/tot_popE,
+            pcb = bl_popE/tot_popE,
+            pcw = wh_popE/tot_popE,
+            pch = his_popE/tot_popE) %>%
   ms_simplify(., keep = 0.2)
 
 plot(eviction_tract["rb"])
 
+#### Tidy Census ZCTA #####
 eviction_zcta <- get_acs(geography = "zcta", 
                           #state = "TX",
                           variables = acs_var,
@@ -87,6 +92,7 @@ eviction_zcta <- get_acs(geography = "zcta",
 
 plot(eviction_zcta["rb"])
 
+#### Tidy Census Place #####
 eviction_place <- get_acs(geography = "place", 
                           state = "TX",
                           variables = acs_var,
@@ -114,6 +120,7 @@ eviction_place <- get_acs(geography = "place",
 
 plot(eviction_place["rb"])
 
+#### Tidy Census County #####
 eviction_county <- get_acs(geography = "county", 
                           state = "TX",
                           county = counties,
@@ -141,22 +148,52 @@ eviction_county <- get_acs(geography = "county",
 
 plot(eviction_county["rb"])
 
+#### Tidy Census City Council #####
 eviction_council <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Council_Simple.shp") %>%
+  mutate(DISTRICT = str_pad(DISTRICT, 2, pad = "0")) %>%
   select(DISTRICT, geometry) %>%
-  rename(name = DISTRICT) %>%
-  mutate(name = paste("Council District", name)) %>%
   st_transform(crs = 4269) %>%
+  st_intersection(census_tract, .) %>%
+  mutate(id = paste0("4819000_", DISTRICT),
+         name = paste("Council District", DISTRICT),
+         AreaIntersect = as.numeric(st_area(.)),
+         PerIntersect = AreaIntersect/AreaTract,
+         pop_intersect = round(PerIntersect*tot_popE, digits = 4),
+         popbp_intersect = round(PerIntersect*pop_bpE, digits = 4),
+         popu18_intersect = round(PerIntersect*pop_u18E, digits = 4),
+         bpu18_intersect = round(PerIntersect*bp_u18E, digits = 4),
+         rohh_intersect = round(PerIntersect*rohhE, digits = 4),
+         thh_intersect = round(PerIntersect*thhE, digits = 4),
+         rcb_intersect = round(PerIntersect*rcbE, digits = 4),
+         as_intersect = round(PerIntersect*as_popE, digits = 4),
+         bl_intersect = round(PerIntersect*bl_popE, digits = 4),
+         wh_intersect = round(PerIntersect*wh_popE, digits = 4),
+         his_intersect = round(PerIntersect*his_popE, digits = 4)
+         ) %>%
+    group_by(id, name) %>%
+    summarise(pop = sum(pop_intersect),
+              pvr = sum(popbp_intersect)/pop,
+              cpr = sum(bpu18_intersect)/sum(popu18_intersect),
+              prh = sum(rohh_intersect)/sum(thh_intersect),
+              mgr = mean(med_rentE, na.rm = TRUE),
+              mpv = mean(med_valE, na.rm = TRUE),
+              mhi = mean(med_incE, na.rm = TRUE),
+              rb = sum(as_intersect)/100,
+              pca = sum(as_popE)/pop,
+              pcb = sum(bl_intersect)/pop,
+              pcw = sum(wh_intersect)/pop,
+              pch = sum(his_intersect)/pop) %>%
+  select(id, name, pop:pch) %>%
   ms_simplify(., keep = 0.2)
 
-
-# Export to geojson #####
+#### Export demographic data as geojson #####
 st_write(eviction_tract, "demo/NTEP_demographics_tract.geojson", delete_dsn = TRUE)
 st_write(eviction_zcta, "demo/NTEP_demographics_zip.geojson", delete_dsn = TRUE)
 st_write(eviction_place, "demo/NTEP_demographics_place.geojson", delete_dsn = TRUE)
 st_write(eviction_county, "demo/NTEP_demographics_county.geojson", delete_dsn = TRUE)
 st_write(eviction_council, "demo/NTEP_demographics_council.geojson", delete_dsn = TRUE)
 
-# BUBBLE DATA #####
+#### Generate points with population data #####
 bubble_county <- eviction_county %>%
   select(id, name, pop) %>%
   st_point_on_surface(.)
@@ -174,10 +211,10 @@ bubble_tract <- eviction_tract %>%
   st_point_on_surface(.)
 
 bubble_council <- eviction_council %>%
-#  select(id, name, pop) %>%
+  select(id, name, pop) %>%
   st_point_on_surface(.)
-
-# Export to geojson #####
+  
+#### Export population points to geojson #####
 st_write(bubble_tract, "bubble/NTEP_bubble_tract.geojson", delete_dsn = TRUE)
 st_write(bubble_zcta, "bubble/NTEP_bubble_zip.geojson", delete_dsn = TRUE)
 st_write(bubble_place, "bubble/NTEP_bubble_place.geojson", delete_dsn = TRUE)
