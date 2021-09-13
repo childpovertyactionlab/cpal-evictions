@@ -198,3 +198,10 @@ eviction_export <- eviction_sf %>%
 
 # Data export to repo folder #####
 export(eviction_export, "filing data/NTEP_eviction_cases.csv")
+
+#test <- eviction_sf %>%
+#  st_drop_geometry(.) %>%
+#  filter(date >= as.Date("2020-03-01")) %>%
+#  filter(NAME == "Dallas") %>%
+#  group_by(plaintiff_name, plaintiff_address) %>%
+#  summarize(count = n())
