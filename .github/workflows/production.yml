@@ -1,9 +1,9 @@
-name: Reload Data (Staging Environment)
+name: Reload Data (Production Environment)
 on:
   push:
     paths:
       - "./filing data/NTEP_eviction_cases.csv"
-    branches: [main]
+    branches: [production]
   workflow_dispatch:
 jobs:
   deploy:
@@ -17,7 +17,7 @@ jobs:
         env:
           FILE: "./filing data/NTEP_eviction_cases.csv"
           AWS_REGION: "us-east-1"
-          S3_BUCKET: "ntepstack-stagingdatastore42145388-cvt932mf4c2g"
+          S3_BUCKET: "ntepstack-productiondatastore5e36f90b-o3qto80zqh1p"
           S3_KEY: "source.csv"
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
