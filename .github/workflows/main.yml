@@ -1,0 +1,23 @@
+name: Reload Data (Staging Environment)
+on:
+  push:
+    paths:
+      - "./filing data/NTEP_eviction_cases.csv"
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Upload file to bucket
+        uses: zdurham/s3-upload-github-action@master
+        with:
+          args: --acl public-read
+        env:
+          FILE: "./filing data/NTEP_eviction_cases.csv"
+          AWS_REGION: "us-east-1"
+          S3_BUCKET: "ntepstack-stagingdatastore42145388-cvt932mf4c2g"
+          S3_KEY: "source.csv"
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
