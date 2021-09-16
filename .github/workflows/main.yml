@@ -1,9 +1,11 @@
 name: Reload Data (Staging Environment)
 on:
   push:
+    branches:
+      - "main"
     paths:
-      - "./filing data/NTEP_eviction_cases.csv"
-    branches: [main]
+      - "filing data/NTEP_eviction_cases.csv"
+      - ".github/workflows/*.yml"
   workflow_dispatch:
 jobs:
   deploy:
@@ -15,7 +17,7 @@ jobs:
         with:
           args: --acl public-read
         env:
-          FILE: "./filing data/NTEP_eviction_cases.csv"
+          FILE: "'./filing data/NTEP_eviction_cases.csv'"
           AWS_REGION: "us-east-1"
           S3_BUCKET: "ntepstack-stagingdatastore42145388-cvt932mf4c2g"
           S3_KEY: "source.csv"
