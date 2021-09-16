@@ -2,7 +2,7 @@ name: Reload Data (Production Environment)
 on:
   push:
     branches:
-      - "main"
+      - "production"
     paths:
       - "**.csv"
   workflow_dispatch:
