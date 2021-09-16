@@ -13,11 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Upload file to bucket
-        uses: zdurham/s3-upload-github-action@master
+        uses: Hyperobjekt/s3-upload-github-action@master
         with:
           args: --acl public-read
         env:
-          FILE: "'./filing data/NTEP_eviction_cases.csv'"
+          FILE: "./filing data/NTEP_eviction_cases.csv"
           AWS_REGION: "us-east-1"
           S3_BUCKET: "ntepstack-stagingdatastore42145388-cvt932mf4c2g"
           S3_KEY: "source.csv"

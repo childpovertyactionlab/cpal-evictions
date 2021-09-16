@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Upload file to bucket
-        uses: zdurham/s3-upload-github-action@master
+        uses: Hyperobjekt/s3-upload-github-action@master
         with:
           args: --acl public-read
         env:
