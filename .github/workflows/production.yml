@@ -1,9 +1,10 @@
 name: Reload Data (Production Environment)
 on:
   push:
+    branches:
+      - "main"
     paths:
-      - "./filing data/NTEP_eviction_cases.csv"
-    branches: [production]
+      - "**NTEP_eviction_cases.csv"
   workflow_dispatch:
 jobs:
   deploy:

@@ -4,8 +4,7 @@ on:
     branches:
       - "main"
     paths:
-      - "filing data/NTEP_eviction_cases.csv"
-      - ".github/workflows/*.yml"
+      - "**NTEP_eviction_cases.csv"
   workflow_dispatch:
 jobs:
   deploy:
