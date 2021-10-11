@@ -1,0 +1,30 @@
+{
+"type": "FeatureCollection",
+"name": "NTEP_bubble_jpcourt",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::4269" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "48085_1", "name": "Collin County Precinct 1", "pop": 169070.1732 }, "geometry": { "type": "Point", "coordinates": [ -96.573195125172816, 33.256542296211592 ] } },
+{ "type": "Feature", "properties": { "id": "48085_2", "name": "Collin County Precinct 2", "pop": 106711.8426 }, "geometry": { "type": "Point", "coordinates": [ -96.423847257729705, 33.189882879369428 ] } },
+{ "type": "Feature", "properties": { "id": "48085_3", "name": "Collin County Precinct 3", "pop": 405906.8131 }, "geometry": { "type": "Point", "coordinates": [ -96.65261576266353, 33.070971999394516 ] } },
+{ "type": "Feature", "properties": { "id": "48085_4", "name": "Collin County Precinct 4", "pop": 290717.9654 }, "geometry": { "type": "Point", "coordinates": [ -96.770500366219323, 33.20232809121012 ] } },
+{ "type": "Feature", "properties": { "id": "48113_1", "name": "Dallas County Precinct 1", "pop": 494345.4504 }, "geometry": { "type": "Point", "coordinates": [ -96.751778007116314, 32.677454 ] } },
+{ "type": "Feature", "properties": { "id": "48113_2", "name": "Dallas County Precinct 2", "pop": 534310.4006000001 }, "geometry": { "type": "Point", "coordinates": [ -96.613623626088156, 32.834793 ] } },
+{ "type": "Feature", "properties": { "id": "48113_3", "name": "Dallas County Precinct 3", "pop": 605191.2657 }, "geometry": { "type": "Point", "coordinates": [ -96.785198021380126, 32.9043005 ] } },
+{ "type": "Feature", "properties": { "id": "48113_4", "name": "Dallas County Precinct 4", "pop": 513261.7276 }, "geometry": { "type": "Point", "coordinates": [ -96.980821643795679, 32.7503105 ] } },
+{ "type": "Feature", "properties": { "id": "48113_5", "name": "Dallas County Precinct 5", "pop": 458323.1514 }, "geometry": { "type": "Point", "coordinates": [ -96.741136386, 32.806909 ] } },
+{ "type": "Feature", "properties": { "id": "48121_1", "name": "Denton County Precinct 1", "pop": 121907.2629 }, "geometry": { "type": "Point", "coordinates": [ -97.078013961900155, 33.16066774714723 ] } },
+{ "type": "Feature", "properties": { "id": "48121_2", "name": "Denton County Precinct 2", "pop": 151489.0069 }, "geometry": { "type": "Point", "coordinates": [ -96.898058857783099, 33.138753529005569 ] } },
+{ "type": "Feature", "properties": { "id": "48121_3", "name": "Denton County Precinct 3", "pop": 122560.2615 }, "geometry": { "type": "Point", "coordinates": [ -96.978821562559432, 33.055261211330091 ] } },
+{ "type": "Feature", "properties": { "id": "48121_4", "name": "Denton County Precinct 4", "pop": 159841.7231 }, "geometry": { "type": "Point", "coordinates": [ -97.267308836370432, 33.106207064534445 ] } },
+{ "type": "Feature", "properties": { "id": "48121_5", "name": "Denton County Precinct 5", "pop": 144248.6805 }, "geometry": { "type": "Point", "coordinates": [ -97.113257832261866, 33.276211724043648 ] } },
+{ "type": "Feature", "properties": { "id": "48121_6", "name": "Denton County Precinct 6", "pop": 132915.1056 }, "geometry": { "type": "Point", "coordinates": [ -96.902372550852405, 33.036491952974529 ] } },
+{ "type": "Feature", "properties": { "id": "48439_1", "name": "Tarrant County Precinct 1", "pop": 274917.2408 }, "geometry": { "type": "Point", "coordinates": [ -97.26767306496771, 32.843618728866772 ] } },
+{ "type": "Feature", "properties": { "id": "48439_2", "name": "Tarrant County Precinct 2", "pop": 210076.1747 }, "geometry": { "type": "Point", "coordinates": [ -97.099688388026209, 32.756274717216044 ] } },
+{ "type": "Feature", "properties": { "id": "48439_3", "name": "Tarrant County Precinct 3", "pop": 401850.6898 }, "geometry": { "type": "Point", "coordinates": [ -97.152771721540219, 32.898872239295116 ] } },
+{ "type": "Feature", "properties": { "id": "48439_4", "name": "Tarrant County Precinct 4", "pop": 233309.0287 }, "geometry": { "type": "Point", "coordinates": [ -97.440289944347938, 32.857526364394189 ] } },
+{ "type": "Feature", "properties": { "id": "48439_5", "name": "Tarrant County Precinct 5", "pop": 146090.0354 }, "geometry": { "type": "Point", "coordinates": [ -97.348710398411242, 32.751602708241805 ] } },
+{ "type": "Feature", "properties": { "id": "48439_6", "name": "Tarrant County Precinct 6", "pop": 233598.3139 }, "geometry": { "type": "Point", "coordinates": [ -97.449175920080592, 32.648957188986031 ] } },
+{ "type": "Feature", "properties": { "id": "48439_7", "name": "Tarrant County Precinct 7", "pop": 365084.9804 }, "geometry": { "type": "Point", "coordinates": [ -97.139131457597443, 32.655071197006222 ] } },
+{ "type": "Feature", "properties": { "id": "48439_8", "name": "Tarrant County Precinct 8", "pop": 183663.218 }, "geometry": { "type": "Point", "coordinates": [ -97.27357569824585, 32.682515700310574 ] } }
+]
+}
