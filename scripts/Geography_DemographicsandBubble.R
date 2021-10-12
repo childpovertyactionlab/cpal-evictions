@@ -5,8 +5,8 @@ library(rio)
 library(sf)
 library(rmapshaper)
 
-#acs18_b <- load_variables(2019, "acs5", cache = TRUE)
-#acs18_s <- load_variables(2019, "acs5/subject", cache = TRUE)
+acs19_b <- load_variables(2019, "acs5", cache = TRUE)
+acs19_s <- load_variables(2019, "acs5/subject", cache = TRUE)
 
 #### Import demographic variables from TidyCensus #####
 counties <- c("Dallas County", 
@@ -21,7 +21,7 @@ acs_var <- c(
   tot_pop = "B01003_001", #total population
   pop_u18 = "S0101_C01_022", #population under 18
   med_inc = "B19013_001", #median household income
-  med_rent = "S0102_C01_106", #median monthly housing costs
+  med_rent = "B25031_001", #median monthly housing costs
   his_pop = "B03002_012", #hispanic population
   wh_pop = "B03002_003", #white population
   bl_pop = "B03002_004", #black population
@@ -30,8 +30,12 @@ acs_var <- c(
   thh = "B25106_001", #total households
   pop_bp = "S1701_C02_001", #population below poverty
   bp_u18 = "S1701_C02_002", #population under 18 below poverty
-  med_val = "S2506_C01_009", #median value of owner-occupied housing units
-  rcb = "S0102_C01_105" #gross rent as a percentage of income 30% or more
+  med_val = "B25097_001", #median value of owner-occupied housing units
+  rcb1 = "B25106_028", #gross rent as a percentage of income 30% or more,
+  rcb2 = "B25106_032",
+  rcb3 = "B25106_036",
+  rcb4 = "B25106_040",
+  rcb5 = "B25106_044"
 )
 
 #### Tidy Census Tracts #####
@@ -43,7 +47,8 @@ census_tract <- get_acs(geography = "tract",
                            survey = "acs5", 
                            output = "wide",
                            geometry = TRUE) %>%
-  mutate(AreaTract = as.numeric(st_area(.)))
+  mutate(AreaTract = as.numeric(st_area(.)),
+         rcbE = rcb1E+rcb2E+rcb3E+rcb4E+rcb5E)
 
 eviction_tract <- census_tract %>%
   transmute(id = GEOID,
@@ -55,14 +60,16 @@ eviction_tract <- census_tract %>%
             mgr = med_rentE,
             mpv = med_valE,
             mhi = med_incE,
-            rb = rcbE/100,
+            rb = (rcb1E+rcb2E+rcb3E+rcb4E+rcb5E)/rohhE,
             pca = as_popE/tot_popE,
             pcb = bl_popE/tot_popE,
             pcw = wh_popE/tot_popE,
             pch = his_popE/tot_popE) %>%
   ms_simplify(., keep = 0.2)
 
-plot(eviction_tract["rb"])
+plot(eviction_tract["rb"], breaks = "jenks")
+plot(eviction_tract["mpv"])
+plot(eviction_tract["mgr"])
 
 #### Tidy Census ZCTA #####
 eviction_zcta <- get_acs(geography = "zcta", 
@@ -82,7 +89,7 @@ eviction_zcta <- get_acs(geography = "zcta",
             mgr = med_rentE,
             mpv = med_valE,
             mhi = med_incE,
-            rb = rcbE/100,
+            rb = (rcb1E+rcb2E+rcb3E+rcb4E+rcb5E)/rohhE,
             pca = as_popE/tot_popE,
             pcb = bl_popE/tot_popE,
             pcw = wh_popE/tot_popE,
@@ -91,6 +98,8 @@ eviction_zcta <- get_acs(geography = "zcta",
   ms_simplify(., keep = 0.2)
 
 plot(eviction_zcta["rb"])
+plot(eviction_zcta["mpv"])
+plot(eviction_zcta["mgr"])
 
 #### Tidy Census Place #####
 eviction_place <- get_acs(geography = "place", 
@@ -110,7 +119,7 @@ eviction_place <- get_acs(geography = "place",
             mgr = med_rentE,
             mpv = med_valE,
             mhi = med_incE,
-            rb = rcbE/100,
+            rb = (rcb1E+rcb2E+rcb3E+rcb4E+rcb5E)/rohhE,
             pca = as_popE/tot_popE,
             pcb = bl_popE/tot_popE,
             pcw = wh_popE/tot_popE,
@@ -119,6 +128,8 @@ eviction_place <- get_acs(geography = "place",
   ms_simplify(., keep = 0.2)
 
 plot(eviction_place["rb"])
+plot(eviction_place["mpv"])
+plot(eviction_place["mgr"])
 
 #### Tidy Census County #####
 eviction_county <- get_acs(geography = "county", 
@@ -138,7 +149,7 @@ eviction_county <- get_acs(geography = "county",
             mgr = med_rentE,
             mpv = med_valE,
             mhi = med_incE,
-            rb = rcbE/100,
+            rb = (rcb1E+rcb2E+rcb3E+rcb4E+rcb5E)/rohhE,
             pca = as_popE/tot_popE,
             pcb = bl_popE/tot_popE,
             pcw = wh_popE/tot_popE,
@@ -147,6 +158,8 @@ eviction_county <- get_acs(geography = "county",
   ms_simplify(., keep = 0.2)
 
 plot(eviction_county["rb"])
+plot(eviction_county["mpv"])
+plot(eviction_county["mgr"])
 
 #### Tidy Census City Council #####
 eviction_council <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Council_Simple.shp") %>%
@@ -185,6 +198,10 @@ eviction_council <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boun
               pch = sum(his_intersect)/pop) %>%
   select(id, name, pop:pch) %>%
   ms_simplify(., keep = 0.2)
+
+plot(eviction_council["rb"])
+plot(eviction_council["mpv"])
+plot(eviction_council["mgr"])
 
 #### Tidy Census JP Court Boundaries #####
 #st_layers("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg")
@@ -256,6 +273,9 @@ eviction_jpcourt <- rbind(dallas_jp, tarrant_jp) %>%
   select(id, name, pop:pch) #%>%
 #  ms_simplify(., keep = 0.2)
 
+plot(eviction_jpcourt["rb"])
+plot(eviction_jpcourt["mpv"])
+plot(eviction_jpcourt["mgr"])
 
 #### Export demographic data as geojson #####
 st_write(eviction_jpcourt, "demo/NTEP_demographics_tract.geojson", delete_dsn = TRUE)
