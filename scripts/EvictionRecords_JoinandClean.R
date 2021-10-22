@@ -50,6 +50,8 @@ extractzip <- function(x) {
 #### Eviction data import and attribute selection Collin County #####
 #select only the necessary column types and rename them based on NTE data plan
 collin <- import("https://evictions.s3.us-east-2.amazonaws.com/collin-county-tx-evictions.rds") %>%
+#  select(case_number, location, date_filed, lon, lat, defendant_address) %>%
+  select(case_number, date_filed, location, lon, lat, defendant_address, plaintiff_name, plaintiff_address) %>%
   rename(precinct_id = location,
          date = date_filed) %>%
   mutate(county_id = "48085",
@@ -66,6 +68,8 @@ collin <- import("https://evictions.s3.us-east-2.amazonaws.com/collin-county-tx-
 #### Eviction data import and attribute selection Denton County #####
 #select only the necessary column types and rename them based on NTE data plan
 denton <- import("https://evictions.s3.us-east-2.amazonaws.com/denton-county-tx-evictions.rds") %>%
+#  select(case_number, date_filed, location, lon, lat, defendant_address) %>%
+  select(case_number, date_filed, location, lon, lat, defendant_address, plaintiff_name, plaintiff_address) %>%
   rename(precinct_id = location,
          date = date_filed) %>%
   filter(!is.na(defendant_address)) %>%
@@ -83,6 +87,8 @@ denton <- import("https://evictions.s3.us-east-2.amazonaws.com/denton-county-tx-
 #### Eviction data import and attribute selection Tarrant County #####
 #select only the necessary column types and rename them based on NTE data plan
 tarrant <- import("https://evictions.s3.us-east-2.amazonaws.com/tarrant-evictions-2020.csv") %>%
+#  select(case_number, date_filed, location, lon, lat, defendant_address) %>%
+  select(case_number, date_filed, location, lon, lat, defendant_address, plaintiff_name, plaintiff_address) %>%
   rename(precinct_id = location,
          date = date_filed) %>%
   mutate(county_id = "48439",
@@ -98,10 +104,15 @@ tarrant <- import("https://evictions.s3.us-east-2.amazonaws.com/tarrant-eviction
 
 #### Eviction data import and attribute selection Dallas County #####
 #select only the necessary column types and rename them based on NTE data plan
+dallas <- import("E:/CPAL Dropbox/Data Library/Dallas County/Eviction Records/Data/Dallas County Eviction Master/EvictionRecords_Master.csv") %>%
+#dallas <- import("C:/Users/micha/CPAL Dropbox/Data Library/Dallas County/Eviction Records/Data/Dallas County Eviction Master/EvictionRecords_Master.csv") %>%
+#  select(case_number, court, df_city, df_zip, filed_date, amount, X, Y) %>%
+  select(case_number, court, df_city, df_zip, filed_date, amount, X, Y, plaintiff_name, pl_address) %>%
   rename(date = filed_date,
          city_id = df_city,
          zip_id = df_zip,
          precinct_id = court,
+         plaintiff_address = pl_address,
          lon = X,
          lat = Y) %>%
   mutate(county_id = "48113",
@@ -181,19 +192,11 @@ dallascouncil <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boundar
   select(council_id, geometry) %>%
   st_transform(crs = 4269)
 
-#### Import JP Precincts geographies #####
-jp_courts <- st_read("demo/NTEP_demographics_jpcourt.geojson") %>%
-  transmute(jpcourt_id = id) %>%
-  st_transform(crs = 4269)
-
-plot(jp_courts["geometry"])
-
 # Eviction data geography attribute  columns ##########
 eviction_export <- eviction_sf %>%
   .[ntx_counties, ] %>%
   st_join(., ntx_tracts) %>%
   st_join(., dallascouncil) %>%
-#  st_join(., jp_courts) %>%
   relocate(case_number, date, amount, precinct_id, council_id, tract_id, zip_id, city_id, county_id, lon, lat) %>% #jpcourt_id
   select(-NAME) %>%
   st_drop_geometry(.) %>%
@@ -202,6 +205,7 @@ eviction_export <- eviction_sf %>%
 # Data export to repo folder #####
 export(eviction_export, "filing data/NTEP_eviction_cases.csv")
 
+#### TESTING CODE #####
 eviction_export %>%
   filter(date >= as.Date("2020-03-01")) %>%
   mutate(week = lubridate::floor_date(date, unit = "week")) %>%
@@ -211,3 +215,35 @@ eviction_export %>%
   geom_line(size = 1) +
   scale_x_date(date_breaks  = "2 month", date_minor_breaks = "1 month", date_labels = "%b %y")
 
+topfilers <- eviction_sf %>%
+  st_drop_geometry(.) %>%
+  filter(date >= as.Date("2020-03-01") &
+           date <= as.Date("2021-09-30")) %>%
+  filter(NAME == "Dallas") %>%
+  group_by(plaintiff_name, plaintiff_address) %>%
+  summarize(count = n()) %>%
+  arrange(desc(count)) %>%
+  ungroup(.) %>%
+  slice(1:20)
+
+test <- eviction_sf %>%
+  select(plaintiff_name, plaintiff_address, lat, lon) %>%
+  st_drop_geometry(.) %>%
+  left_join(topfilers, .) %>%
+  group_by(plaintiff_name, plaintiff_address, count) %>%
+  slice(1:1)
+
+topfilers_final <- groupname %>%
+  group_by(plaintiff_name, plaintiff_address) %>%
+  summarise(count = sum(count)) %>%
+  left_join(., eviction_sf) %>%
+  group_by(plaintiff_name, plaintiff_address, count) %>%
+  slice(1:1) %>%
+  select(plaintiff_name, plaintiff_address, count, geometry) %>%
+  ungroup(.) %>%
+  slice(1:10)
+
+st_write(topfilers_final, "C:/Users/micha/CPAL Dropbox/Living Wage Jobs/04_Projects/Eviction Top Filers/Data/TopEvictionFilers.gpkg", layer = "Top 10 Filers", delete_layer = TRUE)
+
+topfilers_final %>%
+  export(., "C:/Users/micha/CPAL Dropbox/Living Wage Jobs/04_Projects/Eviction Top Filers/Data/Top10EvictionFilers.csv")

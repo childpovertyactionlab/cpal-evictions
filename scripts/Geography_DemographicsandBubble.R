@@ -57,6 +57,7 @@ eviction_tract <- census_tract %>%
             pvr = pop_bpE/tot_popE,
             cpr = bp_u18E/pop_u18E,
             prh = rohhE/thhE,
+            rhh = rohhE,
             mgr = med_rentE,
             mpv = med_valE,
             mhi = med_incE,
@@ -86,6 +87,7 @@ eviction_zcta <- get_acs(geography = "zcta",
             pvr = pop_bpE/tot_popE,
             cpr = bp_u18E/pop_u18E,
             prh = rohhE/thhE,
+            rhh = rohhE,
             mgr = med_rentE,
             mpv = med_valE,
             mhi = med_incE,
@@ -116,6 +118,7 @@ eviction_place <- get_acs(geography = "place",
             pvr = pop_bpE/tot_popE,
             cpr = bp_u18E/pop_u18E,
             prh = rohhE/thhE,
+            rhh = rohhE,
             mgr = med_rentE,
             mpv = med_valE,
             mhi = med_incE,
@@ -146,6 +149,7 @@ eviction_county <- get_acs(geography = "county",
             pvr = pop_bpE/tot_popE,
             cpr = bp_u18E/pop_u18E,
             prh = rohhE/thhE,
+            rhh = rohhE,
             mgr = med_rentE,
             mpv = med_valE,
             mhi = med_incE,
@@ -188,6 +192,7 @@ eviction_council <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boun
               pvr = sum(popbp_intersect)/pop,
               cpr = sum(bpu18_intersect)/sum(popu18_intersect),
               prh = sum(rohh_intersect)/sum(thh_intersect),
+              rhh = sum(rohh_intersect), 
               mgr = mean(med_rentE, na.rm = TRUE),
               mpv = mean(med_valE, na.rm = TRUE),
               mhi = mean(med_incE, na.rm = TRUE),
@@ -210,7 +215,7 @@ dallas_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/
   select(Name, geom) %>%
   rename(name = Name) %>%
   mutate(name = str_extract(name, "[0-9.]+"), 
-         id = paste0("48113_", name),
+         id = paste0("48113-", name),
          name = paste("Dallas County Precinct", name)) %>%
   st_transform(crs = 4269) %>%
   st_zm(.)
@@ -218,7 +223,7 @@ dallas_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/
 tarrant_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Tarrant County JP Boundaries Rounded") %>%
   select(JP, geom) %>%
   rename(name = JP) %>%
-  mutate(id = paste0("48439_", name),
+  mutate(id = paste0("48439-", name),
          name = paste("Tarrant County Precinct", name)) %>%
   st_transform(crs = 4269) %>%
   st_zm(.)
@@ -226,7 +231,7 @@ tarrant_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries
 collin_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Collin County JP Boundaries Rounded") %>%
 select(JPC, geom) %>%
   rename(name = JPC) %>%
-  mutate(id = paste0("48085_", name),
+  mutate(id = paste0("48085-", name),
          name = paste("Collin County Precinct", name)) %>%
   st_transform(crs = 4269) %>%
   st_zm(.)
@@ -234,7 +239,7 @@ select(JPC, geom) %>%
 denton_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Denton County JP Boundaries Rounded") %>%
 select(JP_C, geom) %>%
   rename(name = JP_C) %>%
-  mutate(id = paste0("48121_", name),
+  mutate(id = paste0("48121-", name),
          name = paste("Denton County Precinct", name)) %>%
   st_transform(crs = 4269) %>%
   st_zm(.)
@@ -262,6 +267,7 @@ eviction_jpcourt <- rbind(dallas_jp, tarrant_jp) %>%
             pvr = sum(popbp_intersect)/pop,
             cpr = sum(bpu18_intersect)/sum(popu18_intersect),
             prh = sum(rohh_intersect)/sum(thh_intersect),
+            rhh = sum(rohh_intersect), 
             mgr = mean(med_rentE, na.rm = TRUE),
             mpv = mean(med_valE, na.rm = TRUE),
             mhi = mean(med_incE, na.rm = TRUE),
@@ -286,27 +292,27 @@ st_write(eviction_council, "demo/NTEP_demographics_council.geojson", delete_dsn 
 
 #### Generate points with population data #####
 bubble_county <- eviction_county %>%
-  select(id, name, pop) %>%
+  select(id, name, pop, rhh) %>%
   st_point_on_surface(.)
 
 bubble_place <- eviction_place %>%
-  select(id, name, pop) %>%
+  select(id, name, pop, rhh) %>%
   st_point_on_surface(.)
 
 bubble_zcta <- eviction_zcta %>%
-  select(id, name, pop) %>%
+  select(id, name, pop, rhh) %>%
   st_point_on_surface(.)
 
 bubble_tract <- eviction_tract %>%
-  select(id, name, pop) %>%
+  select(id, name, pop, rhh) %>%
   st_point_on_surface(.)
 
 bubble_council <- eviction_council %>%
-  select(id, name, pop) %>%
+  select(id, name, pop, rhh) %>%
   st_point_on_surface(.)
 
 bubble_jpcourt <- eviction_jpcourt %>%
-  select(id, name, pop) %>%
+  select(id, name, pop, rhh) %>%
   st_point_on_surface(.)
   
 #### Export population points to geojson #####
