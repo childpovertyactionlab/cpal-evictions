@@ -180,18 +180,26 @@ ntx_tracts <- tigris::tracts(state = "TX", county = counties) %>%
   rename(tract_id = GEOID)
 
 #### Import council districts geographies #####
-dallascouncil <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Council_Simple.shp") %>%
+dallascouncil <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/Council_Simple.shp") %>%
   mutate(DISTRICT = str_pad(DISTRICT, 2, pad = "0"),
          council_id = paste0("4819000-", DISTRICT)) %>%
   select(council_id, geometry) %>%
   st_transform(crs = 4269)
+
+#### Import JP Precincts geographies #####
+jp_courts <- st_read("demo/NTEP_demographics_jpcourt.geojson") %>%
+  transmute(jpcourt_id = id) %>%
+  st_transform(crs = 4269)
+
+plot(jp_courts["geometry"])
 
 # Eviction data geography attribute  columns ##########
 eviction_export <- eviction_sf %>%
   .[ntx_counties, ] %>%
   st_join(., ntx_tracts) %>%
   st_join(., dallascouncil) %>%
-  relocate(case_number, date, amount, precinct_id, council_id, tract_id, zip_id, city_id, county_id, lon, lat) %>%
+#  st_join(., jp_courts) %>%
+  relocate(case_number, date, amount, precinct_id, council_id, tract_id, zip_id, city_id, county_id, lon, lat) %>% #jpcourt_id
   select(-NAME) %>%
   st_drop_geometry(.) %>%
   full_join(., eviction_NA)
@@ -199,9 +207,12 @@ eviction_export <- eviction_sf %>%
 # Data export to repo folder #####
 export(eviction_export, "filing data/NTEP_eviction_cases.csv")
 
-#test <- eviction_sf %>%
-#  st_drop_geometry(.) %>%
-#  filter(date >= as.Date("2020-03-01")) %>%
-#  filter(NAME == "Dallas") %>%
-#  group_by(plaintiff_name, plaintiff_address) %>%
-#  summarize(count = n())
+eviction_export %>%
+  filter(date >= as.Date("2020-03-01")) %>%
+  mutate(week = lubridate::floor_date(date, unit = "week")) %>%
+  group_by(county_id, week) %>%
+  summarize(count = n()) %>%
+  ggplot( aes(x=week, y=count, group=county_id, color=county_id)) +
+  geom_line(size = 1) +
+  scale_x_date(date_breaks  = "2 month", date_minor_breaks = "1 month", date_labels = "%b %y")
+

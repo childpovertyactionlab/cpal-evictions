@@ -162,7 +162,7 @@ plot(eviction_county["mpv"])
 plot(eviction_county["mgr"])
 
 #### Tidy Census City Council #####
-eviction_council <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Council_Simple.shp") %>%
+eviction_council <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/Council_Simple.shp") %>%
   mutate(DISTRICT = str_pad(DISTRICT, 2, pad = "0")) %>%
   select(DISTRICT, geometry) %>%
   st_transform(crs = 4269) %>%
@@ -206,7 +206,7 @@ plot(eviction_council["mgr"])
 #### Tidy Census JP Court Boundaries #####
 #st_layers("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg")
 sf_use_s2(FALSE)
-dallas_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Dallas County JP Boundaries") %>%
+dallas_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Dallas County JP Boundaries Rounded") %>%
   select(Name, geom) %>%
   rename(name = Name) %>%
   mutate(name = str_extract(name, "[0-9.]+"), 
@@ -215,7 +215,7 @@ dallas_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/
   st_transform(crs = 4269) %>%
   st_zm(.)
 
-tarrant_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Tarrant County JP Boundaries") %>%
+tarrant_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Tarrant County JP Boundaries Rounded") %>%
   select(JP, geom) %>%
   rename(name = JP) %>%
   mutate(id = paste0("48439_", name),
@@ -223,16 +223,16 @@ tarrant_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries
   st_transform(crs = 4269) %>%
   st_zm(.)
 
-collin_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Collin County JP Boundaries") %>%
-  select(JPC, geom) %>%
+collin_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Collin County JP Boundaries Rounded") %>%
+select(JPC, geom) %>%
   rename(name = JPC) %>%
   mutate(id = paste0("48085_", name),
          name = paste("Collin County Precinct", name)) %>%
   st_transform(crs = 4269) %>%
   st_zm(.)
 
-denton_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Denton County JP Boundaries") %>%
-  select(JP_C, geom) %>%
+denton_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Denton County JP Boundaries Rounded") %>%
+select(JP_C, geom) %>%
   rename(name = JP_C) %>%
   mutate(id = paste0("48121_", name),
          name = paste("Denton County Precinct", name)) %>%
@@ -270,15 +270,14 @@ eviction_jpcourt <- rbind(dallas_jp, tarrant_jp) %>%
             pcb = sum(bl_intersect)/pop,
             pcw = sum(wh_intersect)/pop,
             pch = sum(his_intersect)/pop) %>%
-  select(id, name, pop:pch) #%>%
-#  ms_simplify(., keep = 0.2)
+  select(id, name, pop:pch) 
 
 plot(eviction_jpcourt["rb"])
 plot(eviction_jpcourt["mpv"])
 plot(eviction_jpcourt["mgr"])
 
 #### Export demographic data as geojson #####
-st_write(eviction_jpcourt, "demo/NTEP_demographics_tract.geojson", delete_dsn = TRUE)
+st_write(eviction_jpcourt, "demo/NTEP_demographics_jpcourt.geojson", delete_dsn = TRUE)
 st_write(eviction_tract, "demo/NTEP_demographics_tract.geojson", delete_dsn = TRUE)
 st_write(eviction_zcta, "demo/NTEP_demographics_zip.geojson", delete_dsn = TRUE)
 st_write(eviction_place, "demo/NTEP_demographics_place.geojson", delete_dsn = TRUE)
