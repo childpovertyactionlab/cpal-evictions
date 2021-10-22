@@ -50,7 +50,6 @@ extractzip <- function(x) {
 #### Eviction data import and attribute selection Collin County #####
 #select only the necessary column types and rename them based on NTE data plan
 collin <- import("https://evictions.s3.us-east-2.amazonaws.com/collin-county-tx-evictions.rds") %>%
-  select(case_number, location, date_filed, lon, lat, defendant_address) %>%
   rename(precinct_id = location,
          date = date_filed) %>%
   mutate(county_id = "48085",
@@ -67,7 +66,6 @@ collin <- import("https://evictions.s3.us-east-2.amazonaws.com/collin-county-tx-
 #### Eviction data import and attribute selection Denton County #####
 #select only the necessary column types and rename them based on NTE data plan
 denton <- import("https://evictions.s3.us-east-2.amazonaws.com/denton-county-tx-evictions.rds") %>%
-  select(case_number, date_filed, location, lon, lat, defendant_address) %>%
   rename(precinct_id = location,
          date = date_filed) %>%
   filter(!is.na(defendant_address)) %>%
@@ -85,7 +83,6 @@ denton <- import("https://evictions.s3.us-east-2.amazonaws.com/denton-county-tx-
 #### Eviction data import and attribute selection Tarrant County #####
 #select only the necessary column types and rename them based on NTE data plan
 tarrant <- import("https://evictions.s3.us-east-2.amazonaws.com/tarrant-evictions-2020.csv") %>%
-  select(case_number, date_filed, location, lon, lat, defendant_address) %>%
   rename(precinct_id = location,
          date = date_filed) %>%
   mutate(county_id = "48439",
@@ -101,8 +98,6 @@ tarrant <- import("https://evictions.s3.us-east-2.amazonaws.com/tarrant-eviction
 
 #### Eviction data import and attribute selection Dallas County #####
 #select only the necessary column types and rename them based on NTE data plan
-dallas <- import("E:/CPAL Dropbox/Data Library/Dallas County/Eviction Records/Data/Dallas County Eviction Master/EvictionRecords_Master.csv") %>%
-  select(case_number, court, df_city, df_zip, filed_date, amount, X, Y) %>%
   rename(date = filed_date,
          city_id = df_city,
          zip_id = df_zip,
