@@ -112,6 +112,8 @@ eviction_place <- get_acs(geography = "place",
                           output = "wide",
                           geometry = TRUE) %>%
   .[ntx_counties, ] %>%
+  mutate(NAME = str_replace(NAME, " city, Texas", ", Texas"),
+         NAME = str_replace(NAME, " town, Texas", " , Texas")) %>%
   transmute(id = GEOID,
             name = NAME,
             pop = tot_popE,
@@ -166,7 +168,8 @@ plot(eviction_county["mpv"])
 plot(eviction_county["mgr"])
 
 #### Tidy Census City Council #####
-eviction_council <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/Council_Simple.shp") %>%
+eviction_council <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/Council_Simple.shp") %>%
+#eviction_council <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/Council_Simple.shp") %>%
   mutate(DISTRICT = str_pad(DISTRICT, 2, pad = "0")) %>%
   select(DISTRICT, geometry) %>%
   st_transform(crs = 4269) %>%
@@ -211,7 +214,8 @@ plot(eviction_council["mgr"])
 #### Tidy Census JP Court Boundaries #####
 #st_layers("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg")
 sf_use_s2(FALSE)
-dallas_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Dallas County JP Boundaries Rounded") %>%
+dallas_jp <- st_read("C:/Users/micha/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Dallas County JP Boundaries Rounded") %>%
+#dallas_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Dallas County JP Boundaries Rounded") %>%
   select(Name, geom) %>%
   rename(name = Name) %>%
   mutate(name = str_extract(name, "[0-9.]+"), 
@@ -220,7 +224,8 @@ dallas_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/
   st_transform(crs = 4269) %>%
   st_zm(.)
 
-tarrant_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Tarrant County JP Boundaries Rounded") %>%
+tarrant_jp <- st_read("C:/Users/micha/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Tarrant County JP Boundaries Rounded") %>%
+#tarrant_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Tarrant County JP Boundaries Rounded") %>%
   select(JP, geom) %>%
   rename(name = JP) %>%
   mutate(id = paste0("48439-", name),
@@ -228,7 +233,8 @@ tarrant_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries
   st_transform(crs = 4269) %>%
   st_zm(.)
 
-collin_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Collin County JP Boundaries Rounded") %>%
+collin_jp <- st_read("C:/Users/micha/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Collin County JP Boundaries Rounded") %>%
+#collin_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Collin County JP Boundaries Rounded") %>%
 select(JPC, geom) %>%
   rename(name = JPC) %>%
   mutate(id = paste0("48085-", name),
@@ -236,7 +242,8 @@ select(JPC, geom) %>%
   st_transform(crs = 4269) %>%
   st_zm(.)
 
-denton_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Denton County JP Boundaries Rounded") %>%
+denton_jp <- st_read("C:/Users/micha/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Denton County JP Boundaries Rounded") %>%
+#denton_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Denton County JP Boundaries Rounded") %>%
 select(JP_C, geom) %>%
   rename(name = JP_C) %>%
   mutate(id = paste0("48121-", name),
