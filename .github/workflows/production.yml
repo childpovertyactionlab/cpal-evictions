@@ -18,7 +18,7 @@ jobs:
         env:
           FILE: "./filing data/NTEP_eviction_cases.csv"
           AWS_REGION: "us-east-1"
-          S3_BUCKET: "ntepstack-productiondatastore5e36f90b-o3qto80zqh1p"
+          S3_BUCKET: "ntepstack-productiondatastore5e36f90b-p50xve6tywxi"
           S3_KEY: "source.csv"
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
