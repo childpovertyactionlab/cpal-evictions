@@ -208,6 +208,12 @@ eviction_export <- eviction_sf %>%
 # Data export to repo folder #####
 export(eviction_export, "filing data/NTEP_eviction_cases.csv")
 
+# Data Prep for Long and Wide Format Export#####
+eviction_export <- 
+
+
+# Wide and Long Formats
+
 #### TESTING CODE #####
 eviction_export %>%
   filter(date >= as.Date("2020-03-01")) %>%
