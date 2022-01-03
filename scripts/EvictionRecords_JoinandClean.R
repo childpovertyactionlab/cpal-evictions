@@ -209,7 +209,7 @@ eviction_export <- eviction_sf %>%
 export(eviction_export, "filing data/NTEP_eviction_cases.csv")
 
 # Data Prep for Long and Wide Format Export#####
-eviction_export <- 
+#eviction_export <- 
 
 
 # Wide and Long Formats
