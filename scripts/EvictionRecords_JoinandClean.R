@@ -152,6 +152,7 @@ eviction_sf <- evictioncases %>%
 #                                             value = TRUE)}),
 #         city_id = city_replace(city_id)
 #         ) %>%
+
   st_as_sf(coords = c("lon", "lat"), crs = 4269) %>%
   st_transform(crs = 4269) %>%
   mutate(lon = sf::st_coordinates(.)[,1],
@@ -201,18 +202,113 @@ eviction_export <- eviction_sf %>%
   st_join(., ntx_tracts) %>%
   st_join(., dallascouncil) %>%
   relocate(case_number, date, amount, precinct_id, subprecinct_id, council_id, tract_id, zip_id, city_id, county_id, lon, lat) %>%
-  select(-NAME) %>%
   st_drop_geometry(.) %>%
   full_join(., eviction_NA)
 
 # Data export to repo folder #####
-export(eviction_export, "filing data/NTEP_eviction_cases.csv")
+eviction_export %>%
+  select(-NAME) %>%
+  export(., "filing data/NTEP_eviction_cases.csv")
 
 # Data Prep for Long and Wide Format Export#####
-#eviction_export <- 
+long_city <- eviction_export %>%
+  mutate(amount = ifelse(amount == 0, NA, amount),
+         year = lubridate::year(date),
+         month = lubridate::month(date)) %>%
+  group_by(NAME, year, month) %>%
+  summarise(tot_evic = n(),
+            med_amount = median(amount, na.rm = TRUE),
+            mean_amount = mean(amount, na.rm = TRUE)
+            ) %>%
+  rename(city_id = NAME) %>%
+  filter(!is.na(city_id)) %>%
+  rename(NAME = city_id) %>%
+  mutate(Geography = "City")
 
+long_precinct <- eviction_export %>%
+  mutate(amount = ifelse(amount == 0, NA, amount),
+         year = lubridate::year(date),
+         month = lubridate::month(date)) %>%
+  group_by(precinct_id, year, month) %>%
+  summarise(tot_evic = n(),
+            med_amount = median(amount, na.rm = TRUE),
+            mean_amount = mean(amount, na.rm = TRUE)
+  ) %>%
+  filter(!is.na(precinct_id)) %>%
+  rename(NAME = precinct_id) %>%
+  mutate(Geography = "Precinct")
 
-# Wide and Long Formats
+long_council <- eviction_export %>%
+  mutate(amount = ifelse(amount == 0, NA, amount),
+         year = lubridate::year(date),
+         month = lubridate::month(date)) %>%
+  group_by(council_id, year, month) %>%
+  summarise(tot_evic = n(),
+            med_amount = median(amount, na.rm = TRUE),
+            mean_amount = mean(amount, na.rm = TRUE)
+  ) %>%
+  filter(!is.na(council_id)) %>%
+  rename(NAME = council_id) %>%
+  mutate(Geography = "City Council")
+
+long_tract <- eviction_export %>%
+  mutate(amount = ifelse(amount == 0, NA, amount),
+         year = lubridate::year(date),
+         month = lubridate::month(date)) %>%
+  group_by(tract_id, year, month) %>%
+  summarise(tot_evic = n(),
+            med_amount = median(amount, na.rm = TRUE),
+            mean_amount = mean(amount, na.rm = TRUE)
+  ) %>%
+  filter(!is.na(tract_id)) %>%
+  rename(NAME = tract_id) %>%
+  mutate(Geography = "Census Tract")
+
+long_zip <- eviction_export %>%
+  mutate(amount = ifelse(amount == 0, NA, amount),
+         year = lubridate::year(date),
+         month = lubridate::month(date)) %>%
+  group_by(zip_id, year, month) %>%
+  summarise(tot_evic = n(),
+            med_amount = median(amount, na.rm = TRUE),
+            mean_amount = mean(amount, na.rm = TRUE)
+  ) %>%
+  filter(!is.na(zip_id)) %>%
+  rename(NAME = zip_id) %>%
+  mutate(Geography = "Zip")
+
+long_county <- eviction_export %>%
+  mutate(amount = ifelse(amount == 0, NA, amount),
+         year = lubridate::year(date),
+         month = lubridate::month(date)) %>%
+  group_by(county_id, year, month) %>%
+  summarise(tot_evic = n(),
+            med_amount = median(amount, na.rm = TRUE),
+            mean_amount = mean(amount, na.rm = TRUE)
+  ) %>%
+  filter(!is.na(county_id)) %>%
+  rename(NAME = county_id) %>%
+  mutate(Geography = "County")
+
+long_export <- rbind(long_city, long_council) %>%
+  rbind(., long_county) %>%
+  rbind(., long_precinct) %>%
+  rbind(., long_tract) %>%
+  rbind(., long_zip) %>%
+  rename(Name = NAME,
+         Year = year,
+         Month = month) %>%
+  select(Name, Geography, Year, Month, tot_evic, med_amount, mean_amount) %>%
+  filter(Name != "")
+  
+wide_export <- long_export %>%
+  pivot_longer(cols = c(tot_evic, med_amount, mean_amount), 
+               names_to = "Metric") %>%
+  pivot_wider(names_from = Name,
+              values_from = value)
+
+export(long_export, "filing data/NTEP_datadownload_long.csv")
+export(wide_export, "filing data/NTEP_datadownload_wide.csv")
 
 #### TESTING CODE #####
 eviction_export %>%
