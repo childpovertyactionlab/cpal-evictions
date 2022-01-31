@@ -307,8 +307,8 @@ wide_export <- long_export %>%
   pivot_wider(names_from = Name,
               values_from = value)
 
-export(long_export, "filing data/NTEP_datadownload_long.csv")
-export(wide_export, "filing data/NTEP_datadownload_wide.csv")
+export(long_export, "filing data/NTEP_datadownload.csv")
+#export(wide_export, "filing data/NTEP_datadownload_wide.csv")
 
 #### TESTING CODE #####
 eviction_export %>%
