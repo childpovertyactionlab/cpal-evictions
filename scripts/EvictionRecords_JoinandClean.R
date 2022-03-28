@@ -9,12 +9,12 @@ counties <- c("Dallas County",
               "Denton County",
               "Tarrant County")
 
-ntx_counties <- tigris::counties(state = "TX") %>%
+ntx_counties <- tigris::counties(state = "TX", year = 2019) %>%
   filter(NAMELSAD %in% counties) %>%
   select(NAME, GEOID,  geometry) %>%
   rename(county_id = GEOID)
 
-ntx_places <- tigris::places(state = "TX") %>%
+ntx_places <- tigris::places(state = "TX", year = 2019) %>%
   .[ntx_counties, ] %>%
   select(NAME, GEOID, geometry) %>%
   rename(city_id = GEOID)
