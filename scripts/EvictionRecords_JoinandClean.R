@@ -196,12 +196,31 @@ dallascouncil <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/City of Dalla
   select(council_id, geometry) %>%
   st_transform(crs = 4269)
 
+#### Import school district boundaries geographies #####
+eviction_elem <- st_read("demo/NTEP_demographics_elemschool.geojson") %>%
+  rename(elem_id = name) %>%
+  select(elem_id, geometry) %>%
+  st_transform(crs = 4269)
+  
+eviction_midd <- st_read("demo/NTEP_demographics_midschool.geojson") %>%
+  rename(midd_id = name) %>%
+  select(midd_id, geometry) %>%
+  st_transform(crs = 4269)
+
+eviction_high <- st_read("demo/NTEP_demographics_highschool.geojson") %>%
+  rename(high_id = name) %>%
+  select(high_id, geometry) %>%
+  st_transform(crs = 4269)
+
 # Eviction data geography attribute  columns ##########
 eviction_export <- eviction_sf %>%
   .[ntx_counties, ] %>%
   st_join(., ntx_tracts) %>%
   st_join(., dallascouncil) %>%
-  relocate(case_number, date, amount, precinct_id, subprecinct_id, council_id, tract_id, zip_id, city_id, county_id, lon, lat) %>%
+  st_join(., eviction_elem) %>%
+  st_join(., eviction_midd) %>%
+  st_join(., eviction_high) %>%
+  relocate(case_number, date, amount, precinct_id, subprecinct_id, council_id, tract_id, zip_id, city_id, county_id, elem_id, midd_id, high_id, lon, lat) %>%
   st_drop_geometry(.) %>%
   full_join(., eviction_NA)
 
@@ -291,7 +310,49 @@ long_county <- eviction_export %>%
   rename(NAME = county_id) %>%
   mutate(Geography = "County")
 
+long_elem <- eviction_export %>%
+  mutate(amount = ifelse(amount == 0, NA, amount),
+         year = lubridate::year(date),
+         month = lubridate::month(date)) %>%
+  group_by(elem_id, year, month) %>%
+  summarise(tot_evic = n(),
+            med_amount = median(amount, na.rm = TRUE),
+            mean_amount = mean(amount, na.rm = TRUE)
+  ) %>%
+  filter(!is.na(elem_id)) %>%
+  rename(NAME = elem_id) %>%
+  mutate(Geography = "Elementary School")
+
+long_midd <- eviction_export %>%
+  mutate(amount = ifelse(amount == 0, NA, amount),
+         year = lubridate::year(date),
+         month = lubridate::month(date)) %>%
+  group_by(midd_id, year, month) %>%
+  summarise(tot_evic = n(),
+            med_amount = median(amount, na.rm = TRUE),
+            mean_amount = mean(amount, na.rm = TRUE)
+  ) %>%
+  filter(!is.na(midd_id)) %>%
+  rename(NAME = midd_id) %>%
+  mutate(Geography = "Middle School")
+
+long_high <- eviction_export %>%
+  mutate(amount = ifelse(amount == 0, NA, amount),
+         year = lubridate::year(date),
+         month = lubridate::month(date)) %>%
+  group_by(high_id, year, month) %>%
+  summarise(tot_evic = n(),
+            med_amount = median(amount, na.rm = TRUE),
+            mean_amount = mean(amount, na.rm = TRUE)
+  ) %>%
+  filter(!is.na(high_id)) %>%
+  rename(NAME = high_id) %>%
+  mutate(Geography = "High School")
+
 long_export <- rbind(long_city, long_council) %>%
+  rbind(., long_elem) %>%
+  rbind(., long_midd) %>%
+  rbind(., long_high) %>%
   rbind(., long_county) %>%
   rbind(., long_precinct) %>%
   rbind(., long_tract) %>%

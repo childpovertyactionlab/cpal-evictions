@@ -219,6 +219,122 @@ plot(eviction_council["rb"])
 plot(eviction_council["mpv"])
 plot(eviction_council["mgr"])
 
+#### Tidy Census School Boundary #####
+eviction_elem <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Elementary.shp") %>%
+#eviction_elem <- st_read("E:/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Elementary.shp") %>%
+  select(SLN, ELEM_DESC, geometry) %>%
+  st_transform(crs = 4269) %>%
+  st_intersection(census_tract, .) %>%
+  mutate(id = SLN,
+         name = ELEM_DESC,
+         AreaIntersect = as.numeric(st_area(.)),
+         PerIntersect = AreaIntersect/AreaTract,
+         pop_intersect = round(PerIntersect*tot_popE, digits = 4),
+         popbp_intersect = round(PerIntersect*pop_bpE, digits = 4),
+         popu18_intersect = round(PerIntersect*pop_u18E, digits = 4),
+         bpu18_intersect = round(PerIntersect*bp_u18E, digits = 4),
+         rohh_intersect = round(PerIntersect*rohhE, digits = 4),
+         thh_intersect = round(PerIntersect*thhE, digits = 4),
+         rcb_intersect = round(PerIntersect*rcbE, digits = 4),
+         as_intersect = round(PerIntersect*as_popE, digits = 4),
+         bl_intersect = round(PerIntersect*bl_popE, digits = 4),
+         wh_intersect = round(PerIntersect*wh_popE, digits = 4),
+         his_intersect = round(PerIntersect*his_popE, digits = 4)
+  ) %>%
+  group_by(id, name) %>%
+  summarise(pop = sum(pop_intersect),
+            pvr = sum(popbp_intersect)/pop,
+            cpr = sum(bpu18_intersect)/sum(popu18_intersect),
+            prh = sum(rohh_intersect)/sum(thh_intersect),
+            rhh = sum(rohh_intersect), 
+            mgr = mean(med_rentE, na.rm = TRUE),
+            mpv = mean(med_valE, na.rm = TRUE),
+            mhi = mean(med_incE, na.rm = TRUE),
+            rb = sum(as_intersect)/100,
+            pca = sum(as_popE)/pop,
+            pcb = sum(bl_intersect)/pop,
+            pcw = sum(wh_intersect)/pop,
+            pch = sum(his_intersect)/pop) %>%
+  select(id, name, pop:pch) %>%
+  ms_simplify(., keep = 0.2)
+
+eviction_midd <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Middle.shp") %>%
+  #eviction_midd <- st_read("E:/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Middle.shp") %>%
+  select(MID_SLN, MIDDLE, geometry) %>%
+  st_transform(crs = 4269) %>%
+  st_intersection(census_tract, .) %>%
+  mutate(id = MID_SLN,
+         name = MIDDLE,
+         AreaIntersect = as.numeric(st_area(.)),
+         PerIntersect = AreaIntersect/AreaTract,
+         pop_intersect = round(PerIntersect*tot_popE, digits = 4),
+         popbp_intersect = round(PerIntersect*pop_bpE, digits = 4),
+         popu18_intersect = round(PerIntersect*pop_u18E, digits = 4),
+         bpu18_intersect = round(PerIntersect*bp_u18E, digits = 4),
+         rohh_intersect = round(PerIntersect*rohhE, digits = 4),
+         thh_intersect = round(PerIntersect*thhE, digits = 4),
+         rcb_intersect = round(PerIntersect*rcbE, digits = 4),
+         as_intersect = round(PerIntersect*as_popE, digits = 4),
+         bl_intersect = round(PerIntersect*bl_popE, digits = 4),
+         wh_intersect = round(PerIntersect*wh_popE, digits = 4),
+         his_intersect = round(PerIntersect*his_popE, digits = 4)
+  ) %>%
+  group_by(id, name) %>%
+  summarise(pop = sum(pop_intersect),
+            pvr = sum(popbp_intersect)/pop,
+            cpr = sum(bpu18_intersect)/sum(popu18_intersect),
+            prh = sum(rohh_intersect)/sum(thh_intersect),
+            rhh = sum(rohh_intersect), 
+            mgr = mean(med_rentE, na.rm = TRUE),
+            mpv = mean(med_valE, na.rm = TRUE),
+            mhi = mean(med_incE, na.rm = TRUE),
+            rb = sum(as_intersect)/100,
+            pca = sum(as_popE)/pop,
+            pcb = sum(bl_intersect)/pop,
+            pcw = sum(wh_intersect)/pop,
+            pch = sum(his_intersect)/pop) %>%
+  select(id, name, pop:pch) %>%
+  ms_simplify(., keep = 0.2)
+
+
+eviction_high <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_High.shp") %>%
+#eviction_high <- st_read("E:/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_High.shp") %>%
+  select(HIGH_SLN, HIGH, geometry) %>%
+  st_transform(crs = 4269) %>%
+  st_intersection(census_tract, .) %>%
+  mutate(id = HIGH_SLN,
+         name = HIGH,
+         AreaIntersect = as.numeric(st_area(.)),
+         PerIntersect = AreaIntersect/AreaTract,
+         pop_intersect = round(PerIntersect*tot_popE, digits = 4),
+         popbp_intersect = round(PerIntersect*pop_bpE, digits = 4),
+         popu18_intersect = round(PerIntersect*pop_u18E, digits = 4),
+         bpu18_intersect = round(PerIntersect*bp_u18E, digits = 4),
+         rohh_intersect = round(PerIntersect*rohhE, digits = 4),
+         thh_intersect = round(PerIntersect*thhE, digits = 4),
+         rcb_intersect = round(PerIntersect*rcbE, digits = 4),
+         as_intersect = round(PerIntersect*as_popE, digits = 4),
+         bl_intersect = round(PerIntersect*bl_popE, digits = 4),
+         wh_intersect = round(PerIntersect*wh_popE, digits = 4),
+         his_intersect = round(PerIntersect*his_popE, digits = 4)
+  ) %>%
+  group_by(id, name) %>%
+  summarise(pop = sum(pop_intersect),
+            pvr = sum(popbp_intersect)/pop,
+            cpr = sum(bpu18_intersect)/sum(popu18_intersect),
+            prh = sum(rohh_intersect)/sum(thh_intersect),
+            rhh = sum(rohh_intersect), 
+            mgr = mean(med_rentE, na.rm = TRUE),
+            mpv = mean(med_valE, na.rm = TRUE),
+            mhi = mean(med_incE, na.rm = TRUE),
+            rb = sum(as_intersect)/100,
+            pca = sum(as_popE)/pop,
+            pcb = sum(bl_intersect)/pop,
+            pcw = sum(wh_intersect)/pop,
+            pch = sum(his_intersect)/pop) %>%
+  select(id, name, pop:pch) %>%
+  ms_simplify(., keep = 0.2)
+
 #### Tidy Census JP Court Boundaries #####
 #st_layers("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg")
 sf_use_s2(FALSE)
@@ -298,6 +414,10 @@ plot(eviction_jpcourt["mpv"])
 plot(eviction_jpcourt["mgr"])
 
 #### Export demographic data as geojson #####
+st_write(eviction_elem, "demo/NTEP_demographics_elemschool.geojson", delete_dsn = TRUE)
+st_write(eviction_midd, "demo/NTEP_demographics_midschool.geojson", delete_dsn = TRUE)
+st_write(eviction_high, "demo/NTEP_demographics_highschool.geojson", delete_dsn = TRUE)
+
 st_write(eviction_jpcourt, "demo/NTEP_demographics_jpcourt.geojson", delete_dsn = TRUE)
 st_write(eviction_tract, "demo/NTEP_demographics_tract.geojson", delete_dsn = TRUE)
 st_write(eviction_zcta, "demo/NTEP_demographics_zip.geojson", delete_dsn = TRUE)
@@ -306,6 +426,18 @@ st_write(eviction_county, "demo/NTEP_demographics_county.geojson", delete_dsn = 
 st_write(eviction_council, "demo/NTEP_demographics_council.geojson", delete_dsn = TRUE)
 
 #### Generate points with population data #####
+bubble_elem <- eviction_elem %>%
+  select(id, name, pop, rhh) %>%
+  st_point_on_surface(.)
+
+bubble_midd <- eviction_midd %>%
+  select(id, name, pop, rhh) %>%
+  st_point_on_surface(.)
+
+bubble_high <- eviction_high %>%
+  select(id, name, pop, rhh) %>%
+  st_point_on_surface(.)
+
 bubble_county <- eviction_county %>%
   select(id, name, pop, rhh) %>%
   st_point_on_surface(.)
@@ -331,6 +463,9 @@ bubble_jpcourt <- eviction_jpcourt %>%
   st_point_on_surface(.)
   
 #### Export population points to geojson #####
+st_write(bubble_elem, "bubble/NTEP_bubble_elemschool.geojson", delete_dsn = TRUE)
+st_write(bubble_midd, "bubble/NTEP_bubble_middschool.geojson", delete_dsn = TRUE)
+st_write(bubble_high, "bubble/NTEP_bubble_highschool.geojson", delete_dsn = TRUE)
 st_write(bubble_tract, "bubble/NTEP_bubble_tract.geojson", delete_dsn = TRUE)
 st_write(bubble_zcta, "bubble/NTEP_bubble_zip.geojson", delete_dsn = TRUE)
 st_write(bubble_place, "bubble/NTEP_bubble_place.geojson", delete_dsn = TRUE)
