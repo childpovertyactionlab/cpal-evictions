@@ -220,12 +220,12 @@ plot(eviction_council["mpv"])
 plot(eviction_council["mgr"])
 
 #### Tidy Census School Boundary #####
-eviction_elem <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Elementary.shp") %>%
-#eviction_elem <- st_read("E:/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Elementary.shp") %>%
+#eviction_elem <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Elementary.shp") %>%
+eviction_elem <- st_read("E:/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Elementary.shp") %>%
   select(SLN, ELEM_DESC, geometry) %>%
   st_transform(crs = 4269) %>%
   st_intersection(census_tract, .) %>%
-  mutate(id = SLN,
+  mutate(id = paste0("1-", SLN),
          name = ELEM_DESC,
          AreaIntersect = as.numeric(st_area(.)),
          PerIntersect = AreaIntersect/AreaTract,
@@ -258,12 +258,12 @@ eviction_elem <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Indepe
   select(id, name, pop:pch) %>%
   ms_simplify(., keep = 0.2)
 
-eviction_midd <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Middle.shp") %>%
-  #eviction_midd <- st_read("E:/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Middle.shp") %>%
+#eviction_midd <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Middle.shp") %>%
+eviction_midd <- st_read("E:/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Middle.shp") %>%
   select(MID_SLN, MIDDLE, geometry) %>%
   st_transform(crs = 4269) %>%
   st_intersection(census_tract, .) %>%
-  mutate(id = MID_SLN,
+  mutate(id = paste0("2-", str_pad(MID_SLN, 3, pad = "0")),
          name = MIDDLE,
          AreaIntersect = as.numeric(st_area(.)),
          PerIntersect = AreaIntersect/AreaTract,
@@ -297,12 +297,12 @@ eviction_midd <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Indepe
   ms_simplify(., keep = 0.2)
 
 
-eviction_high <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_High.shp") %>%
-#eviction_high <- st_read("E:/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_High.shp") %>%
+#eviction_high <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_High.shp") %>%
+eviction_high <- st_read("E:/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_High.shp") %>%
   select(HIGH_SLN, HIGH, geometry) %>%
   st_transform(crs = 4269) %>%
   st_intersection(census_tract, .) %>%
-  mutate(id = HIGH_SLN,
+  mutate(id = paste0("3-", str_pad(HIGH_SLN, 3, pad = "0")),
          name = HIGH,
          AreaIntersect = as.numeric(st_area(.)),
          PerIntersect = AreaIntersect/AreaTract,
