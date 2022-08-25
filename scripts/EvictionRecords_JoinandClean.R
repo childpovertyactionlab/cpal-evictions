@@ -198,17 +198,17 @@ dallascouncil <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boundar
 
 #### Import school district boundaries geographies #####
 eviction_elem <- st_read("demo/NTEP_demographics_elemschool.geojson") %>%
-  rename(elem_id = name) %>%
+  rename(elem_id = id) %>%
   select(elem_id, geometry) %>%
   st_transform(crs = 4269)
   
 eviction_midd <- st_read("demo/NTEP_demographics_midschool.geojson") %>%
-  rename(midd_id = name) %>%
+  rename(midd_id = id) %>%
   select(midd_id, geometry) %>%
   st_transform(crs = 4269)
 
 eviction_high <- st_read("demo/NTEP_demographics_highschool.geojson") %>%
-  rename(high_id = name) %>%
+  rename(high_id = id) %>%
   select(high_id, geometry) %>%
   st_transform(crs = 4269)
 
