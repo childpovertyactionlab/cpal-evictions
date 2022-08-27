@@ -1,3 +1,11 @@
+## Summary
+
+This project consists of multiple repos:
+
+- [Hyperobjekt/nte-backend](https://github.com/Hyperobjekt/nte-backend): contains backend infrastructure code and lambda functions for the api (and [data flow overview](https://github.com/Hyperobjekt/nte-backend/blob/main/CONTRIBUTING.md#data-flow))
+- [childpovertyactionlab/cpal-evictions](https://github.com/childpovertyactionlab/cpal-evictions) (this repo): this repo contains source data for populating the database in the nte-backend
+- [Hyperobjekt/north-texas-evictions](https://github.com/Hyperobjekt/north-texas-evictions): contains front end app code
+
 # cpal-evictions
  A repository to store code and data for evictions activity in North Texas that feeds CPAL's North Texas Evictions website.
 
