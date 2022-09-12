@@ -67,7 +67,7 @@ Addison,City,2022,5,45,1661.02,2175.42744186047
 Addison,City,2022,6,83,1728.145,2308.38682926829
 Addison,City,2022,7,66,1902.5,2373.79265625
 Addison,City,2022,8,50,1924.15,2109.18
-Addison,City,2022,9,1,,
+Addison,City,2022,9,2,1383,1383
 Aledo,City,2020,7,1,,
 Aledo,City,2021,11,1,,
 Aledo,City,2022,6,1,,
@@ -176,7 +176,7 @@ Arlington,City,2022,5,623,,
 Arlington,City,2022,6,616,,
 Arlington,City,2022,7,544,,
 Arlington,City,2022,8,701,,
-Arlington,City,2022,9,122,,
+Arlington,City,2022,9,178,,
 Aubrey,City,2019,1,5,,
 Aubrey,City,2019,2,3,,
 Aubrey,City,2019,3,3,,
@@ -314,7 +314,7 @@ Balch Springs,City,2022,5,43,1493.5,2035.18609756098
 Balch Springs,City,2022,6,43,1248.5,1677.8553125
 Balch Springs,City,2022,7,64,2247.725,2680.45607142857
 Balch Springs,City,2022,8,46,2360,2541.45190476191
-Balch Springs,City,2022,9,1,3100,3100
+Balch Springs,City,2022,9,4,2878,2951.66666666667
 Bartonville,City,2019,7,1,,
 Bartonville,City,2021,3,1,,
 Bartonville,City,2022,4,1,,
@@ -351,7 +351,7 @@ Bedford,City,2022,5,78,,
 Bedford,City,2022,6,85,,
 Bedford,City,2022,7,93,,
 Bedford,City,2022,8,74,,
-Bedford,City,2022,9,6,,
+Bedford,City,2022,9,9,,
 Benbrook,City,2020,1,20,,
 Benbrook,City,2020,2,27,,
 Benbrook,City,2020,3,12,,
@@ -383,7 +383,7 @@ Benbrook,City,2022,5,39,,
 Benbrook,City,2022,6,43,,
 Benbrook,City,2022,7,47,,
 Benbrook,City,2022,8,42,,
-Benbrook,City,2022,9,3,,
+Benbrook,City,2022,9,5,,
 Blue Mound,City,2020,5,1,,
 Blue Mound,City,2020,6,1,,
 Blue Mound,City,2020,8,1,,
@@ -404,6 +404,7 @@ Blue Mound,City,2022,5,3,,
 Blue Mound,City,2022,6,2,,
 Blue Mound,City,2022,7,1,,
 Blue Mound,City,2022,8,3,,
+Blue Mound,City,2022,9,2,,
 Blue Ridge,City,2020,5,4,,
 Blue Ridge,City,2020,7,1,,
 Blue Ridge,City,2020,8,1,,
@@ -529,7 +530,7 @@ Carrollton,City,2022,5,89,2176.745,2728.714375
 Carrollton,City,2022,6,99,1654,2038.2415625
 Carrollton,City,2022,7,136,1925,2410.3464
 Carrollton,City,2022,8,114,2958,3209.9504
-Carrollton,City,2022,9,9,3125.66,3000.3
+Carrollton,City,2022,9,18,3125.66,3000.3
 Cedar Hill,City,2017,1,53,1537.5,2269.38477272727
 Cedar Hill,City,2017,2,71,2197.13,2234.18740740741
 Cedar Hill,City,2017,3,38,1490,2339.60677419355
@@ -598,7 +599,7 @@ Cedar Hill,City,2022,5,43,2819.54,3284.86763157895
 Cedar Hill,City,2022,6,53,3681.12,4151.44019230769
 Cedar Hill,City,2022,7,60,3080,3442.1649122807
 Cedar Hill,City,2022,8,46,2948,3384.90239130435
-Cedar Hill,City,2022,9,1,2240.62,2240.62
+Cedar Hill,City,2022,9,9,2240.62,3078.46444444444
 Cedar Hill,City,,,1,1044,1044
 Celina,City,2019,5,1,,
 Celina,City,2019,10,1,,
@@ -858,7 +859,7 @@ Crowley,City,2022,5,16,,
 Crowley,City,2022,6,16,,
 Crowley,City,2022,7,22,,
 Crowley,City,2022,8,44,,
-Crowley,City,2022,9,7,,
+Crowley,City,2022,9,13,,
 Dallas,City,2017,1,2121,1001.56,1274.2207537961
 Dallas,City,2017,2,1843,1011,1278.62481028939
 Dallas,City,2017,3,1594,953,1216.85287106447
@@ -927,7 +928,7 @@ Dallas,City,2022,5,1853,2447.66,2953.63516348774
 Dallas,City,2022,6,2232,2369,2903.80509101251
 Dallas,City,2022,7,2162,2479.095,2914.21141221374
 Dallas,City,2022,8,2104,2516.35,2977.84768820391
-Dallas,City,2022,9,397,2958,3248.7791740413
+Dallas,City,2022,9,614,2945.195,3337.15357414449
 Dallas,City,,,8,1365.89,1269.46333333333
 Dalworthington Gardens,City,2020,1,4,,
 Dalworthington Gardens,City,2020,2,2,,
@@ -983,7 +984,7 @@ Denton,City,2022,5,157,,
 Denton,City,2022,6,150,,
 Denton,City,2022,7,166,,
 Denton,City,2022,8,175,,
-Denton,City,2022,9,12,,
+Denton,City,2022,9,16,,
 DeSoto,City,2017,1,112,1129.585,1574.89880434783
 DeSoto,City,2017,2,100,1088.9,1477.00976190476
 DeSoto,City,2017,3,65,1269.93,1526.62709090909
@@ -1050,7 +1051,7 @@ DeSoto,City,2022,5,79,2117.61,2822.66369863014
 DeSoto,City,2022,6,71,2169,2770.54939393939
 DeSoto,City,2022,7,104,1774.75,2284.62918367347
 DeSoto,City,2022,8,114,1999,2451.44785046729
-DeSoto,City,2022,9,17,3201,3457.00333333333
+DeSoto,City,2022,9,28,3480,3534.452
 DeSoto,City,,,1,2592.89,2592.89
 DISH,City,2019,1,1,,
 DISH,City,2020,1,1,,
@@ -1125,7 +1126,7 @@ Duncanville,City,2022,5,52,2818,3054.95458333333
 Duncanville,City,2022,6,57,3300,3681.26040816327
 Duncanville,City,2022,7,29,2260,2741.44222222222
 Duncanville,City,2022,8,100,2448.995,2925.5496875
-Duncanville,City,2022,9,4,2252.095,2338.7975
+Duncanville,City,2022,9,21,2663.7,3321.524
 Duncanville,City,,,1,2546,2546
 Edgecliff Village,City,2020,6,1,,
 Edgecliff Village,City,2020,7,1,,
@@ -1171,7 +1172,7 @@ Euless,City,2022,5,85,,
 Euless,City,2022,6,66,,
 Euless,City,2022,7,92,,
 Euless,City,2022,8,106,,
-Euless,City,2022,9,15,,
+Euless,City,2022,9,21,,
 Everman,City,2020,1,4,,
 Everman,City,2020,2,1,,
 Everman,City,2020,3,2,,
@@ -1288,7 +1289,7 @@ Farmers Branch,City,2022,5,69,1760.155,2234.54426470588
 Farmers Branch,City,2022,6,61,1947,2364.88754098361
 Farmers Branch,City,2022,7,79,1874,2248.96753424658
 Farmers Branch,City,2022,8,76,1639.495,1814.15635135135
-Farmers Branch,City,2022,9,8,3509.265,3819.14125
+Farmers Branch,City,2022,9,28,2557,2811.46851851852
 Farmersville,City,2020,1,3,,
 Farmersville,City,2020,2,2,,
 Farmersville,City,2020,3,3,,
@@ -1394,7 +1395,7 @@ Forest Hill,City,2022,5,8,,
 Forest Hill,City,2022,6,7,,
 Forest Hill,City,2022,7,11,,
 Forest Hill,City,2022,8,11,,
-Forest Hill,City,2022,9,1,,
+Forest Hill,City,2022,9,3,,
 Fort Worth,City,2018,9,1,,
 Fort Worth,City,2019,1,2,,
 Fort Worth,City,2019,3,4,,
@@ -1439,7 +1440,7 @@ Fort Worth,City,2022,5,1194,,
 Fort Worth,City,2022,6,1239,,
 Fort Worth,City,2022,7,1307,,
 Fort Worth,City,2022,8,1205,1324,1324
-Fort Worth,City,2022,9,140,2994,2994
+Fort Worth,City,2022,9,246,2994,2994
 Frisco,City,2019,1,64,,
 Frisco,City,2019,2,28,,
 Frisco,City,2019,3,27,,
@@ -1553,7 +1554,7 @@ Garland,City,2022,5,246,1625.14,2168.97945454545
 Garland,City,2022,6,240,1302.5,1931.24067307692
 Garland,City,2022,7,262,1383.535,1856.14063559322
 Garland,City,2022,8,219,1539.58,2149.51306451613
-Garland,City,2022,9,27,2135,2427.4447826087
+Garland,City,2022,9,48,2540,2871.29488372093
 Garland,City,2022,10,1,5550,5550
 Garland,City,,,1,1400,1400
 Glenn Heights,City,2017,1,3,750,573.333333333333
@@ -1622,6 +1623,7 @@ Glenn Heights,City,2022,5,9,1686.5,1541.64
 Glenn Heights,City,2022,6,10,2490,3671.36111111111
 Glenn Heights,City,2022,7,21,1817,2774.935
 Glenn Heights,City,2022,8,5,2145.42,2602.29
+Glenn Heights,City,2022,9,1,1760,1760
 Grand Prairie,City,2017,1,101,1142.07,1475.83886363636
 Grand Prairie,City,2017,2,98,1102.5,1373.99404761905
 Grand Prairie,City,2017,3,66,1239.61,1646.36254237288
@@ -1690,7 +1692,7 @@ Grand Prairie,City,2022,5,243,2384,2967.89954022989
 Grand Prairie,City,2022,6,222,2070.345,2375.86782608696
 Grand Prairie,City,2022,7,298,2240,2690.98983471074
 Grand Prairie,City,2022,8,263,2065.55,2770.20423423423
-Grand Prairie,City,2022,9,28,2600,2948.49857142857
+Grand Prairie,City,2022,9,46,2695.14,3024.16
 Grand Prairie,City,,,1,849.11,849.11
 Grapevine,City,2020,1,63,,
 Grapevine,City,2020,2,39,,
@@ -1723,7 +1725,7 @@ Grapevine,City,2022,5,36,,
 Grapevine,City,2022,6,39,,
 Grapevine,City,2022,7,48,,
 Grapevine,City,2022,8,56,,
-Grapevine,City,2022,9,13,,
+Grapevine,City,2022,9,18,,
 Hackberry,City,2019,1,1,,
 Hackberry,City,2019,2,1,,
 Hackberry,City,2019,5,1,,
@@ -1772,7 +1774,7 @@ Haltom City,City,2022,5,70,,
 Haltom City,City,2022,6,65,,
 Haltom City,City,2022,7,80,,
 Haltom City,City,2022,8,94,,
-Haltom City,City,2022,9,5,,
+Haltom City,City,2022,9,9,,
 Haslet,City,2019,4,1,,
 Haslet,City,2019,10,1,,
 Haslet,City,2019,11,1,,
@@ -2017,7 +2019,7 @@ Irving,City,2022,5,336,1820.035,2251.52593167702
 Irving,City,2022,6,393,1932.5,2141.87245989305
 Irving,City,2022,7,494,2016.23,2341.36933476395
 Irving,City,2022,8,414,1887.65,2229.78425587467
-Irving,City,2022,9,56,2388,2478.15245283019
+Irving,City,2022,9,90,2393.44,2671.22333333333
 Irving,City,,,3,2400,2929.78
 Josephine,City,2020,2,1,,
 Josephine,City,2021,1,1,,
@@ -2153,6 +2155,7 @@ Krum,City,2022,5,1,,
 Krum,City,2022,6,2,,
 Krum,City,2022,7,1,,
 Krum,City,2022,8,2,,
+Krum,City,2022,9,1,,
 Lake Dallas,City,2019,1,11,,
 Lake Dallas,City,2019,2,10,,
 Lake Dallas,City,2019,3,2,,
@@ -2296,7 +2299,7 @@ Lancaster,City,2022,5,69,1575.855,2194.61075757576
 Lancaster,City,2022,6,87,1616.06,2383.94555555556
 Lancaster,City,2022,7,123,2113.43,2806.51117647059
 Lancaster,City,2022,8,70,1747.645,2488.64609375
-Lancaster,City,2022,9,10,1300,2373.33222222222
+Lancaster,City,2022,9,24,2333.04,3534.36217391304
 Lantana,City,2019,2,1,,
 Lantana,City,2019,3,1,,
 Lantana,City,2019,4,1,,
@@ -2370,7 +2373,7 @@ Lewisville,City,2022,5,240,,
 Lewisville,City,2022,6,261,,
 Lewisville,City,2022,7,265,,
 Lewisville,City,2022,8,319,,
-Lewisville,City,2022,9,13,,
+Lewisville,City,2022,9,22,,
 Lincoln Park,City,2019,1,1,,
 Lincoln Park,City,2019,2,6,,
 Lincoln Park,City,2019,3,2,,
@@ -2446,7 +2449,7 @@ Little Elm,City,2022,5,29,,
 Little Elm,City,2022,6,32,,
 Little Elm,City,2022,7,30,,
 Little Elm,City,2022,8,46,,
-Little Elm,City,2022,9,7,,
+Little Elm,City,2022,9,8,,
 Lowry Crossing,City,2021,2,1,,
 Lowry Crossing,City,2021,7,1,,
 Lowry Crossing,City,2022,2,2,,
@@ -2487,7 +2490,7 @@ Mansfield,City,2022,5,55,,
 Mansfield,City,2022,6,47,,
 Mansfield,City,2022,7,64,,
 Mansfield,City,2022,8,55,,
-Mansfield,City,2022,9,10,,
+Mansfield,City,2022,9,13,,
 McKinney,City,2020,1,242,,
 McKinney,City,2020,2,200,,
 McKinney,City,2020,3,114,,
@@ -2609,7 +2612,7 @@ Mesquite,City,2022,5,195,1892.62,2520.22646666667
 Mesquite,City,2022,6,189,1582.665,2197.61431034483
 Mesquite,City,2022,7,174,1906.66,2456.22779874214
 Mesquite,City,2022,8,198,1988,2694.15973684211
-Mesquite,City,2022,9,22,2495,2817.70947368421
+Mesquite,City,2022,9,38,2309.185,2860.89411764706
 Murphy,City,2020,3,2,,
 Murphy,City,2020,7,1,,
 Murphy,City,2020,9,1,,
@@ -2706,7 +2709,7 @@ Northlake,City,2022,5,1,,
 Northlake,City,2022,6,2,,
 Northlake,City,2022,7,3,,
 Northlake,City,2022,8,1,,
-Northlake,City,2022,9,2,,
+Northlake,City,2022,9,3,,
 Oak Point,City,2019,9,1,,
 Oak Point,City,2020,2,3,,
 Oak Point,City,2020,11,1,,
@@ -2789,6 +2792,7 @@ Pantego,City,2022,3,2,,
 Pantego,City,2022,5,1,,
 Pantego,City,2022,7,1,,
 Pantego,City,2022,8,1,,
+Pantego,City,2022,9,1,,
 Parker,City,2020,1,1,,
 Parker,City,2021,8,1,,
 Parker,City,2022,1,1,,
@@ -2819,6 +2823,7 @@ Pelican Bay,City,2022,5,2,,
 Pelican Bay,City,2022,6,3,,
 Pelican Bay,City,2022,7,2,,
 Pelican Bay,City,2022,8,2,,
+Pelican Bay,City,2022,9,1,,
 Pilot Point,City,2019,1,1,,
 Pilot Point,City,2019,2,1,,
 Pilot Point,City,2019,4,1,,
@@ -2853,6 +2858,7 @@ Pilot Point,City,2022,4,1,,
 Pilot Point,City,2022,5,1,,
 Pilot Point,City,2022,6,5,,
 Pilot Point,City,2022,7,2,,
+Pilot Point,City,2022,9,1,,
 Plano,City,2017,12,1,,
 Plano,City,2019,1,2,,
 Plano,City,2019,2,3,,
@@ -3023,7 +3029,7 @@ Providence Village,City,2022,3,1,,
 Providence Village,City,2022,4,1,,
 Providence Village,City,2022,6,1,,
 Providence Village,City,2022,7,1,,
-Providence Village,City,2022,9,1,,
+Providence Village,City,2022,9,2,,
 Rendon,City,2020,1,7,,
 Rendon,City,2020,2,7,,
 Rendon,City,2020,3,4,,
@@ -3054,6 +3060,7 @@ Rendon,City,2022,5,5,,
 Rendon,City,2022,6,2,,
 Rendon,City,2022,7,5,,
 Rendon,City,2022,8,5,,
+Rendon,City,2022,9,1,,
 Reno,City,2021,5,1,,
 Rhome,City,2019,3,1,,
 Rhome,City,2020,1,1,,
@@ -3130,7 +3137,7 @@ Richardson,City,2022,5,59,1630,2002.93085714286
 Richardson,City,2022,6,83,1446,1947.05857142857
 Richardson,City,2022,7,74,2253,2785.71111111111
 Richardson,City,2022,8,101,1781.48,2095.19492753623
-Richardson,City,2022,9,7,2108,3001.4
+Richardson,City,2022,9,13,2108,3198.87272727273
 Richland Hills,City,2020,1,13,,
 Richland Hills,City,2020,2,15,,
 Richland Hills,City,2020,3,9,,
@@ -3186,6 +3193,7 @@ River Oaks,City,2022,5,4,,
 River Oaks,City,2022,6,8,,
 River Oaks,City,2022,7,7,,
 River Oaks,City,2022,8,6,,
+River Oaks,City,2022,9,2,,
 Roanoke,City,2019,1,1,,
 Roanoke,City,2019,2,2,,
 Roanoke,City,2019,3,2,,
@@ -3226,7 +3234,7 @@ Roanoke,City,2022,5,10,,
 Roanoke,City,2022,6,8,,
 Roanoke,City,2022,7,9,,
 Roanoke,City,2022,8,5,,
-Roanoke,City,2022,9,1,,
+Roanoke,City,2022,9,2,,
 Rowlett,City,2017,1,21,1798.195,1941.79
 Rowlett,City,2017,2,12,1440.5,1792.125
 Rowlett,City,2017,3,17,1430,1605.07125
@@ -3293,7 +3301,7 @@ Rowlett,City,2022,5,34,2147.5,3169.1975
 Rowlett,City,2022,6,40,2663,3789.53166666667
 Rowlett,City,2022,7,23,2350,3144.81944444444
 Rowlett,City,2022,8,30,2886,3608.56333333333
-Rowlett,City,2022,9,4,1915.5,2628.685
+Rowlett,City,2022,9,6,2095,2780.948
 Royse City,City,2020,8,1,,
 Royse City,City,2021,6,1,,
 Sachse,City,2017,1,4,1032,1244
@@ -3393,7 +3401,7 @@ Saginaw,City,2022,5,15,,
 Saginaw,City,2022,6,11,,
 Saginaw,City,2022,7,8,,
 Saginaw,City,2022,8,10,,
-Saginaw,City,2022,9,5,,
+Saginaw,City,2022,9,8,,
 Sanger,City,2019,1,5,,
 Sanger,City,2019,2,7,,
 Sanger,City,2019,3,7,,
@@ -3468,6 +3476,7 @@ Sansom Park,City,2022,5,5,,
 Sansom Park,City,2022,6,20,,
 Sansom Park,City,2022,7,5,,
 Sansom Park,City,2022,8,19,,
+Sansom Park,City,2022,9,1,,
 Savannah,City,2019,1,6,,
 Savannah,City,2019,2,1,,
 Savannah,City,2019,4,1,,
@@ -3493,7 +3502,7 @@ Savannah,City,2022,3,3,,
 Savannah,City,2022,6,3,,
 Savannah,City,2022,7,4,,
 Savannah,City,2022,8,3,,
-Savannah,City,2022,9,1,,
+Savannah,City,2022,9,2,,
 Seagoville,City,2017,1,18,1736,2219.59076923077
 Seagoville,City,2017,2,8,922.5,1059.29625
 Seagoville,City,2017,3,13,1402.58,2450.06444444444
@@ -3561,6 +3570,7 @@ Seagoville,City,2022,5,25,2750,3453.95619047619
 Seagoville,City,2022,6,15,2712,3370.35461538462
 Seagoville,City,2022,7,12,2317,2716.01
 Seagoville,City,2022,8,12,2345,2766.32545454546
+Seagoville,City,2022,9,4,1782.36,2219.7275
 Shady Shores,City,2019,3,1,,
 Shady Shores,City,2019,8,1,,
 Shady Shores,City,2019,9,1,,
@@ -3762,7 +3772,7 @@ Watauga,City,2022,5,13,,
 Watauga,City,2022,6,8,,
 Watauga,City,2022,7,11,,
 Watauga,City,2022,8,16,,
-Watauga,City,2022,9,1,,
+Watauga,City,2022,9,2,,
 Westlake,City,2022,4,1,,
 Westminster,City,2020,8,1,,
 Westminster,City,2020,10,1,,
@@ -3819,7 +3829,7 @@ White Settlement,City,2022,5,39,,
 White Settlement,City,2022,6,42,,
 White Settlement,City,2022,7,34,,
 White Settlement,City,2022,8,51,,
-White Settlement,City,2022,9,4,,
+White Settlement,City,2022,9,6,,
 Wilmer,City,2017,1,7,1410.5,1267.976
 Wilmer,City,2017,2,8,1938.2,1924.6
 Wilmer,City,2017,3,1,1560.89,1560.89
@@ -3887,6 +3897,7 @@ Wilmer,City,2022,5,36,1385,1799.98857142857
 Wilmer,City,2022,6,30,1060,1151.58766666667
 Wilmer,City,2022,7,19,920.405,1111.25142857143
 Wilmer,City,2022,8,16,1142.5,1220.9325
+Wilmer,City,2022,9,1,,
 Wylie,City,2017,2,1,1233.83,1233.83
 Wylie,City,2017,3,1,1636,1636
 Wylie,City,2017,4,2,1264,1264
@@ -4013,7 +4024,7 @@ Wylie,City,2022,8,17,,
 4819000-01,City Council,2022,6,61,2926.6,3655.06159090909
 4819000-01,City Council,2022,7,101,2000,2916.51908045977
 4819000-01,City Council,2022,8,63,2180,2713.34358490566
-4819000-01,City Council,2022,9,14,1332.5,2505.93785714286
+4819000-01,City Council,2022,9,17,1565,2494.06647058824
 4819000-01,City Council,,,1,1557,1557
 4819000-02,City Council,2017,1,171,845,1091.58301369863
 4819000-02,City Council,2017,2,150,1067.5,1298.43732283465
@@ -4082,7 +4093,7 @@ Wylie,City,2022,8,17,,
 4819000-02,City Council,2022,6,200,2968.07,3472.9473480663
 4819000-02,City Council,2022,7,202,2963,3487.85210227273
 4819000-02,City Council,2022,8,189,2875,3218.25852941176
-4819000-02,City Council,2022,9,38,3265,3895.66
+4819000-02,City Council,2022,9,62,3298,3845.32
 4819000-03,City Council,2017,1,183,1095,1371.30235294118
 4819000-03,City Council,2017,2,147,972.5,1276.83977941176
 4819000-03,City Council,2017,3,109,999.82,1107.8117
@@ -4151,7 +4162,7 @@ Wylie,City,2022,8,17,,
 4819000-03,City Council,2022,6,89,2495,3156.69678571429
 4819000-03,City Council,2022,7,114,2500.8,2946.8804040404
 4819000-03,City Council,2022,8,89,2282,2512.34649350649
-4819000-03,City Council,2022,9,35,2188.315,2851.895
+4819000-03,City Council,2022,9,41,2177.23,2756.88289473684
 4819000-04,City Council,2017,1,197,980.33,1406.47394285714
 4819000-04,City Council,2017,2,133,994,1371.67377192982
 4819000-04,City Council,2017,3,111,1256,1505.44252525253
@@ -4220,7 +4231,7 @@ Wylie,City,2022,8,17,,
 4819000-04,City Council,2022,6,144,2563.75,3182.30853448276
 4819000-04,City Council,2022,7,175,2720,2940.44182481752
 4819000-04,City Council,2022,8,177,2985.6,3456.63598540146
-4819000-04,City Council,2022,9,22,4029.86,3737.625
+4819000-04,City Council,2022,9,32,3670.14,3673.5696
 4819000-05,City Council,2017,1,48,1000,1563.32621621622
 4819000-05,City Council,2017,2,53,913,1131.88617647059
 4819000-05,City Council,2017,3,60,1007,1242.03
@@ -4289,7 +4300,7 @@ Wylie,City,2022,8,17,,
 4819000-05,City Council,2022,6,42,2508,3216.91529411765
 4819000-05,City Council,2022,7,60,2580.5,3196.05875
 4819000-05,City Council,2022,8,51,3395,3818.023
-4819000-05,City Council,2022,9,4,1186.945,1186.945
+4819000-05,City Council,2022,9,7,2159.385,1807.6925
 4819000-06,City Council,2017,1,62,1090.5,1542.7832
 4819000-06,City Council,2017,2,86,1061,1076.56276923077
 4819000-06,City Council,2017,3,83,1043.5,1179.02339285714
@@ -4357,7 +4368,7 @@ Wylie,City,2022,8,17,,
 4819000-06,City Council,2022,6,131,2620,3363.01
 4819000-06,City Council,2022,7,103,2387.5,3131.3125
 4819000-06,City Council,2022,8,90,2928,3334.41283950617
-4819000-06,City Council,2022,9,34,3097.62,3303.56551724138
+4819000-06,City Council,2022,9,44,2988.595,3058.22105263158
 4819000-06,City Council,,,1,,
 4819000-07,City Council,2017,1,259,1005.085,1283.97858974359
 4819000-07,City Council,2017,2,191,1058.15,1423.49068322981
@@ -4427,7 +4438,7 @@ Wylie,City,2022,8,17,,
 4819000-07,City Council,2022,6,225,2524,3061.61619047619
 4819000-07,City Council,2022,7,262,2378.08,2794.53080188679
 4819000-07,City Council,2022,8,217,2287.67,2892.2681
-4819000-07,City Council,2022,9,68,2502.5,3159.83733333333
+4819000-07,City Council,2022,9,103,2911.235,3368.20811111111
 4819000-07,City Council,,,1,699,699
 4819000-08,City Council,2017,1,339,1046,1283.56630662021
 4819000-08,City Council,2017,2,247,1048.64,1269.61317307692
@@ -4497,7 +4508,7 @@ Wylie,City,2022,8,17,,
 4819000-08,City Council,2022,6,252,2253,2570.39318181818
 4819000-08,City Council,2022,7,229,2311.38,2813.40793269231
 4819000-08,City Council,2022,8,261,2717.855,3145.26258064516
-4819000-08,City Council,2022,9,25,2946.5,3706.41909090909
+4819000-08,City Council,2022,9,82,3595,4212.44092105263
 4819000-08,City Council,,,2,1362.78,1362.78
 4819000-09,City Council,2017,1,124,929.98,1068.97418803419
 4819000-09,City Council,2017,2,143,900,1118.84836065574
@@ -4567,7 +4578,7 @@ Wylie,City,2022,8,17,,
 4819000-09,City Council,2022,6,174,1922.6,2519.75475609756
 4819000-09,City Council,2022,7,142,2000,2601.70270676692
 4819000-09,City Council,2022,8,131,1925,2508.55982905983
-4819000-09,City Council,2022,9,6,1434,1734.33333333333
+4819000-09,City Council,2022,9,9,2600,2177.04555555556
 4819000-09,City Council,,,1,1189,1189
 4819000-10,City Council,2017,1,305,998.89,1233.83435114504
 4819000-10,City Council,2017,2,243,952.5,1224.44556097561
@@ -4637,7 +4648,7 @@ Wylie,City,2022,8,17,,
 4819000-10,City Council,2022,6,305,1854,2230.35709677419
 4819000-10,City Council,2022,7,277,2166,2440.70133333333
 4819000-10,City Council,2022,8,266,2228.83,2669.84174603175
-4819000-10,City Council,2022,9,59,2925,3229.05655172414
+4819000-10,City Council,2022,9,76,2865,3170.24197183099
 4819000-10,City Council,,,1,1369,1369
 4819000-11,City Council,2017,1,138,955,1100.39684684685
 4819000-11,City Council,2017,2,165,1063.625,1272.29154929577
@@ -4707,7 +4718,7 @@ Wylie,City,2022,8,17,,
 4819000-11,City Council,2022,6,135,2176.83,2506.3788976378
 4819000-11,City Council,2022,7,157,2291,2601.02607843137
 4819000-11,City Council,2022,8,134,1969,2477.69798387097
-4819000-11,City Council,2022,9,29,2705.5,3095.64571428571
+4819000-11,City Council,2022,9,40,2731,3064.93236842105
 4819000-12,City Council,2017,1,5,797.695,967.3475
 4819000-12,City Council,2017,2,2,1134,1134
 4819000-12,City Council,2017,3,8,795,1051.57142857143
@@ -4776,7 +4787,7 @@ Wylie,City,2022,8,17,,
 4819000-12,City Council,2022,6,241,1046.89,1262.61
 4819000-12,City Council,2022,7,95,1981.02,2347.00666666667
 4819000-12,City Council,2022,8,238,1230,1125
-4819000-12,City Council,2022,9,22,2120.5,2120.5
+4819000-12,City Council,2022,9,33,2120.5,2120.5
 4819000-13,City Council,2017,1,110,902.4,1095.328
 4819000-13,City Council,2017,2,100,948.475,1103.21807692308
 4819000-13,City Council,2017,3,60,940,1050.64404255319
@@ -4844,7 +4855,7 @@ Wylie,City,2022,8,17,,
 4819000-13,City Council,2022,6,52,2390,3241.23617021277
 4819000-13,City Council,2022,7,84,2237.5,2753.20296296296
 4819000-13,City Council,2022,8,42,2531.5,2770.64975
-4819000-13,City Council,2022,9,16,3700,3785.29307692308
+4819000-13,City Council,2022,9,20,3609.6,3604.933125
 4819000-14,City Council,2017,1,97,1565.47,1719.30813186813
 4819000-14,City Council,2017,2,100,1503.5,1843.95071428571
 4819000-14,City Council,2017,3,97,1237.5,1548.34657534247
@@ -4913,7 +4924,7 @@ Wylie,City,2022,8,17,,
 4819000-14,City Council,2022,6,178,3083.045,3467.65230769231
 4819000-14,City Council,2022,7,158,3591,3808.10328767123
 4819000-14,City Council,2022,8,144,3276,3582.42234848485
-4819000-14,City Council,2022,9,19,4026.07,4258.57133333333
+4819000-14,City Council,2022,9,39,2050,3254.51558823529
 4819000-14,City Council,,,1,1440,1440
 1-101,Elementary School,2017,2,4,957.5,1039
 1-101,Elementary School,2017,3,1,1400,1400
@@ -5131,7 +5142,7 @@ Wylie,City,2022,8,17,,
 1-105,Elementary School,2022,6,9,2620,2564.02888888889
 1-105,Elementary School,2022,7,8,2600,2448.42857142857
 1-105,Elementary School,2022,8,3,2310,2300
-1-105,Elementary School,2022,9,4,4700,4446.33333333333
+1-105,Elementary School,2022,9,6,3059,3437.8
 1-107,Elementary School,2017,1,25,909.035,968.99
 1-107,Elementary School,2017,2,30,1151,1091.31695652174
 1-107,Elementary School,2017,3,22,1046,1111.87529411765
@@ -5263,6 +5274,7 @@ Wylie,City,2022,8,17,,
 1-108,Elementary School,2022,6,18,1811.37,2532.33941176471
 1-108,Elementary School,2022,7,14,2518.275,2678.87928571429
 1-108,Elementary School,2022,8,13,2153.32,2424.924
+1-108,Elementary School,2022,9,1,4600,4600
 1-109,Elementary School,2017,1,14,2084,1947.82727272727
 1-109,Elementary School,2017,2,9,2227,2180.71428571429
 1-109,Elementary School,2017,3,4,1599,1599
@@ -6546,7 +6558,7 @@ Wylie,City,2022,8,17,,
 1-139,Elementary School,2022,6,59,2048.2,2408.71243243243
 1-139,Elementary School,2022,7,76,2969.99,3462.2925
 1-139,Elementary School,2022,8,52,2075,2617.85911111111
-1-139,Elementary School,2022,9,7,2958.735,3149.12333333333
+1-139,Elementary School,2022,9,15,3982.47,3975.04454545455
 1-141,Elementary School,2017,1,20,842.5,999.100555555555
 1-141,Elementary School,2017,2,24,847.5,1040.23045454545
 1-141,Elementary School,2017,3,11,1025,1271.66666666667
@@ -6745,7 +6757,7 @@ Wylie,City,2022,8,17,,
 1-145,Elementary School,2022,6,14,1741,1622.265
 1-145,Elementary School,2022,7,8,2070,1985.42
 1-145,Elementary School,2022,8,21,2270,2390.20333333333
-1-145,Elementary School,2022,9,3,2464,2458
+1-145,Elementary School,2022,9,4,2632,2946
 1-147,Elementary School,2017,1,45,941.96,973.129333333333
 1-147,Elementary School,2017,2,38,822.265,848.971052631579
 1-147,Elementary School,2017,3,39,799.73,881.258108108108
@@ -7317,6 +7329,7 @@ Wylie,City,2022,8,17,,
 1-159,Elementary School,2022,6,9,2748.5,2494.325
 1-159,Elementary School,2022,7,12,1880,2253.95
 1-159,Elementary School,2022,8,16,2531.5,2625.8125
+1-159,Elementary School,2022,9,2,949.4,949.4
 1-161,Elementary School,2017,1,7,550,599.428571428572
 1-161,Elementary School,2017,2,7,319,355.666666666667
 1-161,Elementary School,2017,3,8,426.64,1540.85
@@ -7439,7 +7452,7 @@ Wylie,City,2022,8,17,,
 1-162,Elementary School,2022,6,10,4498.19,4291.421
 1-162,Elementary School,2022,7,12,2820,3358.63
 1-162,Elementary School,2022,8,6,4142.21,4190.855
-1-162,Elementary School,2022,9,1,,
+1-162,Elementary School,2022,9,3,8413.04,8413.04
 1-163,Elementary School,2017,1,33,879,1206.37931034483
 1-163,Elementary School,2017,2,19,895,1131.56705882353
 1-163,Elementary School,2017,3,13,1493,1566.41666666667
@@ -7564,6 +7577,7 @@ Wylie,City,2022,8,17,,
 1-164,Elementary School,2022,5,6,2309.74,2303.592
 1-164,Elementary School,2022,6,8,2213,3175
 1-164,Elementary School,2022,7,13,1937.9,1959.79090909091
+1-164,Elementary School,2022,9,1,1000,1000
 1-166,Elementary School,2017,1,1,890.32,890.32
 1-166,Elementary School,2017,2,3,3000,2605.33333333333
 1-166,Elementary School,2017,3,2,875.5,875.5
@@ -8188,6 +8202,7 @@ Wylie,City,2022,8,17,,
 1-175,Elementary School,2022,6,9,3759.25,3818.08333333333
 1-175,Elementary School,2022,7,9,3795,4542.23222222222
 1-175,Elementary School,2022,8,17,3509,3297.08875
+1-175,Elementary School,2022,9,13,8040,7508.17384615385
 1-176,Elementary School,2017,1,10,986,1202.10428571429
 1-176,Elementary School,2017,2,12,893.645,1148.27333333333
 1-176,Elementary School,2017,3,7,1246.83,1466.415
@@ -8319,7 +8334,7 @@ Wylie,City,2022,8,17,,
 1-177,Elementary School,2022,6,34,1900,2007.4696
 1-177,Elementary School,2022,7,12,2197,2115.93857142857
 1-177,Elementary School,2022,8,21,3672.5,4448.890625
-1-177,Elementary School,2022,9,2,3590,3590
+1-177,Elementary School,2022,9,3,3580,2760
 1-177,Elementary School,,,1,1440,1440
 1-178,Elementary School,2017,1,10,885.08,1187.395
 1-178,Elementary School,2017,2,4,4481,4183.75
@@ -8494,7 +8509,7 @@ Wylie,City,2022,8,17,,
 1-181,Elementary School,2022,6,47,3544,4226.52372093023
 1-181,Elementary School,2022,7,42,2890.5,3193.35769230769
 1-181,Elementary School,2022,8,47,3585,4035.13125
-1-181,Elementary School,2022,9,10,5916,5176.17777777778
+1-181,Elementary School,2022,9,20,3585.5,4427.92222222222
 1-182,Elementary School,2017,1,7,1092.5,946.333333333333
 1-182,Elementary School,2017,2,9,1102,1234.05
 1-182,Elementary School,2017,3,1,1085,1085
@@ -8551,6 +8566,7 @@ Wylie,City,2022,8,17,,
 1-182,Elementary School,2022,6,2,3698.1,3698.1
 1-182,Elementary School,2022,7,1,2000,2000
 1-182,Elementary School,2022,8,2,1720.095,1720.095
+1-182,Elementary School,2022,9,2,1870,1870
 1-183,Elementary School,2017,1,20,1089,1982.80944444444
 1-183,Elementary School,2017,2,12,954,981.799090909091
 1-183,Elementary School,2017,3,10,1165.5,1452
@@ -8618,7 +8634,7 @@ Wylie,City,2022,8,17,,
 1-183,Elementary School,2022,6,10,1095,1863.77777777778
 1-183,Elementary School,2022,7,11,1750,1728.74444444444
 1-183,Elementary School,2022,8,11,1733.75,2260.21875
-1-183,Elementary School,2022,9,5,975,985
+1-183,Elementary School,2022,9,7,1075,2354.06833333333
 1-184,Elementary School,2017,1,57,1737.64,2003.86436363636
 1-184,Elementary School,2017,2,48,2205.89,2483.85229166667
 1-184,Elementary School,2017,3,25,1757.3,1981.45666666667
@@ -8687,7 +8703,7 @@ Wylie,City,2022,8,17,,
 1-184,Elementary School,2022,6,101,3479.25,3801.50276595745
 1-184,Elementary School,2022,7,89,3832.665,4094.58630952381
 1-184,Elementary School,2022,8,94,3196,3490.29966292135
-1-184,Elementary School,2022,9,8,5260,5614.15857142857
+1-184,Elementary School,2022,9,26,2712.66,3196.46208333333
 1-185,Elementary School,2017,1,9,1780,1944.26875
 1-185,Elementary School,2017,2,6,1531,1603.33333333333
 1-185,Elementary School,2017,3,6,1615,1566.4
@@ -8876,7 +8892,7 @@ Wylie,City,2022,8,17,,
 1-188,Elementary School,2022,6,9,1902.43,2009.9
 1-188,Elementary School,2022,7,14,2120,2242.13272727273
 1-188,Elementary School,2022,8,19,2276,2429.63470588235
-1-188,Elementary School,2022,9,10,2942.445,3141.453
+1-188,Elementary School,2022,9,11,2809.75,3083.68454545455
 1-189,Elementary School,2017,1,24,1280,1428.98736842105
 1-189,Elementary School,2017,2,19,958.98,1130.135625
 1-189,Elementary School,2017,3,15,1026.45,1147.94533333333
@@ -8943,7 +8959,7 @@ Wylie,City,2022,8,17,,
 1-189,Elementary School,2022,6,10,2334.2,2345.18
 1-189,Elementary School,2022,7,23,2556,2563.26421052632
 1-189,Elementary School,2022,8,9,3983.4,3470.15428571429
-1-189,Elementary School,2022,9,7,4490.75,4397.72428571429
+1-189,Elementary School,2022,9,8,4459.87,4306.77625
 1-190,Elementary School,2017,1,2,2444.655,2444.655
 1-190,Elementary School,2017,2,4,1926,1660.25
 1-190,Elementary School,2017,3,2,565,565
@@ -9307,6 +9323,7 @@ Wylie,City,2022,8,17,,
 1-195,Elementary School,2022,6,9,2355,3871.17555555556
 1-195,Elementary School,2022,7,20,3703.5,4092.091
 1-195,Elementary School,2022,8,7,3318,4241.7
+1-195,Elementary School,2022,9,1,6571.32,6571.32
 1-197,Elementary School,2017,1,3,2700,2523.66666666667
 1-197,Elementary School,2017,4,2,825,825
 1-197,Elementary School,2017,5,3,800,860.886666666667
@@ -9874,6 +9891,7 @@ Wylie,City,2022,8,17,,
 1-206,Elementary School,2022,6,12,2920.05,3709.88916666667
 1-206,Elementary School,2022,7,7,1098,1350.91666666667
 1-206,Elementary School,2022,8,11,950,2194.55555555556
+1-206,Elementary School,2022,9,3,2897.2,3062.47
 1-207,Elementary School,2017,2,1,,
 1-207,Elementary School,2017,3,3,1200,867.333333333333
 1-207,Elementary School,2017,4,1,2164,2164
@@ -9920,7 +9938,7 @@ Wylie,City,2022,8,17,,
 1-207,Elementary School,2022,5,7,6879.9,6023.132
 1-207,Elementary School,2022,6,3,3819.5,4882.83333333333
 1-207,Elementary School,2022,7,2,1900,1900
-1-207,Elementary School,2022,9,1,1941.89,1941.89
+1-207,Elementary School,2022,9,2,2159.385,2159.385
 1-208,Elementary School,2017,1,8,2810,2866.75166666667
 1-208,Elementary School,2017,2,8,1042.915,1265.805
 1-208,Elementary School,2017,3,9,1427,2721.905
@@ -9985,6 +10003,7 @@ Wylie,City,2022,8,17,,
 1-208,Elementary School,2022,6,7,2614.475,3722.2375
 1-208,Elementary School,2022,7,5,807.54,1209.166
 1-208,Elementary School,2022,8,4,1060,1060
+1-208,Elementary School,2022,9,1,1400.59,1400.59
 1-208,Elementary School,,,2,1362.78,1362.78
 1-209,Elementary School,2017,1,4,1519.93,2134.82
 1-209,Elementary School,2017,2,4,764,764
@@ -10041,6 +10060,7 @@ Wylie,City,2022,8,17,,
 1-209,Elementary School,2022,6,1,3900,3900
 1-209,Elementary School,2022,7,7,1425.65,1466.52
 1-209,Elementary School,2022,8,2,9180,9180
+1-209,Elementary School,2022,9,1,,
 1-210,Elementary School,2017,1,7,1132,1123.4
 1-210,Elementary School,2017,2,3,820,820
 1-210,Elementary School,2017,3,2,809,809
@@ -10228,6 +10248,7 @@ Wylie,City,2022,8,17,,
 1-213,Elementary School,2022,4,1,3200,3200
 1-213,Elementary School,2022,6,2,4674.595,4674.595
 1-213,Elementary School,2022,7,2,4383.33,4383.33
+1-213,Elementary School,2022,9,1,1395,1395
 1-215,Elementary School,2017,1,6,1381,1680.62833333333
 1-215,Elementary School,2017,2,5,1014,902.8
 1-215,Elementary School,2017,3,10,1150,1421.46142857143
@@ -10359,7 +10380,7 @@ Wylie,City,2022,8,17,,
 1-216,Elementary School,2022,6,15,5063.175,5444.17785714286
 1-216,Elementary School,2022,7,36,2259.065,2886.79666666667
 1-216,Elementary School,2022,8,12,1899.38,1773.54545454545
-1-216,Elementary School,2022,9,15,4244,4306.16
+1-216,Elementary School,2022,9,37,3618.03,3939.25810810811
 1-218,Elementary School,2017,1,26,1218,1666.7332
 1-218,Elementary School,2017,2,8,929.69,1529.88375
 1-218,Elementary School,2017,3,18,1399,1761.32823529412
@@ -10426,7 +10447,7 @@ Wylie,City,2022,8,17,,
 1-218,Elementary School,2022,6,29,2100,2489.47655172414
 1-218,Elementary School,2022,7,20,790,991.0975
 1-218,Elementary School,2022,8,24,1100,1663.53375
-1-218,Elementary School,2022,9,9,1377.5,1689.23375
+1-218,Elementary School,2022,9,14,1809.75,2275.3225
 1-218,Elementary School,,,1,699,699
 1-219,Elementary School,2017,1,17,1890,1764.46666666667
 1-219,Elementary School,2017,2,11,1740,2671.125
@@ -10583,6 +10604,7 @@ Wylie,City,2022,8,17,,
 1-224,Elementary School,2021,11,1,,
 1-224,Elementary School,2022,1,1,3370,3370
 1-224,Elementary School,2022,7,2,,
+1-224,Elementary School,2022,9,1,,
 1-225,Elementary School,2017,1,64,1006.965,1254.3678125
 1-225,Elementary School,2017,2,49,1100,1074.32346938776
 1-225,Elementary School,2017,3,43,1009.64,1037.46209302326
@@ -10649,7 +10671,7 @@ Wylie,City,2022,8,17,,
 1-225,Elementary School,2022,6,6,685,939.95
 1-225,Elementary School,2022,7,53,2763.475,3553.9758
 1-225,Elementary School,2022,8,14,2116,2290.05384615385
-1-225,Elementary School,2022,9,15,2910,3546.73733333333
+1-225,Elementary School,2022,9,16,2916,3598.248125
 1-226,Elementary School,2017,1,9,1156.5,1326
 1-226,Elementary School,2017,2,10,1328.855,1660.67625
 1-226,Elementary School,2017,3,5,609.93,681.94
@@ -10711,7 +10733,7 @@ Wylie,City,2022,8,17,,
 1-226,Elementary School,2022,6,5,3430,2824.196
 1-226,Elementary School,2022,7,11,3598,4269.172
 1-226,Elementary School,2022,8,25,2813.36,3099.67916666667
-1-226,Elementary School,2022,9,4,1991.34,2003.17
+1-226,Elementary School,2022,9,5,2683.68,2227.736
 1-229,Elementary School,2017,1,1,950,950
 1-229,Elementary School,2017,2,2,525,525
 1-229,Elementary School,2017,3,1,2950,2950
@@ -10922,7 +10944,7 @@ Wylie,City,2022,8,17,,
 1-233,Elementary School,2022,6,11,1829,2455.43444444444
 1-233,Elementary School,2022,7,2,3830,3830
 1-233,Elementary School,2022,8,2,1543,1543
-1-233,Elementary School,2022,9,5,3750,4582.19
+1-233,Elementary School,2022,9,7,4296,4775
 1-234,Elementary School,2017,2,1,720,720
 1-234,Elementary School,2017,3,2,747.5,747.5
 1-234,Elementary School,2017,4,1,850,850
@@ -11043,7 +11065,7 @@ Wylie,City,2022,8,17,,
 1-235,Elementary School,2022,6,6,3211,3447.01
 1-235,Elementary School,2022,7,12,3292.155,3770.86416666667
 1-235,Elementary School,2022,8,2,5277.95,5277.95
-1-235,Elementary School,2022,9,1,2875,2875
+1-235,Elementary School,2022,9,2,2563.975,2563.975
 1-236,Elementary School,2017,1,4,1789.95,1837.4625
 1-236,Elementary School,2017,2,9,810,714.111111111111
 1-236,Elementary School,2017,3,2,983.5,983.5
@@ -11170,7 +11192,7 @@ Wylie,City,2022,8,17,,
 1-237,Elementary School,2022,6,14,1790,2419.33333333333
 1-237,Elementary School,2022,7,13,1863,2308.125
 1-237,Elementary School,2022,8,1,,
-1-237,Elementary School,2022,9,2,,
+1-237,Elementary School,2022,9,3,,
 1-239,Elementary School,2017,2,1,615,615
 1-239,Elementary School,2017,3,2,3527,3527
 1-239,Elementary School,2017,4,3,,
@@ -11279,7 +11301,7 @@ Wylie,City,2022,8,17,,
 1-240,Elementary School,2022,6,26,1657.99,2686.35826086957
 1-240,Elementary School,2022,7,17,2409.28,2240.01533333333
 1-240,Elementary School,2022,8,12,2205,2494.88272727273
-1-240,Elementary School,2022,9,12,1381.225,1762.91333333333
+1-240,Elementary School,2022,9,14,1478.4,1934.61071428571
 1-244,Elementary School,2017,1,17,1040.83,1410.82454545455
 1-244,Elementary School,2017,2,7,1570,1519.575
 1-244,Elementary School,2017,3,9,770.935,770.935
@@ -11346,6 +11368,7 @@ Wylie,City,2022,8,17,,
 1-244,Elementary School,2022,6,5,2650,3400.866
 1-244,Elementary School,2022,7,12,2295,2595.74636363636
 1-244,Elementary School,2022,8,12,2791.875,3219.2525
+1-244,Elementary School,2022,9,3,2164.13,2492.77333333333
 1-247,Elementary School,2017,1,19,1070.62,1448.29714285714
 1-247,Elementary School,2017,2,8,143,189.67
 1-247,Elementary School,2017,3,30,643.76,678.194583333333
@@ -11569,7 +11592,7 @@ Wylie,City,2022,8,17,,
 1-263,Elementary School,2022,6,18,2021.5,2269.375
 1-263,Elementary School,2022,7,44,3873,3986.99511627907
 1-263,Elementary School,2022,8,52,3555.33,3725.41770833333
-1-263,Elementary School,2022,9,1,2000,2000
+1-263,Elementary School,2022,9,10,3505.6,3374.12222222222
 1-264,Elementary School,2017,1,61,1347,1533.6775
 1-264,Elementary School,2017,2,45,1096,1245.81186046512
 1-264,Elementary School,2017,3,42,964.64,1042.13523809524
@@ -11636,7 +11659,7 @@ Wylie,City,2022,8,17,,
 1-264,Elementary School,2022,6,83,2320.53,2447.80012987013
 1-264,Elementary School,2022,7,74,2311.38,2680.21058823529
 1-264,Elementary School,2022,8,86,2697,2999.78071428571
-1-264,Elementary School,2022,9,2,4763.35,4763.35
+1-264,Elementary School,2022,9,48,2964.35,3656.28065217391
 1-265,Elementary School,2017,1,2,1950,1950
 1-265,Elementary School,2017,2,5,385.5,789
 1-265,Elementary School,2017,3,4,1650,1650
@@ -11696,7 +11719,7 @@ Wylie,City,2022,8,17,,
 1-265,Elementary School,2022,6,5,6500,5850
 1-265,Elementary School,2022,7,4,550,550
 1-265,Elementary School,2022,8,2,2650,2650
-1-265,Elementary School,2022,9,1,,
+1-265,Elementary School,2022,9,2,,
 1-266,Elementary School,2017,1,23,1238.515,1494.27071428571
 1-266,Elementary School,2017,2,12,1904,1896.66666666667
 1-266,Elementary School,2017,3,15,1093,1515.78571428571
@@ -11817,7 +11840,7 @@ Wylie,City,2022,8,17,,
 1-271,Elementary School,2022,6,10,2085.01,2149.247
 1-271,Elementary School,2022,7,9,1354.7,1310.11333333333
 1-271,Elementary School,2022,8,5,1488.76,2009.648
-1-271,Elementary School,2022,9,5,3030,2978
+1-271,Elementary School,2022,9,6,2961,2905.83333333333
 1-272,Elementary School,2017,2,1,,
 1-272,Elementary School,2017,3,1,,
 1-272,Elementary School,2017,4,1,2128,2128
@@ -11926,6 +11949,7 @@ Wylie,City,2022,8,17,,
 1-273,Elementary School,2022,6,5,5400,4496.29666666667
 1-273,Elementary School,2022,7,1,1560,1560
 1-273,Elementary School,2022,8,5,5075,4768.75
+1-273,Elementary School,2022,9,2,2480,2480
 1-274,Elementary School,2017,1,1,2925,2925
 1-274,Elementary School,2017,2,3,1049,1112
 1-274,Elementary School,2017,3,1,1205,1205
@@ -12037,6 +12061,7 @@ Wylie,City,2022,8,17,,
 1-275,Elementary School,2022,6,14,1607.77,2372.855
 1-275,Elementary School,2022,7,4,1664,1820.735
 1-275,Elementary School,2022,8,1,,
+1-275,Elementary School,2022,9,3,2500,2438.66666666667
 1-276,Elementary School,2017,1,17,1033.5,1506.442
 1-276,Elementary School,2017,2,10,1120.5,1253.66666666667
 1-276,Elementary School,2017,3,3,2242,2242
@@ -12211,7 +12236,7 @@ Wylie,City,2022,8,17,,
 1-278,Elementary School,2022,6,2,814,814
 1-278,Elementary School,2022,7,4,1475,1437.1675
 1-278,Elementary School,2022,8,3,3413.53,3486.99666666667
-1-278,Elementary School,2022,9,3,900,1757.93333333333
+1-278,Elementary School,2022,9,4,850,1518.45
 1-279,Elementary School,2017,1,14,1115,918.839090909091
 1-279,Elementary School,2017,2,18,1835,2310.056
 1-279,Elementary School,2017,3,14,1097.08,1337.10166666667
@@ -12346,7 +12371,7 @@ Wylie,City,2022,8,17,,
 1-280,Elementary School,2022,6,44,2979,3184.60333333333
 1-280,Elementary School,2022,7,58,2485.53,2742.37517241379
 1-280,Elementary School,2022,8,35,2678,3191.0696875
-1-280,Elementary School,2022,9,9,2216,2293.22666666667
+1-280,Elementary School,2022,9,16,2536.39,2725.331875
 1-281,Elementary School,2017,1,40,837.23,1117.82027027027
 1-281,Elementary School,2017,2,43,965,1042.08764705882
 1-281,Elementary School,2017,3,34,800,947.636956521739
@@ -12413,7 +12438,7 @@ Wylie,City,2022,8,17,,
 1-281,Elementary School,2022,6,76,3486,3865.68507462687
 1-281,Elementary School,2022,7,88,2900,3491.08605263158
 1-281,Elementary School,2022,8,72,2925,3208.59348484849
-1-281,Elementary School,2022,9,6,3850,4388.892
+1-281,Elementary School,2022,9,12,2646,3196.43818181818
 1-283,Elementary School,2017,1,32,1550,1721.34896551724
 1-283,Elementary School,2017,2,30,1304.5,1605.76285714286
 1-283,Elementary School,2017,3,21,1549.74,1981.1135
@@ -12480,7 +12505,7 @@ Wylie,City,2022,8,17,,
 1-283,Elementary School,2022,6,51,4085.28,4088.99816326531
 1-283,Elementary School,2022,7,46,3570,3713.22093023256
 1-283,Elementary School,2022,8,24,3791.4,3464.31590909091
-1-283,Elementary School,2022,9,3,3113.15,3744.38333333333
+1-283,Elementary School,2022,9,8,3086.575,3414.85125
 1-284,Elementary School,2017,1,30,952.14,1056.94222222222
 1-284,Elementary School,2017,2,14,1085.715,1252.7025
 1-284,Elementary School,2017,3,24,1630,1844.35565217391
@@ -12788,7 +12813,7 @@ Wylie,City,2022,8,17,,
 1-301,Elementary School,2022,6,22,1929.255,2126.68
 1-301,Elementary School,2022,7,5,1400,1460
 1-301,Elementary School,2022,8,1,150,150
-1-301,Elementary School,2022,9,3,1773.12,1773.12
+1-301,Elementary School,2022,9,4,1773.12,1773.12
 1-303,Elementary School,2017,1,2,3331,3331
 1-303,Elementary School,2017,3,2,1085,1085
 1-303,Elementary School,2017,4,2,1100,1100
@@ -13027,7 +13052,7 @@ Wylie,City,2022,8,17,,
 1-307,Elementary School,2022,6,8,1600,1977.83333333333
 1-307,Elementary School,2022,7,23,3168,3563.05555555556
 1-307,Elementary School,2022,8,12,3701.25,3414.25
-1-307,Elementary School,2022,9,10,5034,5141.93888888889
+1-307,Elementary School,2022,9,11,5540.93,5357.745
 1-312,Elementary School,2017,1,7,1410.5,1267.976
 1-312,Elementary School,2017,2,8,1938.2,1924.6
 1-312,Elementary School,2017,3,1,1560.89,1560.89
@@ -13095,6 +13120,7 @@ Wylie,City,2022,8,17,,
 1-312,Elementary School,2022,6,30,1060,1151.58766666667
 1-312,Elementary School,2022,7,19,920.405,1111.25142857143
 1-312,Elementary School,2022,8,16,1142.5,1220.9325
+1-312,Elementary School,2022,9,1,,
 2-012,Middle School,2017,1,8,1770,1821
 2-012,Middle School,2017,2,18,892,973.226153846154
 2-012,Middle School,2017,3,24,747,1085.43285714286
@@ -13161,7 +13187,7 @@ Wylie,City,2022,8,17,,
 2-012,Middle School,2022,6,46,3475,4106.96
 2-012,Middle School,2022,7,24,3945,3850.35055555556
 2-012,Middle School,2022,8,25,4221,4772.15909090909
-2-012,Middle School,2022,9,15,3375.09,3665.2875
+2-012,Middle School,2022,9,16,3375.09,3665.2875
 2-012,Middle School,,,1,,
 2-042,Middle School,2017,1,127,1250,1443.06247787611
 2-042,Middle School,2017,2,115,1096,1402.95923809524
@@ -13230,7 +13256,7 @@ Wylie,City,2022,8,17,,
 2-042,Middle School,2022,6,126,2669.345,3011.68271929825
 2-042,Middle School,2022,7,112,2946.495,3154.5983
 2-042,Middle School,2022,8,138,2850,3141.10114503817
-2-042,Middle School,2022,9,9,2875,3568.26444444444
+2-042,Middle School,2022,9,71,3447,4277.6347826087
 2-043,Middle School,2017,1,152,1005,1210.04530201342
 2-043,Middle School,2017,2,110,935,1071.80663551402
 2-043,Middle School,2017,3,80,974.94,1076.49358974359
@@ -13298,7 +13324,7 @@ Wylie,City,2022,8,17,,
 2-043,Middle School,2022,6,68,2333.4,2772.07476190476
 2-043,Middle School,2022,7,84,2501.9,3057.85355263158
 2-043,Middle School,2022,8,38,1944,2012.55194444444
-2-043,Middle School,2022,9,16,2730,3426.62875
+2-043,Middle School,2022,9,17,2910,3482.17470588235
 2-045,Middle School,2017,1,60,1065,1436.44595744681
 2-045,Middle School,2017,2,37,1355,1451.89677419355
 2-045,Middle School,2017,3,27,928.5,1307.06818181818
@@ -13435,7 +13461,7 @@ Wylie,City,2022,8,17,,
 2-046,Middle School,2022,6,37,3937.805,4345.04928571429
 2-046,Middle School,2022,7,59,2263.36,2727.54113207547
 2-046,Middle School,2022,8,23,1941.57,2898.91842105263
-2-046,Middle School,2022,9,17,4244,4306.16
+2-046,Middle School,2022,9,42,3510.625,3900.85657894737
 2-047,Middle School,2017,1,96,913,1130.13763157895
 2-047,Middle School,2017,2,119,1058,1258.22463917526
 2-047,Middle School,2017,3,83,1031.5,1081.16651515152
@@ -13504,7 +13530,7 @@ Wylie,City,2022,8,17,,
 2-047,Middle School,2022,6,103,2460,2890.56
 2-047,Middle School,2022,7,137,2505,2790.72585185185
 2-047,Middle School,2022,8,106,2530,2778.253125
-2-047,Middle School,2022,9,17,1988,2099.186
+2-047,Middle School,2022,9,25,2445.78,2653.27739130435
 2-048,Middle School,2017,1,29,1310,1465.09703703704
 2-048,Middle School,2017,2,55,960,1281.731
 2-048,Middle School,2017,3,40,827.5,867.017222222222
@@ -13573,7 +13599,7 @@ Wylie,City,2022,8,17,,
 2-048,Middle School,2022,6,61,2397,2828.11830508475
 2-048,Middle School,2022,7,49,2100,2392.38422222222
 2-048,Middle School,2022,8,69,1819.64,2184.34728813559
-2-048,Middle School,2022,9,3,970,1404
+2-048,Middle School,2022,9,7,2766,2571.34428571429
 2-049,Middle School,2017,1,5,1040,1260.506
 2-049,Middle School,2017,2,8,925,1172.5
 2-049,Middle School,2017,3,6,1211.665,1392.83833333333
@@ -13775,7 +13801,7 @@ Wylie,City,2022,8,17,,
 2-051,Middle School,2022,6,42,2340,2752.09677419355
 2-051,Middle School,2022,7,74,3726,3736.69790322581
 2-051,Middle School,2022,8,84,3067,3410.53154929578
-2-051,Middle School,2022,9,5,2000,2000
+2-051,Middle School,2022,9,14,3505.6,3374.12222222222
 2-052,Middle School,2017,1,15,735,1145.33076923077
 2-052,Middle School,2017,2,11,456,470.672857142857
 2-052,Middle School,2017,3,18,659.99,1278.45823529412
@@ -13844,7 +13870,7 @@ Wylie,City,2022,8,17,,
 2-052,Middle School,2022,6,9,3800,3766.74285714286
 2-052,Middle School,2022,7,19,3020.695,3962.6675
 2-052,Middle School,2022,8,1,,
-2-052,Middle School,2022,9,2,1186.945,1186.945
+2-052,Middle School,2022,9,3,1941.89,1583.59
 2-053,Middle School,2017,1,52,862.97,1236.65230769231
 2-053,Middle School,2017,2,50,1057.98,1412.17935483871
 2-053,Middle School,2017,3,62,901.355,1308.33152173913
@@ -13913,7 +13939,7 @@ Wylie,City,2022,8,17,,
 2-053,Middle School,2022,6,58,2181,2584.65
 2-053,Middle School,2022,7,48,2469.1,2668.62641025641
 2-053,Middle School,2022,8,54,2819,3714.92111111111
-2-053,Middle School,2022,9,13,3104.14,3216.21083333333
+2-053,Middle School,2022,9,17,3104.14,3689.163125
 2-053,Middle School,,,1,1440,1440
 2-054,Middle School,2017,1,17,849,971.1875
 2-054,Middle School,2017,2,24,1133.33,1307.29
@@ -13981,6 +14007,7 @@ Wylie,City,2022,8,17,,
 2-054,Middle School,2022,6,5,4140,3845.4
 2-054,Middle School,2022,7,13,5409.4,4724.79076923077
 2-054,Middle School,2022,8,8,2492.5,2832.77375
+2-054,Middle School,2022,9,2,1870,1870
 2-055,Middle School,2017,1,71,1109.19,1340.06970149254
 2-055,Middle School,2017,2,50,1273,1505.20276595745
 2-055,Middle School,2017,3,57,1331.935,1531.44596153846
@@ -14048,7 +14075,7 @@ Wylie,City,2022,8,17,,
 2-055,Middle School,2022,6,105,3824.945,4091.91795918367
 2-055,Middle School,2022,7,97,3198,3513.09688888889
 2-055,Middle School,2022,8,78,3612.4,3812.77308823529
-2-055,Middle School,2022,9,13,4170,4818.22916666667
+2-055,Middle School,2022,9,28,3256,4116.20807692308
 2-056,Middle School,2017,1,72,946.775,1045.7475862069
 2-056,Middle School,2017,2,74,1218.54,1422.74784615385
 2-056,Middle School,2017,3,57,1115,1302.37431372549
@@ -14117,7 +14144,7 @@ Wylie,City,2022,8,17,,
 2-056,Middle School,2022,6,95,2006.45,2512.34505494506
 2-056,Middle School,2022,7,91,1789.02,2313.13
 2-056,Middle School,2022,8,79,1924.15,2430.90333333333
-2-056,Middle School,2022,9,12,3556.475,3946.956
+2-056,Middle School,2022,9,14,4000,4165.30083333333
 2-058,Middle School,2017,1,119,1355.4,1503.29285714286
 2-058,Middle School,2017,2,120,1396,1735.75733944954
 2-058,Middle School,2017,3,72,1079.35,1369.37779661017
@@ -14186,7 +14213,7 @@ Wylie,City,2022,8,17,,
 2-058,Middle School,2022,6,185,3486,3822.12431137725
 2-058,Middle School,2022,7,195,3623.3,3887.58768786127
 2-058,Middle School,2022,8,178,3020.5,3332.33916167665
-2-058,Middle School,2022,9,24,4194,4450.35523809524
+2-058,Middle School,2022,9,48,2906.215,3274.76818181818
 2-059,Middle School,2017,1,5,2127.9,2054.97
 2-059,Middle School,2017,2,15,865,845.066666666667
 2-059,Middle School,2017,3,10,1205,1667.71428571429
@@ -14321,7 +14348,7 @@ Wylie,City,2022,8,17,,
 2-060,Middle School,2022,6,30,2212.845,2126.72333333333
 2-060,Middle School,2022,7,48,2290.5,2335.27277777778
 2-060,Middle School,2022,8,32,2005,2663.07608695652
-2-060,Middle School,2022,9,12,3659.72,3156.73363636364
+2-060,Middle School,2022,9,15,3789.07,3469.90142857143
 2-062,Middle School,2017,1,98,1100,1354.27172413793
 2-062,Middle School,2017,2,72,1357.5,1821.83193548387
 2-062,Middle School,2017,3,94,955,1290.95797297297
@@ -14390,7 +14417,7 @@ Wylie,City,2022,8,17,,
 2-062,Middle School,2022,6,79,1981,2328.41407407407
 2-062,Middle School,2022,7,126,2880,3383.30450549451
 2-062,Middle School,2022,8,70,2282.5,2663.65793103448
-2-062,Middle School,2022,9,18,4023.5,4344.81266666667
+2-062,Middle School,2022,9,27,4800,4633.47333333333
 2-068,Middle School,2017,1,39,769.5,1081.58162162162
 2-068,Middle School,2017,2,33,960,1061.4246875
 2-068,Middle School,2017,3,44,899,1007.23368421053
@@ -14458,7 +14485,7 @@ Wylie,City,2022,8,17,,
 2-068,Middle School,2022,6,43,2213,2852.3472972973
 2-068,Middle School,2022,7,50,2545,3321.47326086957
 2-068,Middle School,2022,8,20,2178,2852.14
-2-068,Middle School,2022,9,11,1205,2134
+2-068,Middle School,2022,9,17,1375,2094.125
 2-069,Middle School,2017,1,43,1219.54,1818.69741935484
 2-069,Middle School,2017,2,32,1140.83,1167.3012
 2-069,Middle School,2017,3,39,967,1707.4964
@@ -14526,7 +14553,7 @@ Wylie,City,2022,8,17,,
 2-069,Middle School,2022,6,37,2572,3121.53933333333
 2-069,Middle School,2022,7,34,1845,2414.41827586207
 2-069,Middle School,2022,8,44,2259.08,2940.17902439024
-2-069,Middle School,2022,9,3,2571.02,4280.94
+2-069,Middle School,2022,9,7,2417.3,3103.10428571429
 2-069,Middle School,,,2,1362.78,1362.78
 2-072,Middle School,2017,1,69,1040,1456.86046153846
 2-072,Middle School,2017,2,40,795,1514.42857142857
@@ -14664,7 +14691,7 @@ Wylie,City,2022,8,17,,
 2-076,Middle School,2022,6,104,2402.76,3033.57755102041
 2-076,Middle School,2022,7,79,1990,2526.30863013699
 2-076,Middle School,2022,8,130,2430,3061.97448818898
-2-076,Middle School,2022,9,29,1705,1984.99892857143
+2-076,Middle School,2022,9,36,1796.875,2214.69294117647
 2-076,Middle School,,,1,699,699
 2-077,Middle School,2017,1,33,882.5,1095.23
 2-077,Middle School,2017,2,37,775,1083.91235294118
@@ -14802,7 +14829,7 @@ Wylie,City,2022,8,17,,
 2-079,Middle School,2022,6,50,1807.53,2074.34853658537
 2-079,Middle School,2022,7,50,1750,2140.67244444444
 2-079,Middle School,2022,8,61,2458,2667.11762711864
-2-079,Middle School,2022,9,14,2632,2447.31666666667
+2-079,Middle School,2022,9,18,2545,2474.85333333333
 2-083,Middle School,2017,1,94,858,1050.2344
 2-083,Middle School,2017,2,74,941,1187.93054545455
 2-083,Middle School,2017,3,60,1085,1463.18787234043
@@ -14871,7 +14898,7 @@ Wylie,City,2022,8,17,,
 2-083,Middle School,2022,6,79,2014.675,2383.04847222222
 2-083,Middle School,2022,7,73,1706.685,2038.69385714286
 2-083,Middle School,2022,8,55,1455,1925.57203703704
-2-083,Middle School,2022,9,14,3609.6,3694.83833333333
+2-083,Middle School,2022,9,16,3502.6,3302.63285714286
 2-083,Middle School,,,1,1189,1189
 2-100,Middle School,2017,1,11,975,860.846666666667
 2-100,Middle School,2017,2,7,820.595,1484.795
@@ -15074,7 +15101,7 @@ Wylie,City,2022,8,17,,
 2-353,Middle School,2022,6,45,2675.12,3219.26761904762
 2-353,Middle School,2022,7,26,2167.5,2405.41
 2-353,Middle School,2022,8,27,3700,3938.29086956522
-2-353,Middle School,2022,9,7,2300,3068.28
+2-353,Middle School,2022,9,8,2300,3068.28
 2-354,Middle School,2017,1,37,1074.11,1088.947
 2-354,Middle School,2017,2,29,1759.23,1906.74588235294
 2-354,Middle School,2017,3,31,1513,2017.2319047619
@@ -15143,7 +15170,7 @@ Wylie,City,2022,8,17,,
 2-354,Middle School,2022,6,65,1425,1863.68152542373
 2-354,Middle School,2022,7,41,1565,2564.92
 2-354,Middle School,2022,8,41,1831.79,2574.95756756757
-2-354,Middle School,2022,9,9,2474.955,2396.87333333333
+2-354,Middle School,2022,9,11,2474.955,2396.87333333333
 3-001,High School,2017,1,98,963.21,1111.24294736842
 3-001,High School,2017,2,129,885.15,1077.81060344828
 3-001,High School,2017,3,101,813,880.564175824176
@@ -15212,7 +15239,7 @@ Wylie,City,2022,8,17,,
 3-001,High School,2022,6,153,1943.1,2593.83650684932
 3-001,High School,2022,7,123,2437.185,2760.02681034483
 3-001,High School,2022,8,118,1868.755,2549.84961538462
-3-001,High School,2022,9,5,970,1701.6
+3-001,High School,2022,9,9,2766,2477.26777777778
 3-002,High School,2017,1,33,882.5,1095.23
 3-002,High School,2017,2,37,775,1083.91235294118
 3-002,High School,2017,3,12,1241.885,1257.87333333333
@@ -15416,7 +15443,7 @@ Wylie,City,2022,8,17,,
 3-006,High School,2022,6,103,2460,2890.56
 3-006,High School,2022,7,137,2505,2790.72585185185
 3-006,High School,2022,8,106,2530,2778.253125
-3-006,High School,2022,9,17,1988,2099.186
+3-006,High School,2022,9,25,2445.78,2653.27739130435
 3-007,High School,2017,1,55,869,1215.63045454545
 3-007,High School,2017,2,67,868,905.024791666667
 3-007,High School,2017,3,47,969.44,1017.18823529412
@@ -15484,7 +15511,7 @@ Wylie,City,2022,8,17,,
 3-007,High School,2022,6,50,1807.53,2074.34853658537
 3-007,High School,2022,7,50,1750,2140.67244444444
 3-007,High School,2022,8,61,2458,2667.11762711864
-3-007,High School,2022,9,14,2632,2447.31666666667
+3-007,High School,2022,9,18,2545,2474.85333333333
 3-008,High School,2017,1,163,996.77,1190.15424050633
 3-008,High School,2017,2,117,930.83,1086.6890990991
 3-008,High School,2017,3,85,972.46,1069.36195121951
@@ -15552,7 +15579,7 @@ Wylie,City,2022,8,17,,
 3-008,High School,2022,6,76,2367.33,2910.30910447761
 3-008,High School,2022,7,101,2203,2974.59033707865
 3-008,High School,2022,8,45,2073,2306.75292682927
-3-008,High School,2022,9,17,2730,3426.62875
+3-008,High School,2022,9,18,2910,3482.17470588235
 3-009,High School,2017,1,32,1065,1380.77419354839
 3-009,High School,2017,2,26,1455,2088.75
 3-009,High School,2017,3,32,660,1067.76
@@ -15621,7 +15648,7 @@ Wylie,City,2022,8,17,,
 3-009,High School,2022,6,15,1790,2120.5
 3-009,High School,2022,7,45,2760,3442.00941176471
 3-009,High School,2022,8,16,3202.5,3033.54166666667
-3-009,High School,2022,9,11,5034,5141.93888888889
+3-009,High School,2022,9,12,5540.93,5357.745
 3-012,High School,2017,1,29,1067.34,1163.33153846154
 3-012,High School,2017,2,32,896,937.762592592593
 3-012,High School,2017,3,51,997.5,1134.51944444444
@@ -15688,7 +15715,7 @@ Wylie,City,2022,8,17,,
 3-012,High School,2022,6,66,2955.57,3732.69156862745
 3-012,High School,2022,7,42,2979,3374.65705882353
 3-012,High School,2022,8,44,3267.03,3963.73
-3-012,High School,2022,9,26,3026.94,2969.24772727273
+3-012,High School,2022,9,29,2988.595,2882.22708333333
 3-012,High School,,,1,,
 3-013,High School,2017,1,67,889.5,1263.98
 3-013,High School,2017,2,53,1031,1262.69446808511
@@ -15758,7 +15785,7 @@ Wylie,City,2022,8,17,,
 3-013,High School,2022,6,42,2340,2752.09677419355
 3-013,High School,2022,7,74,3726,3736.69790322581
 3-013,High School,2022,8,84,3067,3410.53154929578
-3-013,High School,2022,9,5,2000,2000
+3-013,High School,2022,9,14,3505.6,3374.12222222222
 3-014,High School,2017,1,76,903.84,1136.36095238095
 3-014,High School,2017,2,75,925,1049.684
 3-014,High School,2017,3,54,1035.96,1314.50058823529
@@ -15827,7 +15854,7 @@ Wylie,City,2022,8,17,,
 3-014,High School,2022,6,46,3819.5,4229.388
 3-014,High School,2022,7,78,2380.75,3013.94724637681
 3-014,High School,2022,8,24,1941.57,2898.91842105263
-3-014,High School,2022,9,19,4075.05,3939.19352941177
+3-014,High School,2022,9,45,3092.47,3731.30048780488
 3-015,High School,2017,1,43,1219.54,1818.69741935484
 3-015,High School,2017,2,32,1140.83,1167.3012
 3-015,High School,2017,3,39,967,1707.4964
@@ -15895,7 +15922,7 @@ Wylie,City,2022,8,17,,
 3-015,High School,2022,6,37,2572,3121.53933333333
 3-015,High School,2022,7,34,1845,2414.41827586207
 3-015,High School,2022,8,44,2259.08,2940.17902439024
-3-015,High School,2022,9,3,2571.02,4280.94
+3-015,High School,2022,9,7,2417.3,3103.10428571429
 3-015,High School,,,2,1362.78,1362.78
 3-016,High School,2017,1,135,1169.5,1548.21467213115
 3-016,High School,2017,2,88,954,1436.16831168831
@@ -15965,7 +15992,7 @@ Wylie,City,2022,8,17,,
 3-016,High School,2022,6,78,2648.7,3036.16983606557
 3-016,High School,2022,7,104,2290.5,2406.06014285714
 3-016,High School,2022,8,108,2751,3318.04013888889
-3-016,High School,2022,9,23,3388.31,3007.72368421053
+3-016,High School,2022,9,26,3552.375,3227.33181818182
 3-017,High School,2017,1,92,1045,1533.55014492754
 3-017,High School,2017,2,67,1079,1362.3876
 3-017,High School,2017,3,43,866.485,1209.47764705882
@@ -16102,7 +16129,7 @@ Wylie,City,2022,8,17,,
 3-018,High School,2022,6,29,2250.5,3262.16166666667
 3-018,High School,2022,7,43,2145.2,3126.39725
 3-018,High School,2022,8,9,2969.12,3502.22
-3-018,High School,2022,9,2,6222.91,6222.91
+3-018,High School,2022,9,6,2750,3460.30333333333
 3-021,High School,2017,1,89,945.775,1029.62648648649
 3-021,High School,2017,2,98,1208.175,1396.63238095238
 3-021,High School,2017,3,64,1098.75,1306.66431034483
@@ -16171,7 +16198,7 @@ Wylie,City,2022,8,17,,
 3-021,High School,2022,6,100,2018.225,2554.88936170213
 3-021,High School,2022,7,104,1912,2626.6459
 3-021,High School,2022,8,87,1931.715,2471.090375
-3-021,High School,2022,9,12,3556.475,3946.956
+3-021,High School,2022,9,16,3556.475,3837.40071428571
 3-022,High School,2017,1,52,862.97,1236.65230769231
 3-022,High School,2017,2,50,1057.98,1412.17935483871
 3-022,High School,2017,3,62,901.355,1308.33152173913
@@ -16240,7 +16267,7 @@ Wylie,City,2022,8,17,,
 3-022,High School,2022,6,58,2181,2584.65
 3-022,High School,2022,7,48,2469.1,2668.62641025641
 3-022,High School,2022,8,54,2819,3714.92111111111
-3-022,High School,2022,9,13,3104.14,3216.21083333333
+3-022,High School,2022,9,17,3104.14,3689.163125
 3-022,High School,,,1,1440,1440
 3-023,High School,2017,1,127,1250,1443.06247787611
 3-023,High School,2017,2,115,1096,1402.95923809524
@@ -16309,7 +16336,7 @@ Wylie,City,2022,8,17,,
 3-023,High School,2022,6,126,2669.345,3011.68271929825
 3-023,High School,2022,7,112,2946.495,3154.5983
 3-023,High School,2022,8,138,2850,3141.10114503817
-3-023,High School,2022,9,9,2875,3568.26444444444
+3-023,High School,2022,9,71,3447,4277.6347826087
 3-024,High School,2017,1,190,1283.38,1442.19815642458
 3-024,High School,2017,2,170,1369.05,1666.29538461538
 3-024,High School,2017,3,129,1240,1445.30162162162
@@ -16378,7 +16405,7 @@ Wylie,City,2022,8,17,,
 3-024,High School,2022,6,290,3558,3921.89705660377
 3-024,High School,2022,7,292,3340,3759.43494296578
 3-024,High School,2022,8,256,3120,3471.35834042553
-3-024,High School,2022,9,37,4194,4584.12757575758
+3-024,High School,2022,9,76,3086.575,3587.303
 3-025,High School,2017,1,142,996.3,1267.83349593496
 3-025,High School,2017,2,94,930,1195.54231884058
 3-025,High School,2017,3,111,866,1232.61141304348
@@ -16446,7 +16473,7 @@ Wylie,City,2022,8,17,,
 3-025,High School,2022,6,149,2538.855,3089.28457142857
 3-025,High School,2022,7,105,2079,2500.30892473118
 3-025,High School,2022,8,157,2577.545,3196.343
-3-025,High School,2022,9,36,1710,2149.13242424242
+3-025,High School,2022,9,44,1820,2324.12717948718
 3-025,High School,,,1,699,699
 3-028,High School,2017,1,94,858,1050.2344
 3-028,High School,2017,2,74,941,1187.93054545455
@@ -16516,7 +16543,7 @@ Wylie,City,2022,8,17,,
 3-028,High School,2022,6,79,2014.675,2383.04847222222
 3-028,High School,2022,7,73,1706.685,2038.69385714286
 3-028,High School,2022,8,55,1455,1925.57203703704
-3-028,High School,2022,9,14,3609.6,3694.83833333333
+3-028,High School,2022,9,16,3502.6,3302.63285714286
 3-028,High School,,,1,1189,1189
 3-032,High School,2017,1,66,1113.5,1339.60071428571
 3-032,High School,2017,2,46,1357.5,1653.25210526316
@@ -16586,7 +16613,7 @@ Wylie,City,2022,8,17,,
 3-032,High School,2022,6,64,2048,2387.8180952381
 3-032,High School,2022,7,81,2885,3348.28754385965
 3-032,High School,2022,8,54,2033.7,2567.16652173913
-3-032,High School,2022,9,7,2958.735,3149.12333333333
+3-032,High School,2022,9,15,3982.47,3975.04454545455
 3-380,High School,2017,1,37,1074.11,1088.947
 3-380,High School,2017,2,29,1759.23,1906.74588235294
 3-380,High School,2017,3,31,1513,2017.2319047619
@@ -16655,7 +16682,7 @@ Wylie,City,2022,8,17,,
 3-380,High School,2022,6,65,1425,1863.68152542373
 3-380,High School,2022,7,41,1565,2564.92
 3-380,High School,2022,8,41,1831.79,2574.95756756757
-3-380,High School,2022,9,9,2474.955,2396.87333333333
+3-380,High School,2022,9,11,2474.955,2396.87333333333
 48085,County,2018,12,11,,
 48085,County,2019,1,908,,
 48085,County,2019,2,831,,
@@ -16701,7 +16728,7 @@ Wylie,City,2022,8,17,,
 48085,County,2022,6,702,,
 48085,County,2022,7,616,,
 48085,County,2022,8,715,,
-48085,County,2022,9,76,,
+48085,County,2022,9,103,,
 48085,County,,,18,,
 48113,County,2011,11,1,1190,1190
 48113,County,2017,1,3518,1034,1334.10577224685
@@ -16772,7 +16799,7 @@ Wylie,City,2022,8,17,,
 48113,County,2022,6,3607,2100,2646.87922174182
 48113,County,2022,7,3902,2187.2,2676.51076157999
 48113,County,2022,8,3511,2167.74,2724.51763330215
-48113,County,2022,9,555,2787,3095.58927419355
+48113,County,2022,9,929,2777.43,3197.44182897862
 48113,County,2022,10,1,5550,5550
 48113,County,,,16,1384.5,1774.15142857143
 48121,County,2019,1,897,,
@@ -16819,7 +16846,7 @@ Wylie,City,2022,8,17,,
 48121,County,2022,6,804,,
 48121,County,2022,7,805,,
 48121,County,2022,8,913,,
-48121,County,2022,9,83,,
+48121,County,2022,9,124,,
 48439,County,2020,1,2949,,
 48439,County,2020,2,2800,,
 48439,County,2020,3,1326,,
@@ -16852,7 +16879,7 @@ Wylie,City,2022,8,17,,
 48439,County,2022,6,2738,,
 48439,County,2022,7,2865,,
 48439,County,2022,8,3134,,
-48439,County,2022,9,383,,
+48439,County,2022,9,607,,
 48439,County,,,6,,
 48085-1,Precinct,2019,1,216,,
 48085-1,Precinct,2019,2,183,,
@@ -16898,7 +16925,7 @@ Wylie,City,2022,8,17,,
 48085-1,Precinct,2022,6,144,,
 48085-1,Precinct,2022,7,143,,
 48085-1,Precinct,2022,8,147,,
-48085-1,Precinct,2022,9,25,,
+48085-1,Precinct,2022,9,33,,
 48085-2,Precinct,2018,12,3,,
 48085-2,Precinct,2019,1,50,,
 48085-2,Precinct,2019,2,32,,
@@ -16944,7 +16971,7 @@ Wylie,City,2022,8,17,,
 48085-2,Precinct,2022,6,35,,
 48085-2,Precinct,2022,7,48,,
 48085-2,Precinct,2022,8,49,,
-48085-2,Precinct,2022,9,13,,
+48085-2,Precinct,2022,9,14,,
 48085-3,Precinct,2019,7,1,,
 48085-3,Precinct,2019,8,1,,
 48085-3,Precinct,2019,11,1,,
@@ -16975,7 +17002,7 @@ Wylie,City,2022,8,17,,
 48085-3,Precinct,2022,6,305,,
 48085-3,Precinct,2022,7,228,,
 48085-3,Precinct,2022,8,309,,
-48085-3,Precinct,2022,9,24,,
+48085-3,Precinct,2022,9,25,,
 48085-3-1,Precinct,2018,12,8,,
 48085-3-1,Precinct,2019,1,349,,
 48085-3-1,Precinct,2019,2,334,,
@@ -17067,7 +17094,7 @@ Wylie,City,2022,8,17,,
 48085-4,Precinct,2022,6,218,,
 48085-4,Precinct,2022,7,197,,
 48085-4,Precinct,2022,8,210,,
-48085-4,Precinct,2022,9,14,,
+48085-4,Precinct,2022,9,31,,
 48113-1,Precinct,2011,11,1,1190,1190
 48113-1,Precinct,2017,1,1091,1150,1427.13332620321
 48113-1,Precinct,2017,2,835,1090,1440.31053521127
@@ -17137,7 +17164,7 @@ Wylie,City,2022,8,17,,
 48113-1,Precinct,2022,6,929,2390,2922.2470755886
 48113-1,Precinct,2022,7,1038,2556,3057.03214206437
 48113-1,Precinct,2022,8,978,2448.5,2968.70819318182
-48113-1,Precinct,2022,9,135,3032,3424.46059322034
+48113-1,Precinct,2022,9,282,3018,3598.856692607
 48113-1,Precinct,,,2,1362.78,1362.78
 48113-2,Precinct,2017,1,529,999.69,1309.22221995927
 48113-2,Precinct,2017,2,438,959.5,1217.80775362319
@@ -17207,7 +17234,7 @@ Wylie,City,2022,8,17,,
 48113-2,Precinct,2022,6,603,1539,2221.185
 48113-2,Precinct,2022,7,596,1582.5,2173.03007462687
 48113-2,Precinct,2022,8,565,1729.15,2462.26230314961
-48113-2,Precinct,2022,9,67,2135,2496.73423728814
+48113-2,Precinct,2022,9,114,2470,2788.22465346535
 48113-2,Precinct,2022,10,1,5550,5550
 48113-2,Precinct,,,2,1049.5,1049.5
 48113-3,Precinct,2017,1,767,982.1,1236.30069354839
@@ -17278,7 +17305,7 @@ Wylie,City,2022,8,17,,
 48113-3,Precinct,2022,6,837,1982,2450.86254129606
 48113-3,Precinct,2022,7,839,2240,2641.4707079646
 48113-3,Precinct,2022,8,797,2220.73,2705.90849933599
-48113-3,Precinct,2022,9,145,2809.75,3043.57748148148
+48113-3,Precinct,2022,9,193,2781.93,3071.38983146067
 48113-3,Precinct,,,2,1279,1279
 48113-4,Precinct,2017,1,625,1084,1474.10489977728
 48113-4,Precinct,2017,2,571,1152.82,1537.52966507177
@@ -17348,7 +17375,7 @@ Wylie,City,2022,8,17,,
 48113-4,Precinct,2022,6,627,2068.69,2414.68231686542
 48113-4,Precinct,2022,7,772,2102.92,2495.32450138504
 48113-4,Precinct,2022,8,657,1990.77,2450.25816091954
-48113-4,Precinct,2022,9,79,2487.49,2724.20535211268
+48113-4,Precinct,2022,9,131,2600,2848.46272727273
 48113-4,Precinct,,,7,2400,2260.19142857143
 48113-5,Precinct,2017,1,506,899,1158.3445890411
 48113-5,Precinct,2017,2,505,973.33,1144.9941439206
@@ -17418,7 +17445,7 @@ Wylie,City,2022,8,17,,
 48113-5,Precinct,2022,6,611,2530,3216.00581573896
 48113-5,Precinct,2022,7,657,2265,2826.86057996485
 48113-5,Precinct,2022,8,514,2402,2941.96776805252
-48113-5,Precinct,2022,9,129,2982.31,3360.32805309735
+48113-5,Precinct,2022,9,209,2800,3212.74475675676
 48113-5,Precinct,,,3,1498.5,1498.5
 48121-1,Precinct,2019,1,82,,
 48121-1,Precinct,2019,2,83,,
@@ -17464,7 +17491,7 @@ Wylie,City,2022,8,17,,
 48121-1,Precinct,2022,6,127,,
 48121-1,Precinct,2022,7,142,,
 48121-1,Precinct,2022,8,150,,
-48121-1,Precinct,2022,9,10,,
+48121-1,Precinct,2022,9,13,,
 48121-2,Precinct,2019,1,111,,
 48121-2,Precinct,2019,2,73,,
 48121-2,Precinct,2019,3,66,,
@@ -17554,7 +17581,7 @@ Wylie,City,2022,8,17,,
 48121-3,Precinct,2022,6,250,,
 48121-3,Precinct,2022,7,265,,
 48121-3,Precinct,2022,8,299,,
-48121-3,Precinct,2022,9,13,,
+48121-3,Precinct,2022,9,22,,
 48121-4,Precinct,2019,1,42,,
 48121-4,Precinct,2019,2,31,,
 48121-4,Precinct,2019,3,36,,
@@ -17599,7 +17626,7 @@ Wylie,City,2022,8,17,,
 48121-4,Precinct,2022,6,60,,
 48121-4,Precinct,2022,7,52,,
 48121-4,Precinct,2022,8,65,,
-48121-4,Precinct,2022,9,10,,
+48121-4,Precinct,2022,9,13,,
 48121-5,Precinct,2019,1,94,,
 48121-5,Precinct,2019,2,85,,
 48121-5,Precinct,2019,3,58,,
@@ -17644,7 +17671,7 @@ Wylie,City,2022,8,17,,
 48121-5,Precinct,2022,6,60,,
 48121-5,Precinct,2022,7,78,,
 48121-5,Precinct,2022,8,80,,
-48121-5,Precinct,2022,9,11,,
+48121-5,Precinct,2022,9,17,,
 48121-6,Precinct,2019,1,326,,
 48121-6,Precinct,2019,2,288,,
 48121-6,Precinct,2019,3,207,,
@@ -17689,7 +17716,7 @@ Wylie,City,2022,8,17,,
 48121-6,Precinct,2022,6,207,,
 48121-6,Precinct,2022,7,173,,
 48121-6,Precinct,2022,8,214,,
-48121-6,Precinct,2022,9,26,,
+48121-6,Precinct,2022,9,46,,
 48439-1,Precinct,2020,1,416,,
 48439-1,Precinct,2020,2,417,,
 48439-1,Precinct,2020,3,206,,
@@ -17722,7 +17749,7 @@ Wylie,City,2022,8,17,,
 48439-1,Precinct,2022,6,249,,
 48439-1,Precinct,2022,7,288,,
 48439-1,Precinct,2022,8,292,,
-48439-1,Precinct,2022,9,26,,
+48439-1,Precinct,2022,9,38,,
 48439-2,Precinct,2020,1,672,,
 48439-2,Precinct,2020,2,610,,
 48439-2,Precinct,2020,3,330,,
@@ -17755,7 +17782,7 @@ Wylie,City,2022,8,17,,
 48439-2,Precinct,2022,6,634,,
 48439-2,Precinct,2022,7,644,,
 48439-2,Precinct,2022,8,778,,
-48439-2,Precinct,2022,9,100,,
+48439-2,Precinct,2022,9,154,,
 48439-3,Precinct,2020,1,346,,
 48439-3,Precinct,2020,2,280,,
 48439-3,Precinct,2020,3,161,,
@@ -17788,7 +17815,7 @@ Wylie,City,2022,8,17,,
 48439-3,Precinct,2022,6,158,,
 48439-3,Precinct,2022,7,213,,
 48439-3,Precinct,2022,8,211,,
-48439-3,Precinct,2022,9,46,,
+48439-3,Precinct,2022,9,59,,
 48439-4,Precinct,2020,1,280,,
 48439-4,Precinct,2020,2,254,,
 48439-4,Precinct,2020,3,146,,
@@ -17821,7 +17848,7 @@ Wylie,City,2022,8,17,,
 48439-4,Precinct,2022,6,172,,
 48439-4,Precinct,2022,7,191,,
 48439-4,Precinct,2022,8,246,,
-48439-4,Precinct,2022,9,42,,
+48439-4,Precinct,2022,9,58,,
 48439-5,Precinct,2020,1,122,,
 48439-5,Precinct,2020,2,136,,
 48439-5,Precinct,2020,3,64,,
@@ -17854,7 +17881,7 @@ Wylie,City,2022,8,17,,
 48439-5,Precinct,2022,6,333,,
 48439-5,Precinct,2022,7,324,,
 48439-5,Precinct,2022,8,353,,
-48439-5,Precinct,2022,9,37,,
+48439-5,Precinct,2022,9,55,,
 48439-6,Precinct,2020,1,276,,
 48439-6,Precinct,2020,2,320,,
 48439-6,Precinct,2020,3,123,,
@@ -17887,7 +17914,7 @@ Wylie,City,2022,8,17,,
 48439-6,Precinct,2022,6,313,,
 48439-6,Precinct,2022,7,243,,
 48439-6,Precinct,2022,8,261,,
-48439-6,Precinct,2022,9,36,,
+48439-6,Precinct,2022,9,46,,
 48439-7,Precinct,2020,1,424,,
 48439-7,Precinct,2020,2,405,,
 48439-7,Precinct,2020,3,135,,
@@ -17920,7 +17947,7 @@ Wylie,City,2022,8,17,,
 48439-7,Precinct,2022,6,401,,
 48439-7,Precinct,2022,7,410,,
 48439-7,Precinct,2022,8,471,,
-48439-7,Precinct,2022,9,68,,
+48439-7,Precinct,2022,9,95,,
 48439-8,Precinct,2020,1,413,,
 48439-8,Precinct,2020,2,378,,
 48439-8,Precinct,2020,3,161,,
@@ -17953,7 +17980,7 @@ Wylie,City,2022,8,17,,
 48439-8,Precinct,2022,6,478,,
 48439-8,Precinct,2022,7,552,,
 48439-8,Precinct,2022,8,522,,
-48439-8,Precinct,2022,9,28,,
+48439-8,Precinct,2022,9,102,,
 48085030101,Census Tract,2020,3,1,,
 48085030101,Census Tract,2020,5,4,,
 48085030101,Census Tract,2020,7,1,,
@@ -21703,7 +21730,7 @@ Wylie,City,2022,8,17,,
 48113000409,Census Tract,2022,6,12,2978.14,4084.37222222222
 48113000409,Census Tract,2022,7,18,4233,4175.369375
 48113000409,Census Tract,2022,8,7,3409.1,3732.49571428571
-48113000409,Census Tract,2022,9,2,7481.8,7481.8
+48113000409,Census Tract,2022,9,3,7481.8,7481.8
 48113000410,Census Tract,2017,1,3,715,715
 48113000410,Census Tract,2017,2,2,1885,1885
 48113000410,Census Tract,2017,3,8,715,806.428571428572
@@ -21824,6 +21851,7 @@ Wylie,City,2022,8,17,,
 48113000501,Census Tract,2022,6,4,4450.415,4052.0825
 48113000501,Census Tract,2022,7,4,4957.925,4815.2125
 48113000501,Census Tract,2022,8,3,4182,3272.5
+48113000501,Census Tract,2022,9,1,5311.66,5311.66
 48113000502,Census Tract,2017,1,2,1531.29,1531.29
 48113000502,Census Tract,2017,6,2,1962.75,1962.75
 48113000502,Census Tract,2017,8,1,,
@@ -22149,6 +22177,7 @@ Wylie,City,2022,8,17,,
 48113000609,Census Tract,2022,6,4,6881.5,6423.1475
 48113000609,Census Tract,2022,7,4,3198,3048
 48113000609,Census Tract,2022,8,9,4351.23,3934.48777777778
+48113000609,Census Tract,2022,9,5,2654,3609.2
 48113000610,Census Tract,2017,1,5,630,844.95
 48113000610,Census Tract,2017,2,2,1268.76,1268.76
 48113000610,Census Tract,2017,3,7,1361.54,1340.525
@@ -22263,6 +22292,7 @@ Wylie,City,2022,8,17,,
 48113000611,Census Tract,2022,6,4,4950,4546.5
 48113000611,Census Tract,2022,7,8,2093.5,2449.855
 48113000611,Census Tract,2022,8,6,4494,3962.6
+48113000611,Census Tract,2022,9,4,3561.5,3767.75
 48113000703,Census Tract,2017,1,2,2647.5,2647.5
 48113000703,Census Tract,2017,2,1,2680,2680
 48113000703,Census Tract,2017,3,1,2228,2228
@@ -22409,6 +22439,7 @@ Wylie,City,2022,8,17,,
 48113000705,Census Tract,2022,2,4,1900,1900
 48113000705,Census Tract,2022,5,1,2749.32,2749.32
 48113000705,Census Tract,2022,7,1,4788,4788
+48113000705,Census Tract,2022,9,1,,
 48113000706,Census Tract,2017,1,3,2794.03,2668.65
 48113000706,Census Tract,2017,4,2,1886.535,1886.535
 48113000706,Census Tract,2017,5,1,1825,1825
@@ -22880,7 +22911,7 @@ Wylie,City,2022,8,17,,
 48113001202,Census Tract,2022,6,6,1784.35,1979.03333333333
 48113001202,Census Tract,2022,7,14,2023.47,2067.16153846154
 48113001202,Census Tract,2022,8,13,2500,2736.83
-48113001202,Census Tract,2022,9,9,3075.14,3362.72555555556
+48113001202,Census Tract,2022,9,10,2942.445,3277.053
 48113001203,Census Tract,2017,5,1,,
 48113001203,Census Tract,2017,7,1,1800,1800
 48113001203,Census Tract,2017,10,1,810,810
@@ -23084,6 +23115,7 @@ Wylie,City,2022,8,17,,
 48113001400,Census Tract,2022,6,18,2135.97,2312.954375
 48113001400,Census Tract,2022,7,8,2490.465,2564.3975
 48113001400,Census Tract,2022,8,13,4600,5044.56818181818
+48113001400,Census Tract,2022,9,1,1100,1100
 48113001502,Census Tract,2017,1,12,660,739.163636363636
 48113001502,Census Tract,2017,2,15,790.2,1372.444
 48113001502,Census Tract,2017,3,8,690,959.018571428571
@@ -23284,6 +23316,7 @@ Wylie,City,2022,8,17,,
 48113001504,Census Tract,2022,6,4,1033.625,985.55
 48113001504,Census Tract,2022,7,5,2862,3081.66666666667
 48113001504,Census Tract,2022,8,9,2300,3478.89714285714
+48113001504,Census Tract,2022,9,1,3563,3563
 48113001601,Census Tract,2017,1,7,1350,1669
 48113001601,Census Tract,2017,2,1,1949,1949
 48113001601,Census Tract,2017,3,4,580,580
@@ -23348,7 +23381,7 @@ Wylie,City,2022,8,17,,
 48113001601,Census Tract,2022,6,8,5717.335,5280.8125
 48113001601,Census Tract,2022,7,23,4946.92,4406.92181818182
 48113001601,Census Tract,2022,8,15,2744.06,3029.56
-48113001601,Census Tract,2022,9,5,3850,4388.892
+48113001601,Census Tract,2022,9,10,2373,3159.782
 48113001602,Census Tract,2017,1,3,817,817
 48113001602,Census Tract,2017,2,8,687.5,825.53625
 48113001602,Census Tract,2017,4,2,1171.5,1171.5
@@ -23633,7 +23666,7 @@ Wylie,City,2022,8,17,,
 48113001802,Census Tract,2022,6,3,1952,1762.34333333333
 48113001802,Census Tract,2022,7,7,4937,5562.58857142857
 48113001802,Census Tract,2022,8,3,4841.68,4721.56333333333
-48113001802,Census Tract,2022,9,1,4026.07,4026.07
+48113001802,Census Tract,2022,9,2,3488.535,3488.535
 48113001901,Census Tract,2017,1,5,2152.63,2315.786
 48113001901,Census Tract,2017,2,4,3197,2913.1875
 48113001901,Census Tract,2017,3,4,797.415,1934.955
@@ -24141,6 +24174,7 @@ Wylie,City,2022,8,17,,
 48113002500,Census Tract,2022,6,7,1425,2461
 48113002500,Census Tract,2022,7,8,1839.5,2072.19666666667
 48113002500,Census Tract,2022,8,2,593,593
+48113002500,Census Tract,2022,9,1,,
 48113002703,Census Tract,2017,1,15,1200,1167.85714285714
 48113002703,Census Tract,2017,2,10,1337.5,1562
 48113002703,Census Tract,2017,3,14,1088,1180.28571428571
@@ -24324,6 +24358,7 @@ Wylie,City,2022,8,17,,
 48113003103,Census Tract,2022,6,31,3574,3682.64965517241
 48113003103,Census Tract,2022,7,21,3184.47,3108.06523809524
 48113003103,Census Tract,2022,8,27,1773.18,2620.88592592593
+48113003103,Census Tract,2022,9,10,1625.745,1624.452
 48113003700,Census Tract,2017,1,8,1041,1491.25
 48113003700,Census Tract,2017,2,10,1114,1288.9
 48113003700,Census Tract,2017,3,5,785,932.5
@@ -24392,7 +24427,7 @@ Wylie,City,2022,8,17,,
 48113003700,Census Tract,2022,6,6,2025,2174.83333333333
 48113003700,Census Tract,2022,7,4,3400,3400
 48113003700,Census Tract,2022,8,12,3097.66,3010.19333333333
-48113003700,Census Tract,2022,9,2,1600,1600
+48113003700,Census Tract,2022,9,3,1600,1600
 48113004201,Census Tract,2017,1,4,847.5,758.25
 48113004201,Census Tract,2017,4,3,725,761.666666666667
 48113004201,Census Tract,2017,5,9,880,927.667777777778
@@ -24664,6 +24699,7 @@ Wylie,City,2022,8,17,,
 48113004500,Census Tract,2022,6,9,2288,2889.89428571429
 48113004500,Census Tract,2022,7,4,1664,1820.735
 48113004500,Census Tract,2022,8,1,,
+48113004500,Census Tract,2022,9,3,2500,2438.66666666667
 48113004600,Census Tract,2017,1,5,622.03,975.264
 48113004600,Census Tract,2017,2,5,800,781.166666666667
 48113004600,Census Tract,2017,3,5,396.77,728.708
@@ -25392,7 +25428,7 @@ Wylie,City,2022,8,17,,
 48113005902,Census Tract,2022,6,8,2334.2,2345.18
 48113005902,Census Tract,2022,7,3,2449.51,2449.51
 48113005902,Census Tract,2022,8,7,4215.33,4108.216
-48113005902,Census Tract,2022,9,7,4490.75,4397.72428571429
+48113005902,Census Tract,2022,9,8,4459.87,4306.77625
 48113006001,Census Tract,2017,3,3,700,846.666666666667
 48113006001,Census Tract,2017,4,4,855,967.5
 48113006001,Census Tract,2017,6,4,942.5,943.75
@@ -25891,6 +25927,7 @@ Wylie,City,2022,8,17,,
 48113006701,Census Tract,2022,6,8,2213,3234
 48113006701,Census Tract,2022,7,7,2000,1902.36
 48113006701,Census Tract,2022,8,1,1005,1005
+48113006701,Census Tract,2022,9,1,1000,1000
 48113006702,Census Tract,2017,1,1,450,450
 48113006702,Census Tract,2017,2,5,1822,1724.2
 48113006702,Census Tract,2017,4,7,814,1057.14285714286
@@ -26259,7 +26296,7 @@ Wylie,City,2022,8,17,,
 48113007204,Census Tract,2022,6,23,1879,2195.275
 48113007204,Census Tract,2022,7,23,1593.83,1767.56428571429
 48113007204,Census Tract,2022,8,11,1620,1825.47636363636
-48113007204,Census Tract,2022,9,5,3030,2978
+48113007204,Census Tract,2022,9,6,2961,2905.83333333333
 48113007205,Census Tract,2017,1,7,580,638.428571428571
 48113007205,Census Tract,2017,2,12,647.5,699.8
 48113007205,Census Tract,2017,3,7,525,511.868333333333
@@ -27531,6 +27568,7 @@ Wylie,City,2022,8,17,,
 48113007833,Census Tract,2022,6,2,616.8,616.8
 48113007833,Census Tract,2022,7,9,1810,1809.16666666667
 48113007833,Census Tract,2022,8,5,2546,2546.6
+48113007833,Census Tract,2022,9,2,949.4,949.4
 48113007834,Census Tract,2017,1,22,1003.03,984.911176470588
 48113007834,Census Tract,2017,2,22,1229.5,1558.536875
 48113007834,Census Tract,2017,3,21,793.165,783.744166666667
@@ -27598,7 +27636,7 @@ Wylie,City,2022,8,17,,
 48113007834,Census Tract,2022,6,16,742.78,1270.348125
 48113007834,Census Tract,2022,7,7,2745.5,3054.78
 48113007834,Census Tract,2022,8,35,1949,2317.11742857143
-48113007834,Census Tract,2022,9,8,1407.44,1833.88375
+48113007834,Census Tract,2022,9,14,1592.47,1856.55769230769
 48113007835,Census Tract,2017,1,9,872.8,848.86
 48113007835,Census Tract,2017,2,10,640,652.781111111111
 48113007835,Census Tract,2017,3,3,770,770
@@ -27785,6 +27823,7 @@ Wylie,City,2022,8,17,,
 48113007906,Census Tract,2021,9,2,10218.01,10218.01
 48113007906,Census Tract,2022,3,1,3983.23,3983.23
 48113007906,Census Tract,2022,7,1,806.45,806.45
+48113007906,Census Tract,2022,9,1,6571.32,6571.32
 48113007909,Census Tract,2017,1,1,1377,1377
 48113007909,Census Tract,2017,2,1,,
 48113007909,Census Tract,2017,3,3,1853.16,1853.16
@@ -27959,7 +27998,7 @@ Wylie,City,2022,8,17,,
 48113007913,Census Tract,2022,6,4,3365.69,3783.095
 48113007913,Census Tract,2022,7,3,2312.715,2312.715
 48113007913,Census Tract,2022,8,3,3850,4109.66666666667
-48113007913,Census Tract,2022,9,1,,
+48113007913,Census Tract,2022,9,3,8413.04,8413.04
 48113007914,Census Tract,2017,1,5,1792.29,1827.558
 48113007914,Census Tract,2017,2,3,1563.64,1563.64
 48113007914,Census Tract,2017,3,3,2164.69,2579.52
@@ -28243,6 +28282,7 @@ Wylie,City,2022,8,17,,
 48113008401,Census Tract,2022,6,1,3900,3900
 48113008401,Census Tract,2022,7,6,1425.65,1466.52
 48113008401,Census Tract,2022,8,3,7900,7900
+48113008401,Census Tract,2022,9,1,,
 48113008402,Census Tract,2017,1,4,588.705,831.085
 48113008402,Census Tract,2017,2,1,,
 48113008402,Census Tract,2017,3,1,827.55,827.55
@@ -28424,6 +28464,7 @@ Wylie,City,2022,8,17,,
 48113008604,Census Tract,2022,6,16,2086,2666.92307692308
 48113008604,Census Tract,2022,7,45,3990,4104.29976744186
 48113008604,Census Tract,2022,8,52,3555.33,3725.41770833333
+48113008604,Census Tract,2022,9,9,3659.8,3545.8875
 48113008701,Census Tract,2017,1,30,825.42,1290.31655172414
 48113008701,Census Tract,2017,2,17,660,942.8
 48113008701,Census Tract,2017,3,19,929.875,1059.23666666667
@@ -28950,7 +28991,7 @@ Wylie,City,2022,8,17,,
 48113009101,Census Tract,2022,5,9,5639.95,5654.27666666667
 48113009101,Census Tract,2022,6,3,3819.5,4882.83333333333
 48113009101,Census Tract,2022,7,3,1900,1900
-48113009101,Census Tract,2022,9,1,1941.89,1941.89
+48113009101,Census Tract,2022,9,2,2159.385,2159.385
 48113009103,Census Tract,2017,1,6,503,582.5
 48113009103,Census Tract,2017,2,6,319,355.666666666667
 48113009103,Census Tract,2017,3,8,426.64,1540.85
@@ -29683,6 +29724,7 @@ Wylie,City,2022,8,17,,
 48113009610,Census Tract,2022,6,2,3698.1,3698.1
 48113009610,Census Tract,2022,7,1,2000,2000
 48113009610,Census Tract,2022,8,2,1720.095,1720.095
+48113009610,Census Tract,2022,9,2,1870,1870
 48113009611,Census Tract,2017,1,3,605,605
 48113009611,Census Tract,2017,2,1,1112.33,1112.33
 48113009611,Census Tract,2017,6,2,,
@@ -29836,6 +29878,7 @@ Wylie,City,2022,8,17,,
 48113009802,Census Tract,2022,5,3,2107.935,2107.935
 48113009802,Census Tract,2022,7,1,3064,3064
 48113009802,Census Tract,2022,8,2,2164.615,2164.615
+48113009802,Census Tract,2022,9,1,4410,4410
 48113009803,Census Tract,2017,1,6,750,1154.356
 48113009803,Census Tract,2017,2,5,448.14,448.14
 48113009803,Census Tract,2017,3,1,750,750
@@ -29949,7 +29992,7 @@ Wylie,City,2022,8,17,,
 48113009804,Census Tract,2022,6,3,840,1209.33333333333
 48113009804,Census Tract,2022,7,5,1800,2268.734
 48113009804,Census Tract,2022,8,6,3069,3047.87166666667
-48113009804,Census Tract,2022,9,3,900,1757.93333333333
+48113009804,Census Tract,2022,9,4,850,1518.45
 48113009900,Census Tract,2017,1,18,1372.255,1372.28125
 48113009900,Census Tract,2017,2,23,1214.25,1484.651
 48113009900,Census Tract,2017,3,22,1446.64,1432.42533333333
@@ -30145,7 +30188,7 @@ Wylie,City,2022,8,17,,
 48113010003,Census Tract,2022,6,18,5162.775,5497.23833333333
 48113010003,Census Tract,2022,7,10,4353,3927.69222222222
 48113010003,Census Tract,2022,8,9,4002,3841.15857142857
-48113010003,Census Tract,2022,9,2,3113.15,3113.15
+48113010003,Census Tract,2022,9,6,2430,2777.43
 48113010101,Census Tract,2017,2,6,1030.5,1029.83333333333
 48113010101,Census Tract,2017,3,7,701,1149.4
 48113010101,Census Tract,2017,4,10,3925,4265.5
@@ -30423,7 +30466,7 @@ Wylie,City,2022,8,17,,
 48113010701,Census Tract,2022,6,9,2620,2564.02888888889
 48113010701,Census Tract,2022,7,9,2623,2667.375
 48113010701,Census Tract,2022,8,3,2310,2300
-48113010701,Census Tract,2022,9,4,4700,4446.33333333333
+48113010701,Census Tract,2022,9,6,3059,3437.8
 48113010704,Census Tract,2017,1,2,2536.925,2536.925
 48113010704,Census Tract,2017,2,6,857.5,897.666666666667
 48113010704,Census Tract,2017,3,2,1050,1050
@@ -30542,7 +30585,7 @@ Wylie,City,2022,8,17,,
 48113010804,Census Tract,2022,5,2,2502,2502
 48113010804,Census Tract,2022,7,12,2560.04,2563.02545454545
 48113010804,Census Tract,2022,8,4,2578.855,2688.24
-48113010804,Census Tract,2022,9,11,3465.54,4179.18727272727
+48113010804,Census Tract,2022,9,12,3483.485,4195.16416666667
 48113010805,Census Tract,2017,1,6,1400,1616.4
 48113010805,Census Tract,2017,2,4,3750,3750
 48113010805,Census Tract,2017,3,3,901.16,858.06
@@ -30886,6 +30929,7 @@ Wylie,City,2022,8,17,,
 48113010903,Census Tract,2022,6,3,3215.04,4773.11
 48113010903,Census Tract,2022,7,1,2100,2100
 48113010903,Census Tract,2022,8,19,3512,3396.23947368421
+48113010903,Census Tract,2022,9,15,2810.16,3379.742
 48113010904,Census Tract,2017,1,43,1059.52,1386.75255813953
 48113010904,Census Tract,2017,2,35,1152,1105.088
 48113010904,Census Tract,2017,3,25,1012.94,1007.518
@@ -31017,6 +31061,7 @@ Wylie,City,2022,8,17,,
 48113010905,Census Tract,2022,6,35,2613,2505.03258064516
 48113010905,Census Tract,2022,7,47,2335,2672.80279069767
 48113010905,Census Tract,2022,8,27,3245.73,3616.87461538462
+48113010905,Census Tract,2022,9,26,3595,3943.90692307692
 48113010906,Census Tract,2017,1,20,1354,1448.68578947368
 48113010906,Census Tract,2017,2,10,1504,2018.44444444444
 48113010906,Census Tract,2017,3,19,832,1041.47277777778
@@ -31081,7 +31126,7 @@ Wylie,City,2022,8,17,,
 48113010906,Census Tract,2022,6,26,2827.735,3066.5175
 48113010906,Census Tract,2022,7,1,3650.83,3650.83
 48113010906,Census Tract,2022,8,15,2715,3533.78214285714
-48113010906,Census Tract,2022,9,1,4615,4615
+48113010906,Census Tract,2022,9,6,1960,2509.875
 48113011002,Census Tract,2017,1,7,1656,1621.75
 48113011002,Census Tract,2017,2,1,1150,1150
 48113011002,Census Tract,2017,3,2,1175,1175
@@ -31308,7 +31353,7 @@ Wylie,City,2022,8,17,,
 48113011101,Census Tract,2022,4,9,4699.55,4859.25333333333
 48113011101,Census Tract,2022,5,1,,
 48113011101,Census Tract,2022,7,11,3302.96,3968.21545454546
-48113011101,Census Tract,2022,9,1,2875,2875
+48113011101,Census Tract,2022,9,2,2563.975,2563.975
 48113011103,Census Tract,2017,1,3,1489.5,1489.5
 48113011103,Census Tract,2017,2,2,1667.5,1667.5
 48113011103,Census Tract,2017,3,3,1445,1281.66666666667
@@ -31367,6 +31412,7 @@ Wylie,City,2022,8,17,,
 48113011103,Census Tract,2022,5,1,,
 48113011103,Census Tract,2022,6,1,4609.29,4609.29
 48113011103,Census Tract,2022,7,3,2991.665,2991.665
+48113011103,Census Tract,2022,9,1,1395,1395
 48113011104,Census Tract,2017,1,12,875.5,1010
 48113011104,Census Tract,2017,2,14,949.5,1284.6325
 48113011104,Census Tract,2017,3,9,677.93,747.035714285714
@@ -31432,6 +31478,7 @@ Wylie,City,2022,8,17,,
 48113011104,Census Tract,2022,6,3,5848.5,5848.5
 48113011104,Census Tract,2022,7,1,5730,5730
 48113011104,Census Tract,2022,8,4,2813.36,3196.34666666667
+48113011104,Census Tract,2022,9,1,5456.33,5456.33
 48113011105,Census Tract,2017,1,12,1170.96,1261.50888888889
 48113011105,Census Tract,2017,2,15,1485.71,1521.84076923077
 48113011105,Census Tract,2017,3,8,1613,1445.87142857143
@@ -31496,6 +31543,7 @@ Wylie,City,2022,8,17,,
 48113011105,Census Tract,2022,6,6,1716.99,2558.596
 48113011105,Census Tract,2022,7,15,3692.205,4565.98642857143
 48113011105,Census Tract,2022,8,25,3364.58,3220.5432
+48113011105,Census Tract,2022,9,1,3126,3126
 48113011201,Census Tract,2017,1,14,1089,1130.85833333333
 48113011201,Census Tract,2017,2,8,990,1076.22375
 48113011201,Census Tract,2017,3,8,1375.5,1681
@@ -31561,6 +31609,7 @@ Wylie,City,2022,8,17,,
 48113011201,Census Tract,2022,6,4,3190,3364.66666666667
 48113011201,Census Tract,2022,7,8,1838,2128.95
 48113011201,Census Tract,2022,8,1,1370,1370
+48113011201,Census Tract,2022,9,2,5092.205,5092.205
 48113011202,Census Tract,2017,1,6,1290,3686.71166666667
 48113011202,Census Tract,2017,2,4,765,730
 48113011202,Census Tract,2017,3,2,765,765
@@ -32238,6 +32287,7 @@ Wylie,City,2022,8,17,,
 48113011901,Census Tract,2022,6,3,6488.89,6488.89
 48113011901,Census Tract,2022,7,1,1560,1560
 48113011901,Census Tract,2022,8,2,2487.5,2487.5
+48113011901,Census Tract,2022,9,2,2480,2480
 48113011902,Census Tract,2017,1,1,,
 48113011902,Census Tract,2017,2,1,,
 48113011902,Census Tract,2017,3,5,1648.5,1886.75
@@ -32292,7 +32342,7 @@ Wylie,City,2022,8,17,,
 48113011902,Census Tract,2022,4,1,3405,3405
 48113011902,Census Tract,2022,5,2,,
 48113011902,Census Tract,2022,7,3,5600,5600
-48113011902,Census Tract,2022,9,1,,
+48113011902,Census Tract,2022,9,2,,
 48113012000,Census Tract,2017,1,29,894.955,1187.75307692308
 48113012000,Census Tract,2017,2,26,924,930.187083333333
 48113012000,Census Tract,2017,3,10,851,1073.154
@@ -32360,7 +32410,7 @@ Wylie,City,2022,8,17,,
 48113012000,Census Tract,2022,6,14,5063.175,5586.22833333333
 48113012000,Census Tract,2022,7,21,2254.77,3299.42761904762
 48113012000,Census Tract,2022,8,1,2207.93,2207.93
-48113012000,Census Tract,2022,9,15,4244,4306.16
+48113012000,Census Tract,2022,9,25,3403.22,3993.9188
 48113012101,Census Tract,2017,1,16,960.37,920.6
 48113012101,Census Tract,2017,2,18,1011,1291.48611111111
 48113012101,Census Tract,2017,3,14,897.5,1318.93285714286
@@ -32422,7 +32472,7 @@ Wylie,City,2022,8,17,,
 48113012101,Census Tract,2022,6,2,2122.5,2122.5
 48113012101,Census Tract,2022,7,16,2223.21,2299.64666666667
 48113012101,Census Tract,2022,8,8,1934.95,2341.88375
-48113012101,Census Tract,2022,9,3,4686.4,4580.46666666667
+48113012101,Census Tract,2022,9,14,3767.465,3934.71285714286
 48113012102,Census Tract,2017,1,4,4170,2996.33333333333
 48113012102,Census Tract,2017,2,4,1902.5,1769.25
 48113012102,Census Tract,2017,3,1,5591,5591
@@ -32609,7 +32659,7 @@ Wylie,City,2022,8,17,,
 48113012207,Census Tract,2022,6,24,1575,2657.47523809524
 48113012207,Census Tract,2022,7,17,2409.28,2240.01533333333
 48113012207,Census Tract,2022,8,12,2205,2494.88272727273
-48113012207,Census Tract,2022,9,12,1381.225,1762.91333333333
+48113012207,Census Tract,2022,9,14,1478.4,1934.61071428571
 48113012208,Census Tract,2017,1,5,875,906.386
 48113012208,Census Tract,2017,2,11,1168.935,1117.47833333333
 48113012208,Census Tract,2017,3,3,947.225,947.225
@@ -32671,6 +32721,7 @@ Wylie,City,2022,8,17,,
 48113012208,Census Tract,2022,6,12,1811.37,2232.88818181818
 48113012208,Census Tract,2022,7,7,1875.62,2108.79833333333
 48113012208,Census Tract,2022,8,8,1819.64,2077.448
+48113012208,Census Tract,2022,9,3,2897.2,3062.47
 48113012209,Census Tract,2017,1,6,2080,2020
 48113012209,Census Tract,2017,2,24,995.5,1151.20083333333
 48113012209,Census Tract,2017,3,11,813,823.624545454545
@@ -32919,6 +32970,7 @@ Wylie,City,2022,8,17,,
 48113012212,Census Tract,2022,6,5,1300,1520
 48113012212,Census Tract,2022,7,8,2456.395,2429.8875
 48113012212,Census Tract,2022,8,4,2249.5,2843.75
+48113012212,Census Tract,2022,9,1,4600,4600
 48113012213,Census Tract,2017,1,1,403.33,403.33
 48113012213,Census Tract,2017,4,3,1125.72,1125.72
 48113012213,Census Tract,2017,5,2,907.665,907.665
@@ -33020,7 +33072,7 @@ Wylie,City,2022,8,17,,
 48113012301,Census Tract,2022,6,6,2880,2822.83333333333
 48113012301,Census Tract,2022,7,2,1055,1055
 48113012301,Census Tract,2022,8,5,3360.965,4189.3325
-48113012301,Census Tract,2022,9,1,,
+48113012301,Census Tract,2022,9,6,3545,3447.5
 48113012302,Census Tract,2017,1,21,1171.425,1726.2715
 48113012302,Census Tract,2017,2,8,929.69,1529.88375
 48113012302,Census Tract,2017,3,13,1261.65,1615.79833333333
@@ -33608,6 +33660,7 @@ Wylie,City,2022,8,17,,
 48113013005,Census Tract,2019,6,1,,
 48113013005,Census Tract,2020,3,1,,
 48113013005,Census Tract,2021,11,1,,
+48113013005,Census Tract,2022,9,1,,
 48113013007,Census Tract,2017,2,1,1189,1189
 48113013007,Census Tract,2017,4,2,,
 48113013007,Census Tract,2017,5,2,2266.5,2266.5
@@ -34484,6 +34537,7 @@ Wylie,City,2022,8,17,,
 48113013610,Census Tract,2022,6,3,1436,1539.8
 48113013610,Census Tract,2022,7,8,2339,3652.16375
 48113013610,Census Tract,2022,8,4,2357.49,2208.49666666667
+48113013610,Census Tract,2022,9,1,4593.75,4593.75
 48113013611,Census Tract,2017,2,2,1431.625,1431.625
 48113013611,Census Tract,2017,3,2,1472,1472
 48113013611,Census Tract,2017,4,2,1593.32,1593.32
@@ -34948,7 +35002,7 @@ Wylie,City,2022,8,17,,
 48113013624,Census Tract,2022,6,16,2981,3225.873125
 48113013624,Census Tract,2022,7,17,2374,2737.53176470588
 48113013624,Census Tract,2022,8,7,2704,3051.20857142857
-48113013624,Census Tract,2022,9,1,3246,3246
+48113013624,Census Tract,2022,9,6,2755,3138.71166666667
 48113013625,Census Tract,2017,1,6,1395.46,1395.46
 48113013625,Census Tract,2017,2,8,1481,1481
 48113013625,Census Tract,2017,3,4,846,945.266666666667
@@ -35255,7 +35309,7 @@ Wylie,City,2022,8,17,,
 48113013629,Census Tract,2022,6,8,4945.12,4676.44142857143
 48113013629,Census Tract,2022,7,16,2882.5,3369.5675
 48113013629,Census Tract,2022,8,8,1890,1946.66666666667
-48113013629,Census Tract,2022,9,2,1310,1310
+48113013629,Census Tract,2022,9,4,2292.5,2500
 48113013630,Census Tract,2017,2,1,1801.06,1801.06
 48113013630,Census Tract,2017,4,1,1471.7,1471.7
 48113013630,Census Tract,2017,5,1,,
@@ -36036,6 +36090,7 @@ Wylie,City,2022,8,17,,
 48113013805,Census Tract,2022,6,40,1564,2033.019
 48113013805,Census Tract,2022,7,25,2592,2730.99
 48113013805,Census Tract,2022,8,13,3048,3012.55923076923
+48113013805,Census Tract,2022,9,1,1383,1383
 48113013806,Census Tract,2017,1,22,1430,1558.686
 48113013806,Census Tract,2017,2,24,1312.75,1621.22357142857
 48113013806,Census Tract,2017,3,14,1431.25,1396.6225
@@ -36103,7 +36158,7 @@ Wylie,City,2022,8,17,,
 48113013806,Census Tract,2022,6,18,1816.53,1829.30277777778
 48113013806,Census Tract,2022,7,16,1708.25,1763.68933333333
 48113013806,Census Tract,2022,8,22,1639.495,1622.31681818182
-48113013806,Census Tract,2022,9,2,5590,5590
+48113013806,Census Tract,2022,9,4,5257.025,5423.5125
 48113013807,Census Tract,2017,4,1,550,550
 48113013807,Census Tract,2017,6,1,,
 48113013807,Census Tract,2017,8,1,1295,1295
@@ -36282,7 +36337,7 @@ Wylie,City,2022,8,17,,
 48113014002,Census Tract,2022,6,14,1846.255,1980.98285714286
 48113014002,Census Tract,2022,7,26,1596,1672.94807692308
 48113014002,Census Tract,2022,8,29,1733,1654.79222222222
-48113014002,Census Tract,2022,9,1,1037,1037
+48113014002,Census Tract,2022,9,19,1731,1993.30388888889
 48113014119,Census Tract,2017,11,1,,
 48113014119,Census Tract,2018,4,1,1995,1995
 48113014119,Census Tract,2018,5,1,2061.5,2061.5
@@ -36481,6 +36536,7 @@ Wylie,City,2022,8,17,,
 48113014128,Census Tract,2022,5,2,3825.07,3825.07
 48113014128,Census Tract,2022,6,2,1212.265,1212.265
 48113014128,Census Tract,2022,7,2,5166.535,5166.535
+48113014128,Census Tract,2022,9,1,5900.56,5900.56
 48113014130,Census Tract,2017,1,5,1595.16,1444.28
 48113014130,Census Tract,2017,2,7,1462,1867.924
 48113014130,Census Tract,2017,3,2,670.28,670.28
@@ -36915,6 +36971,7 @@ Wylie,City,2022,8,17,,
 48113014143,Census Tract,2022,4,1,7022,7022
 48113014143,Census Tract,2022,5,4,2698,3038.66666666667
 48113014143,Census Tract,2022,8,2,3058,3058
+48113014143,Census Tract,2022,9,1,8450,8450
 48113014144,Census Tract,2017,1,4,,
 48113014144,Census Tract,2017,2,9,1266.5,1250
 48113014144,Census Tract,2017,3,6,1923.61,1923.61
@@ -36973,6 +37030,7 @@ Wylie,City,2022,8,17,,
 48113014144,Census Tract,2022,6,11,1971.25,1968.83545454545
 48113014144,Census Tract,2022,7,9,2560.16,2728.06666666667
 48113014144,Census Tract,2022,8,12,2464.87,2768.33666666667
+48113014144,Census Tract,2022,9,1,2622.58,2622.58
 48113014145,Census Tract,2017,1,5,552,552
 48113014145,Census Tract,2017,2,2,,
 48113014145,Census Tract,2017,3,1,1257.99,1257.99
@@ -37032,6 +37090,7 @@ Wylie,City,2022,8,17,,
 48113014145,Census Tract,2022,6,5,1850.43,1796.536
 48113014145,Census Tract,2022,7,5,1587.3,1817.454
 48113014145,Census Tract,2022,8,2,1715.9,1715.9
+48113014145,Census Tract,2022,9,6,1678.75,2064.5
 48113014146,Census Tract,2017,1,5,2071.085,2071.085
 48113014146,Census Tract,2017,2,3,962.26,1081.08666666667
 48113014146,Census Tract,2017,3,3,631.295,631.295
@@ -37777,7 +37836,7 @@ Wylie,City,2022,8,17,,
 48113014161,Census Tract,2022,6,23,1998,2122.83869565217
 48113014161,Census Tract,2022,7,39,2565,2680.03594594595
 48113014161,Census Tract,2022,8,11,2322,2228.278
-48113014161,Census Tract,2022,9,25,2546,2593.96583333333
+48113014161,Census Tract,2022,9,34,2462,2565.17
 48113014161,Census Tract,,,1,5375.34,5375.34
 48113014203,Census Tract,2017,2,1,,
 48113014203,Census Tract,2017,3,2,598.74,598.74
@@ -37813,6 +37872,7 @@ Wylie,City,2022,8,17,,
 48113014203,Census Tract,2022,4,2,2463.685,2463.685
 48113014203,Census Tract,2022,5,1,,
 48113014203,Census Tract,2022,8,3,1015,1006.66666666667
+48113014203,Census Tract,2022,9,1,930,930
 48113014204,Census Tract,2017,1,12,470,413.036666666667
 48113014204,Census Tract,2017,2,4,583.04,2663.6175
 48113014204,Census Tract,2017,3,2,826.5,826.5
@@ -37933,6 +37993,7 @@ Wylie,City,2022,8,17,,
 48113014207,Census Tract,2022,6,5,2897,2863.132
 48113014207,Census Tract,2022,7,15,2736.55,2730.422
 48113014207,Census Tract,2022,8,17,2218,2576.81823529412
+48113014207,Census Tract,2022,9,4,3628.67,4728.08
 48113014208,Census Tract,2017,1,6,1589,1905.666
 48113014208,Census Tract,2017,2,3,1704.72,1704.72
 48113014208,Census Tract,2017,3,3,2529,2529
@@ -38353,7 +38414,7 @@ Wylie,City,2022,8,17,,
 48113014313,Census Tract,2022,6,16,470.66,557.941875
 48113014313,Census Tract,2022,7,24,532.92,710.653913043478
 48113014313,Census Tract,2022,8,17,1424.515,1365.17
-48113014313,Census Tract,2022,9,1,1585,1585
+48113014313,Census Tract,2022,9,2,2945.685,2945.685
 48113014314,Census Tract,2017,1,6,1679.6,1712.426
 48113014314,Census Tract,2017,2,4,1592.64,1592.64
 48113014314,Census Tract,2017,3,2,1620.83,1620.83
@@ -38788,6 +38849,7 @@ Wylie,City,2022,8,17,,
 48113014406,Census Tract,2022,4,1,1095,1095
 48113014406,Census Tract,2022,6,2,2357.5,2357.5
 48113014406,Census Tract,2022,8,1,2368.35,2368.35
+48113014406,Census Tract,2022,9,1,4672,4672
 48113014406,Census Tract,,,1,2400,2400
 48113014407,Census Tract,2017,1,9,931.12,1097.624
 48113014407,Census Tract,2017,2,9,1982.06,2333.7
@@ -38914,6 +38976,7 @@ Wylie,City,2022,8,17,,
 48113014408,Census Tract,2022,6,6,2611.46,3426.01833333333
 48113014408,Census Tract,2022,7,4,2529.53,1905.46333333333
 48113014408,Census Tract,2022,8,2,1434.76,1434.76
+48113014408,Census Tract,2022,9,3,2653.17,2614.94333333333
 48113014409,Census Tract,2017,1,6,951.66,1006.895
 48113014409,Census Tract,2017,2,1,811,811
 48113014409,Census Tract,2017,3,5,892.74,914.348
@@ -39318,6 +39381,7 @@ Wylie,City,2022,8,17,,
 48113014701,Census Tract,2022,6,9,2236.66,3345.08222222222
 48113014701,Census Tract,2022,7,4,5244,4193
 48113014701,Census Tract,2022,8,5,1100,1131.25
+48113014701,Census Tract,2022,9,1,400,400
 48113014704,Census Tract,2017,1,2,345,345
 48113014704,Census Tract,2017,2,2,1115.305,1115.305
 48113014704,Census Tract,2017,3,2,,
@@ -39758,6 +39822,7 @@ Wylie,City,2022,8,17,,
 48113015207,Census Tract,2022,6,1,860,860
 48113015207,Census Tract,2022,7,1,3820,3820
 48113015207,Census Tract,2022,8,2,2275,2275
+48113015207,Census Tract,2022,9,2,4255,4255
 48113015208,Census Tract,2017,1,1,,
 48113015208,Census Tract,2017,2,3,880,880
 48113015208,Census Tract,2017,5,1,,
@@ -39790,6 +39855,7 @@ Wylie,City,2022,8,17,,
 48113015208,Census Tract,2022,4,1,1897,1897
 48113015208,Census Tract,2022,6,1,1200,1200
 48113015208,Census Tract,2022,8,1,3400,3400
+48113015208,Census Tract,2022,9,3,1224,1241.08666666667
 48113015303,Census Tract,2017,1,5,1332,1247.14
 48113015303,Census Tract,2017,10,2,1263.94,1263.94
 48113015303,Census Tract,2017,11,1,1020,1020
@@ -39829,6 +39895,7 @@ Wylie,City,2022,8,17,,
 48113015303,Census Tract,2022,5,1,,
 48113015303,Census Tract,2022,6,1,,
 48113015303,Census Tract,2022,7,2,2638.1,2638.1
+48113015303,Census Tract,2022,9,1,,
 48113015304,Census Tract,2017,1,1,,
 48113015304,Census Tract,2017,2,1,,
 48113015304,Census Tract,2017,3,1,1239.61,1239.61
@@ -40040,6 +40107,7 @@ Wylie,City,2022,8,17,,
 48113015403,Census Tract,2022,6,6,2425.69,2554.09166666667
 48113015403,Census Tract,2022,7,12,1287.5,3159.5925
 48113015403,Census Tract,2022,8,6,4842,5240.904
+48113015403,Census Tract,2022,9,6,3365.955,3362.84166666667
 48113015404,Census Tract,2017,1,12,1592.005,1636.41083333333
 48113015404,Census Tract,2017,2,9,1666,1655.66777777778
 48113015404,Census Tract,2017,3,1,2390,2390
@@ -40980,6 +41048,7 @@ Wylie,City,2022,8,17,,
 48113016412,Census Tract,2022,4,1,5860,5860
 48113016412,Census Tract,2022,5,1,6849,6849
 48113016412,Census Tract,2022,6,2,1295.5,1295.5
+48113016412,Census Tract,2022,9,1,626.67,626.67
 48113016414,Census Tract,2017,1,4,1231.5,1508.08
 48113016414,Census Tract,2017,2,2,1113,1113
 48113016414,Census Tract,2017,3,5,1111.83,1309.508
@@ -41234,6 +41303,7 @@ Wylie,City,2022,8,17,,
 48113016418,Census Tract,2022,6,2,5214.4,5214.4
 48113016418,Census Tract,2022,7,6,3504,3715.20666666667
 48113016418,Census Tract,2022,8,19,3897.37,3627.04157894737
+48113016418,Census Tract,2022,9,1,3919.19,3919.19
 48113016419,Census Tract,2017,1,4,2249.5,2249.5
 48113016419,Census Tract,2017,3,1,,
 48113016419,Census Tract,2017,5,1,1615,1615
@@ -41795,6 +41865,7 @@ Wylie,City,2022,8,17,,
 48113016522,Census Tract,2022,6,11,3550,4033.46272727273
 48113016522,Census Tract,2022,7,15,3549.79,4146.17133333333
 48113016522,Census Tract,2022,8,7,2946,2571.28571428571
+48113016522,Census Tract,2022,9,1,1700,1700
 48113016524,Census Tract,2017,1,2,1215.845,1215.845
 48113016524,Census Tract,2017,2,3,,
 48113016524,Census Tract,2017,3,1,13300,13300
@@ -41961,6 +42032,7 @@ Wylie,City,2022,8,17,,
 48113016527,Census Tract,2022,5,1,1700,1700
 48113016527,Census Tract,2022,6,4,5114.84,5996.7325
 48113016527,Census Tract,2022,7,1,2700,2700
+48113016527,Census Tract,2022,9,1,375,375
 48113016528,Census Tract,2017,1,1,,
 48113016528,Census Tract,2017,2,2,,
 48113016528,Census Tract,2017,3,1,,
@@ -42044,6 +42116,7 @@ Wylie,City,2022,8,17,,
 48113016529,Census Tract,2022,2,3,2895,2895
 48113016529,Census Tract,2022,4,1,4947,4947
 48113016529,Census Tract,2022,6,2,7159.34,7159.34
+48113016529,Census Tract,2022,9,1,4802.09,4802.09
 48113016530,Census Tract,2017,1,2,1100,1100
 48113016530,Census Tract,2017,2,3,2600,2010.12
 48113016530,Census Tract,2017,3,2,2095.835,2095.835
@@ -42097,6 +42170,7 @@ Wylie,City,2022,8,17,,
 48113016530,Census Tract,2022,5,2,6996.12,6996.12
 48113016530,Census Tract,2022,7,1,3408.8,3408.8
 48113016530,Census Tract,2022,8,2,3294.09,3294.09
+48113016530,Census Tract,2022,9,2,2734.51,2734.51
 48113016531,Census Tract,2017,1,3,4482.5,4482.5
 48113016531,Census Tract,2017,2,2,1400,1400
 48113016531,Census Tract,2017,3,1,4300,4300
@@ -42194,6 +42268,7 @@ Wylie,City,2022,8,17,,
 48113016532,Census Tract,2022,5,3,4645.475,4645.475
 48113016532,Census Tract,2022,6,2,3475.5,3475.5
 48113016532,Census Tract,2022,8,1,,
+48113016532,Census Tract,2022,9,1,,
 48113016533,Census Tract,2017,1,2,1875,1875
 48113016533,Census Tract,2017,3,1,800,800
 48113016533,Census Tract,2017,4,2,1441,1441
@@ -42449,7 +42524,7 @@ Wylie,City,2022,8,17,,
 48113016607,Census Tract,2022,6,33,1767.935,2599.8234375
 48113016607,Census Tract,2022,7,40,1405.2,2090.88897435897
 48113016607,Census Tract,2022,8,56,4040,3934.95571428571
-48113016607,Census Tract,2022,9,5,4991.6,5741.14
+48113016607,Census Tract,2022,9,13,2935,3551.86846153846
 48113016610,Census Tract,2017,1,15,1043.65,1112.37666666667
 48113016610,Census Tract,2017,2,14,1093.12,1700.13538461538
 48113016610,Census Tract,2017,3,6,1350,1432.698
@@ -42515,7 +42590,7 @@ Wylie,City,2022,8,17,,
 48113016610,Census Tract,2022,6,8,2690,2615.71428571429
 48113016610,Census Tract,2022,7,17,2130,1734.52941176471
 48113016610,Census Tract,2022,8,11,2381,2966.805
-48113016610,Census Tract,2022,9,2,3361.5,3361.5
+48113016610,Census Tract,2022,9,3,3840,4194.33333333333
 48113016615,Census Tract,2017,1,4,2173.68,2173.68
 48113016615,Census Tract,2017,3,5,1700,2148.33333333333
 48113016615,Census Tract,2017,4,7,1000,1033.998
@@ -42638,6 +42713,7 @@ Wylie,City,2022,8,17,,
 48113016616,Census Tract,2022,6,6,5266.11,4998.60666666667
 48113016616,Census Tract,2022,7,7,4191.6,4650.694
 48113016616,Census Tract,2022,8,5,2966,3889.034
+48113016616,Census Tract,2022,9,1,4269.8,4269.8
 48113016617,Census Tract,2017,1,2,8367.86,8367.86
 48113016617,Census Tract,2017,2,1,1806.94,1806.94
 48113016617,Census Tract,2017,4,1,7490,7490
@@ -42746,7 +42822,7 @@ Wylie,City,2022,8,17,,
 48113016618,Census Tract,2022,6,18,2340,2704.00647058824
 48113016618,Census Tract,2022,7,6,3492.5,3325.42
 48113016618,Census Tract,2022,8,13,2490,2894
-48113016618,Census Tract,2022,9,5,3863.83,4109.098
+48113016618,Census Tract,2022,9,6,3863.83,4109.098
 48113016619,Census Tract,2017,1,16,1109.67,1177.1525
 48113016619,Census Tract,2017,2,14,1346.23,1229.8325
 48113016619,Census Tract,2017,3,8,1334.965,1440.97875
@@ -42875,6 +42951,7 @@ Wylie,City,2022,8,17,,
 48113016620,Census Tract,2022,6,5,3570,3862.104
 48113016620,Census Tract,2022,7,6,2897.5,3009.5
 48113016620,Census Tract,2022,8,4,2400,2711.3325
+48113016620,Census Tract,2022,9,2,3664.315,3664.315
 48113016620,Census Tract,,,1,2592.89,2592.89
 48113016621,Census Tract,2017,1,18,935,1042.33823529412
 48113016621,Census Tract,2017,2,36,935,1481.18290322581
@@ -42941,7 +43018,7 @@ Wylie,City,2022,8,17,,
 48113016621,Census Tract,2022,6,6,3150.98,3206.715
 48113016621,Census Tract,2022,7,9,1824,2935.26428571429
 48113016621,Census Tract,2022,8,4,3887.465,3887.465
-48113016621,Census Tract,2022,9,2,1239.88,1239.88
+48113016621,Census Tract,2022,9,3,2359.94,2359.94
 48113016622,Census Tract,2017,1,2,485,485
 48113016622,Census Tract,2017,2,4,1121,1121
 48113016622,Census Tract,2017,3,6,1675,3285.156
@@ -43061,6 +43138,7 @@ Wylie,City,2022,8,17,,
 48113016623,Census Tract,2022,6,9,2490,3661.37222222222
 48113016623,Census Tract,2022,7,14,1810,2746.78333333333
 48113016623,Census Tract,2022,8,8,1371,1957.6075
+48113016623,Census Tract,2022,9,2,1944.9,1944.9
 48113016624,Census Tract,2017,1,5,1691.67,1718.474
 48113016624,Census Tract,2017,2,2,2457.875,2457.875
 48113016624,Census Tract,2017,3,3,1605,1883.32666666667
@@ -43117,7 +43195,7 @@ Wylie,City,2022,8,17,,
 48113016624,Census Tract,2022,6,2,5402.72,5402.72
 48113016624,Census Tract,2022,7,3,3375,3925.26666666667
 48113016624,Census Tract,2022,8,2,7032.455,7032.455
-48113016624,Census Tract,2022,9,1,2240.62,2240.62
+48113016624,Census Tract,2022,9,2,3581.915,3581.915
 48113016626,Census Tract,2017,1,9,1807.875,2447.01
 48113016626,Census Tract,2017,2,3,1877.5,1877.5
 48113016626,Census Tract,2017,3,4,2345.885,2645.08
@@ -43289,7 +43367,7 @@ Wylie,City,2022,8,17,,
 48113016628,Census Tract,2022,6,12,2471.075,3014.62416666667
 48113016628,Census Tract,2022,7,11,3670,3505.21636363636
 48113016628,Census Tract,2022,8,14,3868,3788.16153846154
-48113016628,Census Tract,2022,9,2,3431.5,3431.5
+48113016628,Census Tract,2022,9,7,3805,3509.74714285714
 48113016629,Census Tract,2017,1,9,1094.5,2485.97875
 48113016629,Census Tract,2017,2,10,967.5,1046.726
 48113016629,Census Tract,2017,3,5,604.96,802.758
@@ -43410,6 +43488,7 @@ Wylie,City,2022,8,17,,
 48113016630,Census Tract,2022,6,17,3175,3472.705
 48113016630,Census Tract,2022,7,11,2876,2713.48818181818
 48113016630,Census Tract,2022,8,15,2950,3095.046
+48113016630,Census Tract,2022,9,1,2171.64,2171.64
 48113016631,Census Tract,2017,1,2,1652.085,1652.085
 48113016631,Census Tract,2017,2,2,,
 48113016631,Census Tract,2017,3,1,,
@@ -43515,6 +43594,7 @@ Wylie,City,2022,8,17,,
 48113016632,Census Tract,2022,6,3,4484.52,4484.52
 48113016632,Census Tract,2022,7,3,4942.75,4942.75
 48113016632,Census Tract,2022,8,3,1999,2321.79666666667
+48113016632,Census Tract,2022,9,1,2132.39,2132.39
 48113016633,Census Tract,2017,1,9,2460,3101.206
 48113016633,Census Tract,2017,2,3,2401.275,2401.275
 48113016633,Census Tract,2017,3,3,891.915,891.915
@@ -43690,7 +43770,7 @@ Wylie,City,2022,8,17,,
 48113016635,Census Tract,2022,6,15,1846.55,2809.50357142857
 48113016635,Census Tract,2022,7,4,1757,1737.25
 48113016635,Census Tract,2022,8,9,1586,1827.43333333333
-48113016635,Census Tract,2022,9,1,2683.68,2683.68
+48113016635,Census Tract,2022,9,13,8040,7294.89307692308
 48113016636,Census Tract,2017,1,3,976,1315.09666666667
 48113016636,Census Tract,2017,2,2,1420,1420
 48113016636,Census Tract,2017,3,3,,
@@ -43748,6 +43828,7 @@ Wylie,City,2022,8,17,,
 48113016636,Census Tract,2022,6,2,3356,3356
 48113016636,Census Tract,2022,7,2,3277.78,3277.78
 48113016636,Census Tract,2022,8,3,2620,2511.66666666667
+48113016636,Census Tract,2022,9,1,9000,9000
 48113016637,Census Tract,2017,1,3,943.77,943.77
 48113016637,Census Tract,2017,2,2,,
 48113016637,Census Tract,2017,5,2,,
@@ -43797,6 +43878,7 @@ Wylie,City,2022,8,17,,
 48113016637,Census Tract,2022,6,3,7016,6919.5
 48113016637,Census Tract,2022,7,2,1769.225,1769.225
 48113016637,Census Tract,2022,8,2,4396.79,4396.79
+48113016637,Census Tract,2022,9,1,2439.16,2439.16
 48113016638,Census Tract,2017,1,4,1519.535,1499.0675
 48113016638,Census Tract,2017,2,4,1602.25,1592.8275
 48113016638,Census Tract,2017,3,3,1238.4,1349.41333333333
@@ -44043,7 +44125,7 @@ Wylie,City,2022,8,17,,
 48113016707,Census Tract,2022,6,25,1520,1856.01727272727
 48113016707,Census Tract,2022,7,24,1363.87,1737.50916666667
 48113016707,Census Tract,2022,8,11,1563.305,2612.382
-48113016707,Census Tract,2022,9,1,,
+48113016707,Census Tract,2022,9,3,2683.24,2683.24
 48113016708,Census Tract,2017,1,4,1445.5,1636.1875
 48113016708,Census Tract,2017,2,8,1400,1760.36571428571
 48113016708,Census Tract,2017,3,3,1450,1300.45
@@ -44107,6 +44189,7 @@ Wylie,City,2022,8,17,,
 48113016708,Census Tract,2022,6,5,3645,3545.408
 48113016708,Census Tract,2022,7,6,6075.81,4767.442
 48113016708,Census Tract,2022,8,5,1720,2313.33333333333
+48113016708,Census Tract,2022,9,6,2516.81,4105.73166666667
 48113016709,Census Tract,2017,1,12,811,1149.33333333333
 48113016709,Census Tract,2017,2,14,2035.565,2430.95375
 48113016709,Census Tract,2017,3,10,1088,1405.5
@@ -44298,6 +44381,7 @@ Wylie,City,2022,8,17,,
 48113016711,Census Tract,2022,6,5,2100,2770.11333333333
 48113016711,Census Tract,2022,7,1,5334,5334
 48113016711,Census Tract,2022,8,2,150,150
+48113016711,Census Tract,2022,9,1,,
 48113016802,Census Tract,2017,1,3,3190,3411.66666666667
 48113016802,Census Tract,2017,2,1,,
 48113016802,Census Tract,2017,3,3,1313.5,1313.5
@@ -44416,6 +44500,7 @@ Wylie,City,2022,8,17,,
 48113016803,Census Tract,2022,6,11,1015,1150.847
 48113016803,Census Tract,2022,7,13,900,1304.86230769231
 48113016803,Census Tract,2022,8,12,1095.495,1703.7625
+48113016803,Census Tract,2022,9,1,5453.53,5453.53
 48113016805,Census Tract,2017,1,5,140.31,140.31
 48113016805,Census Tract,2017,2,8,1370.29,1344.465
 48113016805,Census Tract,2017,3,8,1480,1483.694
@@ -44479,7 +44564,7 @@ Wylie,City,2022,8,17,,
 48113016805,Census Tract,2022,6,19,1533.26,1939.99052631579
 48113016805,Census Tract,2022,7,33,2370,2495.47451612903
 48113016805,Census Tract,2022,8,24,2025,2751.46565217391
-48113016805,Census Tract,2022,9,4,1170,1156.25
+48113016805,Census Tract,2022,9,6,1262.5,3268.28833333333
 48113016806,Census Tract,2017,1,11,1508,1643.33333333333
 48113016806,Census Tract,2017,2,12,1426,1814.1
 48113016806,Census Tract,2017,3,6,1209.5,1305.1375
@@ -44546,7 +44631,7 @@ Wylie,City,2022,8,17,,
 48113016806,Census Tract,2022,6,14,4400,4835.08153846154
 48113016806,Census Tract,2022,7,14,4961.175,5381.185
 48113016806,Census Tract,2022,8,5,4794,5229.0375
-48113016806,Census Tract,2022,9,1,1806.99,1806.99
+48113016806,Census Tract,2022,9,4,2914.805,2824.55
 48113016902,Census Tract,2017,1,9,1124.285,1181.3475
 48113016902,Census Tract,2017,2,3,,
 48113016902,Census Tract,2017,3,1,1107,1107
@@ -44676,6 +44761,7 @@ Wylie,City,2022,8,17,,
 48113016903,Census Tract,2022,6,30,1060,1151.58766666667
 48113016903,Census Tract,2022,7,19,920.405,1111.25142857143
 48113016903,Census Tract,2022,8,16,1142.5,1220.9325
+48113016903,Census Tract,2022,9,1,,
 48113017005,Census Tract,2017,1,11,887.5,1322.97625
 48113017005,Census Tract,2017,2,15,925,1082.87916666667
 48113017005,Census Tract,2017,3,11,833,2125.86727272727
@@ -44788,6 +44874,7 @@ Wylie,City,2022,8,17,,
 48113017006,Census Tract,2022,5,1,,
 48113017006,Census Tract,2022,6,3,1250.1,2129.65
 48113017006,Census Tract,2022,8,3,1060,1060
+48113017006,Census Tract,2022,9,1,1400.59,1400.59
 48113017007,Census Tract,2017,1,12,1276.315,1538.16875
 48113017007,Census Tract,2017,2,2,1057.77,1057.77
 48113017007,Census Tract,2017,3,5,1402.58,1402.58
@@ -44852,6 +44939,7 @@ Wylie,City,2022,8,17,,
 48113017007,Census Tract,2022,6,5,1666,1896.6
 48113017007,Census Tract,2022,7,9,2306,2623.4225
 48113017007,Census Tract,2022,8,9,2395,3137.47555555556
+48113017007,Census Tract,2022,9,3,2164.13,2492.77333333333
 48113017008,Census Tract,2017,1,3,950,918
 48113017008,Census Tract,2017,2,2,1101.53,1101.53
 48113017008,Census Tract,2017,3,2,1851.5,1851.5
@@ -45227,6 +45315,7 @@ Wylie,City,2022,8,17,,
 48113017201,Census Tract,2022,6,16,1145,1414.466
 48113017201,Census Tract,2022,7,11,902,1251.8175
 48113017201,Census Tract,2022,8,11,1199.21,1335.917
+48113017201,Census Tract,2022,9,2,2877.5,2877.5
 48113017203,Census Tract,2017,1,6,1254.5,1254.5
 48113017203,Census Tract,2017,2,6,965.44,1024.986
 48113017203,Census Tract,2017,3,3,828.5,828.5
@@ -45569,7 +45658,7 @@ Wylie,City,2022,8,17,,
 48113017311,Census Tract,2022,6,2,2250,2250
 48113017311,Census Tract,2022,7,2,2450,2450
 48113017311,Census Tract,2022,8,7,1795.93,2640.94142857143
-48113017311,Census Tract,2022,9,3,1101,1542
+48113017311,Census Tract,2022,9,4,1735.16,1748.83
 48113017312,Census Tract,2017,1,3,1734.25,1734.25
 48113017312,Census Tract,2017,3,1,1372,1372
 48113017312,Census Tract,2017,5,1,990,990
@@ -46118,7 +46207,7 @@ Wylie,City,2022,8,17,,
 48113017606,Census Tract,2022,6,2,3722.5,3722.5
 48113017606,Census Tract,2022,7,2,2800.625,2800.625
 48113017606,Census Tract,2022,8,1,2255,2255
-48113017606,Census Tract,2022,9,1,4000,4000
+48113017606,Census Tract,2022,9,2,4280,4280
 48113017703,Census Tract,2017,1,5,893,2772.534
 48113017703,Census Tract,2017,2,6,1349,1283.21666666667
 48113017703,Census Tract,2017,3,1,1200,1200
@@ -46176,7 +46265,7 @@ Wylie,City,2022,8,17,,
 48113017703,Census Tract,2022,6,9,1640,2440.23444444444
 48113017703,Census Tract,2022,7,2,2305,2305
 48113017703,Census Tract,2022,8,5,2544.5,2782.886
-48113017703,Census Tract,2022,9,1,1465,1465
+48113017703,Census Tract,2022,9,2,1465,1465
 48113017704,Census Tract,2017,1,8,1061.6,1523.08714285714
 48113017704,Census Tract,2017,2,5,993.54,1135.212
 48113017704,Census Tract,2017,3,2,1660,1660
@@ -46694,6 +46783,7 @@ Wylie,City,2022,8,17,,
 48113017814,Census Tract,2022,3,2,3786,3786
 48113017814,Census Tract,2022,7,6,3133,3616.83333333333
 48113017814,Census Tract,2022,8,7,5160,3980.62857142857
+48113017814,Census Tract,2022,9,1,9293.33,9293.33
 48113017815,Census Tract,2017,1,5,1650.89,2008.178
 48113017815,Census Tract,2017,2,3,1623,1623
 48113017815,Census Tract,2017,3,6,1452.68,1993.99333333333
@@ -46811,6 +46901,7 @@ Wylie,City,2022,8,17,,
 48113017816,Census Tract,2022,6,8,2470,3321.22571428571
 48113017816,Census Tract,2022,7,5,840,853.333333333333
 48113017816,Census Tract,2022,8,5,1225,1280.43
+48113017816,Census Tract,2022,9,3,2540,3043.66666666667
 48113017817,Census Tract,2017,1,4,943,895.95
 48113017817,Census Tract,2017,2,6,842,898.055
 48113017817,Census Tract,2017,3,4,839.97,832
@@ -46939,6 +47030,7 @@ Wylie,City,2022,8,17,,
 48113017818,Census Tract,2022,6,17,2086.3,2710.03882352941
 48113017818,Census Tract,2022,7,10,1547,2510.53555555556
 48113017818,Census Tract,2022,8,5,2676,2267.6
+48113017818,Census Tract,2022,9,5,2162,2106.4
 48113017819,Census Tract,2017,1,19,945,1174.26473684211
 48113017819,Census Tract,2017,2,11,792,851.74
 48113017819,Census Tract,2017,3,7,823.06,1013.43
@@ -47000,7 +47092,7 @@ Wylie,City,2022,8,17,,
 48113017819,Census Tract,2022,6,30,1952.075,2179.48866666667
 48113017819,Census Tract,2022,7,18,1792.095,1871.02444444444
 48113017819,Census Tract,2022,8,14,2673.29,2899.12333333333
-48113017819,Census Tract,2022,9,4,2525,2617.5
+48113017819,Census Tract,2022,9,8,2242.435,2289.78375
 48113017820,Census Tract,2017,1,2,2400,2400
 48113017820,Census Tract,2017,2,4,1400,1441
 48113017820,Census Tract,2017,3,3,1480,1210
@@ -47287,6 +47379,7 @@ Wylie,City,2022,8,17,,
 48113018105,Census Tract,2022,5,2,1250,1250
 48113018105,Census Tract,2022,7,6,1200,1451.426
 48113018105,Census Tract,2022,8,5,1000,1577.91
+48113018105,Census Tract,2022,9,1,4800,4800
 48113018110,Census Tract,2017,1,3,2157.98,2157.98
 48113018110,Census Tract,2017,2,1,5000,5000
 48113018110,Census Tract,2017,6,1,860,860
@@ -47382,7 +47475,7 @@ Wylie,City,2022,8,17,,
 48113018111,Census Tract,2022,6,2,2975,2975
 48113018111,Census Tract,2022,7,10,1562.5,2067.125
 48113018111,Census Tract,2022,8,5,1360,2078
-48113018111,Census Tract,2022,9,1,1530,1530
+48113018111,Census Tract,2022,9,4,5425,5413.92
 48113018120,Census Tract,2017,1,1,2444,2444
 48113018120,Census Tract,2017,3,1,1165,1165
 48113018120,Census Tract,2017,5,2,1000,1000
@@ -47471,6 +47564,7 @@ Wylie,City,2022,8,17,,
 48113018121,Census Tract,2022,6,1,2300,2300
 48113018121,Census Tract,2022,7,3,2375,2705
 48113018121,Census Tract,2022,8,1,,
+48113018121,Census Tract,2022,9,1,3854,3854
 48113018126,Census Tract,2017,1,2,40,40
 48113018126,Census Tract,2017,2,2,3763.725,3763.725
 48113018126,Census Tract,2017,3,3,1165,1860
@@ -47615,6 +47709,7 @@ Wylie,City,2022,8,17,,
 48113018128,Census Tract,2022,6,33,1510,1807.20052631579
 48113018128,Census Tract,2022,7,16,1208.495,1228.61714285714
 48113018128,Census Tract,2022,8,17,1550,2045.9375
+48113018128,Census Tract,2022,9,3,3726.38,3726.38
 48113018129,Census Tract,2017,1,1,1062.5,1062.5
 48113018129,Census Tract,2017,3,3,675,741.56
 48113018129,Census Tract,2017,4,3,489.5,489.5
@@ -47951,6 +48046,7 @@ Wylie,City,2022,8,17,,
 48113018135,Census Tract,2022,6,16,1440.09,1831.51285714286
 48113018135,Census Tract,2022,7,5,2432,3587.5
 48113018135,Census Tract,2022,8,1,,
+48113018135,Census Tract,2022,9,1,3390,3390
 48113018137,Census Tract,2017,1,4,815,913.696666666667
 48113018137,Census Tract,2017,2,5,1102,1907.37
 48113018137,Census Tract,2017,3,3,1130.54,1043.19
@@ -48015,6 +48111,7 @@ Wylie,City,2022,8,17,,
 48113018137,Census Tract,2022,6,6,1345,1263.022
 48113018137,Census Tract,2022,7,11,1200,2478.02363636364
 48113018137,Census Tract,2022,8,5,1185,1262.75
+48113018137,Census Tract,2022,9,1,2220,2220
 48113018138,Census Tract,2017,1,10,868,890.1
 48113018138,Census Tract,2017,2,8,980,994.625
 48113018138,Census Tract,2017,3,4,1280.5,1361.5
@@ -48469,7 +48566,7 @@ Wylie,City,2022,8,17,,
 48113018149,Census Tract,2021,5,1,4350,4350
 48113018149,Census Tract,2022,3,1,2130,2130
 48113018149,Census Tract,2022,8,2,3747.5,3747.5
-48113018149,Census Tract,2022,9,1,2095,2095
+48113018149,Census Tract,2022,9,2,2095,2095
 48113018150,Census Tract,2017,1,3,2305,2516.66666666667
 48113018150,Census Tract,2017,2,2,2045,2045
 48113018150,Census Tract,2017,3,3,1948.61,1959.07333333333
@@ -48944,6 +49041,7 @@ Wylie,City,2022,8,17,,
 48113018204,Census Tract,2022,5,1,1800,1800
 48113018204,Census Tract,2022,6,2,7750,7750
 48113018204,Census Tract,2022,7,2,3090,3090
+48113018204,Census Tract,2022,9,1,2940,2940
 48113018204,Census Tract,2022,10,1,5550,5550
 48113018205,Census Tract,2017,1,11,845,1075.3
 48113018205,Census Tract,2017,2,14,888.61,864.102857142857
@@ -49106,6 +49204,7 @@ Wylie,City,2022,8,17,,
 48113018300,Census Tract,2022,6,4,1221,1265.33333333333
 48113018300,Census Tract,2022,7,3,2275,2275
 48113018300,Census Tract,2022,8,3,2041.71,2041.71
+48113018300,Census Tract,2022,9,1,825,825
 48113018401,Census Tract,2017,1,3,1051.27,1220.75666666667
 48113018401,Census Tract,2017,3,2,3725.75,3725.75
 48113018401,Census Tract,2017,4,3,1261,1000.30666666667
@@ -49166,6 +49265,7 @@ Wylie,City,2022,8,17,,
 48113018401,Census Tract,2022,6,1,1194,1194
 48113018401,Census Tract,2022,7,7,1922,1802.97
 48113018401,Census Tract,2022,8,1,1500,1500
+48113018401,Census Tract,2022,9,1,1200,1200
 48113018402,Census Tract,2017,1,1,344.9,344.9
 48113018402,Census Tract,2017,2,1,600,600
 48113018402,Census Tract,2017,3,1,416.66,416.66
@@ -49375,7 +49475,7 @@ Wylie,City,2022,8,17,,
 48113018505,Census Tract,2022,6,21,2685.65,2841.99523809524
 48113018505,Census Tract,2022,7,40,2250,2596.16384615385
 48113018505,Census Tract,2022,8,35,1603.67,2162.05314285714
-48113018505,Census Tract,2022,9,2,3157.5,3157.5
+48113018505,Census Tract,2022,9,3,2865,2775
 48113018506,Census Tract,2017,1,44,924.605,1008.75380952381
 48113018506,Census Tract,2017,2,31,913.5,1125.16666666667
 48113018506,Census Tract,2017,3,62,699,830.854677419355
@@ -49441,7 +49541,7 @@ Wylie,City,2022,8,17,,
 48113018506,Census Tract,2022,6,42,1813,1940.9495
 48113018506,Census Tract,2022,7,19,1855.72,1964.60611111111
 48113018506,Census Tract,2022,8,15,2800,2987.84615384615
-48113018506,Census Tract,2022,9,6,3360.365,3297.12166666667
+48113018506,Census Tract,2022,9,12,3756.81,3709.20416666667
 48113018507,Census Tract,2017,1,22,1126,1253.27272727273
 48113018507,Census Tract,2017,2,29,1061.49,1218.48777777778
 48113018507,Census Tract,2017,3,30,834.05,1148.61857142857
@@ -49615,6 +49715,7 @@ Wylie,City,2022,8,17,,
 48113018600,Census Tract,2022,5,1,,
 48113018600,Census Tract,2022,6,2,1232.5,1232.5
 48113018600,Census Tract,2022,8,1,,
+48113018600,Census Tract,2022,9,1,4575,4575
 48113018700,Census Tract,2017,1,6,795,835.834
 48113018700,Census Tract,2017,2,5,900,1088.874
 48113018700,Census Tract,2017,3,5,1387.5,1793.75
@@ -49842,7 +49943,7 @@ Wylie,City,2022,8,17,,
 48113018900,Census Tract,2022,6,16,1037,1168.69857142857
 48113018900,Census Tract,2022,7,14,1022,1411.60357142857
 48113018900,Census Tract,2022,8,13,1319.755,1682.8175
-48113018900,Census Tract,2022,9,1,,
+48113018900,Census Tract,2022,9,4,2065,2786.16
 48113018900,Census Tract,,,1,1400,1400
 48113019013,Census Tract,2017,1,6,742.5,1086.045
 48113019013,Census Tract,2017,2,3,762.42,762.42
@@ -49907,6 +50008,7 @@ Wylie,City,2022,8,17,,
 48113019013,Census Tract,2022,6,2,2684.67,2684.67
 48113019013,Census Tract,2022,7,4,1385.07,1758.35666666667
 48113019013,Census Tract,2022,8,14,1055,1516.56
+48113019013,Census Tract,2022,9,2,990.54,990.54
 48113019016,Census Tract,2017,1,1,645,645
 48113019016,Census Tract,2017,2,1,,
 48113019016,Census Tract,2017,4,1,674.09,674.09
@@ -49964,6 +50066,7 @@ Wylie,City,2022,8,17,,
 48113019016,Census Tract,2022,6,8,1280.83,1350.47
 48113019016,Census Tract,2022,7,5,1210,1248.65
 48113019016,Census Tract,2022,8,13,1486.09,1607.22444444444
+48113019016,Census Tract,2022,9,1,,
 48113019018,Census Tract,2017,1,6,1317.61,2116.53666666667
 48113019018,Census Tract,2017,2,15,1920.5,2387.9375
 48113019018,Census Tract,2017,3,6,1107.5,2451
@@ -50431,6 +50534,7 @@ Wylie,City,2022,8,17,,
 48113019028,Census Tract,2022,4,1,2947.87,2947.87
 48113019028,Census Tract,2022,6,3,4200,4200
 48113019028,Census Tract,2022,7,2,2736,2736
+48113019028,Census Tract,2022,9,1,2431.45,2431.45
 48113019029,Census Tract,2017,1,6,977,1947.58666666667
 48113019029,Census Tract,2017,2,3,1057,1085.66666666667
 48113019029,Census Tract,2017,3,5,3007.13,3392.726
@@ -50489,7 +50593,7 @@ Wylie,City,2022,8,17,,
 48113019029,Census Tract,2022,6,1,2520,2520
 48113019029,Census Tract,2022,7,2,7437.99,7437.99
 48113019029,Census Tract,2022,8,11,3752,4022.556
-48113019029,Census Tract,2022,9,5,2676,2459.888
+48113019029,Census Tract,2022,9,6,2943.22,2620.07333333333
 48113019031,Census Tract,2017,5,1,1049.56,1049.56
 48113019031,Census Tract,2017,7,2,1977.145,1977.145
 48113019031,Census Tract,2017,8,1,1227,1227
@@ -50624,6 +50728,7 @@ Wylie,City,2022,8,17,,
 48113019033,Census Tract,2022,1,1,1500,1500
 48113019033,Census Tract,2022,2,2,1350,1350
 48113019033,Census Tract,2022,8,1,2766.16,2766.16
+48113019033,Census Tract,2022,9,1,3450,3450
 48113019034,Census Tract,2017,1,29,1927,2561.92125
 48113019034,Census Tract,2017,2,10,891.96,1069.314
 48113019034,Census Tract,2017,3,9,900,1069.16
@@ -50685,6 +50790,7 @@ Wylie,City,2022,8,17,,
 48113019034,Census Tract,2022,6,5,2308.5,2654.25
 48113019034,Census Tract,2022,7,1,1440,1440
 48113019034,Census Tract,2022,8,26,4786.62,4383.2624
+48113019034,Census Tract,2022,9,2,1600,1600
 48113019035,Census Tract,2017,1,46,789.75,900.340454545455
 48113019035,Census Tract,2017,2,31,912.5,1196.52366666667
 48113019035,Census Tract,2017,3,25,785,856.791666666667
@@ -51309,6 +51415,7 @@ Wylie,City,2022,8,17,,
 48113019052,Census Tract,2022,5,2,2988.95,2988.95
 48113019052,Census Tract,2022,7,1,3174,3174
 48113019052,Census Tract,2022,8,3,3407.52,3088.05666666667
+48113019052,Census Tract,2022,9,2,3325.42,3325.42
 48113019053,Census Tract,2017,2,2,1500.275,1500.275
 48113019053,Census Tract,2017,6,4,1864,1850
 48113019053,Census Tract,2017,7,5,2056,1939.6
@@ -51363,6 +51470,7 @@ Wylie,City,2022,8,17,,
 48113019053,Census Tract,2022,6,3,1395,1496.66666666667
 48113019053,Census Tract,2022,7,2,1585,1585
 48113019053,Census Tract,2022,8,11,1780,2427.18181818182
+48113019053,Census Tract,2022,9,1,9219.76,9219.76
 48113019101,Census Tract,2017,1,1,2420,2420
 48113019101,Census Tract,2017,2,2,2119.67,2119.67
 48113019101,Census Tract,2017,4,1,1100,1100
@@ -51699,7 +51807,7 @@ Wylie,City,2022,8,17,,
 48113019211,Census Tract,2022,6,5,2111.41,2114.064
 48113019211,Census Tract,2022,7,9,2701.68,3403.75666666667
 48113019211,Census Tract,2022,8,4,2713.5,2481.75
-48113019211,Census Tract,2022,9,1,1245,1245
+48113019211,Census Tract,2022,9,4,1370,1388.75
 48113019212,Census Tract,2017,1,1,1200,1200
 48113019212,Census Tract,2017,2,3,875,925
 48113019212,Census Tract,2017,3,4,655,690
@@ -51744,6 +51852,7 @@ Wylie,City,2022,8,17,,
 48113019212,Census Tract,2022,6,6,975,998.518333333333
 48113019212,Census Tract,2022,7,3,1137.46,1083.58
 48113019212,Census Tract,2022,8,3,1104.58,1092.41666666667
+48113019212,Census Tract,2022,9,3,1114.665,1114.665
 48113019213,Census Tract,2017,1,4,889.6,889.6
 48113019213,Census Tract,2017,2,5,881,955.174
 48113019213,Census Tract,2017,3,2,1292.5,1292.5
@@ -51802,7 +51911,7 @@ Wylie,City,2022,8,17,,
 48113019213,Census Tract,2022,6,2,2919.6,2919.6
 48113019213,Census Tract,2022,7,3,3325.46,3326.85666666667
 48113019213,Census Tract,2022,8,11,1352.625,1802.017
-48113019213,Census Tract,2022,9,6,258.39,656.686666666667
+48113019213,Census Tract,2022,9,9,1250,1002.23222222222
 48113019214,Census Tract,2017,1,10,565.125,712.541666666667
 48113019214,Census Tract,2017,2,3,434.57,434.57
 48113019214,Census Tract,2017,3,2,591.61,591.61
@@ -52291,7 +52400,7 @@ Wylie,City,2022,8,17,,
 48113020300,Census Tract,2022,6,20,1859,1655.62166666667
 48113020300,Census Tract,2022,7,36,3032.5,3506.38777777778
 48113020300,Census Tract,2022,8,4,1280,1359
-48113020300,Census Tract,2022,9,2,2565,2565
+48113020300,Census Tract,2022,9,4,3946.875,3946.875
 48113020401,Census Tract,2017,1,2,1525.5,1525.5
 48113020401,Census Tract,2017,2,6,1700,1661
 48113020401,Census Tract,2017,3,1,1720,1720
@@ -52352,7 +52461,7 @@ Wylie,City,2022,8,17,,
 48113020401,Census Tract,2022,6,2,3942.5,3942.5
 48113020401,Census Tract,2022,7,8,4675,4641.425
 48113020401,Census Tract,2022,8,5,3963.405,3968.3325
-48113020401,Census Tract,2022,9,9,3616.235,3760.90125
+48113020401,Census Tract,2022,9,10,3376,3718.13444444444
 48113020402,Census Tract,2017,1,16,1528,1472.30769230769
 48113020402,Census Tract,2017,2,13,1697.5,1973.61416666667
 48113020402,Census Tract,2017,3,11,1794.345,1677.25666666667
@@ -52417,7 +52526,7 @@ Wylie,City,2022,8,17,,
 48113020402,Census Tract,2022,6,34,2488,3231.46545454545
 48113020402,Census Tract,2022,7,23,5163,5362.72454545455
 48113020402,Census Tract,2022,8,20,2950,3239.621
-48113020402,Census Tract,2022,9,1,2989,2989
+48113020402,Census Tract,2022,9,10,3220.335,3733.546
 48113020500,Census Tract,2017,1,1,235,235
 48113020500,Census Tract,2017,2,5,397,1002
 48113020500,Census Tract,2017,3,9,591.7,559.9
@@ -52464,10 +52573,12 @@ Wylie,City,2022,8,17,,
 48113020500,Census Tract,2022,3,1,,
 48113020500,Census Tract,2022,4,1,,
 48113020500,Census Tract,2022,6,5,7400,7400
+48113020500,Census Tract,2022,9,1,,
 48113020600,Census Tract,2018,4,1,,
 48113020600,Census Tract,2018,5,1,,
 48113020600,Census Tract,2019,3,1,,
 48113020600,Census Tract,2022,7,1,,
+48113020600,Census Tract,2022,9,1,,
 48113020700,Census Tract,2017,1,4,2578,2578
 48113020700,Census Tract,2017,2,1,1919.64,1919.64
 48113020700,Census Tract,2017,3,3,1491.83,1491.83
@@ -52596,7 +52707,7 @@ Wylie,City,2022,8,17,,
 48113020800,Census Tract,2022,6,8,1780,2020.85714285714
 48113020800,Census Tract,2022,7,40,3126,3577.00225806452
 48113020800,Census Tract,2022,8,15,3555,3050.22727272727
-48113020800,Census Tract,2022,9,9,5034,5141.93888888889
+48113020800,Census Tract,2022,9,10,5540.93,5357.745
 48113020900,Census Tract,2017,1,18,1096,1377.52941176471
 48113020900,Census Tract,2017,2,9,1322.975,2215.24375
 48113020900,Census Tract,2017,3,15,850,1095.33333333333
@@ -53016,6 +53127,7 @@ Wylie,City,2022,8,17,,
 48121020118,Census Tract,2022,5,1,,
 48121020118,Census Tract,2022,6,5,,
 48121020118,Census Tract,2022,7,1,,
+48121020118,Census Tract,2022,9,1,,
 48121020119,Census Tract,2019,3,1,,
 48121020119,Census Tract,2019,4,1,,
 48121020119,Census Tract,2019,5,1,,
@@ -53127,7 +53239,7 @@ Wylie,City,2022,8,17,,
 48121020122,Census Tract,2022,3,1,,
 48121020122,Census Tract,2022,4,1,,
 48121020122,Census Tract,2022,7,1,,
-48121020122,Census Tract,2022,9,1,,
+48121020122,Census Tract,2022,9,2,,
 48121020123,Census Tract,2019,1,2,,
 48121020123,Census Tract,2019,2,1,,
 48121020123,Census Tract,2019,3,3,,
@@ -53197,7 +53309,7 @@ Wylie,City,2022,8,17,,
 48121020125,Census Tract,2022,6,3,,
 48121020125,Census Tract,2022,7,4,,
 48121020125,Census Tract,2022,8,3,,
-48121020125,Census Tract,2022,9,1,,
+48121020125,Census Tract,2022,9,3,,
 48121020126,Census Tract,2019,1,5,,
 48121020126,Census Tract,2019,3,2,,
 48121020126,Census Tract,2019,4,1,,
@@ -53715,7 +53827,7 @@ Wylie,City,2022,8,17,,
 48121020312,Census Tract,2022,6,1,,
 48121020312,Census Tract,2022,7,4,,
 48121020312,Census Tract,2022,8,3,,
-48121020312,Census Tract,2022,9,2,,
+48121020312,Census Tract,2022,9,3,,
 48121020313,Census Tract,2019,1,3,,
 48121020313,Census Tract,2019,2,4,,
 48121020313,Census Tract,2019,3,2,,
@@ -53880,7 +53992,7 @@ Wylie,City,2022,8,17,,
 48121020320,Census Tract,2022,6,6,,
 48121020320,Census Tract,2022,7,10,,
 48121020320,Census Tract,2022,8,12,,
-48121020320,Census Tract,2022,9,4,,
+48121020320,Census Tract,2022,9,5,,
 48121020321,Census Tract,2019,1,1,,
 48121020321,Census Tract,2019,3,1,,
 48121020321,Census Tract,2019,7,1,,
@@ -53920,6 +54032,7 @@ Wylie,City,2022,8,17,,
 48121020322,Census Tract,2022,1,2,,
 48121020322,Census Tract,2022,2,1,,
 48121020322,Census Tract,2022,4,1,,
+48121020322,Census Tract,2022,9,1,,
 48121020402,Census Tract,2019,1,1,,
 48121020402,Census Tract,2019,2,3,,
 48121020402,Census Tract,2019,3,1,,
@@ -54026,7 +54139,7 @@ Wylie,City,2022,8,17,,
 48121020404,Census Tract,2022,6,7,,
 48121020404,Census Tract,2022,7,13,,
 48121020404,Census Tract,2022,8,5,,
-48121020404,Census Tract,2022,9,1,,
+48121020404,Census Tract,2022,9,2,,
 48121020405,Census Tract,2019,2,2,,
 48121020405,Census Tract,2019,4,1,,
 48121020405,Census Tract,2019,6,2,,
@@ -54050,6 +54163,7 @@ Wylie,City,2022,8,17,,
 48121020405,Census Tract,2022,5,2,,
 48121020405,Census Tract,2022,7,1,,
 48121020405,Census Tract,2022,8,2,,
+48121020405,Census Tract,2022,9,1,,
 48121020504,Census Tract,2019,1,5,,
 48121020504,Census Tract,2019,2,2,,
 48121020504,Census Tract,2019,3,2,,
@@ -54633,7 +54747,7 @@ Wylie,City,2022,8,17,,
 48121021204,Census Tract,2022,6,23,,
 48121021204,Census Tract,2022,7,14,,
 48121021204,Census Tract,2022,8,10,,
-48121021204,Census Tract,2022,9,1,,
+48121021204,Census Tract,2022,9,3,,
 48121021301,Census Tract,2019,1,11,,
 48121021301,Census Tract,2019,2,4,,
 48121021301,Census Tract,2019,3,12,,
@@ -54936,6 +55050,7 @@ Wylie,City,2022,8,17,,
 48121021415,Census Tract,2022,6,3,,
 48121021415,Census Tract,2022,7,6,,
 48121021415,Census Tract,2022,8,9,,
+48121021415,Census Tract,2022,9,1,,
 48121021416,Census Tract,2019,1,2,,
 48121021416,Census Tract,2019,2,10,,
 48121021416,Census Tract,2019,3,1,,
@@ -55770,6 +55885,7 @@ Wylie,City,2022,8,17,,
 48121021614,Census Tract,2022,4,3,,
 48121021614,Census Tract,2022,6,2,,
 48121021614,Census Tract,2022,7,6,,
+48121021614,Census Tract,2022,9,1,,
 48121021615,Census Tract,2019,3,1,,
 48121021615,Census Tract,2019,4,1,,
 48121021615,Census Tract,2019,5,1,,
@@ -55992,7 +56108,7 @@ Wylie,City,2022,8,17,,
 48121021622,Census Tract,2022,6,2,,
 48121021622,Census Tract,2022,7,11,,
 48121021622,Census Tract,2022,8,4,,
-48121021622,Census Tract,2022,9,1,,
+48121021622,Census Tract,2022,9,2,,
 48121021626,Census Tract,2019,1,1,,
 48121021626,Census Tract,2019,2,1,,
 48121021626,Census Tract,2019,3,1,,
@@ -56041,6 +56157,7 @@ Wylie,City,2022,8,17,,
 48121021630,Census Tract,2022,6,8,,
 48121021630,Census Tract,2022,7,5,,
 48121021630,Census Tract,2022,8,9,,
+48121021630,Census Tract,2022,9,6,,
 48121021631,Census Tract,2017,5,1,1578.54,1578.54
 48121021631,Census Tract,2019,2,2,,
 48121021631,Census Tract,2019,3,1,,
@@ -56140,7 +56257,7 @@ Wylie,City,2022,8,17,,
 48121021634,Census Tract,2022,6,44,,
 48121021634,Census Tract,2022,7,28,,
 48121021634,Census Tract,2022,8,28,,
-48121021634,Census Tract,2022,9,4,,
+48121021634,Census Tract,2022,9,8,,
 48121021635,Census Tract,2019,1,28,,
 48121021635,Census Tract,2019,2,22,,
 48121021635,Census Tract,2019,3,13,,
@@ -56267,6 +56384,7 @@ Wylie,City,2022,8,17,,
 48121021638,Census Tract,2022,6,20,,
 48121021638,Census Tract,2022,7,10,,
 48121021638,Census Tract,2022,8,18,,
+48121021638,Census Tract,2022,9,4,,
 48121021639,Census Tract,2019,2,1,,
 48121021639,Census Tract,2019,5,1,,
 48121021639,Census Tract,2019,7,1,,
@@ -56381,7 +56499,7 @@ Wylie,City,2022,8,17,,
 48121021642,Census Tract,2022,6,3,,
 48121021642,Census Tract,2022,7,4,,
 48121021642,Census Tract,2022,8,19,,
-48121021642,Census Tract,2022,9,2,,
+48121021642,Census Tract,2022,9,5,,
 48121021643,Census Tract,2019,1,3,,
 48121021643,Census Tract,2019,2,1,,
 48121021643,Census Tract,2019,3,2,,
@@ -56626,6 +56744,7 @@ Wylie,City,2022,8,17,,
 48121021650,Census Tract,2022,5,5,,
 48121021650,Census Tract,2022,7,1,,
 48121021650,Census Tract,2022,8,13,,
+48121021650,Census Tract,2022,9,1,,
 48121021651,Census Tract,2019,1,4,,
 48121021651,Census Tract,2019,2,2,,
 48121021651,Census Tract,2019,3,2,,
@@ -57063,7 +57182,7 @@ Wylie,City,2022,8,17,,
 48121021733,Census Tract,2022,6,6,,
 48121021733,Census Tract,2022,7,11,,
 48121021733,Census Tract,2022,8,21,,
-48121021733,Census Tract,2022,9,1,,
+48121021733,Census Tract,2022,9,4,,
 48121021734,Census Tract,2019,1,22,,
 48121021734,Census Tract,2019,2,21,,
 48121021734,Census Tract,2019,3,21,,
@@ -57146,7 +57265,7 @@ Wylie,City,2022,8,17,,
 48121021735,Census Tract,2022,6,19,,
 48121021735,Census Tract,2022,7,18,,
 48121021735,Census Tract,2022,8,30,,
-48121021735,Census Tract,2022,9,1,,
+48121021735,Census Tract,2022,9,2,,
 48121021736,Census Tract,2019,1,10,,
 48121021736,Census Tract,2019,2,8,,
 48121021736,Census Tract,2019,3,4,,
@@ -57225,7 +57344,7 @@ Wylie,City,2022,8,17,,
 48121021737,Census Tract,2022,6,22,,
 48121021737,Census Tract,2022,7,26,,
 48121021737,Census Tract,2022,8,23,,
-48121021737,Census Tract,2022,9,1,,
+48121021737,Census Tract,2022,9,2,,
 48121021738,Census Tract,2019,1,4,,
 48121021738,Census Tract,2019,2,7,,
 48121021738,Census Tract,2019,4,5,,
@@ -57261,7 +57380,7 @@ Wylie,City,2022,8,17,,
 48121021738,Census Tract,2022,6,6,,
 48121021738,Census Tract,2022,7,12,,
 48121021738,Census Tract,2022,8,6,,
-48121021738,Census Tract,2022,9,1,,
+48121021738,Census Tract,2022,9,4,,
 48121021739,Census Tract,2019,1,24,,
 48121021739,Census Tract,2019,2,15,,
 48121021739,Census Tract,2019,3,15,,
@@ -57301,6 +57420,7 @@ Wylie,City,2022,8,17,,
 48121021739,Census Tract,2022,6,5,,
 48121021739,Census Tract,2022,7,17,,
 48121021739,Census Tract,2022,8,18,,
+48121021739,Census Tract,2022,9,1,,
 48121021740,Census Tract,2019,1,18,,
 48121021740,Census Tract,2019,2,13,,
 48121021740,Census Tract,2019,3,10,,
@@ -58021,6 +58141,7 @@ Wylie,City,2022,8,17,,
 48439100900,Census Tract,2022,4,3,,
 48439100900,Census Tract,2022,5,1,,
 48439100900,Census Tract,2022,7,2,,
+48439100900,Census Tract,2022,9,1,,
 48439101201,Census Tract,2020,1,3,,
 48439101201,Census Tract,2020,2,2,,
 48439101201,Census Tract,2020,9,1,,
@@ -58066,7 +58187,7 @@ Wylie,City,2022,8,17,,
 48439101202,Census Tract,2022,6,8,,
 48439101202,Census Tract,2022,7,3,,
 48439101202,Census Tract,2022,8,15,,
-48439101202,Census Tract,2022,9,2,,
+48439101202,Census Tract,2022,9,3,,
 48439101301,Census Tract,2019,4,1,,
 48439101301,Census Tract,2020,1,13,,
 48439101301,Census Tract,2020,2,8,,
@@ -58096,6 +58217,7 @@ Wylie,City,2022,8,17,,
 48439101301,Census Tract,2022,6,9,,
 48439101301,Census Tract,2022,7,5,,
 48439101301,Census Tract,2022,8,2,,
+48439101301,Census Tract,2022,9,1,,
 48439101302,Census Tract,2020,1,6,,
 48439101302,Census Tract,2020,2,6,,
 48439101302,Census Tract,2020,5,2,,
@@ -58226,7 +58348,7 @@ Wylie,City,2022,8,17,,
 48439101500,Census Tract,2022,6,6,,
 48439101500,Census Tract,2022,7,6,,
 48439101500,Census Tract,2022,8,2,,
-48439101500,Census Tract,2022,9,1,,
+48439101500,Census Tract,2022,9,2,,
 48439101700,Census Tract,2020,1,11,,
 48439101700,Census Tract,2020,2,1,,
 48439101700,Census Tract,2020,3,2,,
@@ -58243,6 +58365,7 @@ Wylie,City,2022,8,17,,
 48439101700,Census Tract,2022,5,2,,
 48439101700,Census Tract,2022,7,8,,
 48439101700,Census Tract,2022,8,1,,
+48439101700,Census Tract,2022,9,1,,
 48439102000,Census Tract,2020,1,8,,
 48439102000,Census Tract,2020,2,3,,
 48439102000,Census Tract,2020,3,1,,
@@ -58642,6 +58765,7 @@ Wylie,City,2022,8,17,,
 48439103602,Census Tract,2022,6,1,,
 48439103602,Census Tract,2022,7,2,,
 48439103602,Census Tract,2022,8,1,,
+48439103602,Census Tract,2022,9,1,,
 48439103701,Census Tract,2020,1,5,,
 48439103701,Census Tract,2020,2,6,,
 48439103701,Census Tract,2020,3,1,,
@@ -58721,6 +58845,7 @@ Wylie,City,2022,8,17,,
 48439103800,Census Tract,2022,6,2,,
 48439103800,Census Tract,2022,7,5,,
 48439103800,Census Tract,2022,8,4,,
+48439103800,Census Tract,2022,9,1,,
 48439104100,Census Tract,2020,1,2,,
 48439104100,Census Tract,2020,2,2,,
 48439104100,Census Tract,2020,4,1,,
@@ -58835,6 +58960,7 @@ Wylie,City,2022,8,17,,
 48439104400,Census Tract,2022,6,3,,
 48439104400,Census Tract,2022,7,7,,
 48439104400,Census Tract,2022,8,6,,
+48439104400,Census Tract,2022,9,1,,
 48439104502,Census Tract,2020,1,5,,
 48439104502,Census Tract,2020,2,8,,
 48439104502,Census Tract,2020,3,4,,
@@ -59014,6 +59140,7 @@ Wylie,City,2022,8,17,,
 48439104603,Census Tract,2022,6,5,,
 48439104603,Census Tract,2022,7,4,,
 48439104603,Census Tract,2022,8,2,,
+48439104603,Census Tract,2022,9,1,,
 48439104604,Census Tract,2020,1,3,,
 48439104604,Census Tract,2020,2,5,,
 48439104604,Census Tract,2020,3,2,,
@@ -59123,6 +59250,7 @@ Wylie,City,2022,8,17,,
 48439104802,Census Tract,2022,6,1,,
 48439104802,Census Tract,2022,7,1,,
 48439104802,Census Tract,2022,8,3,,
+48439104802,Census Tract,2022,9,1,,
 48439104803,Census Tract,2020,1,2,,
 48439104803,Census Tract,2020,2,3,,
 48439104803,Census Tract,2020,3,2,,
@@ -59225,6 +59353,7 @@ Wylie,City,2022,8,17,,
 48439105008,Census Tract,2022,6,10,,
 48439105008,Census Tract,2022,7,20,,
 48439105008,Census Tract,2022,8,8,,
+48439105008,Census Tract,2022,9,3,,
 48439105009,Census Tract,2020,1,4,,
 48439105009,Census Tract,2020,2,18,,
 48439105009,Census Tract,2020,3,10,,
@@ -59397,6 +59526,7 @@ Wylie,City,2022,8,17,,
 48439105207,Census Tract,2022,6,7,,
 48439105207,Census Tract,2022,7,5,,
 48439105207,Census Tract,2022,8,6,,
+48439105207,Census Tract,2022,9,5,,
 48439105403,Census Tract,2020,1,6,,
 48439105403,Census Tract,2020,2,4,,
 48439105403,Census Tract,2020,3,6,,
@@ -59456,6 +59586,7 @@ Wylie,City,2022,8,17,,
 48439105405,Census Tract,2022,6,43,,
 48439105405,Census Tract,2022,7,48,,
 48439105405,Census Tract,2022,8,35,,
+48439105405,Census Tract,2022,9,2,,
 48439105407,Census Tract,2020,1,1,,
 48439105407,Census Tract,2020,2,3,,
 48439105407,Census Tract,2020,5,1,,
@@ -59721,7 +59852,7 @@ Wylie,City,2022,8,17,,
 48439105515,Census Tract,2022,6,4,,
 48439105515,Census Tract,2022,7,20,,
 48439105515,Census Tract,2022,8,5,,
-48439105515,Census Tract,2022,9,2,,
+48439105515,Census Tract,2022,9,9,,
 48439105516,Census Tract,2020,6,3,,
 48439105516,Census Tract,2020,7,2,,
 48439105516,Census Tract,2020,9,1,,
@@ -59980,6 +60111,7 @@ Wylie,City,2022,8,17,,
 48439105800,Census Tract,2022,4,1,,
 48439105800,Census Tract,2022,5,3,,
 48439105800,Census Tract,2022,8,1,,
+48439105800,Census Tract,2022,9,3,,
 48439105901,Census Tract,2020,1,16,,
 48439105901,Census Tract,2020,2,21,,
 48439105901,Census Tract,2020,3,10,,
@@ -60031,7 +60163,7 @@ Wylie,City,2022,8,17,,
 48439105902,Census Tract,2022,6,19,,
 48439105902,Census Tract,2022,7,24,,
 48439105902,Census Tract,2022,8,23,,
-48439105902,Census Tract,2022,9,1,,
+48439105902,Census Tract,2022,9,6,,
 48439106002,Census Tract,2020,1,2,,
 48439106002,Census Tract,2020,2,4,,
 48439106002,Census Tract,2020,5,4,,
@@ -60089,7 +60221,7 @@ Wylie,City,2022,8,17,,
 48439106004,Census Tract,2022,6,9,,
 48439106004,Census Tract,2022,7,17,,
 48439106004,Census Tract,2022,8,9,,
-48439106004,Census Tract,2022,9,4,,
+48439106004,Census Tract,2022,9,6,,
 48439106005,Census Tract,2020,1,4,,
 48439106005,Census Tract,2020,2,4,,
 48439106005,Census Tract,2020,3,1,,
@@ -60252,6 +60384,7 @@ Wylie,City,2022,8,17,,
 48439106202,Census Tract,2022,6,7,,
 48439106202,Census Tract,2022,7,5,,
 48439106202,Census Tract,2022,8,9,,
+48439106202,Census Tract,2022,9,1,,
 48439106300,Census Tract,2020,1,8,,
 48439106300,Census Tract,2020,2,5,,
 48439106300,Census Tract,2020,3,4,,
@@ -60279,6 +60412,7 @@ Wylie,City,2022,8,17,,
 48439106300,Census Tract,2022,6,7,,
 48439106300,Census Tract,2022,7,6,,
 48439106300,Census Tract,2022,8,16,,
+48439106300,Census Tract,2022,9,4,,
 48439106400,Census Tract,2020,1,3,,
 48439106400,Census Tract,2020,2,5,,
 48439106400,Census Tract,2020,3,4,,
@@ -60332,6 +60466,7 @@ Wylie,City,2022,8,17,,
 48439106502,Census Tract,2022,5,16,,
 48439106502,Census Tract,2022,6,5,,
 48439106502,Census Tract,2022,7,6,,
+48439106502,Census Tract,2022,9,1,,
 48439106503,Census Tract,2020,1,19,,
 48439106503,Census Tract,2020,2,15,,
 48439106503,Census Tract,2020,3,5,,
@@ -60363,7 +60498,7 @@ Wylie,City,2022,8,17,,
 48439106503,Census Tract,2022,6,10,,
 48439106503,Census Tract,2022,7,12,,
 48439106503,Census Tract,2022,8,5,,
-48439106503,Census Tract,2022,9,1,,
+48439106503,Census Tract,2022,9,4,,
 48439106507,Census Tract,2020,1,7,,
 48439106507,Census Tract,2020,2,9,,
 48439106507,Census Tract,2020,3,5,,
@@ -60412,7 +60547,7 @@ Wylie,City,2022,8,17,,
 48439106509,Census Tract,2022,6,34,,
 48439106509,Census Tract,2022,7,22,,
 48439106509,Census Tract,2022,8,17,,
-48439106509,Census Tract,2022,9,2,,
+48439106509,Census Tract,2022,9,10,,
 48439106512,Census Tract,2020,1,34,,
 48439106512,Census Tract,2020,2,34,,
 48439106512,Census Tract,2020,3,3,,
@@ -60498,7 +60633,7 @@ Wylie,City,2022,8,17,,
 48439106514,Census Tract,2022,6,40,,
 48439106514,Census Tract,2022,7,54,,
 48439106514,Census Tract,2022,8,41,,
-48439106514,Census Tract,2022,9,2,,
+48439106514,Census Tract,2022,9,7,,
 48439106515,Census Tract,2020,1,27,,
 48439106515,Census Tract,2020,2,35,,
 48439106515,Census Tract,2020,3,16,,
@@ -60530,6 +60665,7 @@ Wylie,City,2022,8,17,,
 48439106515,Census Tract,2022,6,43,,
 48439106515,Census Tract,2022,7,30,,
 48439106515,Census Tract,2022,8,46,,
+48439106515,Census Tract,2022,9,20,,
 48439106518,Census Tract,2020,1,43,,
 48439106518,Census Tract,2020,2,39,,
 48439106518,Census Tract,2020,3,36,,
@@ -60623,7 +60759,7 @@ Wylie,City,2022,8,17,,
 48439106520,Census Tract,2022,6,29,,
 48439106520,Census Tract,2022,7,45,,
 48439106520,Census Tract,2022,8,26,1324,1324
-48439106520,Census Tract,2022,9,1,2994,2994
+48439106520,Census Tract,2022,9,2,2994,2994
 48439106521,Census Tract,2020,1,3,,
 48439106521,Census Tract,2020,2,8,,
 48439106521,Census Tract,2020,3,4,,
@@ -60679,6 +60815,7 @@ Wylie,City,2022,8,17,,
 48439106522,Census Tract,2022,6,8,,
 48439106522,Census Tract,2022,7,4,,
 48439106522,Census Tract,2022,8,24,,
+48439106522,Census Tract,2022,9,1,,
 48439106523,Census Tract,2020,1,31,,
 48439106523,Census Tract,2020,2,20,,
 48439106523,Census Tract,2020,3,16,,
@@ -60912,7 +61049,7 @@ Wylie,City,2022,8,17,,
 48439110204,Census Tract,2022,6,14,,
 48439110204,Census Tract,2022,7,12,,
 48439110204,Census Tract,2022,8,3,,
-48439110204,Census Tract,2022,9,2,,
+48439110204,Census Tract,2022,9,3,,
 48439110205,Census Tract,2020,1,14,,
 48439110205,Census Tract,2020,2,20,,
 48439110205,Census Tract,2020,3,17,,
@@ -60962,6 +61099,7 @@ Wylie,City,2022,8,17,,
 48439110206,Census Tract,2022,4,3,,
 48439110206,Census Tract,2022,6,3,,
 48439110206,Census Tract,2022,8,1,,
+48439110206,Census Tract,2022,9,2,,
 48439110301,Census Tract,2020,1,7,,
 48439110301,Census Tract,2020,2,1,,
 48439110301,Census Tract,2020,3,1,,
@@ -61011,6 +61149,7 @@ Wylie,City,2022,8,17,,
 48439110302,Census Tract,2022,6,4,,
 48439110302,Census Tract,2022,7,4,,
 48439110302,Census Tract,2022,8,9,,
+48439110302,Census Tract,2022,9,1,,
 48439110401,Census Tract,2020,1,2,,
 48439110401,Census Tract,2020,3,1,,
 48439110401,Census Tract,2020,6,1,,
@@ -61067,6 +61206,7 @@ Wylie,City,2022,8,17,,
 48439110402,Census Tract,2022,6,20,,
 48439110402,Census Tract,2022,7,5,,
 48439110402,Census Tract,2022,8,19,,
+48439110402,Census Tract,2022,9,1,,
 48439110500,Census Tract,2020,1,10,,
 48439110500,Census Tract,2020,2,6,,
 48439110500,Census Tract,2020,3,4,,
@@ -61094,6 +61234,7 @@ Wylie,City,2022,8,17,,
 48439110500,Census Tract,2022,6,8,,
 48439110500,Census Tract,2022,7,7,,
 48439110500,Census Tract,2022,8,6,,
+48439110500,Census Tract,2022,9,2,,
 48439110600,Census Tract,2020,1,2,,
 48439110600,Census Tract,2020,2,2,,
 48439110600,Census Tract,2020,3,3,,
@@ -61176,6 +61317,7 @@ Wylie,City,2022,8,17,,
 48439110704,Census Tract,2022,6,12,,
 48439110704,Census Tract,2022,7,8,,
 48439110704,Census Tract,2022,8,14,,
+48439110704,Census Tract,2022,9,2,,
 48439110705,Census Tract,2020,1,1,,
 48439110705,Census Tract,2020,2,4,,
 48439110705,Census Tract,2020,3,1,,
@@ -61536,7 +61678,7 @@ Wylie,City,2022,8,17,,
 48439111020,Census Tract,2022,6,67,,
 48439111020,Census Tract,2022,7,4,,
 48439111020,Census Tract,2022,8,6,,
-48439111020,Census Tract,2022,9,2,,
+48439111020,Census Tract,2022,9,5,,
 48439111021,Census Tract,2020,1,3,,
 48439111021,Census Tract,2020,2,2,,
 48439111021,Census Tract,2020,5,2,,
@@ -61587,7 +61729,7 @@ Wylie,City,2022,8,17,,
 48439111022,Census Tract,2022,6,3,,
 48439111022,Census Tract,2022,7,4,,
 48439111022,Census Tract,2022,8,11,,
-48439111022,Census Tract,2022,9,4,,
+48439111022,Census Tract,2022,9,10,,
 48439111023,Census Tract,2020,1,7,,
 48439111023,Census Tract,2020,2,8,,
 48439111023,Census Tract,2020,3,4,,
@@ -61620,6 +61762,7 @@ Wylie,City,2022,8,17,,
 48439111023,Census Tract,2022,6,7,,
 48439111023,Census Tract,2022,7,3,,
 48439111023,Census Tract,2022,8,10,,
+48439111023,Census Tract,2022,9,1,,
 48439111024,Census Tract,2020,1,3,,
 48439111024,Census Tract,2020,3,1,,
 48439111024,Census Tract,2020,6,1,,
@@ -61644,7 +61787,7 @@ Wylie,City,2022,8,17,,
 48439111024,Census Tract,2022,6,4,,
 48439111024,Census Tract,2022,7,2,,
 48439111024,Census Tract,2022,8,6,,
-48439111024,Census Tract,2022,9,1,,
+48439111024,Census Tract,2022,9,2,,
 48439111025,Census Tract,2020,1,3,,
 48439111025,Census Tract,2020,2,6,,
 48439111025,Census Tract,2020,7,1,,
@@ -61700,7 +61843,7 @@ Wylie,City,2022,8,17,,
 48439111026,Census Tract,2022,6,9,,
 48439111026,Census Tract,2022,7,6,,
 48439111026,Census Tract,2022,8,7,,
-48439111026,Census Tract,2022,9,3,,
+48439111026,Census Tract,2022,9,5,,
 48439111027,Census Tract,2020,1,5,,
 48439111027,Census Tract,2020,2,2,,
 48439111027,Census Tract,2020,3,1,,
@@ -61872,7 +62015,7 @@ Wylie,City,2022,8,17,,
 48439111102,Census Tract,2022,6,5,,
 48439111102,Census Tract,2022,7,5,,
 48439111102,Census Tract,2022,8,8,,
-48439111102,Census Tract,2022,9,1,,
+48439111102,Census Tract,2022,9,2,,
 48439111103,Census Tract,2020,1,1,,
 48439111103,Census Tract,2020,2,1,,
 48439111103,Census Tract,2020,3,3,,
@@ -61895,6 +62038,7 @@ Wylie,City,2022,8,17,,
 48439111103,Census Tract,2022,6,2,,
 48439111103,Census Tract,2022,7,4,,
 48439111103,Census Tract,2022,8,3,,
+48439111103,Census Tract,2022,9,1,,
 48439111104,Census Tract,2020,1,1,,
 48439111104,Census Tract,2020,2,7,,
 48439111104,Census Tract,2020,3,1,,
@@ -62029,7 +62173,7 @@ Wylie,City,2022,8,17,,
 48439111306,Census Tract,2022,6,4,,
 48439111306,Census Tract,2022,7,13,,
 48439111306,Census Tract,2022,8,5,,
-48439111306,Census Tract,2022,9,2,,
+48439111306,Census Tract,2022,9,4,,
 48439111307,Census Tract,2020,1,20,,
 48439111307,Census Tract,2020,2,24,,
 48439111307,Census Tract,2020,3,8,,
@@ -62239,6 +62383,7 @@ Wylie,City,2022,8,17,,
 48439111318,Census Tract,2022,5,2,,
 48439111318,Census Tract,2022,6,1,,
 48439111318,Census Tract,2022,7,2,,
+48439111318,Census Tract,2022,9,1,,
 48439111319,Census Tract,2020,1,18,,
 48439111319,Census Tract,2020,2,8,,
 48439111319,Census Tract,2020,3,2,,
@@ -62384,6 +62529,7 @@ Wylie,City,2022,8,17,,
 48439111408,Census Tract,2022,6,6,,
 48439111408,Census Tract,2022,7,3,,
 48439111408,Census Tract,2022,8,9,,
+48439111408,Census Tract,2022,9,2,,
 48439111409,Census Tract,2020,1,1,,
 48439111409,Census Tract,2020,7,2,,
 48439111409,Census Tract,2020,8,1,,
@@ -62497,7 +62643,7 @@ Wylie,City,2022,8,17,,
 48439111506,Census Tract,2022,6,8,,
 48439111506,Census Tract,2022,7,8,,
 48439111506,Census Tract,2022,8,14,,
-48439111506,Census Tract,2022,9,2,,
+48439111506,Census Tract,2022,9,3,,
 48439111513,Census Tract,2020,1,1,,
 48439111513,Census Tract,2020,2,1,,
 48439111513,Census Tract,2020,3,1,,
@@ -62826,7 +62972,7 @@ Wylie,City,2022,8,17,,
 48439111538,Census Tract,2022,6,18,,
 48439111538,Census Tract,2022,7,28,,
 48439111538,Census Tract,2022,8,42,,
-48439111538,Census Tract,2022,9,6,,
+48439111538,Census Tract,2022,9,7,,
 48439111540,Census Tract,2020,1,13,,
 48439111540,Census Tract,2020,2,9,,
 48439111540,Census Tract,2020,3,4,,
@@ -62908,6 +63054,7 @@ Wylie,City,2022,8,17,,
 48439111542,Census Tract,2022,6,2,,
 48439111542,Census Tract,2022,7,6,,
 48439111542,Census Tract,2022,8,3,,
+48439111542,Census Tract,2022,9,1,,
 48439111543,Census Tract,2020,1,11,,
 48439111543,Census Tract,2020,2,9,,
 48439111543,Census Tract,2020,3,3,,
@@ -62938,7 +63085,7 @@ Wylie,City,2022,8,17,,
 48439111543,Census Tract,2022,6,8,,
 48439111543,Census Tract,2022,7,10,,
 48439111543,Census Tract,2022,8,4,,
-48439111543,Census Tract,2022,9,1,,
+48439111543,Census Tract,2022,9,2,,
 48439111544,Census Tract,2020,1,8,,
 48439111544,Census Tract,2020,2,3,,
 48439111544,Census Tract,2020,3,1,,
@@ -62967,6 +63114,7 @@ Wylie,City,2022,8,17,,
 48439111544,Census Tract,2022,6,3,,
 48439111544,Census Tract,2022,7,5,,
 48439111544,Census Tract,2022,8,6,,
+48439111544,Census Tract,2022,9,1,,
 48439111545,Census Tract,2020,1,2,,
 48439111545,Census Tract,2020,2,1,,
 48439111545,Census Tract,2020,12,1,,
@@ -62976,6 +63124,7 @@ Wylie,City,2022,8,17,,
 48439111545,Census Tract,2022,3,1,,
 48439111545,Census Tract,2022,5,2,,
 48439111545,Census Tract,2022,8,3,,
+48439111545,Census Tract,2022,9,1,,
 48439111546,Census Tract,2020,3,2,,
 48439111546,Census Tract,2020,5,2,,
 48439111546,Census Tract,2020,6,1,,
@@ -63053,7 +63202,7 @@ Wylie,City,2022,8,17,,
 48439111553,Census Tract,2022,6,9,,
 48439111553,Census Tract,2022,7,10,,
 48439111553,Census Tract,2022,8,5,,
-48439111553,Census Tract,2022,9,2,,
+48439111553,Census Tract,2022,9,3,,
 48439111554,Census Tract,2017,7,1,,
 48439111554,Census Tract,2018,2,1,2315,2315
 48439111554,Census Tract,2018,9,2,4150,4150
@@ -63167,7 +63316,7 @@ Wylie,City,2022,8,17,,
 48439111558,Census Tract,2022,6,19,,
 48439111558,Census Tract,2022,7,15,,
 48439111558,Census Tract,2022,8,6,,
-48439111558,Census Tract,2022,9,2,,
+48439111558,Census Tract,2022,9,4,,
 48439111559,Census Tract,2020,1,7,,
 48439111559,Census Tract,2020,2,3,,
 48439111559,Census Tract,2020,3,4,,
@@ -63194,6 +63343,7 @@ Wylie,City,2022,8,17,,
 48439111559,Census Tract,2022,6,7,,
 48439111559,Census Tract,2022,7,6,,
 48439111559,Census Tract,2022,8,3,,
+48439111559,Census Tract,2022,9,1,,
 48439111560,Census Tract,2020,1,2,,
 48439111560,Census Tract,2020,2,3,,
 48439111560,Census Tract,2020,3,1,,
@@ -63415,7 +63565,7 @@ Wylie,City,2022,8,17,,
 48439111569,Census Tract,2022,6,16,,
 48439111569,Census Tract,2022,7,15,,
 48439111569,Census Tract,2022,8,8,,
-48439111569,Census Tract,2022,9,3,,
+48439111569,Census Tract,2022,9,4,,
 48439111570,Census Tract,2020,1,16,,
 48439111570,Census Tract,2020,2,30,,
 48439111570,Census Tract,2020,3,5,,
@@ -63444,7 +63594,7 @@ Wylie,City,2022,8,17,,
 48439111570,Census Tract,2022,6,8,,
 48439111570,Census Tract,2022,7,5,,
 48439111570,Census Tract,2022,8,6,,
-48439111570,Census Tract,2022,9,1,,
+48439111570,Census Tract,2022,9,4,,
 48439111571,Census Tract,2017,2,1,,
 48439111571,Census Tract,2017,8,1,,
 48439111571,Census Tract,2018,11,1,,
@@ -63676,6 +63826,7 @@ Wylie,City,2022,8,17,,
 48439113007,Census Tract,2022,6,1,,
 48439113007,Census Tract,2022,7,1,,
 48439113007,Census Tract,2022,8,10,,
+48439113007,Census Tract,2022,9,3,,
 48439113102,Census Tract,2020,1,41,,
 48439113102,Census Tract,2020,2,49,,
 48439113102,Census Tract,2020,3,19,,
@@ -63707,7 +63858,7 @@ Wylie,City,2022,8,17,,
 48439113102,Census Tract,2022,6,34,,
 48439113102,Census Tract,2022,7,39,,
 48439113102,Census Tract,2022,8,53,,
-48439113102,Census Tract,2022,9,5,,
+48439113102,Census Tract,2022,9,19,,
 48439113104,Census Tract,2019,10,1,,
 48439113104,Census Tract,2020,1,23,,
 48439113104,Census Tract,2020,2,35,,
@@ -63738,7 +63889,7 @@ Wylie,City,2022,8,17,,
 48439113104,Census Tract,2022,6,22,,
 48439113104,Census Tract,2022,7,18,,
 48439113104,Census Tract,2022,8,33,,
-48439113104,Census Tract,2022,9,17,,
+48439113104,Census Tract,2022,9,23,,
 48439113107,Census Tract,2022,1,1,,
 48439113108,Census Tract,2020,8,1,,
 48439113108,Census Tract,2022,5,1,,
@@ -63801,7 +63952,7 @@ Wylie,City,2022,8,17,,
 48439113110,Census Tract,2022,6,40,,
 48439113110,Census Tract,2022,7,34,,
 48439113110,Census Tract,2022,8,47,,
-48439113110,Census Tract,2022,9,19,,
+48439113110,Census Tract,2022,9,20,,
 48439113112,Census Tract,2020,1,7,,
 48439113112,Census Tract,2020,2,3,,
 48439113112,Census Tract,2020,3,5,,
@@ -63857,7 +64008,7 @@ Wylie,City,2022,8,17,,
 48439113115,Census Tract,2022,6,11,,
 48439113115,Census Tract,2022,7,3,,
 48439113115,Census Tract,2022,8,12,,
-48439113115,Census Tract,2022,9,1,,
+48439113115,Census Tract,2022,9,2,,
 48439113116,Census Tract,2020,1,59,,
 48439113116,Census Tract,2020,2,31,,
 48439113116,Census Tract,2020,3,9,,
@@ -63888,7 +64039,7 @@ Wylie,City,2022,8,17,,
 48439113116,Census Tract,2022,6,43,,
 48439113116,Census Tract,2022,7,47,,
 48439113116,Census Tract,2022,8,62,,
-48439113116,Census Tract,2022,9,5,,
+48439113116,Census Tract,2022,9,13,,
 48439113117,Census Tract,2020,1,27,,
 48439113117,Census Tract,2020,2,33,,
 48439113117,Census Tract,2020,3,22,,
@@ -64011,6 +64162,7 @@ Wylie,City,2022,8,17,,
 48439113121,Census Tract,2022,6,10,,
 48439113121,Census Tract,2022,7,17,,
 48439113121,Census Tract,2022,8,1,,
+48439113121,Census Tract,2022,9,4,,
 48439113122,Census Tract,2019,5,5,1228.38,1194.964
 48439113122,Census Tract,2020,1,18,,
 48439113122,Census Tract,2020,2,16,,
@@ -64038,7 +64190,7 @@ Wylie,City,2022,8,17,,
 48439113122,Census Tract,2022,6,15,,
 48439113122,Census Tract,2022,7,17,,
 48439113122,Census Tract,2022,8,13,,
-48439113122,Census Tract,2022,9,1,,
+48439113122,Census Tract,2022,9,2,,
 48439113206,Census Tract,2020,1,4,,
 48439113206,Census Tract,2020,2,10,,
 48439113206,Census Tract,2020,3,2,,
@@ -64625,6 +64777,7 @@ Wylie,City,2022,8,17,,
 48439113513,Census Tract,2022,6,11,,
 48439113513,Census Tract,2022,7,6,,
 48439113513,Census Tract,2022,8,4,,
+48439113513,Census Tract,2022,9,7,,
 48439113514,Census Tract,2020,1,1,,
 48439113514,Census Tract,2020,2,1,,
 48439113514,Census Tract,2020,3,7,,
@@ -64655,6 +64808,7 @@ Wylie,City,2022,8,17,,
 48439113514,Census Tract,2022,6,10,,
 48439113514,Census Tract,2022,7,10,,
 48439113514,Census Tract,2022,8,4,,
+48439113514,Census Tract,2022,9,3,,
 48439113516,Census Tract,2020,1,4,,
 48439113516,Census Tract,2020,2,5,,
 48439113516,Census Tract,2020,4,1,,
@@ -64696,6 +64850,7 @@ Wylie,City,2022,8,17,,
 48439113517,Census Tract,2022,6,5,,
 48439113517,Census Tract,2022,7,8,,
 48439113517,Census Tract,2022,8,4,,
+48439113517,Census Tract,2022,9,3,,
 48439113519,Census Tract,2020,1,2,,
 48439113519,Census Tract,2020,2,3,,
 48439113519,Census Tract,2020,3,4,,
@@ -64826,7 +64981,7 @@ Wylie,City,2022,8,17,,
 48439113607,Census Tract,2022,6,12,,
 48439113607,Census Tract,2022,7,16,,
 48439113607,Census Tract,2022,8,5,,
-48439113607,Census Tract,2022,9,4,,
+48439113607,Census Tract,2022,9,5,,
 48439113611,Census Tract,2020,2,3,,
 48439113611,Census Tract,2020,7,1,,
 48439113611,Census Tract,2021,1,2,,
@@ -64969,6 +65124,7 @@ Wylie,City,2022,8,17,,
 48439113626,Census Tract,2022,5,2,,
 48439113626,Census Tract,2022,7,2,,
 48439113626,Census Tract,2022,8,1,,
+48439113626,Census Tract,2022,9,1,,
 48439113628,Census Tract,2020,1,12,,
 48439113628,Census Tract,2020,2,7,,
 48439113628,Census Tract,2020,3,4,,
@@ -64999,7 +65155,7 @@ Wylie,City,2022,8,17,,
 48439113628,Census Tract,2022,6,18,,
 48439113628,Census Tract,2022,7,13,,
 48439113628,Census Tract,2022,8,11,,
-48439113628,Census Tract,2022,9,1,,
+48439113628,Census Tract,2022,9,2,,
 48439113629,Census Tract,2020,1,8,,
 48439113629,Census Tract,2020,2,7,,
 48439113629,Census Tract,2020,3,2,,
@@ -65102,7 +65258,7 @@ Wylie,City,2022,8,17,,
 48439113635,Census Tract,2022,6,2,,
 48439113635,Census Tract,2022,7,10,,
 48439113635,Census Tract,2022,8,1,,
-48439113635,Census Tract,2022,9,3,,
+48439113635,Census Tract,2022,9,8,,
 48439113636,Census Tract,2020,1,14,,
 48439113636,Census Tract,2020,2,13,,
 48439113636,Census Tract,2020,3,12,,
@@ -65349,7 +65505,7 @@ Wylie,City,2022,8,17,,
 48439113803,Census Tract,2022,6,1,,
 48439113803,Census Tract,2022,7,1,,
 48439113803,Census Tract,2022,8,2,,
-48439113803,Census Tract,2022,9,1,,
+48439113803,Census Tract,2022,9,2,,
 48439113808,Census Tract,2020,1,3,,
 48439113808,Census Tract,2020,2,2,,
 48439113808,Census Tract,2020,4,1,,
@@ -65576,7 +65732,7 @@ Wylie,City,2022,8,17,,
 48439113919,Census Tract,2022,5,1,,
 48439113919,Census Tract,2022,6,2,,
 48439113919,Census Tract,2022,8,1,,
-48439113919,Census Tract,2022,9,1,,
+48439113919,Census Tract,2022,9,2,,
 48439113920,Census Tract,2020,1,1,,
 48439113920,Census Tract,2020,2,1,,
 48439113920,Census Tract,2020,3,1,,
@@ -65641,6 +65797,7 @@ Wylie,City,2022,8,17,,
 48439113924,Census Tract,2022,5,6,,
 48439113924,Census Tract,2022,6,3,,
 48439113924,Census Tract,2022,7,4,,
+48439113924,Census Tract,2022,9,1,,
 48439113925,Census Tract,2020,1,2,,
 48439113925,Census Tract,2020,2,6,,
 48439113925,Census Tract,2020,3,1,,
@@ -65713,6 +65870,7 @@ Wylie,City,2022,8,17,,
 48439113931,Census Tract,2022,6,4,,
 48439113931,Census Tract,2022,7,8,,
 48439113931,Census Tract,2022,8,6,,
+48439113931,Census Tract,2022,9,1,,
 48439113932,Census Tract,2020,1,2,,
 48439113932,Census Tract,2020,2,3,,
 48439113932,Census Tract,2020,3,1,,
@@ -65780,6 +65938,7 @@ Wylie,City,2022,8,17,,
 48439113934,Census Tract,2022,6,1,,
 48439113934,Census Tract,2022,7,3,,
 48439113934,Census Tract,2022,8,2,,
+48439113934,Census Tract,2022,9,1,,
 48439113935,Census Tract,2020,2,3,,
 48439113935,Census Tract,2020,3,1,,
 48439113935,Census Tract,2020,9,1,,
@@ -65867,7 +66026,7 @@ Wylie,City,2022,8,17,,
 48439113939,Census Tract,2022,6,1,,
 48439113939,Census Tract,2022,7,4,,
 48439113939,Census Tract,2022,8,3,,
-48439113939,Census Tract,2022,9,1,,
+48439113939,Census Tract,2022,9,2,,
 48439113940,Census Tract,2020,1,4,,
 48439113940,Census Tract,2020,2,4,,
 48439113940,Census Tract,2020,3,1,,
@@ -65930,7 +66089,7 @@ Wylie,City,2022,8,17,,
 48439113942,Census Tract,2022,5,1,,
 48439113942,Census Tract,2022,7,2,,
 48439113942,Census Tract,2022,8,2,,
-48439113942,Census Tract,2022,9,1,,
+48439113942,Census Tract,2022,9,2,,
 48439113943,Census Tract,2020,1,1,,
 48439113943,Census Tract,2020,2,1,,
 48439113943,Census Tract,2020,8,2,,
@@ -66126,7 +66285,7 @@ Wylie,City,2022,8,17,,
 48439114003,Census Tract,2022,6,6,,
 48439114003,Census Tract,2022,7,2,,
 48439114003,Census Tract,2022,8,7,,
-48439114003,Census Tract,2022,9,1,,
+48439114003,Census Tract,2022,9,4,,
 48439114006,Census Tract,2020,1,2,,
 48439114006,Census Tract,2020,2,2,,
 48439114006,Census Tract,2020,3,2,,
@@ -66156,7 +66315,7 @@ Wylie,City,2022,8,17,,
 48439114006,Census Tract,2022,6,1,,
 48439114006,Census Tract,2022,7,3,,
 48439114006,Census Tract,2022,8,4,,
-48439114006,Census Tract,2022,9,2,,
+48439114006,Census Tract,2022,9,4,,
 48439114009,Census Tract,2020,1,4,,
 48439114009,Census Tract,2020,2,1,,
 48439114009,Census Tract,2020,8,2,,
@@ -66462,6 +66621,7 @@ Wylie,City,2022,8,17,,
 48439114112,Census Tract,2021,11,1,,
 48439114112,Census Tract,2022,1,1,,
 48439114112,Census Tract,2022,4,1,,
+48439114112,Census Tract,2022,9,1,,
 48439114113,Census Tract,2020,1,4,,
 48439114113,Census Tract,2020,2,1,,
 48439114113,Census Tract,2020,4,1,,
@@ -66511,7 +66671,7 @@ Wylie,City,2022,8,17,,
 48439114203,Census Tract,2022,6,5,,
 48439114203,Census Tract,2022,7,5,,
 48439114203,Census Tract,2022,8,7,,
-48439114203,Census Tract,2022,9,4,,
+48439114203,Census Tract,2022,9,5,,
 48439114204,Census Tract,2020,1,1,,
 48439114204,Census Tract,2020,2,3,,
 48439114204,Census Tract,2020,6,1,,
@@ -66589,6 +66749,7 @@ Wylie,City,2022,8,17,,
 48439114206,Census Tract,2022,6,5,,
 48439114206,Census Tract,2022,7,6,,
 48439114206,Census Tract,2022,8,4,,
+48439114206,Census Tract,2022,9,1,,
 48439114207,Census Tract,2020,1,2,,
 48439114207,Census Tract,2020,2,1,,
 48439114207,Census Tract,2020,3,1,,
@@ -66769,6 +66930,7 @@ Wylie,City,2022,8,17,,
 48439121614,Census Tract,2022,6,7,,
 48439121614,Census Tract,2022,7,2,,
 48439121614,Census Tract,2022,8,9,,
+48439121614,Census Tract,2022,9,1,,
 48439121615,Census Tract,2020,1,9,,
 48439121615,Census Tract,2020,2,7,,
 48439121615,Census Tract,2020,3,4,,
@@ -66877,6 +67039,7 @@ Wylie,City,2022,8,17,,
 48439121704,Census Tract,2022,6,4,,
 48439121704,Census Tract,2022,7,4,,
 48439121704,Census Tract,2022,8,9,,
+48439121704,Census Tract,2022,9,2,,
 48439121904,Census Tract,2018,10,3,4276,4364.66666666667
 48439121904,Census Tract,2020,1,4,,
 48439121904,Census Tract,2020,2,8,,
@@ -66931,7 +67094,7 @@ Wylie,City,2022,8,17,,
 48439121905,Census Tract,2022,6,32,,
 48439121905,Census Tract,2022,7,19,,
 48439121905,Census Tract,2022,8,33,,
-48439121905,Census Tract,2022,9,1,,
+48439121905,Census Tract,2022,9,4,,
 48439121906,Census Tract,2020,1,6,,
 48439121906,Census Tract,2020,2,4,,
 48439121906,Census Tract,2020,3,3,,
@@ -66987,7 +67150,7 @@ Wylie,City,2022,8,17,,
 48439121907,Census Tract,2022,6,5,,
 48439121907,Census Tract,2022,7,13,,
 48439121907,Census Tract,2022,8,28,,
-48439121907,Census Tract,2022,9,2,,
+48439121907,Census Tract,2022,9,3,,
 48439121908,Census Tract,2020,1,6,,
 48439121908,Census Tract,2020,2,2,,
 48439121908,Census Tract,2020,8,7,,
@@ -67029,6 +67192,7 @@ Wylie,City,2022,8,17,,
 48439122001,Census Tract,2022,4,1,,
 48439122001,Census Tract,2022,7,1,,
 48439122001,Census Tract,2022,8,2,,
+48439122001,Census Tract,2022,9,1,,
 48439122002,Census Tract,2020,1,10,,
 48439122002,Census Tract,2020,2,15,,
 48439122002,Census Tract,2020,3,7,,
@@ -67057,7 +67221,7 @@ Wylie,City,2022,8,17,,
 48439122002,Census Tract,2022,5,29,,
 48439122002,Census Tract,2022,6,21,,
 48439122002,Census Tract,2022,8,6,,
-48439122002,Census Tract,2022,9,5,,
+48439122002,Census Tract,2022,9,7,,
 48439122100,Census Tract,2020,1,2,,
 48439122100,Census Tract,2020,2,3,,
 48439122100,Census Tract,2020,3,3,,
@@ -67111,7 +67275,7 @@ Wylie,City,2022,8,17,,
 48439122200,Census Tract,2022,6,1,,
 48439122200,Census Tract,2022,7,1,,
 48439122200,Census Tract,2022,8,2,,
-48439122200,Census Tract,2022,9,2,,
+48439122200,Census Tract,2022,9,4,,
 48439122300,Census Tract,2020,1,12,,
 48439122300,Census Tract,2020,2,7,,
 48439122300,Census Tract,2020,3,8,,
@@ -67359,7 +67523,7 @@ Wylie,City,2022,8,17,,
 48439122802,Census Tract,2022,6,12,,
 48439122802,Census Tract,2022,7,11,,
 48439122802,Census Tract,2022,8,5,,
-48439122802,Census Tract,2022,9,4,,
+48439122802,Census Tract,2022,9,5,,
 48439122901,Census Tract,2020,1,1,,
 48439122901,Census Tract,2021,5,1,,
 48439122901,Census Tract,2021,9,1,,
@@ -67428,7 +67592,7 @@ Wylie,City,2022,8,17,,
 48439123001,Census Tract,2022,6,4,,
 48439123001,Census Tract,2022,7,4,,
 48439123001,Census Tract,2022,8,9,,
-48439123001,Census Tract,2022,9,1,,
+48439123001,Census Tract,2022,9,2,,
 48439123002,Census Tract,2020,1,4,,
 48439123002,Census Tract,2020,2,10,,
 48439123002,Census Tract,2020,6,3,,
@@ -67457,6 +67621,7 @@ Wylie,City,2022,8,17,,
 48439123002,Census Tract,2022,6,4,,
 48439123002,Census Tract,2022,7,26,,
 48439123002,Census Tract,2022,8,16,,
+48439123002,Census Tract,2022,9,2,,
 48439123100,Census Tract,2020,1,3,,
 48439123100,Census Tract,2020,2,10,,
 48439123100,Census Tract,2020,3,1,,
@@ -67486,7 +67651,7 @@ Wylie,City,2022,8,17,,
 48439123100,Census Tract,2022,6,2,,
 48439123100,Census Tract,2022,7,11,,
 48439123100,Census Tract,2022,8,9,,
-48439123100,Census Tract,2022,9,1,,
+48439123100,Census Tract,2022,9,2,,
 48439123200,Census Tract,2020,1,7,,
 48439123200,Census Tract,2020,2,9,,
 48439123200,Census Tract,2020,3,6,,
@@ -67715,7 +67880,7 @@ Wylie,City,2022,8,17,,
 75001,Zip,2022,6,82,1720,2299.89777777778
 75001,Zip,2022,7,66,1902.5,2373.79265625
 75001,Zip,2022,8,49,1931.43,2113.85653061225
-75001,Zip,2022,9,1,,
+75001,Zip,2022,9,2,1383,1383
 75002,Zip,2019,7,1,2070,2070
 75002,Zip,2020,1,15,,
 75002,Zip,2020,2,25,,
@@ -67881,7 +68046,7 @@ Wylie,City,2022,8,17,,
 75007,Zip,2022,6,31,,
 75007,Zip,2022,7,29,4340.225,4836.89333333333
 75007,Zip,2022,8,29,2750,2750
-75007,Zip,2022,9,4,,
+75007,Zip,2022,9,11,,
 75009,Zip,2019,5,1,,
 75009,Zip,2019,10,1,,
 75009,Zip,2020,1,3,,
@@ -67949,7 +68114,7 @@ Wylie,City,2022,8,17,,
 75010,Zip,2022,6,39,,
 75010,Zip,2022,7,67,,
 75010,Zip,2022,8,65,,
-75010,Zip,2022,9,2,,
+75010,Zip,2022,9,4,,
 75013,Zip,2020,1,29,,
 75013,Zip,2020,2,21,,
 75013,Zip,2020,3,7,,
@@ -68364,7 +68529,7 @@ Wylie,City,2022,8,17,,
 75038,Zip,2022,6,80,2064.22,2203.55962025316
 75038,Zip,2022,7,105,2320,2521.8703030303
 75038,Zip,2022,8,81,2200.65,2369.51671428571
-75038,Zip,2022,9,35,2800.995,2822.34941176471
+75038,Zip,2022,9,50,2628,2732.29755102041
 75038,Zip,,,1,5375.34,5375.34
 75039,Zip,2017,1,37,1468,1906.044
 75039,Zip,2017,2,29,1404.85,1756.50333333333
@@ -68431,7 +68596,7 @@ Wylie,City,2022,8,17,,
 75039,Zip,2022,6,38,2140,2463.01756756757
 75039,Zip,2022,7,63,2404.81,2843.53063492064
 75039,Zip,2022,8,54,2212.38,2434.0496
-75039,Zip,2022,9,2,1092.15,1092.15
+75039,Zip,2022,9,8,2827.96,4021.15
 75040,Zip,2017,1,47,1136,1669.00214285714
 75040,Zip,2017,2,26,1173.45,1835.87909090909
 75040,Zip,2017,3,20,1350,2030.66578947368
@@ -68498,7 +68663,7 @@ Wylie,City,2022,8,17,,
 75040,Zip,2022,6,26,2300,3194.89739130435
 75040,Zip,2022,7,25,2302,2547.98590909091
 75040,Zip,2022,8,24,3250,3551.61333333333
-75040,Zip,2022,9,8,2280.11,2598.53
+75040,Zip,2022,9,11,2643.19,2943.84
 75040,Zip,2022,10,1,5550,5550
 75041,Zip,2017,1,27,880,1132.24038461538
 75041,Zip,2017,2,38,855,963.428648648649
@@ -68566,7 +68731,7 @@ Wylie,City,2022,8,17,,
 75041,Zip,2022,6,30,1475,2174.70551724138
 75041,Zip,2022,7,25,1566.3,1684.072
 75041,Zip,2022,8,16,1999.87,2261.52615384615
-75041,Zip,2022,9,3,2505,2505
+75041,Zip,2022,9,5,1835,1758.75
 75042,Zip,2017,1,28,791.5,934.161071428571
 75042,Zip,2017,2,27,902.42,1335.97192307692
 75042,Zip,2017,3,20,1113.285,1198.00277777778
@@ -68634,7 +68799,7 @@ Wylie,City,2022,8,17,,
 75042,Zip,2022,6,22,1072.12,1452.42736842105
 75042,Zip,2022,7,25,1182.75,1913.65136363636
 75042,Zip,2022,8,39,1325,1774.03896551724
-75042,Zip,2022,9,2,,
+75042,Zip,2022,9,9,2065,2623.50857142857
 75042,Zip,,,1,1400,1400
 75043,Zip,2017,1,77,853.57,1019.21959459459
 75043,Zip,2017,2,70,1020,1306.89791044776
@@ -68703,7 +68868,7 @@ Wylie,City,2022,8,17,,
 75043,Zip,2022,6,127,1300,1822.64714285714
 75043,Zip,2022,7,126,1200,1718.12730434783
 75043,Zip,2022,8,82,1544,1904.51558823529
-75043,Zip,2022,9,6,1648.27,2055.59166666667
+75043,Zip,2022,9,13,2659.105,3510.99916666667
 75044,Zip,2017,1,34,1060,1422.03363636364
 75044,Zip,2017,2,23,1103.5,1555.88727272727
 75044,Zip,2017,3,21,1045,1800.62619047619
@@ -68770,7 +68935,7 @@ Wylie,City,2022,8,17,,
 75044,Zip,2022,6,29,1220.115,1473.235
 75044,Zip,2022,7,51,1471.5,1773.46833333333
 75044,Zip,2022,8,52,1594,2228.5718
-75044,Zip,2022,9,8,2676,2528.49142857143
+75044,Zip,2022,9,10,2676,2616.87666666667
 75048,Zip,2017,1,4,1032,1244
 75048,Zip,2017,2,2,1975,1975
 75048,Zip,2017,3,3,3171.29,2810.43
@@ -68903,7 +69068,7 @@ Wylie,City,2022,8,17,,
 75050,Zip,2022,6,67,2320,2594.96869565217
 75050,Zip,2022,7,102,2240,2672.26659090909
 75050,Zip,2022,8,57,2137.55,2636.818
-75050,Zip,2022,9,4,2300,2300
+75050,Zip,2022,9,16,3190,3211.00714285714
 75051,Zip,2017,1,28,850,1322.7004
 75051,Zip,2017,2,37,1178.93,1482.78272727273
 75051,Zip,2017,3,28,1493.5,1918.71083333333
@@ -68971,7 +69136,7 @@ Wylie,City,2022,8,17,,
 75051,Zip,2022,6,43,1800,2120.81948717949
 75051,Zip,2022,7,43,1787,2407.95647058824
 75051,Zip,2022,8,41,1915,2372.56851851852
-75051,Zip,2022,9,5,2600,2215.33333333333
+75051,Zip,2022,9,8,2600,2215.33333333333
 75052,Zip,2017,1,27,1554,1766.81
 75052,Zip,2017,2,25,873,1598.65470588235
 75052,Zip,2017,3,16,1158,1469.88692307692
@@ -69040,7 +69205,7 @@ Wylie,City,2022,8,17,,
 75052,Zip,2022,6,98,1985,2587.32
 75052,Zip,2022,7,126,2475.46,2788.84923076923
 75052,Zip,2022,8,157,1995,2927.99283018868
-75052,Zip,2022,9,17,2619.05,3897.83
+75052,Zip,2022,9,20,2619.05,3247.87
 75052,Zip,,,1,849.11,849.11
 75054,Zip,2017,1,2,1475.5,1475.5
 75054,Zip,2017,3,1,1407,1407
@@ -69251,6 +69416,7 @@ Wylie,City,2022,8,17,,
 75060,Zip,2022,6,18,2375,2536.71764705882
 75060,Zip,2022,7,38,1349,1989.25515151515
 75060,Zip,2022,8,33,1369,2077.40935483871
+75060,Zip,2022,9,5,1935.26,2446.652
 75060,Zip,,,1,1014,1014
 75061,Zip,2017,1,72,770,883.231860465116
 75061,Zip,2017,2,38,1053.22,1815.7848
@@ -69320,7 +69486,7 @@ Wylie,City,2022,8,17,,
 75061,Zip,2022,6,74,2115,2312.75092307692
 75061,Zip,2022,7,84,1941.06,2038.93
 75061,Zip,2022,8,107,1662,2165.63839622641
-75061,Zip,2022,9,4,1000,2111.88666666667
+75061,Zip,2022,9,9,2520.295,2406.56125
 75061,Zip,,,1,2400,2400
 75062,Zip,2017,1,74,869,1089.44604651163
 75062,Zip,2017,2,57,818.695,1162.852
@@ -69389,7 +69555,7 @@ Wylie,City,2022,8,17,,
 75062,Zip,2022,6,122,1951.51,2224.075
 75062,Zip,2022,7,114,2147.76,2123.92554455446
 75062,Zip,2022,8,90,1920.315,2353.68025641026
-75062,Zip,2022,9,15,1500.5,1918.73142857143
+75062,Zip,2022,9,17,1372.965,1809.89625
 75063,Zip,2017,1,42,1158.94,1370.22909090909
 75063,Zip,2017,2,33,1247.69,1535.71
 75063,Zip,2017,3,17,1179.5,1064.24
@@ -69457,6 +69623,7 @@ Wylie,City,2022,8,17,,
 75063,Zip,2022,6,61,915.58,1406.6955
 75063,Zip,2022,7,91,1890,2435.592
 75063,Zip,2022,8,49,1593.5,1851.96458333333
+75063,Zip,2022,9,1,5900.56,5900.56
 75065,Zip,2019,1,12,,
 75065,Zip,2019,2,10,,
 75065,Zip,2019,3,2,,
@@ -69543,7 +69710,7 @@ Wylie,City,2022,8,17,,
 75067,Zip,2022,6,151,,
 75067,Zip,2022,7,154,,
 75067,Zip,2022,8,168,,
-75067,Zip,2022,9,10,,
+75067,Zip,2022,9,19,,
 75068,Zip,2019,1,33,,
 75068,Zip,2019,2,22,,
 75068,Zip,2019,3,22,,
@@ -69894,7 +70061,7 @@ Wylie,City,2022,8,17,,
 75080,Zip,2022,6,33,1906.66,2459.438
 75080,Zip,2022,7,14,3452.54,3904.00785714286
 75080,Zip,2022,8,29,2310,2240.11055555556
-75080,Zip,2022,9,3,1854,1735.66666666667
+75080,Zip,2022,9,6,1545,1586.16666666667
 75081,Zip,2017,1,27,1139.165,1919.515
 75081,Zip,2017,2,21,1135,1240.89222222222
 75081,Zip,2017,3,16,952.5,1304.535
@@ -69962,7 +70129,7 @@ Wylie,City,2022,8,17,,
 75081,Zip,2022,6,36,1409.5,1721.00882352941
 75081,Zip,2022,7,62,1823,2447.26816666667
 75081,Zip,2022,8,49,1689,1947.27
-75081,Zip,2022,9,4,4900,4900
+75081,Zip,2022,9,5,4900,6339.92
 75082,Zip,2017,1,1,1460,1460
 75082,Zip,2017,2,1,3704,3704
 75082,Zip,2017,5,2,,
@@ -70017,6 +70184,7 @@ Wylie,City,2022,8,17,,
 75082,Zip,2022,6,3,,
 75082,Zip,2022,7,1,3174,3174
 75082,Zip,2022,8,11,3407.52,3088.05666666667
+75082,Zip,2022,9,2,3325.42,3325.42
 75088,Zip,2017,1,15,1600,1723.725
 75088,Zip,2017,2,5,1440.5,1399.5
 75088,Zip,2017,3,7,900,1479.85714285714
@@ -70083,7 +70251,7 @@ Wylie,City,2022,8,17,,
 75088,Zip,2022,6,21,1650,2183.39888888889
 75088,Zip,2022,7,17,2432,2996.71153846154
 75088,Zip,2022,8,13,3950,4240.11909090909
-75088,Zip,2022,9,3,1736,2806.58
+75088,Zip,2022,9,4,2563,2952.435
 75089,Zip,2017,1,6,2150.695,2305.23166666667
 75089,Zip,2017,2,7,1624.5,2184.75
 75089,Zip,2017,3,10,1560,1702.46
@@ -70149,7 +70317,7 @@ Wylie,City,2022,8,17,,
 75089,Zip,2022,6,19,5523.2,5395.66444444445
 75089,Zip,2022,7,6,2268,3529.9
 75089,Zip,2022,8,15,2511.865,3371.72071428571
-75089,Zip,2022,9,1,2095,2095
+75089,Zip,2022,9,2,2095,2095
 75093,Zip,2017,12,1,,
 75093,Zip,2019,1,1,,
 75093,Zip,2019,2,2,,
@@ -70330,7 +70498,7 @@ Wylie,City,2022,8,17,,
 75104,Zip,2022,6,53,3681.12,4151.44019230769
 75104,Zip,2022,7,60,3080,3442.1649122807
 75104,Zip,2022,8,46,2948,3384.90239130435
-75104,Zip,2022,9,1,2240.62,2240.62
+75104,Zip,2022,9,9,2240.62,3078.46444444444
 75104,Zip,,,1,1044,1044
 75115,Zip,2017,1,112,1129.585,1574.89880434783
 75115,Zip,2017,2,100,1088.9,1477.00976190476
@@ -70398,7 +70566,7 @@ Wylie,City,2022,8,17,,
 75115,Zip,2022,6,71,2169,2770.54939393939
 75115,Zip,2022,7,104,1774.75,2284.62918367347
 75115,Zip,2022,8,112,1999,2466.15257142857
-75115,Zip,2022,9,17,3201,3457.00333333333
+75115,Zip,2022,9,28,3480,3534.452
 75115,Zip,,,1,2592.89,2592.89
 75116,Zip,2017,1,23,1109.5,1457.875
 75116,Zip,2017,2,24,1015,1568.31947368421
@@ -70538,7 +70706,7 @@ Wylie,City,2022,8,17,,
 75134,Zip,2022,6,42,1659.12,2099.36512820513
 75134,Zip,2022,7,61,1861.93,2626.15169491525
 75134,Zip,2022,8,27,1650.42,2205.58
-75134,Zip,2022,9,5,2646.5,3732
+75134,Zip,2022,9,13,2516.81,3744.0725
 75137,Zip,2017,1,20,1171.9,1662.289375
 75137,Zip,2017,2,17,1212.14,1110.13636363636
 75137,Zip,2017,3,16,907.5,1480.91375
@@ -70607,7 +70775,7 @@ Wylie,City,2022,8,17,,
 75137,Zip,2022,6,28,3356,3825.65739130435
 75137,Zip,2022,7,17,2334,3237.116
 75137,Zip,2022,8,22,2750,2921.42388888889
-75137,Zip,2022,9,4,2252.095,2338.7975
+75137,Zip,2022,9,7,2569.58,3465.725
 75137,Zip,,,1,2546,2546
 75141,Zip,2017,1,9,1124.285,1181.3475
 75141,Zip,2017,2,3,,
@@ -70737,7 +70905,7 @@ Wylie,City,2022,8,17,,
 75146,Zip,2022,6,45,1574.43,2648.19880952381
 75146,Zip,2022,7,62,2336.46,2983.86466666667
 75146,Zip,2022,8,43,1929.12,2647.43926829268
-75146,Zip,2022,9,5,1225,1286.398
+75146,Zip,2022,9,11,2189.61,3305.58727272727
 75149,Zip,2017,1,79,1007.85,1554.09328358209
 75149,Zip,2017,2,65,970.5,1133.56590163934
 75149,Zip,2017,3,39,1080,1045.40885714286
@@ -70805,7 +70973,7 @@ Wylie,City,2022,8,17,,
 75149,Zip,2022,6,74,1339.62,1945.07333333333
 75149,Zip,2022,7,51,1885,2376.32208333333
 75149,Zip,2022,8,73,1625,2447.52535211268
-75149,Zip,2022,9,11,2376.315,2662.587
+75149,Zip,2022,9,14,2432.975,2796.26583333333
 75150,Zip,2017,1,101,1004,1134.34863157895
 75150,Zip,2017,2,72,931.5,1046.28838235294
 75150,Zip,2017,3,75,1098,1563.57661764706
@@ -70874,7 +71042,7 @@ Wylie,City,2022,8,17,,
 75150,Zip,2022,6,110,1746,2165.7004950495
 75150,Zip,2022,7,120,1900,2488.08027522936
 75150,Zip,2022,8,118,1825,2603.19168141593
-75150,Zip,2022,9,9,2178,2862.71428571429
+75150,Zip,2022,9,22,2216,2842.18
 75154,Zip,2017,1,3,750,573.333333333333
 75154,Zip,2017,2,21,1465,2082.62764705882
 75154,Zip,2017,3,20,691.6,2401.55941176471
@@ -70941,6 +71109,7 @@ Wylie,City,2022,8,17,,
 75154,Zip,2022,6,10,2490,3671.36111111111
 75154,Zip,2022,7,21,1817,2774.935
 75154,Zip,2022,8,5,2145.42,2602.29
+75154,Zip,2022,9,1,1760,1760
 75159,Zip,2017,1,18,1736,2219.59076923077
 75159,Zip,2017,2,8,922.5,1059.29625
 75159,Zip,2017,3,14,1402.58,2450.06444444444
@@ -71008,6 +71177,7 @@ Wylie,City,2022,8,17,,
 75159,Zip,2022,6,15,2712,3370.35461538462
 75159,Zip,2022,7,12,2317,2716.01
 75159,Zip,2022,8,13,2345,2766.32545454546
+75159,Zip,2022,9,4,1782.36,2219.7275
 75164,Zip,2020,2,1,,
 75164,Zip,2021,1,1,,
 75164,Zip,2022,3,1,,
@@ -71089,6 +71259,7 @@ Wylie,City,2022,8,17,,
 75172,Zip,2022,6,30,1060,1151.58766666667
 75172,Zip,2022,7,19,920.405,1111.25142857143
 75172,Zip,2022,8,16,1142.5,1220.9325
+75172,Zip,2022,9,1,,
 75173,Zip,2020,1,1,,
 75173,Zip,2020,2,2,,
 75173,Zip,2020,3,1,,
@@ -71179,7 +71350,7 @@ Wylie,City,2022,8,17,,
 75180,Zip,2022,6,42,1248.5,1677.8553125
 75180,Zip,2022,7,56,1667.58,2408.16125
 75180,Zip,2022,8,46,2360,2541.45190476191
-75180,Zip,2022,9,1,3100,3100
+75180,Zip,2022,9,3,2878,2951.66666666667
 75181,Zip,2017,1,7,2225,2534.74333333333
 75181,Zip,2017,2,13,1629,1651.34230769231
 75181,Zip,2017,3,15,1906.835,1932.698
@@ -71336,7 +71507,7 @@ Wylie,City,2022,8,17,,
 75201,Zip,2022,6,60,3509,3854.76431034483
 75201,Zip,2022,7,58,4006.06,4156.06160714286
 75201,Zip,2022,8,53,2150,2953.19019607843
-75201,Zip,2022,9,1,4026.07,4026.07
+75201,Zip,2022,9,17,1993.73,2264.17941176471
 75202,Zip,2017,1,14,1708.82,1756.19285714286
 75202,Zip,2017,2,11,2656,2614.64909090909
 75202,Zip,2017,3,7,1523,1515.42571428571
@@ -71540,7 +71711,7 @@ Wylie,City,2022,8,17,,
 75204,Zip,2022,6,73,3538,3804.56936507937
 75204,Zip,2022,7,82,3340,3783.14438356164
 75204,Zip,2022,8,71,3029.79,3429.23454545455
-75204,Zip,2022,9,7,3355.715,4090.19
+75204,Zip,2022,9,13,2621.34,3095.45833333333
 75205,Zip,2017,1,8,2844.515,3098.095
 75205,Zip,2017,2,4,4174,5391.33333333333
 75205,Zip,2017,3,1,1750.34,1750.34
@@ -71607,7 +71778,7 @@ Wylie,City,2022,8,17,,
 75205,Zip,2022,6,4,3858.25,3357.5475
 75205,Zip,2022,7,1,4788,4788
 75205,Zip,2022,8,4,6082.5,6349
-75205,Zip,2022,9,1,7500,7500
+75205,Zip,2022,9,2,7500,7500
 75206,Zip,2017,1,24,1178.7,1469.2795
 75206,Zip,2017,2,26,1057.98,1288.62058823529
 75206,Zip,2017,3,37,951.355,1399.26291666667
@@ -71675,7 +71846,7 @@ Wylie,City,2022,8,17,,
 75206,Zip,2022,6,41,2833.68,3570.90128205128
 75206,Zip,2022,7,49,2500,2912.64564102564
 75206,Zip,2022,8,32,2400,3285.1412
-75206,Zip,2022,9,1,,
+75206,Zip,2022,9,4,7821.52,6796.36
 75207,Zip,2017,1,7,1761,3030.512
 75207,Zip,2017,2,3,2158,2291.33333333333
 75207,Zip,2017,3,4,1807.5,2486
@@ -71741,7 +71912,7 @@ Wylie,City,2022,8,17,,
 75207,Zip,2022,6,17,5076,5257.66588235294
 75207,Zip,2022,7,10,4353,3927.69222222222
 75207,Zip,2022,8,7,4002,3841.15857142857
-75207,Zip,2022,9,1,3113.15,3113.15
+75207,Zip,2022,9,5,2430,2777.43
 75208,Zip,2017,1,23,950,1208.23904761905
 75208,Zip,2017,2,17,1000,1400.26461538462
 75208,Zip,2017,3,14,1285,1372.56538461538
@@ -71873,7 +72044,7 @@ Wylie,City,2022,8,17,,
 75209,Zip,2022,6,8,6689,5761.53
 75209,Zip,2022,7,6,2748,2487.08
 75209,Zip,2022,8,12,3874.615,3917.44583333333
-75209,Zip,2022,9,1,,
+75209,Zip,2022,9,6,2654,3609.2
 75210,Zip,2017,1,26,920,1050.76
 75210,Zip,2017,2,19,1140,1505.0625
 75210,Zip,2017,3,21,1088,1343.05
@@ -72009,7 +72180,7 @@ Wylie,City,2022,8,17,,
 75211,Zip,2022,6,59,1824,2530.7585106383
 75211,Zip,2022,7,82,2195.5,3130.75643835616
 75211,Zip,2022,8,30,2080,2872.05166666667
-75211,Zip,2022,9,13,1215,2485.45454545455
+75211,Zip,2022,9,19,1450,2323.88235294118
 75212,Zip,2017,1,8,1558.5,1749.5
 75212,Zip,2017,2,16,701,861.090909090909
 75212,Zip,2017,3,22,701,957.752727272727
@@ -72076,7 +72247,7 @@ Wylie,City,2022,8,17,,
 75212,Zip,2022,6,31,3562.5,4045.25
 75212,Zip,2022,7,19,2857.5,3135.41428571429
 75212,Zip,2022,8,16,2544,3179.90909090909
-75212,Zip,2022,9,14,3375.09,3665.2875
+75212,Zip,2022,9,15,3375.09,3665.2875
 75212,Zip,,,1,,
 75214,Zip,2017,1,43,775,935.8725
 75214,Zip,2017,2,44,922.095,1228.32642857143
@@ -72146,7 +72317,7 @@ Wylie,City,2022,8,17,,
 75214,Zip,2022,6,46,1925,2127.00805555556
 75214,Zip,2022,7,27,2264,2517.14652173913
 75214,Zip,2022,8,51,2588.33,3367.19720930233
-75214,Zip,2022,9,16,2786.72,2462.10928571429
+75214,Zip,2022,9,18,2634.845,2379.720625
 75214,Zip,,,1,1440,1440
 75215,Zip,2017,1,67,1113.5,1497.91066666667
 75215,Zip,2017,2,48,1490.25,1975.96772727273
@@ -72216,7 +72387,7 @@ Wylie,City,2022,8,17,,
 75215,Zip,2022,6,56,1968,2244.18052631579
 75215,Zip,2022,7,96,3390,3781.12573529412
 75215,Zip,2022,8,45,1934,2396.90153846154
-75215,Zip,2022,9,14,4323.695,4452.62083333333
+75215,Zip,2022,9,21,4852,4834.48235294118
 75216,Zip,2017,1,136,967.165,1325.48216666667
 75216,Zip,2017,2,97,1040,1543.10385542169
 75216,Zip,2017,3,78,1208,1476.76173913043
@@ -72285,7 +72456,7 @@ Wylie,City,2022,8,17,,
 75216,Zip,2022,6,83,2579.35,3119.935
 75216,Zip,2022,7,107,2978.46,3241.75714285714
 75216,Zip,2022,8,156,3168.5,3495.59215517241
-75216,Zip,2022,9,19,3470.73,3438.182
+75216,Zip,2022,9,29,3582.66,3483.74875
 75217,Zip,2017,1,103,973,1485.63974683544
 75217,Zip,2017,2,91,980,1236.75821917808
 75217,Zip,2017,3,70,830,1308.04431034483
@@ -72354,7 +72525,7 @@ Wylie,City,2022,8,17,,
 75217,Zip,2022,6,89,2645,3200.79305555556
 75217,Zip,2022,7,56,2298,2814.63170731707
 75217,Zip,2022,8,59,2867.92,3326.26306122449
-75217,Zip,2022,9,7,2465,2371.8
+75217,Zip,2022,9,10,2472.5,2389.83333333333
 75218,Zip,2017,1,8,968.75,1197.605
 75218,Zip,2017,2,20,820,1272.095625
 75218,Zip,2017,3,12,640,721.682222222222
@@ -72488,7 +72659,7 @@ Wylie,City,2022,8,17,,
 75219,Zip,2022,6,42,2892.585,3503.835
 75219,Zip,2022,7,34,2890.5,3047.01451612903
 75219,Zip,2022,8,38,3951,3860.0434375
-75219,Zip,2022,9,4,3060,3590
+75219,Zip,2022,9,8,3891,3988.66571428571
 75220,Zip,2017,1,49,783.05,1118.51447368421
 75220,Zip,2017,2,60,794.885,860.42
 75220,Zip,2017,3,40,762.935,925.338928571429
@@ -72556,7 +72727,7 @@ Wylie,City,2022,8,17,,
 75220,Zip,2022,6,44,1796,1933.40078947368
 75220,Zip,2022,7,50,1750,2108.97466666667
 75220,Zip,2022,8,46,2415,2621.91866666667
-75220,Zip,2022,9,13,2632,2447.31666666667
+75220,Zip,2022,9,17,2545,2474.85333333333
 75223,Zip,2017,1,8,1463,1339.75
 75223,Zip,2017,2,5,1161.415,1161.415
 75223,Zip,2017,3,9,673.8,1317.08888888889
@@ -72624,7 +72795,7 @@ Wylie,City,2022,8,17,,
 75223,Zip,2022,6,7,1425,2461
 75223,Zip,2022,7,11,1520,1806.98
 75223,Zip,2022,8,5,1700,1804
-75223,Zip,2022,9,1,6760,6760
+75223,Zip,2022,9,2,6760,6760
 75224,Zip,2017,1,49,945,1215.38630434783
 75224,Zip,2017,2,35,836,1352.4275862069
 75224,Zip,2017,3,29,1130,1303.78807692308
@@ -72748,6 +72919,7 @@ Wylie,City,2022,8,17,,
 75225,Zip,2022,5,1,6216.41,6216.41
 75225,Zip,2022,7,1,806.45,806.45
 75225,Zip,2022,8,1,4690.32,4690.32
+75225,Zip,2022,9,1,6571.32,6571.32
 75226,Zip,2017,1,8,1000,1034.44428571429
 75226,Zip,2017,2,8,1130,1357.14285714286
 75226,Zip,2017,3,3,1596.7,1572.23333333333
@@ -72814,7 +72986,7 @@ Wylie,City,2022,8,17,,
 75226,Zip,2022,6,7,2920,3465.96142857143
 75226,Zip,2022,7,12,4994.5,4757.955
 75226,Zip,2022,8,8,1980,3061.44714285714
-75226,Zip,2022,9,13,3616.235,3662.88583333333
+75226,Zip,2022,9,14,3376,3640.81769230769
 75227,Zip,2017,1,88,1017.89,1343.64333333333
 75227,Zip,2017,2,86,1075,1330.80777777778
 75227,Zip,2017,3,77,884.45,1251.15936507937
@@ -72882,7 +73054,7 @@ Wylie,City,2022,8,17,,
 75227,Zip,2022,6,72,3001.04,3525.24857142857
 75227,Zip,2022,7,91,2256,2921.76096385542
 75227,Zip,2022,8,49,2402,3047.82186046512
-75227,Zip,2022,9,30,2492.5,3452.25071428571
+75227,Zip,2022,9,55,2836.985,3491.72384615385
 75228,Zip,2017,1,171,944.645,1144.324
 75228,Zip,2017,2,143,881.43,1027.89007633588
 75228,Zip,2017,3,134,850,1027.59821138211
@@ -72951,7 +73123,7 @@ Wylie,City,2022,8,17,,
 75228,Zip,2022,6,183,2468.39,2914.55051428571
 75228,Zip,2022,7,125,1990,2447.4872173913
 75228,Zip,2022,8,203,2487,3015.91973544974
-75228,Zip,2022,9,26,1700,1831.1456
+75228,Zip,2022,9,35,1909.5,2222.91060606061
 75228,Zip,,,1,699,699
 75229,Zip,2017,1,11,1112.5,1194.339
 75229,Zip,2017,2,22,1255.4,1508.42611111111
@@ -73019,6 +73191,7 @@ Wylie,City,2022,8,17,,
 75229,Zip,2022,6,4,3989.055,3965.05
 75229,Zip,2022,7,9,1756,2158.77777777778
 75229,Zip,2022,8,18,1869,2322.60117647059
+75229,Zip,2022,9,2,1870,1870
 75230,Zip,2017,1,32,940.5,1280.29923076923
 75230,Zip,2017,2,32,1027.5,1223.655
 75230,Zip,2017,3,19,583.275,671.288888888889
@@ -73155,7 +73328,7 @@ Wylie,City,2022,8,17,,
 75231,Zip,2022,6,78,2748.5,3147.42712328767
 75231,Zip,2022,7,82,2520,2870.52721518987
 75231,Zip,2022,8,77,2762,2929.09397260274
-75231,Zip,2022,9,16,3609.6,3604.20071428571
+75231,Zip,2022,9,18,3502.6,3272.350625
 75232,Zip,2017,1,74,1082.5,1424.90564516129
 75232,Zip,2017,2,60,1097.19,1382.662
 75232,Zip,2017,3,34,1139,1283.87419354839
@@ -73223,7 +73396,7 @@ Wylie,City,2022,8,17,,
 75232,Zip,2022,6,16,3002.5,3244.11833333333
 75232,Zip,2022,7,44,3482.24,3807.97538461538
 75232,Zip,2022,8,46,2813.36,2967.66488372093
-75232,Zip,2022,9,8,1748.5,1929.25
+75232,Zip,2022,9,12,2225.475,2305.35666666667
 75233,Zip,2017,1,44,1119.65,1248.47627906977
 75233,Zip,2017,2,34,1038.57,1130.8071875
 75233,Zip,2017,3,30,990,1012.09827586207
@@ -73291,7 +73464,7 @@ Wylie,City,2022,8,17,,
 75233,Zip,2022,6,10,1917.5,2759.496
 75233,Zip,2022,7,19,1559.63,2186.14133333333
 75233,Zip,2022,8,7,2550,2417.56571428571
-75233,Zip,2022,9,11,3465.54,4179.18727272727
+75233,Zip,2022,9,12,3483.485,4195.16416666667
 75234,Zip,2017,1,13,1610.71,1645.24777777778
 75234,Zip,2017,2,19,1100,1295.49076923077
 75234,Zip,2017,3,14,1446.64,1369.77142857143
@@ -73359,7 +73532,7 @@ Wylie,City,2022,8,17,,
 75234,Zip,2022,6,35,1834,2514.23303030303
 75234,Zip,2022,7,64,2272,2856.68762711864
 75234,Zip,2022,8,49,1536,1804.58723404255
-75234,Zip,2022,9,6,3509.265,3228.855
+75234,Zip,2022,9,24,2188,2357.2
 75235,Zip,2017,1,24,899,970.62375
 75235,Zip,2017,2,11,1538.27,1521.167
 75235,Zip,2017,3,24,1166.55,1429.915
@@ -73426,7 +73599,7 @@ Wylie,City,2022,8,17,,
 75235,Zip,2022,6,42,3525.73,3706.76081081081
 75235,Zip,2022,7,32,3564.965,3774.77666666667
 75235,Zip,2022,8,20,3409.1,3939.68736842105
-75235,Zip,2022,9,8,6064.42,5491.95
+75235,Zip,2022,9,10,5916,5240.84444444445
 75236,Zip,2017,1,43,1177.015,1422.475
 75236,Zip,2017,2,18,819,1046.89294117647
 75236,Zip,2017,3,20,987,1084.35777777778
@@ -73493,7 +73666,7 @@ Wylie,City,2022,8,17,,
 75236,Zip,2022,6,46,3029.33,3442.92377777778
 75236,Zip,2022,7,17,1741,2537.780625
 75236,Zip,2022,8,45,2282,2659.63659090909
-75236,Zip,2022,9,12,1857.615,2554.07083333333
+75236,Zip,2022,9,27,2627.4,3012.77703703704
 75237,Zip,2017,1,149,1133.19,1322.3231292517
 75237,Zip,2017,2,131,1023,1125.36905511811
 75237,Zip,2017,3,90,938.415,998.710581395349
@@ -73561,7 +73734,7 @@ Wylie,City,2022,8,17,,
 75237,Zip,2022,6,128,2181.66,2463.28302521008
 75237,Zip,2022,7,150,2258,2832.72118881119
 75237,Zip,2022,8,138,2804.17,3276.11917910448
-75237,Zip,2022,9,7,4911.7,5461.77142857143
+75237,Zip,2022,9,58,4221,4568.16071428572
 75238,Zip,2017,1,46,925.07,1047.64738095238
 75238,Zip,2017,2,40,1021.5,1243.829
 75238,Zip,2017,3,43,1369.085,1719.08175
@@ -73629,7 +73802,7 @@ Wylie,City,2022,8,17,,
 75238,Zip,2022,6,92,1352.86,1686.60465909091
 75238,Zip,2022,7,79,1820,2652.49935064935
 75238,Zip,2022,8,50,1418.075,2250.5672
-75238,Zip,2022,9,22,3471,4111.77272727273
+75238,Zip,2022,9,23,3471,4111.77272727273
 75238,Zip,,,2,1279,1279
 75240,Zip,2017,1,56,1034,1169.70380952381
 75240,Zip,2017,2,52,915,1142.80622222222
@@ -73699,7 +73872,7 @@ Wylie,City,2022,8,17,,
 75240,Zip,2022,6,45,1811,2190.67214285714
 75240,Zip,2022,7,47,1639,2312.05361702128
 75240,Zip,2022,8,42,1442.5,1683.26416666667
-75240,Zip,2022,9,11,1625.97,2124.18818181818
+75240,Zip,2022,9,18,1523.55,2074.65411764706
 75241,Zip,2017,1,59,1163.6,1434.63274509804
 75241,Zip,2017,2,36,981.5,1416.88566666667
 75241,Zip,2017,3,60,1271,1702.69272727273
@@ -73768,7 +73941,7 @@ Wylie,City,2022,8,17,,
 75241,Zip,2022,6,42,2204,2558.27388888889
 75241,Zip,2022,7,42,2451.36,3278.10029411765
 75241,Zip,2022,8,45,2880.16,3461.00764705882
-75241,Zip,2022,9,14,1393,2045.44666666667
+75241,Zip,2022,9,17,2724,2599.40272727273
 75243,Zip,2017,1,273,955.54,1192.87306382979
 75243,Zip,2017,2,218,932,1202.79326203209
 75243,Zip,2017,3,211,796,1013.33610810811
@@ -73837,7 +74010,7 @@ Wylie,City,2022,8,17,,
 75243,Zip,2022,6,260,1935,2261.26216101695
 75243,Zip,2022,7,250,2145,2435.01175438597
 75243,Zip,2022,8,223,2223.66,2576.25033175355
-75243,Zip,2022,9,38,2718,2729.62918918919
+75243,Zip,2022,9,54,2656.43,2775.9636
 75244,Zip,2017,1,29,1229.105,1335.96772727273
 75244,Zip,2017,2,28,1312.75,1565.275
 75244,Zip,2017,3,17,1466.2,1590.70785714286
@@ -73905,7 +74078,7 @@ Wylie,City,2022,8,17,,
 75244,Zip,2022,6,19,1868.06,1950.91842105263
 75244,Zip,2022,7,17,1756.125,1998.45875
 75244,Zip,2022,8,23,1632.74,1586.12913043478
-75244,Zip,2022,9,2,5590,5590
+75244,Zip,2022,9,4,5257.025,5423.5125
 75246,Zip,2017,1,12,710,748.4
 75246,Zip,2017,2,22,831,1243.88857142857
 75246,Zip,2017,3,10,362.85,747.331111111111
@@ -74168,6 +74341,7 @@ Wylie,City,2022,8,17,,
 75249,Zip,2022,6,9,4970.335,5045.02375
 75249,Zip,2022,7,5,3000,4582.652
 75249,Zip,2022,8,3,3079.925,3079.925
+75249,Zip,2022,9,1,375,375
 75251,Zip,2017,1,9,1159.57,1372.51666666667
 75251,Zip,2017,2,7,1667.71,1949.52285714286
 75251,Zip,2017,3,3,1386,1792.73333333333
@@ -74407,7 +74581,7 @@ Wylie,City,2022,8,17,,
 75254,Zip,2022,6,51,2896.5,2864.86152173913
 75254,Zip,2022,7,68,2250,2514.25191176471
 75254,Zip,2022,8,58,2045,2586.95472727273
-75254,Zip,2022,9,10,2216,2293.22666666667
+75254,Zip,2022,9,17,2536.39,2725.331875
 75270,Zip,2017,12,1,,
 75270,Zip,2020,9,1,,
 75287,Zip,2017,4,1,2121,2121
@@ -74458,7 +74632,7 @@ Wylie,City,2022,8,17,,
 75287,Zip,2022,6,199,,
 75287,Zip,2022,7,86,,
 75287,Zip,2022,8,203,,
-75287,Zip,2022,9,21,2982,2982
+75287,Zip,2022,9,32,2982,2982
 75407,Zip,2020,1,9,,
 75407,Zip,2020,2,7,,
 75407,Zip,2020,3,5,,
@@ -74618,7 +74792,7 @@ Wylie,City,2022,8,17,,
 76001,Zip,2022,6,16,,
 76001,Zip,2022,7,17,,
 76001,Zip,2022,8,24,,
-76001,Zip,2022,9,1,,
+76001,Zip,2022,9,3,,
 76002,Zip,2020,1,16,,
 76002,Zip,2020,2,9,,
 76002,Zip,2020,3,4,,
@@ -74651,7 +74825,7 @@ Wylie,City,2022,8,17,,
 76002,Zip,2022,6,9,,
 76002,Zip,2022,7,21,,
 76002,Zip,2022,8,20,,
-76002,Zip,2022,9,4,,
+76002,Zip,2022,9,5,,
 76006,Zip,2019,10,1,,
 76006,Zip,2020,1,201,,
 76006,Zip,2020,2,177,,
@@ -74684,7 +74858,7 @@ Wylie,City,2022,8,17,,
 76006,Zip,2022,6,141,,
 76006,Zip,2022,7,153,,
 76006,Zip,2022,8,204,,
-76006,Zip,2022,9,32,,
+76006,Zip,2022,9,61,,
 76008,Zip,2020,7,1,,
 76008,Zip,2020,11,1,,
 76008,Zip,2021,7,1,,
@@ -74726,7 +74900,7 @@ Wylie,City,2022,8,17,,
 76010,Zip,2022,6,123,,
 76010,Zip,2022,7,109,,
 76010,Zip,2022,8,144,,
-76010,Zip,2022,9,20,,
+76010,Zip,2022,9,28,,
 76011,Zip,2020,1,160,,
 76011,Zip,2020,2,157,,
 76011,Zip,2020,3,86,,
@@ -74758,7 +74932,7 @@ Wylie,City,2022,8,17,,
 76011,Zip,2022,6,106,,
 76011,Zip,2022,7,82,,
 76011,Zip,2022,8,118,,
-76011,Zip,2022,9,32,,
+76011,Zip,2022,9,37,,
 76012,Zip,2020,1,25,,
 76012,Zip,2020,2,27,1400,1400
 76012,Zip,2020,3,12,,
@@ -74791,7 +74965,7 @@ Wylie,City,2022,8,17,,
 76012,Zip,2022,6,15,,
 76012,Zip,2022,7,10,,
 76012,Zip,2022,8,19,,
-76012,Zip,2022,9,3,,
+76012,Zip,2022,9,4,,
 76013,Zip,2020,1,62,,
 76013,Zip,2020,2,67,,
 76013,Zip,2020,3,38,,
@@ -74823,7 +74997,7 @@ Wylie,City,2022,8,17,,
 76013,Zip,2022,6,55,,
 76013,Zip,2022,7,56,,
 76013,Zip,2022,8,54,,
-76013,Zip,2022,9,8,,
+76013,Zip,2022,9,9,,
 76014,Zip,2020,1,47,,
 76014,Zip,2020,2,64,,
 76014,Zip,2020,3,11,,
@@ -74856,7 +75030,7 @@ Wylie,City,2022,8,17,,
 76014,Zip,2022,6,68,,
 76014,Zip,2022,7,50,,
 76014,Zip,2022,8,48,,
-76014,Zip,2022,9,9,,
+76014,Zip,2022,9,15,,
 76015,Zip,2020,1,32,,
 76015,Zip,2020,2,28,,
 76015,Zip,2020,3,10,,
@@ -74889,7 +75063,7 @@ Wylie,City,2022,8,17,,
 76015,Zip,2022,6,18,,
 76015,Zip,2022,7,19,,
 76015,Zip,2022,8,13,,
-76015,Zip,2022,9,4,,
+76015,Zip,2022,9,6,,
 76016,Zip,2020,1,10,,
 76016,Zip,2020,2,6,,
 76016,Zip,2020,3,4,,
@@ -74921,6 +75095,7 @@ Wylie,City,2022,8,17,,
 76016,Zip,2022,6,8,,
 76016,Zip,2022,7,4,,
 76016,Zip,2022,8,8,,
+76016,Zip,2022,9,1,,
 76017,Zip,2020,1,55,,
 76017,Zip,2020,2,50,,
 76017,Zip,2020,3,8,,
@@ -74953,7 +75128,7 @@ Wylie,City,2022,8,17,,
 76017,Zip,2022,6,38,,
 76017,Zip,2022,7,20,,
 76017,Zip,2022,8,37,,
-76017,Zip,2022,9,5,,
+76017,Zip,2022,9,6,,
 76018,Zip,2018,10,1,4910,4910
 76018,Zip,2020,1,21,,
 76018,Zip,2020,2,14,,
@@ -75018,7 +75193,7 @@ Wylie,City,2022,8,17,,
 76020,Zip,2022,6,8,,
 76020,Zip,2022,7,10,,
 76020,Zip,2022,8,20,,
-76020,Zip,2022,9,5,,
+76020,Zip,2022,9,6,,
 76021,Zip,2020,1,56,,
 76021,Zip,2020,2,56,,
 76021,Zip,2020,3,20,,
@@ -75050,7 +75225,7 @@ Wylie,City,2022,8,17,,
 76021,Zip,2022,6,53,,
 76021,Zip,2022,7,54,,
 76021,Zip,2022,8,48,,
-76021,Zip,2022,9,2,,
+76021,Zip,2022,9,4,,
 76022,Zip,2020,1,57,,
 76022,Zip,2020,2,38,,
 76022,Zip,2020,3,20,,
@@ -75082,7 +75257,7 @@ Wylie,City,2022,8,17,,
 76022,Zip,2022,6,32,,
 76022,Zip,2022,7,39,,
 76022,Zip,2022,8,26,,
-76022,Zip,2022,9,4,,
+76022,Zip,2022,9,5,,
 76028,Zip,2020,1,14,,
 76028,Zip,2020,2,10,,
 76028,Zip,2020,3,2,,
@@ -75160,7 +75335,7 @@ Wylie,City,2022,8,17,,
 76036,Zip,2022,6,27,,
 76036,Zip,2022,7,37,,
 76036,Zip,2022,8,66,,
-76036,Zip,2022,9,7,,
+76036,Zip,2022,9,13,,
 76039,Zip,2020,1,46,,
 76039,Zip,2020,2,46,,
 76039,Zip,2020,3,26,,
@@ -75193,7 +75368,7 @@ Wylie,City,2022,8,17,,
 76039,Zip,2022,6,41,,
 76039,Zip,2022,7,67,,
 76039,Zip,2022,8,74,,
-76039,Zip,2022,9,12,,
+76039,Zip,2022,9,15,,
 76040,Zip,2019,4,1,3898.41,3898.41
 76040,Zip,2020,1,70,,
 76040,Zip,2020,2,46,,
@@ -75226,7 +75401,7 @@ Wylie,City,2022,8,17,,
 76040,Zip,2022,6,49,,
 76040,Zip,2022,7,63,,
 76040,Zip,2022,8,73,,
-76040,Zip,2022,9,5,,
+76040,Zip,2022,9,15,,
 76051,Zip,2020,1,63,,
 76051,Zip,2020,2,39,,
 76051,Zip,2020,3,41,,
@@ -75258,7 +75433,7 @@ Wylie,City,2022,8,17,,
 76051,Zip,2022,6,39,,
 76051,Zip,2022,7,48,,
 76051,Zip,2022,8,56,,
-76051,Zip,2022,9,13,,
+76051,Zip,2022,9,18,,
 76052,Zip,2019,4,1,,
 76052,Zip,2019,9,1,,
 76052,Zip,2019,10,1,,
@@ -75292,7 +75467,7 @@ Wylie,City,2022,8,17,,
 76052,Zip,2022,6,4,,
 76052,Zip,2022,7,8,,
 76052,Zip,2022,8,8,,
-76052,Zip,2022,9,4,,
+76052,Zip,2022,9,5,,
 76053,Zip,2020,1,42,,
 76053,Zip,2020,2,36,,
 76053,Zip,2020,3,27,,
@@ -75413,7 +75588,7 @@ Wylie,City,2022,8,17,,
 76063,Zip,2022,6,60,,
 76063,Zip,2022,7,75,,
 76063,Zip,2022,8,63,,
-76063,Zip,2022,9,12,,
+76063,Zip,2022,9,15,,
 76071,Zip,2021,12,1,,
 76071,Zip,2022,5,1,,
 76078,Zip,2019,3,1,,
@@ -75476,7 +75651,7 @@ Wylie,City,2022,8,17,,
 76102,Zip,2022,6,22,,
 76102,Zip,2022,7,21,,
 76102,Zip,2022,8,22,,
-76102,Zip,2022,9,1,,
+76102,Zip,2022,9,2,,
 76103,Zip,2020,1,32,,
 76103,Zip,2020,2,18,,
 76103,Zip,2020,3,3,,
@@ -75509,7 +75684,7 @@ Wylie,City,2022,8,17,,
 76103,Zip,2022,6,27,,
 76103,Zip,2022,7,29,,
 76103,Zip,2022,8,18,,
-76103,Zip,2022,9,2,,
+76103,Zip,2022,9,3,,
 76104,Zip,2020,1,30,,
 76104,Zip,2020,2,31,,
 76104,Zip,2020,3,16,,
@@ -75542,7 +75717,7 @@ Wylie,City,2022,8,17,,
 76104,Zip,2022,6,25,,
 76104,Zip,2022,7,40,,
 76104,Zip,2022,8,34,,
-76104,Zip,2022,9,2,,
+76104,Zip,2022,9,4,,
 76105,Zip,2020,1,34,,
 76105,Zip,2020,2,28,,
 76105,Zip,2020,3,15,,
@@ -75575,7 +75750,7 @@ Wylie,City,2022,8,17,,
 76105,Zip,2022,6,18,,
 76105,Zip,2022,7,18,,
 76105,Zip,2022,8,37,,
-76105,Zip,2022,9,2,,
+76105,Zip,2022,9,5,,
 76106,Zip,2020,1,34,,
 76106,Zip,2020,2,46,,
 76106,Zip,2020,3,22,,
@@ -75674,7 +75849,7 @@ Wylie,City,2022,8,17,,
 76108,Zip,2022,6,54,,
 76108,Zip,2022,7,56,,
 76108,Zip,2022,8,71,,
-76108,Zip,2022,9,8,,
+76108,Zip,2022,9,10,,
 76109,Zip,2020,1,27,,
 76109,Zip,2020,2,32,,
 76109,Zip,2020,3,18,,
@@ -75706,7 +75881,7 @@ Wylie,City,2022,8,17,,
 76109,Zip,2022,6,47,,
 76109,Zip,2022,7,52,,
 76109,Zip,2022,8,40,,
-76109,Zip,2022,9,1,,
+76109,Zip,2022,9,3,,
 76110,Zip,2018,9,1,,
 76110,Zip,2020,1,6,,
 76110,Zip,2020,2,20,,
@@ -75740,6 +75915,7 @@ Wylie,City,2022,8,17,,
 76110,Zip,2022,6,19,,
 76110,Zip,2022,7,16,,
 76110,Zip,2022,8,16,,
+76110,Zip,2022,9,1,,
 76111,Zip,2020,1,11,,
 76111,Zip,2020,2,12,,
 76111,Zip,2020,3,7,,
@@ -75772,7 +75948,7 @@ Wylie,City,2022,8,17,,
 76111,Zip,2022,6,13,,
 76111,Zip,2022,7,12,,
 76111,Zip,2022,8,25,,
-76111,Zip,2022,9,5,,
+76111,Zip,2022,9,6,,
 76112,Zip,2019,4,1,,
 76112,Zip,2020,1,201,,
 76112,Zip,2020,2,194,,
@@ -75806,7 +75982,7 @@ Wylie,City,2022,8,17,,
 76112,Zip,2022,6,142,,
 76112,Zip,2022,7,208,,
 76112,Zip,2022,8,123,1324,1324
-76112,Zip,2022,9,4,2994,2994
+76112,Zip,2022,9,31,2994,2994
 76114,Zip,2020,1,23,,
 76114,Zip,2020,2,22,,
 76114,Zip,2020,3,15,,
@@ -75839,7 +76015,7 @@ Wylie,City,2022,8,17,,
 76114,Zip,2022,6,28,,
 76114,Zip,2022,7,35,,
 76114,Zip,2022,8,26,,
-76114,Zip,2022,9,1,,
+76114,Zip,2022,9,4,,
 76115,Zip,2020,1,22,,
 76115,Zip,2020,2,26,,
 76115,Zip,2020,3,12,,
@@ -75871,6 +76047,7 @@ Wylie,City,2022,8,17,,
 76115,Zip,2022,6,21,,
 76115,Zip,2022,7,18,,
 76115,Zip,2022,8,6,,
+76115,Zip,2022,9,1,,
 76116,Zip,2020,1,153,,
 76116,Zip,2020,2,166,,
 76116,Zip,2020,3,79,,
@@ -75903,7 +76080,7 @@ Wylie,City,2022,8,17,,
 76116,Zip,2022,6,164,,
 76116,Zip,2022,7,146,,
 76116,Zip,2022,8,146,,
-76116,Zip,2022,9,12,,
+76116,Zip,2022,9,20,,
 76117,Zip,2020,1,69,,
 76117,Zip,2020,2,57,,
 76117,Zip,2020,3,35,,
@@ -75936,7 +76113,7 @@ Wylie,City,2022,8,17,,
 76117,Zip,2022,6,36,,
 76117,Zip,2022,7,52,,
 76117,Zip,2022,8,74,,
-76117,Zip,2022,9,4,,
+76117,Zip,2022,9,6,,
 76118,Zip,2020,1,14,,
 76118,Zip,2020,2,17,,
 76118,Zip,2020,3,9,,
@@ -75998,7 +76175,7 @@ Wylie,City,2022,8,17,,
 76119,Zip,2022,6,65,,
 76119,Zip,2022,7,90,,
 76119,Zip,2022,8,85,,
-76119,Zip,2022,9,2,,
+76119,Zip,2022,9,11,,
 76120,Zip,2020,1,93,,
 76120,Zip,2020,2,112,,
 76120,Zip,2020,3,30,,
@@ -76030,7 +76207,7 @@ Wylie,City,2022,8,17,,
 76120,Zip,2022,6,78,,
 76120,Zip,2022,7,80,,
 76120,Zip,2022,8,84,,
-76120,Zip,2022,9,2,,
+76120,Zip,2022,9,16,,
 76123,Zip,2020,1,36,,
 76123,Zip,2020,2,37,,
 76123,Zip,2020,3,14,,
@@ -76063,7 +76240,7 @@ Wylie,City,2022,8,17,,
 76123,Zip,2022,6,28,,
 76123,Zip,2022,7,27,,
 76123,Zip,2022,8,40,,
-76123,Zip,2022,9,7,,
+76123,Zip,2022,9,13,,
 76126,Zip,2020,1,7,,
 76126,Zip,2020,2,5,,
 76126,Zip,2020,5,4,,
@@ -76126,7 +76303,7 @@ Wylie,City,2022,8,17,,
 76131,Zip,2022,6,25,,
 76131,Zip,2022,7,31,,
 76131,Zip,2022,8,27,,
-76131,Zip,2022,9,3,,
+76131,Zip,2022,9,10,,
 76132,Zip,2020,1,62,,
 76132,Zip,2020,2,97,,
 76132,Zip,2020,3,35,,
@@ -76191,7 +76368,7 @@ Wylie,City,2022,8,17,,
 76133,Zip,2022,6,54,,
 76133,Zip,2022,7,61,,
 76133,Zip,2022,8,56,,
-76133,Zip,2022,9,8,,
+76133,Zip,2022,9,13,,
 76134,Zip,2020,1,27,,
 76134,Zip,2020,2,20,,
 76134,Zip,2020,3,7,,
@@ -76223,7 +76400,7 @@ Wylie,City,2022,8,17,,
 76134,Zip,2022,6,76,,
 76134,Zip,2022,7,20,,
 76134,Zip,2022,8,23,,
-76134,Zip,2022,9,4,,
+76134,Zip,2022,9,10,,
 76135,Zip,2020,1,24,,
 76135,Zip,2020,2,17,,
 76135,Zip,2020,3,9,,
@@ -76255,7 +76432,7 @@ Wylie,City,2022,8,17,,
 76135,Zip,2022,6,34,,
 76135,Zip,2022,7,21,,
 76135,Zip,2022,8,33,,
-76135,Zip,2022,9,13,,
+76135,Zip,2022,9,14,,
 76137,Zip,2020,1,71,,
 76137,Zip,2020,2,76,,
 76137,Zip,2020,3,48,,
@@ -76288,7 +76465,7 @@ Wylie,City,2022,8,17,,
 76137,Zip,2022,6,75,,
 76137,Zip,2022,7,88,,
 76137,Zip,2022,8,74,,
-76137,Zip,2022,9,3,,
+76137,Zip,2022,9,7,,
 76140,Zip,2020,1,42,,
 76140,Zip,2020,2,36,,
 76140,Zip,2020,3,29,,
@@ -76321,7 +76498,7 @@ Wylie,City,2022,8,17,,
 76140,Zip,2022,6,22,,
 76140,Zip,2022,7,33,,
 76140,Zip,2022,8,33,,
-76140,Zip,2022,9,8,,
+76140,Zip,2022,9,12,,
 76148,Zip,2020,1,10,,
 76148,Zip,2020,2,7,,
 76148,Zip,2020,3,2,,
@@ -76353,7 +76530,7 @@ Wylie,City,2022,8,17,,
 76148,Zip,2022,6,3,,
 76148,Zip,2022,7,5,,
 76148,Zip,2022,8,9,,
-76148,Zip,2022,9,1,,
+76148,Zip,2022,9,2,,
 76155,Zip,2020,1,43,,
 76155,Zip,2020,2,39,,
 76155,Zip,2020,3,36,,
@@ -76416,7 +76593,7 @@ Wylie,City,2022,8,17,,
 76164,Zip,2022,6,2,,
 76164,Zip,2022,7,12,,
 76164,Zip,2022,8,7,,
-76164,Zip,2022,9,2,,
+76164,Zip,2022,9,3,,
 76177,Zip,2019,1,1,,
 76177,Zip,2019,3,1,,
 76177,Zip,2019,4,1,,
@@ -76455,7 +76632,7 @@ Wylie,City,2022,8,17,,
 76177,Zip,2022,6,19,,
 76177,Zip,2022,7,19,,
 76177,Zip,2022,8,17,,
-76177,Zip,2022,9,1,,
+76177,Zip,2022,9,2,,
 76179,Zip,2020,1,35,,
 76179,Zip,2020,2,15,,
 76179,Zip,2020,3,19,,
@@ -76488,7 +76665,7 @@ Wylie,City,2022,8,17,,
 76179,Zip,2022,6,22,,
 76179,Zip,2022,7,33,,
 76179,Zip,2022,8,52,,
-76179,Zip,2022,9,10,,
+76179,Zip,2022,9,12,,
 76180,Zip,2020,1,51,,
 76180,Zip,2020,2,55,,
 76180,Zip,2020,3,29,,
@@ -76680,7 +76857,7 @@ Wylie,City,2022,8,17,,
 76207,Zip,2022,6,13,,
 76207,Zip,2022,7,24,,
 76207,Zip,2022,8,15,,
-76207,Zip,2022,9,2,,
+76207,Zip,2022,9,3,,
 76208,Zip,2019,1,17,,
 76208,Zip,2019,2,16,,
 76208,Zip,2019,3,14,,
@@ -76723,7 +76900,7 @@ Wylie,City,2022,8,17,,
 76208,Zip,2022,6,28,,
 76208,Zip,2022,7,22,,
 76208,Zip,2022,8,21,,
-76208,Zip,2022,9,2,,
+76208,Zip,2022,9,5,,
 76209,Zip,2019,1,34,,
 76209,Zip,2019,2,27,,
 76209,Zip,2019,3,24,,
@@ -76889,7 +77066,7 @@ Wylie,City,2022,8,17,,
 76227,Zip,2022,6,24,,
 76227,Zip,2022,7,21,,
 76227,Zip,2022,8,27,,
-76227,Zip,2022,9,6,,
+76227,Zip,2022,9,9,,
 76234,Zip,2020,12,1,,
 76244,Zip,2020,1,41,,
 76244,Zip,2020,2,32,,
@@ -76923,7 +77100,7 @@ Wylie,City,2022,8,17,,
 76244,Zip,2022,6,22,,
 76244,Zip,2022,7,35,,
 76244,Zip,2022,8,27,,
-76244,Zip,2022,9,12,,
+76244,Zip,2022,9,15,,
 76247,Zip,2019,1,6,,
 76247,Zip,2019,2,3,,
 76247,Zip,2019,3,5,,
@@ -77027,6 +77204,7 @@ Wylie,City,2022,8,17,,
 76249,Zip,2022,6,2,,
 76249,Zip,2022,7,1,,
 76249,Zip,2022,8,3,,
+76249,Zip,2022,9,1,,
 76258,Zip,2019,1,1,,
 76258,Zip,2019,2,1,,
 76258,Zip,2019,4,2,,
@@ -77062,6 +77240,7 @@ Wylie,City,2022,8,17,,
 76258,Zip,2022,5,1,,
 76258,Zip,2022,6,5,,
 76258,Zip,2022,7,2,,
+76258,Zip,2022,9,1,,
 76259,Zip,2019,1,6,,
 76259,Zip,2019,2,3,,
 76259,Zip,2019,3,1,,
@@ -77133,7 +77312,7 @@ Wylie,City,2022,8,17,,
 76262,Zip,2022,6,12,,
 76262,Zip,2022,7,25,,
 76262,Zip,2022,8,10,,
-76262,Zip,2022,9,6,,
+76262,Zip,2022,9,8,,
 76266,Zip,2019,1,5,,
 76266,Zip,2019,2,8,,
 76266,Zip,2019,3,7,,
