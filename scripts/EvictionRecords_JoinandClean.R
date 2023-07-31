@@ -9,12 +9,12 @@ counties <- c("Dallas County",
               "Denton County",
               "Tarrant County")
 
-ntx_counties <- tigris::counties(state = "TX", year = 2019) %>%
+ntx_counties <- tigris::counties(state = "TX", year = 2021) %>%
   filter(NAMELSAD %in% counties) %>%
   select(NAME, GEOID,  geometry) %>%
   rename(county_id = GEOID)
 
-ntx_places <- tigris::places(state = "TX", year = 2019) %>%
+ntx_places <- tigris::places(state = "TX", year = 2021) %>%
   .[ntx_counties, ] %>%
   select(NAME, GEOID, geometry) %>%
   rename(city_id = GEOID)
@@ -138,6 +138,13 @@ eviction_NA <- evictioncases %>%
   filter(is.na(city_id)) %>%
   filter(is.na(lon))
 
+
+naexplore <- eviction_NA %>%
+  mutate(year = lubridate::year(date)) %>%
+  group_by(county_id, year) %>%
+  summarize(count = n()) %>%
+  pivot_wider(names_from = county_id, values_from = count)
+
 #### Replace all incorrect/missing city names with NA #####
 city_small <- ntx_places %>%
   st_drop_geometry(.)
@@ -189,8 +196,8 @@ ntx_tracts <- tigris::tracts(state = "TX", county = counties, year = 2020) %>%
   rename(tract_id = GEOID)
 
 #### Import council districts geographies #####
-#dallascouncil <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/Council_Simple.shp") %>%
-dallascouncil <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/Council_Simple.shp") %>%
+#dallascouncil <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/City Council 2023 Boundaries/Council_Simple.shp") %>%
+dallascouncil <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/City Council 2023 Boundaries/Council_Simple.shp") %>%
   mutate(DISTRICT = str_pad(DISTRICT, 2, pad = "0"),
          council_id = paste0("4819000-", DISTRICT)) %>%
   select(council_id, geometry) %>%

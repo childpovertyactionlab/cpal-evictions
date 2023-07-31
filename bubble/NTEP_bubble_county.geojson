@@ -3,9 +3,9 @@
 "name": "NTEP_bubble_county",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::4269" } },
 "features": [
-{ "type": "Feature", "properties": { "id": "48113", "name": "Dallas County, Texas", "pop": 2606868.0, "rhh": 464121.0 }, "geometry": { "type": "Point", "coordinates": [ -96.77739551994685, 32.764892 ] } },
-{ "type": "Feature", "properties": { "id": "48085", "name": "Collin County, Texas", "pop": 973977.0, "rhh": 119335.0 }, "geometry": { "type": "Point", "coordinates": [ -96.567716545287212, 33.1821795 ] } },
-{ "type": "Feature", "properties": { "id": "48121", "name": "Denton County, Texas", "pop": 833822.0, "rhh": 101387.0 }, "geometry": { "type": "Point", "coordinates": [ -97.115416228790295, 33.2134515 ] } },
-{ "type": "Feature", "properties": { "id": "48439", "name": "Tarrant County, Texas", "pop": 2049770.0, "rhh": 279622.0 }, "geometry": { "type": "Point", "coordinates": [ -97.291752513338793, 32.764892 ] } }
+{ "type": "Feature", "properties": { "id": "48439", "name": "Tarrant County, Texas", "pop": 2091953.0, "rhh": 297609.0 }, "geometry": { "type": "Point", "coordinates": [ -97.291691907771991, 32.7685135 ] } },
+{ "type": "Feature", "properties": { "id": "48085", "name": "Collin County, Texas", "pop": 1039812.0, "rhh": 130862.0 }, "geometry": { "type": "Point", "coordinates": [ -96.567715921931551, 33.185735 ] } },
+{ "type": "Feature", "properties": { "id": "48113", "name": "Dallas County, Texas", "pop": 2604722.0, "rhh": 468512.0 }, "geometry": { "type": "Point", "coordinates": [ -96.777330765927019, 32.7685135 ] } },
+{ "type": "Feature", "properties": { "id": "48121", "name": "Denton County, Texas", "pop": 885012.0, "rhh": 112214.0 }, "geometry": { "type": "Point", "coordinates": [ -97.115416228790295, 33.2134515 ] } }
 ]
 }
