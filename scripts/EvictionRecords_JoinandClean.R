@@ -104,7 +104,7 @@ tarrant <- import("https://evictions.s3.us-east-2.amazonaws.com/tarrant-eviction
 
 #### Eviction data import and attribute selection Dallas County #####
 #select only the necessary column types and rename them based on NTE data plan
-dallas <- import("C:/Users/micha/CPAL Dropbox/Data Library/Dallas County/Eviction Records/Data/Dallas County Eviction Master/EvictionRecords_Master.csv") %>%
+dallas <- import("C:/Users/Michael/CPAL Dropbox/Data Library/Dallas County/Eviction Records/Data/Dallas County Eviction Master/EvictionRecords_Master.csv") %>%
 #dallas <- import("E:/CPAL Dropbox/Data Library/Dallas County/Eviction Records/Data/Dallas County Eviction Master/EvictionRecords_Master.csv") %>%
 #  select(case_number, court, df_city, df_zip, filed_date, amount, X, Y) %>%
   select(case_number, court, df_city, df_zip, filed_date, amount, X, Y, plaintiff_name, pl_address) %>%
@@ -197,7 +197,7 @@ ntx_tracts <- tigris::tracts(state = "TX", county = counties, year = 2020) %>%
 
 #### Import council districts geographies #####
 #dallascouncil <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/City Council 2023 Boundaries/Council_Simple.shp") %>%
-dallascouncil <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/City Council 2023 Boundaries/Council_Simple.shp") %>%
+dallascouncil <- st_read("C:/Users/Michael/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/City Council 2023 Boundaries/Council_Simple.shp") %>%
   mutate(DISTRICT = str_pad(DISTRICT, 2, pad = "0"),
          council_id = paste0("4819000-", DISTRICT)) %>%
   select(council_id, geometry) %>%
