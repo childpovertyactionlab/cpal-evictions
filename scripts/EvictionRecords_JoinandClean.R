@@ -168,25 +168,30 @@ eviction_sf <- evictioncases %>%
   mutate(lon = sf::st_coordinates(.)[,1],
          lat = sf::st_coordinates(.)[,2]) %>%
   st_join(., ntx_places, left = TRUE) %>%
-  mutate(city_id.x = ifelse(city_id.x == "Worth", "Fort Worth", 
-                            ifelse(city_id.x == "city", NA, 
-                                   ifelse(city_id.x == "Nv", NA,
-                                          ifelse(city_id.x == "Orlando", NA,
-                                                 ifelse(city_id.x == "Paul", "St. Paul",
-                                                        ifelse(city_id.x == "Point", NA,
-                                                               ifelse(city_id.x == "Piont", NA, 
-                                                                      ifelse(city_id.x == "Crossroads", "Cross Roads", 
-                                                                             ifelse(city_id.x == "Roads", "Cross Roads",
-                                                                                    ifelse(city_id.x == "Road", "Cross Roads",
-                                                                                           ifelse(city_id.x == "Mckinney", "McKinney",
-                                                                                                  ifelse(city_id.x == "Ridge", "Blue Ridge",
-                                                                                                         ifelse(city_id.x == "City", NA,
-                                                                                                                ifelse(city_id.x == "Elm", "Little Elm",
-                                                                                                                       ifelse(city_id.x == "Copeville", "Colleyville",
-                                                                                                                              ifelse(city_id.x == "Colony", "The Colony",
-                                                                                                                                     ifelse(city_id.x == "Circlesanger", "Sanger",
-                                                                                                                                            ifelse(city_id.x == "Lewsiville", "Lewisville", city_id.x)))))))))))))))))),
-         city_id.z = ifelse(!is.na(NAME), NAME, city_id.x)) %>%
+  mutate(
+    city_id.x = case_when(
+      city_id.x == "Worth"         ~ "Fort Worth",
+      city_id.x == "city"          ~ NA_character_,
+      city_id.x == "Nv"            ~ NA_character_,
+      city_id.x == "Orlando"       ~ NA_character_,
+      city_id.x == "Paul"          ~ "St. Paul",
+      city_id.x == "Point"         ~ NA_character_,
+      city_id.x == "Piont"         ~ NA_character_,
+      city_id.x == "Crossroads"    ~ "Cross Roads",
+      city_id.x == "Roads"         ~ "Cross Roads",
+      city_id.x == "Road"          ~ "Cross Roads",
+      city_id.x == "Mckinney"      ~ "McKinney",
+      city_id.x == "Ridge"         ~ "Blue Ridge",
+      city_id.x == "City"          ~ NA_character_,
+      city_id.x == "Elm"           ~ "Little Elm",
+      city_id.x == "Copeville"     ~ "Colleyville",
+      city_id.x == "Colony"        ~ "The Colony",
+      city_id.x == "Circlesanger"  ~ "Sanger",
+      city_id.x == "Lewsiville"    ~ "Lewisville",
+      TRUE                         ~ city_id.x
+    ),
+    city_id.z = ifelse(!is.na(NAME), NAME, city_id.x)
+  ) %>%
   select(-city_id.x, -city_id.y, -NAME, -zip_id) %>%
   rename(NAME = city_id.z) %>%
   left_join(., city_small, by = "NAME") %>%
