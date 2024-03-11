@@ -17,6 +17,21 @@ counties <- c("Dallas County",
 ntx_counties <- tigris::counties(state = "TX") %>%
   filter(NAMELSAD %in% counties)
 
+districts <- st_read("Current_Districts_2023.geojson")
+
+ntx_districts <- districts %>%
+  st_make_valid() %>%
+  st_filter(ntx_counties %>% st_transform(st_crs(districts)))
+
+ntxd_rm <- ntx_districts %>%
+  filter(NAME2 != "Dallas") %>%
+  mutate(
+    id = paste0("9-", str_pad(as.numeric(interaction(SDLEA)), width = 3, pad = "0"))
+      
+  ) %>% 
+  select(id, name = NAME, geometry) %>%
+  st_transform(crs = 4269)
+
 acs_var <- c(
   tot_pop = "B01003_001", #total population
   pop_u18 = "B17006_001", #population under 18
@@ -220,14 +235,17 @@ plot(eviction_council["mpv"])
 plot(eviction_council["mgr"])
 
 #### Tidy Census School Boundary #####
-eviction_elem <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Elementary.shp") %>%
+eviction_elem <- st_read("C:/Users/taylo/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Elementary.shp") %>%
+# eviction_elem <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Elementary.shp") %>%
 #eviction_elem <- st_read("E:/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Elementary.shp") %>%
-  select(SLN, ELEM_DESC, geometry) %>%
+  select(id = SLN,
+         name = ELEM_DESC, 
+         geometry) %>%
+  mutate(id = paste0("1-", id)) %>%
   st_transform(crs = 4269) %>%
+  bind_rows(ntxd_rm) %>%
   st_intersection(census_tract, .) %>%
-  mutate(id = paste0("1-", SLN),
-         name = ELEM_DESC,
-         AreaIntersect = as.numeric(st_area(.)),
+  mutate(AreaIntersect = as.numeric(st_area(.)),
          PerIntersect = AreaIntersect/AreaTract,
          pop_intersect = round(PerIntersect*tot_popE, digits = 4),
          popbp_intersect = round(PerIntersect*pop_bpE, digits = 4),
@@ -258,14 +276,17 @@ eviction_elem <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Indepe
   select(id, name, pop:pch) %>%
   ms_simplify(., keep = 0.2)
 
-eviction_midd <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Middle.shp") %>%
+eviction_midd <- st_read("C:/Users/taylo/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Middle.shp") %>%
+# eviction_midd <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Middle.shp") %>%
 #eviction_midd <- st_read("E:/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Middle.shp") %>%
-  select(MID_SLN, MIDDLE, geometry) %>%
+  select(id = MID_SLN,
+         name = MIDDLE, 
+         geometry) %>%
+  mutate(id = paste0("2-", str_pad(id, 3, pad = "0"))) %>%
   st_transform(crs = 4269) %>%
+  bind_rows(ntxd_rm) %>%
   st_intersection(census_tract, .) %>%
-  mutate(id = paste0("2-", str_pad(MID_SLN, 3, pad = "0")),
-         name = MIDDLE,
-         AreaIntersect = as.numeric(st_area(.)),
+  mutate(AreaIntersect = as.numeric(st_area(.)),
          PerIntersect = AreaIntersect/AreaTract,
          pop_intersect = round(PerIntersect*tot_popE, digits = 4),
          popbp_intersect = round(PerIntersect*pop_bpE, digits = 4),
@@ -296,15 +317,17 @@ eviction_midd <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Indepe
   select(id, name, pop:pch) %>%
   ms_simplify(., keep = 0.2)
 
-
-eviction_high <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_High.shp") %>%
+eviction_high <- st_read("C:/Users/taylo/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_High.shp") %>%
+# eviction_high <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_High.shp") %>%
 #eviction_high <- st_read("E:/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_High.shp") %>%
-  select(HIGH_SLN, HIGH, geometry) %>%
+  select(id = HIGH_SLN,
+         name = HIGH, 
+         geometry) %>%
+  mutate(id = paste0("3-", str_pad(id, 3, pad = "0"))) %>%
   st_transform(crs = 4269) %>%
+  bind_rows(ntxd_rm) %>%
   st_intersection(census_tract, .) %>%
-  mutate(id = paste0("3-", str_pad(HIGH_SLN, 3, pad = "0")),
-         name = HIGH,
-         AreaIntersect = as.numeric(st_area(.)),
+  mutate(AreaIntersect = as.numeric(st_area(.)),
          PerIntersect = AreaIntersect/AreaTract,
          pop_intersect = round(PerIntersect*tot_popE, digits = 4),
          popbp_intersect = round(PerIntersect*pop_bpE, digits = 4),
