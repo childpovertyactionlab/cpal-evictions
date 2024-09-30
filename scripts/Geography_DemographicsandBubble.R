@@ -5,8 +5,8 @@ library(rio)
 library(sf)
 library(rmapshaper)
 
-acs19_b <- load_variables(2019, "acs5", cache = TRUE)
-acs19_s <- load_variables(2019, "acs5/subject", cache = TRUE)
+#acs19_b <- load_variables(2019, "acs5", cache = TRUE)
+#acs19_s <- load_variables(2019, "acs5/subject", cache = TRUE)
 
 #### Import demographic variables from TidyCensus #####
 counties <- c("Dallas County", 
@@ -17,7 +17,7 @@ counties <- c("Dallas County",
 ntx_counties <- tigris::counties(state = "TX") %>%
   filter(NAMELSAD %in% counties)
 
-districts <- st_read("Current_Districts_2023.geojson")
+districts <- st_read("data/Current_Districts_2023.geojson")
 
 ntx_districts <- districts %>%
   st_make_valid() %>%
@@ -30,6 +30,13 @@ ntxd_rm <- ntx_districts %>%
       
   ) %>% 
   select(id, name = NAME, geometry) %>%
+  st_transform(crs = 4269)
+
+##### Import School District Data #####
+risd_elem <- st_read("C:/Users/Michael/CPAL Dropbox/Data Library/Richardson Independent School District/School Boundaries/Richardson ISD Elementary School Boundaries 2024-2025.geojson") %>%
+  mutate(name = paste0(SchoolName, " Elementary School"),
+         id = paste0("4-", SchoolCode)) %>%
+  select(id, name, geometry) %>%
   st_transform(crs = 4269)
 
 acs_var <- c(
@@ -58,7 +65,7 @@ census_tract <- get_acs(geography = "tract",
                            state = "TX",
                            county = counties,
                            variables = acs_var,
-                           year = 2021, 
+                           year = 2022, 
                            survey = "acs5", 
                            output = "wide",
                            geometry = TRUE) %>%
@@ -90,13 +97,17 @@ plot(eviction_tract["pvr"])
 plot(eviction_tract["cpr"])
 
 #### Tidy Census ZCTA #####
+zctas <- tigris::zctas(year = 2020) %>%
+  rename(GEOID = GEOID20) %>%
+  select(GEOID, geometry)
+
 eviction_zcta <- get_acs(geography = "zcta", 
                           #state = "TX",
                           variables = acs_var,
-                          year = 2021, 
+                          year = 2022, 
                           survey = "acs5", 
-                          output = "wide",
-                          geometry = TRUE) %>%
+                          output = "wide") %>%
+  left_join(zctas, .) %>%
   .[ntx_counties, ] %>%
   transmute(id = GEOID,
             name = NAME,
@@ -126,7 +137,7 @@ plot(eviction_zcta["cpr"])
 eviction_place <- get_acs(geography = "place", 
                           state = "TX",
                           variables = acs_var,
-                          year = 2021, 
+                          year = 2022, 
                           survey = "acs5", 
                           output = "wide",
                           geometry = TRUE) %>%
@@ -162,7 +173,7 @@ eviction_county <- get_acs(geography = "county",
                           state = "TX",
                           county = counties,
                           variables = acs_var,
-                          year = 2021, 
+                          year = 2022, 
                           survey = "acs5", 
                           output = "wide",
                           geometry = TRUE) %>%
@@ -191,8 +202,7 @@ plot(eviction_county["pvr"])
 plot(eviction_county["cpr"])
 
 #### Tidy Census City Council #####
-eviction_council <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/City Council 2023 Boundaries/Council_Simple.shp") %>%
-#eviction_council <- st_read("E:/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/City Council 2023 Boundaries/Council_Simple.shp") %>%
+eviction_council <- st_read("C:/Users/Michael/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/City Council 2023 Boundaries/Council_Simple.shp") %>%
   mutate(DISTRICT = str_pad(DISTRICT, 2, pad = "0")) %>%
   select(DISTRICT, geometry) %>%
   st_transform(crs = 4269) %>%
@@ -235,15 +245,14 @@ plot(eviction_council["mpv"])
 plot(eviction_council["mgr"])
 
 #### Tidy Census School Boundary #####
-eviction_elem <- st_read("C:/Users/taylo/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Elementary.shp") %>%
-# eviction_elem <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Elementary.shp") %>%
-#eviction_elem <- st_read("E:/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Elementary.shp") %>%
+eviction_elem <- st_read("C:/Users/Michael/CPAL Dropbox/Data Library/Dallas Independent School District/2024_2025 School Year/Elementary_Attendance_Boundaries.geojson") %>%
   select(id = SLN,
          name = ELEM_DESC, 
          geometry) %>%
   mutate(id = paste0("1-", id)) %>%
   st_transform(crs = 4269) %>%
-  bind_rows(ntxd_rm) %>%
+  bind_rows(filter(ntxd_rm, name != "Richardson ISD")) %>%
+  bind_rows(risd_elem) %>%
   st_intersection(census_tract, .) %>%
   mutate(AreaIntersect = as.numeric(st_area(.)),
          PerIntersect = AreaIntersect/AreaTract,
@@ -276,9 +285,7 @@ eviction_elem <- st_read("C:/Users/taylo/CPAL Dropbox/Data Library/Dallas Indepe
   select(id, name, pop:pch) %>%
   ms_simplify(., keep = 0.2)
 
-eviction_midd <- st_read("C:/Users/taylo/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Middle.shp") %>%
-# eviction_midd <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Middle.shp") %>%
-#eviction_midd <- st_read("E:/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_Middle.shp") %>%
+eviction_midd <- st_read("C:/Users/Michael/CPAL Dropbox/Data Library/Dallas Independent School District/2024_2025 School Year/Middle_Attendance_Boundaries.shp") %>%
   select(id = MID_SLN,
          name = MIDDLE, 
          geometry) %>%
@@ -317,9 +324,7 @@ eviction_midd <- st_read("C:/Users/taylo/CPAL Dropbox/Data Library/Dallas Indepe
   select(id, name, pop:pch) %>%
   ms_simplify(., keep = 0.2)
 
-eviction_high <- st_read("C:/Users/taylo/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_High.shp") %>%
-# eviction_high <- st_read("C:/Users/micha/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_High.shp") %>%
-#eviction_high <- st_read("E:/CPAL Dropbox/Data Library/Dallas Independent School District/2022_2023 School Year/DISD_High.shp") %>%
+eviction_high <- st_read("C:/Users/Michael/CPAL Dropbox/Data Library/Dallas Independent School District/2024_2025 School Year/High_Attendance_Boundaries.geojson") %>%
   select(id = HIGH_SLN,
          name = HIGH, 
          geometry) %>%
@@ -359,10 +364,8 @@ eviction_high <- st_read("C:/Users/taylo/CPAL Dropbox/Data Library/Dallas Indepe
   ms_simplify(., keep = 0.2)
 
 #### Tidy Census JP Court Boundaries #####
-#st_layers("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg")
 sf_use_s2(FALSE)
-dallas_jp <- st_read("C:/Users/micha/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Dallas County JP Boundaries Rounded") %>%
-#dallas_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Dallas County JP Boundaries Rounded") %>%
+dallas_jp <- st_read("C:/Users/Michael/CPAL Dropbox/Analytics/Projects + Requests/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Dallas County JP Boundaries Rounded") %>%
   select(Name, geom) %>%
   rename(name = Name) %>%
   mutate(name = str_extract(name, "[0-9.]+"), 
@@ -371,8 +374,7 @@ dallas_jp <- st_read("C:/Users/micha/CPAL Dropbox/Analytics/04_Projects/JP Court
   st_transform(crs = 4269) %>%
   st_zm(.)
 
-tarrant_jp <- st_read("C:/Users/micha/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Tarrant County JP Boundaries Rounded") %>%
-#tarrant_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Tarrant County JP Boundaries Rounded") %>%
+tarrant_jp <- st_read("C:/Users/Michael/CPAL Dropbox/Analytics/Projects + Requests/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Tarrant County JP Boundaries Rounded") %>%
   select(JP, geom) %>%
   rename(name = JP) %>%
   mutate(id = paste0("48439-", name),
@@ -380,8 +382,7 @@ tarrant_jp <- st_read("C:/Users/micha/CPAL Dropbox/Analytics/04_Projects/JP Cour
   st_transform(crs = 4269) %>%
   st_zm(.)
 
-collin_jp <- st_read("C:/Users/micha/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Collin County JP Boundaries Rounded") %>%
-#collin_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Collin County JP Boundaries Rounded") %>%
+collin_jp <- st_read("C:/Users/Michael/CPAL Dropbox/Analytics/Projects + Requests/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Collin County JP Boundaries Rounded") %>%
 select(JPC, geom) %>%
   rename(name = JPC) %>%
   mutate(id = paste0("48085-", name),
@@ -389,8 +390,7 @@ select(JPC, geom) %>%
   st_transform(crs = 4269) %>%
   st_zm(.)
 
-denton_jp <- st_read("C:/Users/micha/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Denton County JP Boundaries Rounded") %>%
-#denton_jp <- st_read("E:/CPAL Dropbox/Analytics/04_Projects/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Denton County JP Boundaries Rounded") %>%
+denton_jp <- st_read("C:/Users/Michael/CPAL Dropbox/Analytics/Projects + Requests/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Denton County JP Boundaries Rounded") %>%
 select(JP_C, geom) %>%
   rename(name = JP_C) %>%
   mutate(id = paste0("48121-", name),
