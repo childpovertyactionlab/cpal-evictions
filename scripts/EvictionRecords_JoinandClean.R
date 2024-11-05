@@ -5,8 +5,8 @@ library(sf)
 
 #libDB <- "C:/Users/Michael/CPAL Dropbox/"
 # libDB <- "C:/Users/taylo/CPAL Dropbox/"
-#libDB <- "/Users/anushachowdhury/CPAL Dropbox/" 
-libDB <- "C:/Users/erose/CPAL Dropbox/"
+libDB <- "/Users/anushachowdhury/CPAL Dropbox/" 
+
 
 #### Generate dataframes with geometries #####
 counties <- c("Dallas County",
@@ -212,22 +212,20 @@ dallascouncil <- st_read(paste0(libDB, "Data Library/City of Dallas/02_Boundarie
   st_transform(crs = 4269)
 
 #### Import school district boundaries geographies #####
-eviction_elem <- st_read("data/NTEP_demo_elem_boundaries.geojson") %>%
-  rename(elem_id = unique_id) %>%
+eviction_elem <- st_read("demo/NTEP_demographics_elemschool.geojson") %>%
+  rename(elem_id = id) %>%
   select(elem_id, geometry) %>%
   st_transform(crs = 4269)
-
-eviction_midd <- st_read("data/NTEP_demo_mid_boundaries.geojson") %>%
-  rename(midd_id = unique_id) %>%
+  
+eviction_midd <- st_read("demo/NTEP_demographics_midschool.geojson") %>%
+  rename(midd_id = id) %>%
   select(midd_id, geometry) %>%
-  st_transform(crs = 4269) %>%
-  st_make_valid()
+  st_transform(crs = 4269)
 
-eviction_high <- st_read("data/NTEP_demo_high_boundaries.geojson") %>%
-  rename(high_id = unique_id) %>%
+eviction_high <- st_read("demo/NTEP_demographics_highschool.geojson") %>%
+  rename(high_id = id) %>%
   select(high_id, geometry) %>%
-  st_transform(crs = 4269) %>%
-  st_make_valid()
+  st_transform(crs = 4269)
 
 # Eviction data geography attribute  columns ##########
 eviction_export <- eviction_sf %>%
@@ -245,7 +243,7 @@ eviction_export <- eviction_sf %>%
 eviction_export %>%
   filter(date >= as.Date("2017-01-01")) %>%
   select(-NAME) %>%
-  export(., "data/NTEP_eviction_cases.csv")
+  export(., "filing data/NTEP_eviction_cases.csv")
 
 # Data Prep for Long and Wide Format Export#####
 long_city <- eviction_export %>%
@@ -387,5 +385,5 @@ wide_export <- long_export %>%
               values_from = value)
 
 export(long_export, "filing data/NTEP_datadownload.csv")
-export(wide_export, "filing data/NTEP_datadownload_wide.csv")
+#export(wide_export, "filing data/NTEP_datadownload_wide.csv")
 
