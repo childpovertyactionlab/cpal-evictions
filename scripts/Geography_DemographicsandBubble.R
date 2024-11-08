@@ -33,6 +33,11 @@ ntxd_rm <- ntx_districts %>%
   st_transform(crs = 4269)
 
 ##### Import School District Data #####
+risd_elem <- st_read("C:/Users/Michael/CPAL Dropbox/Data Library/Richardson Independent School District/School Boundaries/Richardson ISD Elementary School Boundaries 2024-2025.geojson") %>%
+  mutate(name = paste0(SchoolName, " Elementary School"),
+         id = paste0("4-", SchoolCode)) %>%
+  select(id, name, geometry) %>%
+  st_transform(crs = 4269)
 
 acs_var <- c(
   tot_pop = "B01003_001", #total population
@@ -197,7 +202,7 @@ plot(eviction_county["pvr"])
 plot(eviction_county["cpr"])
 
 #### Tidy Census City Council #####
-eviction_council <- st_read("C:/Users/erose/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/City Council 2023 Boundaries/Council_Simple.shp") %>%
+eviction_council <- st_read("C:/Users/Michael/CPAL Dropbox/Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/City Council 2023 Boundaries/Council_Simple.shp") %>%
   mutate(DISTRICT = str_pad(DISTRICT, 2, pad = "0")) %>%
   select(DISTRICT, geometry) %>%
   st_transform(crs = 4269) %>%
@@ -240,15 +245,51 @@ plot(eviction_council["mpv"])
 plot(eviction_council["mgr"])
 
 #### Tidy Census School Boundary #####
-
-ntxd_rm <- ntxd_rm %>%
-  filter(name !="Richardson ISD")
-
-#eviction_elem <- st_read("C:/Users/erose/CPAL Dropbox/Data Library/Dallas Independent School District/2024_2025 School Year/Elementary_Attendance_Boundaries.geojson") %>%
-eviction_elem <- st_read("data/elem_boundaries.geojson") %>%
-  select(id = unique_id,
-         name = schoolname, 
+eviction_elem <- st_read("C:/Users/Michael/CPAL Dropbox/Data Library/Dallas Independent School District/2024_2025 School Year/Elementary_Attendance_Boundaries.geojson") %>%
+  select(id = SLN,
+         name = ELEM_DESC, 
          geometry) %>%
+  mutate(id = paste0("1-", id)) %>%
+  st_transform(crs = 4269) %>%
+  bind_rows(filter(ntxd_rm, name != "Richardson ISD")) %>%
+  bind_rows(risd_elem) %>%
+  st_intersection(census_tract, .) %>%
+  mutate(AreaIntersect = as.numeric(st_area(.)),
+         PerIntersect = AreaIntersect/AreaTract,
+         pop_intersect = round(PerIntersect*tot_popE, digits = 4),
+         popbp_intersect = round(PerIntersect*pop_bpE, digits = 4),
+         popu18_intersect = round(PerIntersect*pop_u18E, digits = 4),
+         bpu18_intersect = round(PerIntersect*bp_u18E, digits = 4),
+         rohh_intersect = round(PerIntersect*rohhE, digits = 4),
+         thh_intersect = round(PerIntersect*thhE, digits = 4),
+         rcb_intersect = round(PerIntersect*rcbE, digits = 4),
+         as_intersect = round(PerIntersect*as_popE, digits = 4),
+         bl_intersect = round(PerIntersect*bl_popE, digits = 4),
+         wh_intersect = round(PerIntersect*wh_popE, digits = 4),
+         his_intersect = round(PerIntersect*his_popE, digits = 4)
+  ) %>%
+  group_by(id, name) %>%
+  summarise(pop = sum(pop_intersect),
+            pvr = sum(popbp_intersect)/pop,
+            cpr = sum(bpu18_intersect)/sum(popu18_intersect),
+            prh = sum(rohh_intersect)/sum(thh_intersect),
+            rhh = sum(rohh_intersect), 
+            mgr = mean(med_rentE, na.rm = TRUE),
+            mpv = mean(med_valE, na.rm = TRUE),
+            mhi = mean(med_incE, na.rm = TRUE),
+            rb = sum(as_intersect)/100,
+            pca = sum(as_popE)/pop,
+            pcb = sum(bl_intersect)/pop,
+            pcw = sum(wh_intersect)/pop,
+            pch = sum(his_intersect)/pop) %>%
+  select(id, name, pop:pch) %>%
+  ms_simplify(., keep = 0.2)
+
+eviction_midd <- st_read("C:/Users/Michael/CPAL Dropbox/Data Library/Dallas Independent School District/2024_2025 School Year/Middle_Attendance_Boundaries.shp") %>%
+  select(id = MID_SLN,
+         name = MIDDLE, 
+         geometry) %>%
+  mutate(id = paste0("2-", str_pad(id, 3, pad = "0"))) %>%
   st_transform(crs = 4269) %>%
   bind_rows(ntxd_rm) %>%
   st_intersection(census_tract, .) %>%
@@ -283,50 +324,11 @@ eviction_elem <- st_read("data/elem_boundaries.geojson") %>%
   select(id, name, pop:pch) %>%
   ms_simplify(., keep = 0.2)
 
-#eviction_midd <- st_read("C:/Users/erose/CPAL Dropbox/Data Library/Dallas Independent School District/2024_2025 School Year/Middle_Attendance_Boundaries.shp") %>%
-eviction_midd <- st_read("data/mid_boundaries.geojson") %>%
-  select(id = unique_id,
-         name = schoolname, 
+eviction_high <- st_read("C:/Users/Michael/CPAL Dropbox/Data Library/Dallas Independent School District/2024_2025 School Year/High_Attendance_Boundaries.geojson") %>%
+  select(id = HIGH_SLN,
+         name = HIGH, 
          geometry) %>%
-  st_transform(crs = 4269) %>%
-  bind_rows(ntxd_rm) %>%
-  st_intersection(census_tract, .) %>%
-  mutate(AreaIntersect = as.numeric(st_area(.)),
-         PerIntersect = AreaIntersect/AreaTract,
-         pop_intersect = round(PerIntersect*tot_popE, digits = 4),
-         popbp_intersect = round(PerIntersect*pop_bpE, digits = 4),
-         popu18_intersect = round(PerIntersect*pop_u18E, digits = 4),
-         bpu18_intersect = round(PerIntersect*bp_u18E, digits = 4),
-         rohh_intersect = round(PerIntersect*rohhE, digits = 4),
-         thh_intersect = round(PerIntersect*thhE, digits = 4),
-         rcb_intersect = round(PerIntersect*rcbE, digits = 4),
-         as_intersect = round(PerIntersect*as_popE, digits = 4),
-         bl_intersect = round(PerIntersect*bl_popE, digits = 4),
-         wh_intersect = round(PerIntersect*wh_popE, digits = 4),
-         his_intersect = round(PerIntersect*his_popE, digits = 4)
-  ) %>%
-  group_by(id, name) %>%
-  summarise(pop = sum(pop_intersect),
-            pvr = sum(popbp_intersect)/pop,
-            cpr = sum(bpu18_intersect)/sum(popu18_intersect),
-            prh = sum(rohh_intersect)/sum(thh_intersect),
-            rhh = sum(rohh_intersect), 
-            mgr = mean(med_rentE, na.rm = TRUE),
-            mpv = mean(med_valE, na.rm = TRUE),
-            mhi = mean(med_incE, na.rm = TRUE),
-            rb = sum(as_intersect)/100,
-            pca = sum(as_popE)/pop,
-            pcb = sum(bl_intersect)/pop,
-            pcw = sum(wh_intersect)/pop,
-            pch = sum(his_intersect)/pop) %>%
-  select(id, name, pop:pch) %>%
-  ms_simplify(., keep = 0.2)
-
-#eviction_high <- st_read("C:/Users/erose/CPAL Dropbox/Data Library/Dallas Independent School District/2024_2025 School Year/High_Attendance_Boundaries.geojson") %>%
-eviction_high <- st_read("data/high_boundaries.geojson") %>%
- select(id = unique_id,
-         name = schoolname, 
-         geometry) %>%
+  mutate(id = paste0("3-", str_pad(id, 3, pad = "0"))) %>%
   st_transform(crs = 4269) %>%
   bind_rows(ntxd_rm) %>%
   st_intersection(census_tract, .) %>%
@@ -363,7 +365,7 @@ eviction_high <- st_read("data/high_boundaries.geojson") %>%
 
 #### Tidy Census JP Court Boundaries #####
 sf_use_s2(FALSE)
-dallas_jp <- st_read("C:/Users/erose/CPAL Dropbox/Analytics/Projects + Requests/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Dallas County JP Boundaries Rounded") %>%
+dallas_jp <- st_read("C:/Users/Michael/CPAL Dropbox/Analytics/Projects + Requests/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Dallas County JP Boundaries Rounded") %>%
   select(Name, geom) %>%
   rename(name = Name) %>%
   mutate(name = str_extract(name, "[0-9.]+"), 
@@ -372,7 +374,7 @@ dallas_jp <- st_read("C:/Users/erose/CPAL Dropbox/Analytics/Projects + Requests/
   st_transform(crs = 4269) %>%
   st_zm(.)
 
-tarrant_jp <- st_read("C:/Users/erose/CPAL Dropbox/Analytics/Projects + Requests/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Tarrant County JP Boundaries Rounded") %>%
+tarrant_jp <- st_read("C:/Users/Michael/CPAL Dropbox/Analytics/Projects + Requests/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Tarrant County JP Boundaries Rounded") %>%
   select(JP, geom) %>%
   rename(name = JP) %>%
   mutate(id = paste0("48439-", name),
@@ -380,7 +382,7 @@ tarrant_jp <- st_read("C:/Users/erose/CPAL Dropbox/Analytics/Projects + Requests
   st_transform(crs = 4269) %>%
   st_zm(.)
 
-collin_jp <- st_read("C:/Users/erose/CPAL Dropbox/Analytics/Projects + Requests/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Collin County JP Boundaries Rounded") %>%
+collin_jp <- st_read("C:/Users/Michael/CPAL Dropbox/Analytics/Projects + Requests/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Collin County JP Boundaries Rounded") %>%
 select(JPC, geom) %>%
   rename(name = JPC) %>%
   mutate(id = paste0("48085-", name),
@@ -388,7 +390,7 @@ select(JPC, geom) %>%
   st_transform(crs = 4269) %>%
   st_zm(.)
 
-denton_jp <- st_read("C:/Users/erose/CPAL Dropbox/Analytics/Projects + Requests/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Denton County JP Boundaries Rounded") %>%
+denton_jp <- st_read("C:/Users/Michael/CPAL Dropbox/Analytics/Projects + Requests/JP Court Boundaries/Data/North Texas JP Court Boundaries.gpkg", layer = "Denton County JP Boundaries Rounded") %>%
 select(JP_C, geom) %>%
   rename(name = JP_C) %>%
   mutate(id = paste0("48121-", name),

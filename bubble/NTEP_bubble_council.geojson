@@ -3,19 +3,19 @@
 "name": "NTEP_bubble_council",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::4269" } },
 "features": [
-{ "type": "Feature", "properties": { "id": "4819000_01", "name": "Council District 01", "pop": 80292.1925, "rhh": 12377.5767 }, "geometry": { "type": "Point", "coordinates": [ -96.847294766467144, 32.746030499100385 ] } },
-{ "type": "Feature", "properties": { "id": "4819000_02", "name": "Council District 02", "pop": 91228.3923, "rhh": 36103.705 }, "geometry": { "type": "Point", "coordinates": [ -96.838186222505342, 32.812735999348774 ] } },
-{ "type": "Feature", "properties": { "id": "4819000_03", "name": "Council District 03", "pop": 116594.2621, "rhh": 17876.7739 }, "geometry": { "type": "Point", "coordinates": [ -96.915731289191967, 32.690615998977194 ] } },
-{ "type": "Feature", "properties": { "id": "4819000_04", "name": "Council District 04", "pop": 89212.7811, "rhh": 13281.9497 }, "geometry": { "type": "Point", "coordinates": [ -96.807697522747659, 32.716399998864475 ] } },
-{ "type": "Feature", "properties": { "id": "4819000_05", "name": "Council District 05", "pop": 78394.5749, "rhh": 7971.5952 }, "geometry": { "type": "Point", "coordinates": [ -96.677440470628454, 32.736672999084732 ] } },
-{ "type": "Feature", "properties": { "id": "4819000_06", "name": "Council District 06", "pop": 90844.8926, "rhh": 21803.2441 }, "geometry": { "type": "Point", "coordinates": [ -96.879692491218321, 32.85070167175617 ] } },
-{ "type": "Feature", "properties": { "id": "4819000_07", "name": "Council District 07", "pop": 102592.492, "rhh": 20170.2967 }, "geometry": { "type": "Point", "coordinates": [ -96.759205569485346, 32.76132599893765 ] } },
-{ "type": "Feature", "properties": { "id": "4819000_08", "name": "Council District 08", "pop": 98899.6131, "rhh": 16069.0202 }, "geometry": { "type": "Point", "coordinates": [ -96.637237509505084, 32.66931042660562 ] } },
-{ "type": "Feature", "properties": { "id": "4819000_09", "name": "Council District 09", "pop": 83479.0314, "rhh": 14408.3148 }, "geometry": { "type": "Point", "coordinates": [ -96.705095265715414, 32.835935757282485 ] } },
-{ "type": "Feature", "properties": { "id": "4819000_10", "name": "Council District 10", "pop": 96907.4048, "rhh": 26256.5805 }, "geometry": { "type": "Point", "coordinates": [ -96.726355297974521, 32.894948998866674 ] } },
-{ "type": "Feature", "properties": { "id": "4819000_11", "name": "Council District 11", "pop": 94275.5707, "rhh": 30116.6138 }, "geometry": { "type": "Point", "coordinates": [ -96.782147301577169, 32.933462518205488 ] } },
-{ "type": "Feature", "properties": { "id": "4819000_12", "name": "Council District 12", "pop": 92786.1945, "rhh": 27682.5671 }, "geometry": { "type": "Point", "coordinates": [ -96.805780348049808, 32.988658317540796 ] } },
-{ "type": "Feature", "properties": { "id": "4819000_13", "name": "Council District 13", "pop": 87661.8303, "rhh": 16998.0795 }, "geometry": { "type": "Point", "coordinates": [ -96.792400514612353, 32.877327498720611 ] } },
-{ "type": "Feature", "properties": { "id": "4819000_14", "name": "Council District 14", "pop": 98815.0816, "rhh": 41384.8147 }, "geometry": { "type": "Point", "coordinates": [ -96.775179281272699, 32.821315118257438 ] } }
+{ "type": "Feature", "properties": { "id": "4819000_01", "name": "Council District 01", "pop": 80292.197, "rhh": 12377.5775 }, "geometry": { "type": "Point", "coordinates": [ -96.847294766467144, 32.746030499100385 ] } },
+{ "type": "Feature", "properties": { "id": "4819000_02", "name": "Council District 02", "pop": 91228.3786, "rhh": 36103.7094 }, "geometry": { "type": "Point", "coordinates": [ -96.838186222505342, 32.812735999348774 ] } },
+{ "type": "Feature", "properties": { "id": "4819000_03", "name": "Council District 03", "pop": 116594.2633, "rhh": 17876.7728 }, "geometry": { "type": "Point", "coordinates": [ -96.915731289191967, 32.690615998977194 ] } },
+{ "type": "Feature", "properties": { "id": "4819000_04", "name": "Council District 04", "pop": 89212.7736, "rhh": 13281.9477 }, "geometry": { "type": "Point", "coordinates": [ -96.807697522747659, 32.716399998864475 ] } },
+{ "type": "Feature", "properties": { "id": "4819000_05", "name": "Council District 05", "pop": 78394.5813, "rhh": 7971.5967 }, "geometry": { "type": "Point", "coordinates": [ -96.677440470628454, 32.736672999084732 ] } },
+{ "type": "Feature", "properties": { "id": "4819000_06", "name": "Council District 06", "pop": 90844.878, "rhh": 21803.2446 }, "geometry": { "type": "Point", "coordinates": [ -96.879692491218321, 32.85070167175617 ] } },
+{ "type": "Feature", "properties": { "id": "4819000_07", "name": "Council District 07", "pop": 102592.5029, "rhh": 20170.3002 }, "geometry": { "type": "Point", "coordinates": [ -96.759205569485346, 32.76132599893765 ] } },
+{ "type": "Feature", "properties": { "id": "4819000_08", "name": "Council District 08", "pop": 98899.6235, "rhh": 16069.0229 }, "geometry": { "type": "Point", "coordinates": [ -96.637237509505098, 32.66931042660562 ] } },
+{ "type": "Feature", "properties": { "id": "4819000_09", "name": "Council District 09", "pop": 83479.0406, "rhh": 14408.3181 }, "geometry": { "type": "Point", "coordinates": [ -96.705095265715414, 32.835935757282485 ] } },
+{ "type": "Feature", "properties": { "id": "4819000_10", "name": "Council District 10", "pop": 96907.4118, "rhh": 26256.5839 }, "geometry": { "type": "Point", "coordinates": [ -96.726355297974536, 32.894948998866667 ] } },
+{ "type": "Feature", "properties": { "id": "4819000_11", "name": "Council District 11", "pop": 94275.5763, "rhh": 30116.6152 }, "geometry": { "type": "Point", "coordinates": [ -96.782147301577169, 32.933462518205481 ] } },
+{ "type": "Feature", "properties": { "id": "4819000_12", "name": "Council District 12", "pop": 92786.1906, "rhh": 27682.5658 }, "geometry": { "type": "Point", "coordinates": [ -96.805780348049808, 32.988658317540796 ] } },
+{ "type": "Feature", "properties": { "id": "4819000_13", "name": "Council District 13", "pop": 87661.8353, "rhh": 16998.0804 }, "geometry": { "type": "Point", "coordinates": [ -96.792400514612353, 32.877327498720611 ] } },
+{ "type": "Feature", "properties": { "id": "4819000_14", "name": "Council District 14", "pop": 98815.0824, "rhh": 41384.8179 }, "geometry": { "type": "Point", "coordinates": [ -96.775179281272699, 32.821315118257445 ] } }
 ]
 }
