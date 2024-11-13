@@ -1,3 +1,4 @@
+
 #### Load needed libraries #####
 library(tidyverse)
 library(tidycensus)
@@ -224,8 +225,8 @@ eviction_council <- st_read(paste0(libDB, "Data Library/City of Dallas/02_Bounda
   ms_simplify(., keep = 0.2)
 
 plot(eviction_council["rb"])
-plot(eviction_council["mpv"])
-plot(eviction_council["mgr"])
+#plot(eviction_council["mpv"])
+#plot(eviction_council["mgr"])
 
 #### Tidy Census School Boundary #####
 

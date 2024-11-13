@@ -141,7 +141,6 @@ evictioncases <- full_join(full_join(full_join(dallas, collin), denton), tarrant
                           ifelse(city_id == " ", NA, city_id))) %>%
   select(-plaintiff_address, -plaintiff_name)
 
-
 #### Extract all cases without lon/lat coordinates available #####
 eviction_NA <- evictioncases %>%
   filter(is.na(city_id)) %>%
