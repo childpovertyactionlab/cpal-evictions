@@ -68,7 +68,7 @@ collin <- import("https://evictions.s3.us-east-2.amazonaws.com/collin-county-tx-
   select(-defendant_address)
 
 #names(collin)
-#unique(collin$precinct_id)
+unique(collin$precinct_id)
 
 #### Eviction data import and attribute selection Denton County #####
 #select only the necessary column types and rename them based on NTE data plan
@@ -87,7 +87,7 @@ denton <- import("https://evictions.s3.us-east-2.amazonaws.com/denton-county-tx-
   select(-defendant_address)
 
 #names(denton)
-#unique(denton$precinct_id)
+unique(denton$precinct_id)
 
 #### Eviction data import and attribute selection Tarrant County #####
 #select only the necessary column types and rename them based on NTE data plan
@@ -105,7 +105,7 @@ tarrant <- import("https://evictions.s3.us-east-2.amazonaws.com/tarrant-eviction
   select(-defendant_address)
 
 #names(tarrant)
-#unique(tarrant$precinct_id)
+unique(tarrant$precinct_id)
 
 #### Eviction data import and attribute selection Dallas County #####
 #select only the necessary column types and rename them based on NTE data plan
@@ -127,7 +127,7 @@ dallas <- import(paste0(libDB, "Data Library/Dallas County/Eviction Records/Data
          zip_id = as.character(zip_id))
 
 #names(dallas)
-#unique(dallas$precinct_id)
+unique(dallas$precinct_id)
 
 #### Join all county data into singular dataframe #####
 # join all county datasets into one main dataset
@@ -446,3 +446,10 @@ wide_export <- long_export %>%
 export(long_export, "filing data/NTEP_datadownload.csv")
 export(wide_export, "filing data/NTEP_datadownload_wide.csv")
 
+unique(eviction_export$precinct_id)
+unique(eviction_export$zip_id)
+unique(eviction_export$city_id)
+unique(eviction_export$county_id)
+unique(eviction_export$elem_id)
+unique(eviction_export$midd_id)
+unique(eviction_export$high_id)
