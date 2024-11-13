@@ -16,10 +16,20 @@ libDB <- "C:/Users/Michael/CPAL Dropbox/"
 counties <- c("Dallas County", 
               "Collin County", 
               "Denton County", 
-              "Tarrant County")
+              "Tarrant County",
+              "Kaufman County",
+              "Ellis County",
+              "Rockwall County",
+              "Johnson County")
 
 ntx_counties <- tigris::counties(state = "TX") %>%
   filter(NAMELSAD %in% counties)
+
+ntep_counties <- ntx_counties %>%
+  filter(NAMELSAD %in% c("Dallas County",
+                         "Tarrant County",
+                         "Collin County",
+                         "Denton County"))
 
 ##### Import School District Data #####
 
@@ -72,7 +82,8 @@ eviction_tract <- census_tract %>%
             pcb = bl_popE/tot_popE,
             pcw = wh_popE/tot_popE,
             pch = his_popE/tot_popE) %>%
-  ms_simplify(., keep = 0.2)
+  ms_simplify(., keep = 0.2) %>%
+  filter(str_detect(name, c("Dallas|Collin|Denton|Tarrant")))
 
 plot(eviction_tract["rb"], breaks = "jenks")
 #plot(eviction_tract["mpv"])
@@ -92,7 +103,7 @@ eviction_zcta <- get_acs(geography = "zcta",
                           survey = "acs5", 
                           output = "wide") %>%
   left_join(zctas, .) %>%
-  .[ntx_counties, ] %>%
+  .[ntep_counties, ] %>%
   transmute(id = GEOID,
             name = NAME,
             pop = tot_popE,
@@ -125,7 +136,7 @@ eviction_place <- get_acs(geography = "place",
                           survey = "acs5", 
                           output = "wide",
                           geometry = TRUE) %>%
-  .[ntx_counties, ] %>%
+  .[ntep_counties, ] %>%
   mutate(NAME = str_replace(NAME, " city, Texas", ", Texas"),
          NAME = str_replace(NAME, " town, Texas", " , Texas")) %>%
   transmute(id = GEOID,
@@ -155,7 +166,7 @@ plot(eviction_place["rb"])
 #### Tidy Census County #####
 eviction_county <- get_acs(geography = "county", 
                           state = "TX",
-                          county = counties,
+                          county = ntep_counties$NAMELSAD,
                           variables = acs_var,
                           year = 2022, 
                           survey = "acs5", 
@@ -266,7 +277,8 @@ eviction_elem <- st_read("data/geographies/elem_boundaries.geojson") %>%
             pcw = sum(wh_intersect)/pop,
             pch = sum(his_intersect)/pop) %>%
   select(id, name, pop:pch) %>%
-  ms_simplify(., keep = 0.2)
+  ms_simplify(., keep = 0.2) %>%
+  .[ntep_counties, ]
 
 plot(eviction_elem["pop"])
 
@@ -306,7 +318,8 @@ eviction_midd <- st_read("data/geographies/mid_boundaries.geojson") %>%
             pcw = sum(wh_intersect)/pop,
             pch = sum(his_intersect)/pop) %>%
   select(id, name, pop:pch) %>%
-  ms_simplify(., keep = 0.2)
+  ms_simplify(., keep = 0.2) %>%
+  .[ntep_counties, ]
 
 plot(eviction_midd["pop"])
 
@@ -346,7 +359,8 @@ eviction_high <- st_read("data/geographies/high_boundaries.geojson") %>%
             pcw = sum(wh_intersect)/pop,
             pch = sum(his_intersect)/pop) %>%
   select(id, name, pop:pch) %>%
-  ms_simplify(., keep = 0.2)
+  ms_simplify(., keep = 0.2) %>%
+  .[ntep_counties, ]
 
 plot(eviction_high["pop"])
 
