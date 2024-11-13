@@ -13,7 +13,7 @@ disd_elem <- st_read(paste0(libDB, "Data Library/Dallas Independent School Distr
   select(SLN, ELEM_DESC, geometry) %>%
   rename(schoolname = ELEM_DESC) %>%
   st_transform(4269) %>%
-  mutate(unique_id = paste0("01-disd-", SLN)) %>%
+  mutate(unique_id = paste0("1-disd-", SLN)) %>%
   select(schoolname,geometry,unique_id)
 
 disd_mid <- st_read(paste0(libDB, "Data Library/Dallas Independent School District/2024_2025 School Year/Middle_Attendance_Boundaries.shp")) %>%
@@ -21,7 +21,7 @@ disd_mid <- st_read(paste0(libDB, "Data Library/Dallas Independent School Distri
   rename(schoolname = MIDDLE,
          SLN = MID_SLN) %>%
   st_transform(4269) %>%
-  mutate(unique_id = paste0("02-disd-", SLN)) %>%
+  mutate(unique_id = paste0("2-disd-", SLN)) %>%
   select(schoolname,geometry,unique_id)
 
  disd_high <- st_read(paste0(libDB, "Data Library/Dallas Independent School District/2024_2025 School Year/High_Attendance_Boundaries.geojson")) %>%  
@@ -29,7 +29,7 @@ disd_mid <- st_read(paste0(libDB, "Data Library/Dallas Independent School Distri
   rename(schoolname = HIGH,
          SLN = HIGH_SLN) %>%
    st_transform(4269) %>%
-   mutate(unique_id = paste0("03-disd-", SLN)) %>%
+   mutate(unique_id = paste0("3-disd-", SLN)) %>%
    select(schoolname,geometry,unique_id)
 
 ##### School District: RISD #####
@@ -37,7 +37,7 @@ risd_elem <- st_read(paste0(libDB, "Data Library/Richardson Independent School D
   select(SchoolCode, SchoolName, geometry) %>%
   rename(schoolname = SchoolName,
          SLN = SchoolCode) %>%
-   mutate(unique_id = paste0("01-risd-", SLN)) %>%
+   mutate(unique_id = paste0("1-risd-", SLN)) %>%
    st_make_valid() %>%  # Ensure geometries are valid before grouping
    group_by(unique_id, schoolname) %>%
    summarise(geometry = st_union(geometry), .groups = "drop") %>%  # Union geometries by unique_id
@@ -50,7 +50,7 @@ risd_elem <- st_read(paste0(libDB, "Data Library/Richardson Independent School D
    rename(schoolname = SchoolName, SLN = SchoolCode) %>%
    mutate(
      schoolname = str_trim(schoolname),  # Trim any extra spaces
-     unique_id = paste0("02-risd-", SLN)
+     unique_id = paste0("2-risd-", SLN)
    ) %>%
    st_make_valid() %>%  # Ensure geometries are valid before grouping
    group_by(schoolname, unique_id) %>%
@@ -62,7 +62,7 @@ risd_elem <- st_read(paste0(libDB, "Data Library/Richardson Independent School D
 risd_high <- st_read(paste0(libDB, "Data Library/Richardson Independent School District/School Boundaries/Richardson ISD High School Boundaries 2024-2025.geojson")) %>%
   select(SchoolCode, SchoolName, geometry) %>%
   rename(schoolname = SchoolName, SLN = SchoolCode) %>%
-  mutate(unique_id = paste0("03-risd-", SLN)) %>%
+  mutate(unique_id = paste0("3-risd-", SLN)) %>%
   st_make_valid() %>%  # Ensure geometries are valid before grouping
   group_by(schoolname, unique_id) %>%
   summarise(geometry = st_union(geometry), .groups = "drop") %>%  # Union geometries by unique_id
@@ -87,7 +87,7 @@ ntx_districts <- districts %>%
   filter(NAME != "Dallas ISD",
          NAME != "Richardson ISD") %>%
   mutate(
-    id = paste0("09-ntx-", str_pad(as.numeric(interaction(SDLEA)), width = 3, pad = "0"))
+    id = paste0("9-ntx-", str_pad(as.numeric(interaction(SDLEA)), width = 3, pad = "0"))
     
   ) %>% 
   select(unique_id = id, 
@@ -110,21 +110,21 @@ boundary_final <- do.call(rbind, list_of_dfs) %>%
 st_write(boundary_final, "data/geographies/all_school_boundaries.geojson", delete_dsn = TRUE)
 
 elem_bounds <- boundary_final %>%
-  filter(str_detect(unique_id, "01-|09-ntx-"))
+  filter(str_detect(unique_id, "1-|9-ntx-"))
 
 plot(elem_bounds["unique_id"])
 
 st_write(elem_bounds, "data/geographies/elem_boundaries.geojson", delete_dsn = TRUE)
 
 mid_bounds <- boundary_final %>%
-  filter(str_detect(unique_id, "02-|09-ntx-"))
+  filter(str_detect(unique_id, "2-|9-ntx-"))
 
 plot(mid_bounds["unique_id"])
 
 st_write(mid_bounds, "data/geographies/mid_boundaries.geojson", delete_dsn = TRUE)
 
 high_bounds <- boundary_final %>%
-  filter(str_detect(unique_id, "03-|09-ntx-"))
+  filter(str_detect(unique_id, "3-|9-ntx-"))
 
 plot(high_bounds["unique_id"])
 
