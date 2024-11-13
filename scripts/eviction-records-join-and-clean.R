@@ -124,7 +124,7 @@ dallas <- import(paste0(libDB, "Data Library/Dallas County/Eviction Records/Data
          lon = X,
          lat = Y) %>%
   mutate(county_id = "48113",
-         subprecinct_id = str_replace(precinct_id, "Court  ", "48113-"),
+         subprecinct_id = str_replace(precinct_id, "Court ", "48113-"),
          precinct_id = substr(subprecinct_id, 1, nchar(subprecinct_id)-2),
          city_id = str_to_title(city_id),
          date = lubridate::as_date(date, format = "%m/%d/%Y"),
