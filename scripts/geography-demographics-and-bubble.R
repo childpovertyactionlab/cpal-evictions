@@ -495,3 +495,4 @@ st_write(bubble_county, "bubble/NTEP_bubble_county.geojson", delete_dsn = TRUE)
 st_write(bubble_council, "bubble/NTEP_bubble_council.geojson", delete_dsn = TRUE)
 st_write(bubble_jpcourt, "bubble/NTEP_bubble_jpcourt.geojson", delete_dsn = TRUE)
 
+unique(bubble_jpcourt$id)
