@@ -4,7 +4,6 @@ library(rio)
 library(sf)
 
 libDB <- "C:/Users/Michael/CPAL Dropbox/"
-# libDB <- "C:/Users/taylo/CPAL Dropbox/"
 #libDB <- "/Users/anushachowdhury/CPAL Dropbox/" 
 #libDB <- "C:/Users/erose/CPAL Dropbox/"
 
@@ -14,24 +13,21 @@ counties <- c("Dallas County",
               "Denton County",
               "Tarrant County")
 
-ntx_counties <- tigris::counties(state = "TX", year = 2021) %>%
-  filter(NAMELSAD %in% counties) %>%
-  select(NAME, GEOID,  geometry) %>%
-  rename(county_id = GEOID)
+ntx_counties <- st_read("demo/NTEP_demographics_county.geojson") %>%
+  select(name, id, geometry) %>%
+  mutate(NAME = str_remove(name, " County, Texas")) %>%
+  select(NAME, id,  geometry) %>%
+  rename(county_id = id)
 
-ntx_places <- tigris::places(state = "TX", year = 2021) %>%
-  .[ntx_counties, ] %>%
-  select(NAME, GEOID, geometry) %>%
-  rename(city_id = GEOID)
+ntx_places <- st_read("demo/NTEP_demographics_place.geojson") %>%
+  select(name, id, geometry) %>%
+  rename(city_id = id,
+         NAME = name) %>%
+  mutate(NAME = str_remove(NAME, ", Texas"))
 
-ntx_zcta <- tigris::zctas(state = "TX", year = 2010) %>%
-  .[ntx_counties, ] %>%
-  select(ZCTA5CE10, geometry) %>%
-  rename(zip_id = ZCTA5CE10)
-
-ntx_districts <- st_read("data/geographies/all_school_boundaries.geojson") %>%
-  st_transform(crs = 4269)
-  
+ntx_zcta <- st_read("demo/NTEP_demographics_zip.geojson") %>%
+  select(id, geometry) %>%
+  rename(zip_id = id)
 
 #### Functions to extract the zip code and city name from address strings #####
 # extractcity function only does a partial fix of extracting city information.
@@ -168,13 +164,6 @@ city_small <- ntx_places %>%
 eviction_sf <- evictioncases %>%
   filter(!is.na(city_id)) %>%
   filter(!is.na(lon)) %>%
-#  mutate(city_id = sapply(city_id, 
-#                           function(x){agrep(x, 
-#                                             ntx_places$NAME, 
-#                                             value = TRUE)}),
-#         city_id = city_replace(city_id)
-#         ) %>%
-
   st_as_sf(coords = c("lon", "lat"), crs = 4269) %>%
   st_transform(crs = 4269) %>%
   mutate(lon = sf::st_coordinates(.)[,1],
@@ -200,6 +189,58 @@ eviction_sf <- evictioncases %>%
       city_id.x == "Colony"        ~ "The Colony",
       city_id.x == "Circlesanger"  ~ "Sanger",
       city_id.x == "Lewsiville"    ~ "Lewisville",
+      city_id.x == "Messquite"     ~ "Mesquite",
+      city_id.x == "North Dallas"     ~ "Dallas",
+      city_id.x == "Sasche"     ~ "Sachse",
+      city_id.x == "Mesqute"     ~ "Mesquite",
+      city_id.x == "Sesoto"     ~ "Desoto",
+      city_id.x == "Wimer"     ~ "Wilmer",
+      city_id.x == "Wills Point"     ~ "Willis Point",
+      city_id.x == "Kinney"     ~ "McKinney",
+      city_id.x == "Dakkas"     ~ "Dallas",
+      city_id.x == "Plno"     ~ "Plano",
+      city_id.x == "Dalla"     ~ "Dallas",
+      city_id.x == "Pllano"     ~ "Plano",
+      city_id.x == "Frosco"     ~ "Frisco",
+      city_id.x == "Frscio"     ~ "Frisco",
+      city_id.x == "Friscot"     ~ "Frisco",
+      city_id.x == "Friso"     ~ "Frisco",
+      city_id.x == "Firsco"     ~ "Frisco",
+      city_id.x == "Frsico"     ~ "Frisco",
+      city_id.x == "Richardxson"     ~ "Richardson",
+      city_id.x == "Ricahrdson"     ~ "Richardson",
+      city_id.x == "Wtlie"     ~ "Wylie",
+      city_id.x == "Mckiney"     ~ "McKinney",
+      city_id.x == "Mckinnwy"     ~ "McKinney",
+      city_id.x == "Mckinneyt"     ~ "McKinney",
+      city_id.x == "Plaono"     ~ "Plano",
+      city_id.x == "Alllen"     ~ "Allen",
+      city_id.x == "Mckinneyt"     ~ "McKinney",
+      city_id.x == "Mckinnwy"     ~ "McKinney",
+      city_id.x == "Sacshe"     ~ "Sachse",
+      city_id.x == "Frirso"     ~ "Frisco",
+      city_id.x == "Plan"     ~ "Plano",
+      city_id.x == "Princton"     ~ "Princeton",
+      city_id.x == "Ricardson"     ~ "Richardson",
+      city_id.x == "Princenton"     ~ "Princeton",
+      city_id.x == "Mckininey"     ~ "McKinney",
+      city_id.x == "Alen"     ~ "Allen",
+      city_id.x == "Dalls"     ~ "Dallas",
+      city_id.x == "Palno"     ~ "Plano",
+      city_id.x == "Fariview"     ~ "Fairview",
+      city_id.x == "Planop"     ~ "Plano",
+      city_id.x == "Propser"     ~ "Prosper",
+      city_id.x == "Frisc"     ~ "Frisco",
+      city_id.x == "Cross Roads "     ~ "Cross Roads",
+      city_id.x == "Ftw"     ~ "Fort Worth",
+      city_id.x == "Mansfiedl"     ~ "Mansfield",
+      city_id.x == "Northlake "     ~ "Northlake",
+      city_id.x == "Ponder "     ~ "Ponder",
+      city_id.x == "Prosper "     ~ "Prosper",
+      city_id.x == "Savannah"     ~ "Savannah CDP",
+      city_id.x == "New Fairview"     ~ "Fairview",
+      city_id.x == "View"     ~ "Fairview",
+      
       TRUE                         ~ city_id.x
     ),
     city_id.z = ifelse(!is.na(NAME), NAME, city_id.x)
@@ -208,25 +249,26 @@ eviction_sf <- evictioncases %>%
   rename(NAME = city_id.z) %>%
   left_join(., city_small, by = "NAME") %>%
   st_join(., ntx_zcta) %>%
-  .[ntx_counties, ]
+  .[ntx_counties, ] %>%
+  mutate(NAME = trimws(NAME))
 
 #### Import tract geographies from tigris package #####
-ntx_tracts <- tigris::tracts(state = "TX", county = counties, year = 2020) %>%
-  select(GEOID, geometry) %>%
-  rename(tract_id = GEOID)
+ntx_tracts <- st_read("demo/NTEP_demographics_tract.geojson") %>%
+  select(id) %>%
+  rename(tract_id = id)
 
 #### Import council districts geographies #####
-dallascouncil <- st_read(paste0(libDB, "Data Library/City of Dallas/02_Boundaries and Features/Legislative Boundaries/City Council 2023 Boundaries/Council_Simple.shp")) %>%
-  mutate(DISTRICT = str_pad(DISTRICT, 2, pad = "0"),
-         council_id = paste0("4819000-", DISTRICT)) %>%
-  select(council_id, geometry) %>%
+dallascouncil <- st_read("demo/NTEP_demographics_council.geojson") %>%
+  select(id, geometry) %>%
+  rename(council_id = id) %>%
   st_transform(crs = 4269)
 
 #### Import school district boundaries geographies #####
 eviction_elem <- st_read("data/geographies/elem_boundaries.geojson") %>%
   rename(elem_id = unique_id) %>%
   select(elem_id, geometry) %>%
-  st_transform(crs = 4269)
+  st_transform(crs = 4269) %>%
+  st_make_valid()
 
 eviction_midd <- st_read("data/geographies/mid_boundaries.geojson") %>%
   rename(midd_id = unique_id) %>%
@@ -237,7 +279,8 @@ eviction_midd <- st_read("data/geographies/mid_boundaries.geojson") %>%
 eviction_high <- st_read("data/geographies/high_boundaries.geojson") %>%
   rename(high_id = unique_id) %>%
   select(high_id, geometry) %>%
-  st_transform(crs = 4269) 
+  st_transform(crs = 4269) %>%
+  st_make_valid()
 
 # Eviction data geography attribute  columns ##########
 eviction_export <- eviction_sf %>%
@@ -252,7 +295,6 @@ eviction_export <- eviction_sf %>%
   full_join(., eviction_NA) %>%
   filter(date >= as.Date("2017-01-01"))
   
-
 # Data export to repo folder #####
 eviction_export %>%
   select(-NAME) %>%
