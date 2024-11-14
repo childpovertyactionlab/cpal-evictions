@@ -6,7 +6,7 @@ library(rio)
 library(sf)
 library(rmapshaper)
 
-libDB <- "C:/Users/Michael/CPAL Dropbox/"
+libDB <- "E:/CPAL Dropbox/"
 #libDB <- "C/Users/erose/CPAL Dropbox/"
 
 #acs19_b <- load_variables(2019, "acs5", cache = TRUE)
@@ -282,7 +282,6 @@ eviction_elem <- st_read("data/geographies/elem_boundaries.geojson") %>%
 
 plot(eviction_elem["pop"])
 
-#eviction_midd <- st_read("C:/Users/erose/CPAL Dropbox/Data Library/Dallas Independent School District/2024_2025 School Year/Middle_Attendance_Boundaries.shp") %>%
 eviction_midd <- st_read("data/geographies/mid_boundaries.geojson") %>%
   select(id = unique_id,
          name = schoolname, 

@@ -3,7 +3,7 @@ library(tidyverse)
 library(rio)
 library(sf)
 
-libDB <- "C:/Users/Michael/CPAL Dropbox/"
+libDB <- "E:/CPAL Dropbox/"
 #libDB <- "/Users/anushachowdhury/CPAL Dropbox/" 
 #libDB <- "C:/Users/erose/CPAL Dropbox/"
 
@@ -453,3 +453,4 @@ unique(eviction_export$county_id)
 unique(eviction_export$elem_id)
 unique(eviction_export$midd_id)
 unique(eviction_export$high_id)
+
