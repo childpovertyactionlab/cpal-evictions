@@ -116,7 +116,9 @@ st_write(boundary_final, "data/geographies/all_school_boundaries.geojson", delet
 
 elem_bounds <- boundary_final %>%
   filter(str_detect(unique_id, "1-|9-")) %>%
-  mutate(unique_id = str_replace(unique_id, "9-99", "9-10"))
+#  mutate(unique_id = str_replace(unique_id, "9-99", "9-10")) %>%
+  mutate(unique_id = NA,
+         unique_id = paste0("1-", sprintf("%03d", sample(000:499, n(), replace = FALSE))))
 
 plot(elem_bounds["unique_id"])
 
@@ -124,7 +126,9 @@ st_write(elem_bounds, "data/geographies/elem_boundaries.geojson", delete_dsn = T
 
 mid_bounds <- boundary_final %>%
   filter(str_detect(unique_id, "2-|9-")) %>%
-  mutate(unique_id = str_replace(unique_id, "9-99", "9-20"))
+#  mutate(unique_id = str_replace(unique_id, "9-99", "9-20")) %>%
+  mutate(unique_id = NA,
+         unique_id = paste0("2-", sprintf("%03d", sample(500:799, n(), replace = FALSE))))
 
 plot(mid_bounds["unique_id"])
 
@@ -132,7 +136,9 @@ st_write(mid_bounds, "data/geographies/mid_boundaries.geojson", delete_dsn = TRU
 
 high_bounds <- boundary_final %>%
   filter(str_detect(unique_id, "3-|9-")) %>%
-  mutate(unique_id = str_replace(unique_id, "9-99", "9-30"))
+#  mutate(unique_id = str_replace(unique_id, "9-99", "9-30")) %>%
+  mutate(unique_id = NA,
+         unique_id = paste0("3-", sprintf("%03d", sample(800:999, n(), replace = FALSE))))
 
 plot(high_bounds["unique_id"])
 
