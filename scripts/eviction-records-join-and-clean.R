@@ -3,7 +3,7 @@ library(tidyverse)
 library(rio)
 library(sf)
 
-# libDB <- "C:/Users/Michael/CPAL Dropbox/"
+libDB <- "C:/Users/Michael/CPAL Dropbox/"
 libDB <- "/Users/anushachowdhury/CPAL Dropbox/"
 #libDB <- "C:/Users/erose/CPAL Dropbox/"
 
@@ -64,7 +64,8 @@ collin <- import("https://evictions.s3.us-east-2.amazonaws.com/collin-county-tx-
          precinct_id = str_replace(precinct_id, "Precinct ", "48085-"),
          date = lubridate::as_date(date),
          zip_id = extractzip(defendant_address),
-         city_id = extractcity(defendant_address)) %>%
+         city_id = extractcity(defendant_address),
+         subprecinct_id = NA) %>%
   select(-defendant_address)
 
 #names(collin)
@@ -77,13 +78,14 @@ denton <- import("https://evictions.s3.us-east-2.amazonaws.com/denton-county-tx-
   select(case_number, date_filed, location, lon, lat, defendant_address, plaintiff_name, plaintiff_address) %>%
   rename(precinct_id = location,
          date = date_filed) %>%
-  filter(!is.na(defendant_address)) %>%
+#  filter(!is.na(defendant_address)) %>%
   mutate(county_id = "48121",
          amount = NA,
          precinct_id = str_replace(precinct_id, "Justice of the Peace Pct #", "48121-"),
          date = lubridate::as_date(date),
          zip_id = extractzip(defendant_address),
-         city_id = extractcity(defendant_address)) %>%
+         city_id = extractcity(defendant_address),
+         subprecinct_id = NA) %>%
   select(-defendant_address)
 
 #names(denton)
@@ -101,7 +103,8 @@ tarrant <- import("https://evictions.s3.us-east-2.amazonaws.com/tarrant-eviction
          precinct_id = str_replace(precinct_id, "JP No. ", "48439-"),
          date = lubridate::as_date(date),
          zip_id = extractzip(defendant_address),
-         city_id = extractcity(defendant_address)) %>%
+         city_id = extractcity(defendant_address),
+         subprecinct_id = NA) %>%
   select(-defendant_address)
 
 #names(tarrant)
@@ -131,16 +134,30 @@ unique(dallas$precinct_id)
 
 #### Join all county data into singular dataframe #####
 # join all county datasets into one main dataset
-evictioncases <- full_join(full_join(full_join(dallas, collin), denton), tarrant) %>%
+dallas %>%
+  group_by(lubridate::year(date)) %>%
+  summarize(count = n())
+
+evictioncases <- evictioncases <- bind_rows(dallas, collin, denton, tarrant) %>%
   relocate(case_number, date, amount, precinct_id, city_id, county_id, lon, lat) %>%
   mutate(city_id = ifelse(city_id == "", NA, 
                           ifelse(city_id == " ", NA, city_id))) %>%
   select(-plaintiff_address, -plaintiff_name)
 
+evictioncases %>%
+  filter(county_id == "48113") %>%
+  group_by(lubridate::year(date)) %>%
+  summarize(count = n())
+
 #### Extract all cases without lon/lat coordinates available #####
 eviction_NA <- evictioncases %>%
-  filter(is.na(city_id)) %>%
-  filter(is.na(lon))
+  filter(is.na(lon)) %>%
+  mutate(elem_id = NA,
+         midd_id = NA,
+         high_id = NA,
+         council_id = NA,
+         ntx_tracts = NA,
+         NAME = NA)
 
 # REVIEW HOW MANY NA IF ANY COUNTIES ARE EXPERIENCING HIGH NA VALUES IN COORDINATES
 evictioncases %>%
@@ -162,7 +179,6 @@ city_small <- ntx_places %>%
 
 #### Create sf frame of all cases containing lon/lat coordinates #####
 eviction_sf <- evictioncases %>%
-  filter(!is.na(city_id)) %>%
   filter(!is.na(lon)) %>%
   st_as_sf(coords = c("lon", "lat"), crs = 4269) %>%
   st_transform(crs = 4269) %>%
@@ -249,8 +265,25 @@ eviction_sf <- evictioncases %>%
   rename(NAME = city_id.z) %>%
   left_join(., city_small, by = "NAME") %>%
   st_join(., ntx_zcta) %>%
-  .[ntx_counties, ] %>%
   mutate(NAME = trimws(NAME))
+
+######
+eviction_sf %>%
+  st_drop_geometry() %>%
+  filter(county_id == "48113") %>%
+  group_by(lubridate::year(date)) %>%
+  summarize(count = n())
+
+whatis <- evictioncases %>%
+  filter(county_id == "48113")
+
+missing <- eviction_sf %>%
+  st_drop_geometry() %>%
+  filter(county_id == "48113")
+
+itsthis <- anti_join(whatis, missing, by = "case_number")
+
+#####
 
 #### Import tract geographies from tigris package #####
 ntx_tracts <- st_read("demo/NTEP_demographics_tract.geojson") %>%
@@ -284,7 +317,6 @@ eviction_high <- st_read("data/geographies/high_boundaries.geojson") %>%
 
 # Eviction data geography attribute  columns ##########
 eviction_export <- eviction_sf %>%
-  .[ntx_counties, ] %>%
   st_join(., ntx_tracts) %>%
   st_join(., dallascouncil) %>%
   st_join(., eviction_elem) %>%
@@ -292,9 +324,14 @@ eviction_export <- eviction_sf %>%
   st_join(., eviction_high) %>%
   relocate(case_number, date, amount, precinct_id, subprecinct_id, council_id, tract_id, zip_id, city_id, county_id, elem_id, midd_id, high_id, lon, lat) %>%
   st_drop_geometry(.) %>%
-  full_join(., eviction_NA) %>%
+  bind_rows(., eviction_NA) %>%
   filter(date >= as.Date("2017-01-01"))
-  
+
+eviction_export %>%
+  filter(county_id == "48113") %>%
+  group_by(lubridate::year(date)) %>%
+  summarize(count = n())
+
 # Data export to repo folder #####
 eviction_export %>%
   select(-NAME) %>%
