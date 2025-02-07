@@ -399,6 +399,7 @@ eviction_export <- eviction_sf %>%
   relocate(case_number, date, amount, precinct_id, subprecinct_id, council_id, tract_id, zip_id, city_id, county_id, elem_id, midd_id, high_id, lon, lat) %>%
   st_drop_geometry(.) %>%
   bind_rows(., eviction_NA) %>%
+  mutate(zip_id = str_sub(zip_id, 1, 5)) %>%
   filter(date >= as.Date("2017-01-01"))
 
 eviction_export %>%
@@ -408,11 +409,11 @@ eviction_export %>%
 
 # Data export to repo folder #####
 eviction_export %>%
-  select(-NAME) %>%
+  select(-NAME, -ntx_tracts) %>%
   export(., "data/NTEP_eviction_cases.csv")
 
 eviction_export %>%
-  select(-NAME) %>%
+  select(-NAME, -ntx_tracts) %>%
   export(., "filing data/NTEP_eviction_cases.csv")
 
 # Data Prep for Long and Wide Format Export#####
