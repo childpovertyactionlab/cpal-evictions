@@ -3,7 +3,7 @@ library(tidyverse)
 library(rio)
 library(sf)
 
-libDB <- "C:/Users/Michael/CPAL Dropbox/"
+#libDB <- "C:/Users/Michael/CPAL Dropbox/"
 libDB <- "/Users/anushachowdhury/CPAL Dropbox/"
 #libDB <- "C:/Users/erose/CPAL Dropbox/"
 
@@ -149,6 +149,10 @@ evictioncases %>%
   group_by(lubridate::year(date)) %>%
   summarize(count = n())
 
+#### Replace all incorrect/missing city names with NA #####
+city_small <- ntx_places %>%
+  st_drop_geometry(.)
+
 #### Extract all cases without lon/lat coordinates available #####
 eviction_NA <- evictioncases %>%
   filter(is.na(lon)) %>%
@@ -156,8 +160,100 @@ eviction_NA <- evictioncases %>%
          midd_id = NA,
          high_id = NA,
          council_id = NA,
-         ntx_tracts = NA,
-         NAME = NA)
+         ntx_tracts = NA) %>%
+  mutate(
+    city_id = case_when(
+      city_id == "Worth"         ~ "Fort Worth",
+      city_id == "city"          ~ NA_character_,
+      city_id == "Nv"            ~ NA_character_,
+      city_id == "Orlando"       ~ NA_character_,
+      city_id == "Paul"          ~ "St. Paul",
+      city_id == "Point"         ~ NA_character_,
+      city_id == "Piont"         ~ NA_character_,
+      city_id == "Crossroads"    ~ "Cross Roads",
+      city_id == "Roads"         ~ "Cross Roads",
+      city_id == "Road"          ~ "Cross Roads",
+      city_id == "Mckinney"      ~ "McKinney",
+      city_id == "Ridge"         ~ "Blue Ridge",
+      city_id == "City"          ~ NA_character_,
+      city_id == "Elm"           ~ "Little Elm",
+      city_id == "Copeville"     ~ "Colleyville",
+      city_id == "Colony"        ~ "The Colony",
+      city_id == "Circlesanger"  ~ "Sanger",
+      city_id == "Lewsiville"    ~ "Lewisville",
+      city_id == "Messquite"     ~ "Mesquite",
+      city_id == "North Dallas"     ~ "Dallas",
+      city_id == "Sasche"     ~ "Sachse",
+      city_id == "Mesqute"     ~ "Mesquite",
+      city_id == "Sesoto"     ~ "Desoto",
+      city_id == "Wimer"     ~ "Wilmer",
+      city_id == "Wills Point"     ~ "Willis Point",
+      city_id == "Kinney"     ~ "McKinney",
+      city_id == "Dakkas"     ~ "Dallas",
+      city_id == "Plno"     ~ "Plano",
+      city_id == "Dalla"     ~ "Dallas",
+      city_id == "Pllano"     ~ "Plano",
+      city_id == "Frosco"     ~ "Frisco",
+      city_id == "Frscio"     ~ "Frisco",
+      city_id == "Friscot"     ~ "Frisco",
+      city_id == "Friso"     ~ "Frisco",
+      city_id == "Firsco"     ~ "Frisco",
+      city_id == "Frsico"     ~ "Frisco",
+      city_id == "Richardxson"     ~ "Richardson",
+      city_id == "Ricahrdson"     ~ "Richardson",
+      city_id == "Wtlie"     ~ "Wylie",
+      city_id == "Mckiney"     ~ "McKinney",
+      city_id == "Mckinnwy"     ~ "McKinney",
+      city_id == "Mckinneyt"     ~ "McKinney",
+      city_id == "Plaono"     ~ "Plano",
+      city_id == "Alllen"     ~ "Allen",
+      city_id == "Mckinneyt"     ~ "McKinney",
+      city_id == "Mckinnwy"     ~ "McKinney",
+      city_id == "Sacshe"     ~ "Sachse",
+      city_id == "Frirso"     ~ "Frisco",
+      city_id == "Plan"     ~ "Plano",
+      city_id == "Princton"     ~ "Princeton",
+      city_id == "Ricardson"     ~ "Richardson",
+      city_id == "Princenton"     ~ "Princeton",
+      city_id == "Mckininey"     ~ "McKinney",
+      city_id == "Alen"     ~ "Allen",
+      city_id == "Dalls"     ~ "Dallas",
+      city_id == "Palno"     ~ "Plano",
+      city_id == "Fariview"     ~ "Fairview",
+      city_id == "Planop"     ~ "Plano",
+      city_id == "Propser"     ~ "Prosper",
+      city_id == "Frisc"     ~ "Frisco",
+      city_id == "Cross Roads "     ~ "Cross Roads",
+      city_id == "Ftw"     ~ "Fort Worth",
+      city_id == "Mansfiedl"     ~ "Mansfield",
+      city_id == "Northlake "     ~ "Northlake",
+      city_id == "Ponder "     ~ "Ponder",
+      city_id == "Prosper "     ~ "Prosper",
+      city_id == "Savannah"     ~ "Savannah CDP",
+      city_id == "New Fairview"     ~ "Fairview",
+      city_id == "View"     ~ "Fairview",
+      city_id == "Branch"     ~ "Farmers Branch",
+      city_id == "Christi"     ~ "Corpus Christi",
+      city_id == "Mound"     ~ "Flower Mound",
+      city_id == "Rddallas"     ~ "Dallas",
+      city_id == "Oak"     ~ "Red Oak",
+      city_id == "Avedallas"     ~ "Dallas",
+      city_id == "Gdallas"     ~ "Dallas",
+      city_id == "Stdallas"     ~ "Dallas",
+      city_id == "Prairie"     ~ "Grand Prairie",
+      city_id == "Weateford"     ~ "Weatherford",
+      city_id == "Alington"     ~ "Arlington",
+      city_id == "Lake"     ~ "Southlake",
+      
+      city_id == "NA" ~ NA,
+      
+      
+      TRUE                         ~ city_id
+    )
+  ) %>%
+  rename(NAME = city_id) %>%
+  left_join(., city_small, by = "NAME") %>%
+  mutate(NAME = trimws(NAME))
 
 # REVIEW HOW MANY NA IF ANY COUNTIES ARE EXPERIENCING HIGH NA VALUES IN COORDINATES
 evictioncases %>%
@@ -172,10 +268,6 @@ evictioncases %>%
   select(-na_count, -total_count) %>%
   pivot_wider(names_from = county_id, values_from = c(na_percentage)) %>%
   arrange(year)
-
-#### Replace all incorrect/missing city names with NA #####
-city_small <- ntx_places %>%
-  st_drop_geometry(.)
 
 #### Create sf frame of all cases containing lon/lat coordinates #####
 eviction_sf <- evictioncases %>%
@@ -266,24 +358,6 @@ eviction_sf <- evictioncases %>%
   left_join(., city_small, by = "NAME") %>%
   st_join(., ntx_zcta) %>%
   mutate(NAME = trimws(NAME))
-
-######
-eviction_sf %>%
-  st_drop_geometry() %>%
-  filter(county_id == "48113") %>%
-  group_by(lubridate::year(date)) %>%
-  summarize(count = n())
-
-whatis <- evictioncases %>%
-  filter(county_id == "48113")
-
-missing <- eviction_sf %>%
-  st_drop_geometry() %>%
-  filter(county_id == "48113")
-
-itsthis <- anti_join(whatis, missing, by = "case_number")
-
-#####
 
 #### Import tract geographies from tigris package #####
 ntx_tracts <- st_read("demo/NTEP_demographics_tract.geojson") %>%
