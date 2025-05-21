@@ -1,0 +1,13 @@
+default:
+  data:
+    root: data
+  dcad:
+    # path to where files are synchronized
+    dest: data/dcad-sync
+    sftp:
+      host:
+      user:
+      pass:
+      hdir:
+  sheets:
+    report:
