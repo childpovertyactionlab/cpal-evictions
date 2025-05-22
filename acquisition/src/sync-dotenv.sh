@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 # Translate some elements of the YML application configuration into dotenv
 #  format to be used by the file sync process.
 awk '

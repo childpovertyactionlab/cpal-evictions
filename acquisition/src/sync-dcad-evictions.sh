@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 # Synchronize data from the SFTP server and path designated by the SYNC_
 #  environment variables to a local path. See sync-dotenv.sh for
 #  translating the config.yml file contents into environment variables.
