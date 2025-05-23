@@ -11,3 +11,5 @@ dpath <- function (path = '') {
   return(str_glue("{root}/{path}", root = config$data$root))
 }
 print(str_glue('Data root: {root}', root = dpath()))
+
+source('scripts/R/data.R')

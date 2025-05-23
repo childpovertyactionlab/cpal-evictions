@@ -145,7 +145,7 @@ unique(tarrant$precinct_id)
 
 #### Eviction data import and attribute selection Dallas County #####
 #select only the necessary column types and rename them based on NTE data plan
-dallas <- import(evictiondata$dallas_cpal) %>%
+dallas <- import(project_file$master$daily$csv) %>%
 #  select(case_number, court, df_city, df_zip, filed_date, amount, X, Y) %>%
   select(case_number, court, df_city, df_zip, filed_date, amount, X, Y, plaintiff_name, pl_address) %>%
   rename(date = filed_date,
