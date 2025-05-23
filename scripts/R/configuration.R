@@ -5,7 +5,7 @@ load_configuration <- function () {
       stop("'data.root' not configured")
     }
   }, error = function(e) {
-  print(paste('R_CONFIG_FILE=', Sys.getenv('R_CONFIG_FILE', './config.yml')))
+    print(paste('R_CONFIG_FILE=', Sys.getenv('R_CONFIG_FILE', './config.yml')))
     stop('Error: ', e$message)
   })
   return(config)

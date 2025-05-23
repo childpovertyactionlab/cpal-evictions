@@ -10,29 +10,11 @@
 #  RW config.data.root
 #
 
-#### Load necessary libraries #####
 library(tidyverse)
 library(rio)
 library(sf)
 
-Sys.setenv(TZ = "America/Chicago")
-source('scripts/R/environment.R')
-source('scripts/R/configuration.R')
-
-if (env_prod()) {
-  options(gargle_oauth_cache = FALSE)
-  options(gargle_verbosity = 'info')
-} else {
-  options(gargle_verbosity = 'debug')
-  Sys.setenv(R_CONFIG_FILE = '../config.yml')
-}
-config <- load_configuration()
-dpath <- function (path = '') {
-  return(str_glue("{root}/{path}", root = config$data$root))
-}
-
-print(str_glue('[{env}] Configuration loaded', env = env()))
-print(str_glue('Data root: {root}', root = dpath()))
+source('scripts/init.R')
 
 # Create references to all pertinent directories and files.
 data_dir <- list(
