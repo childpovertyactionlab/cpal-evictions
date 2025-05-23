@@ -11,3 +11,8 @@ default:
       hdir:
   sheets:
     report:
+  evictiondata:
+    tarrant_ja:"https://evictions.s3.us-east-2.amazonaws.com/tarrant-evictions-2020.csv"
+    collin_ja:"https://evictions.s3.us-east-2.amazonaws.com/collin-county-tx-evictions.rds"
+    denton_ja:"https://evictions.s3.us-east-2.amazonaws.com/denton-county-tx-evictions.rds"
+    dallas_cpal:

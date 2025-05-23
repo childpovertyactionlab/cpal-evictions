@@ -11,8 +11,8 @@
 #
 
 Sys.setenv(TZ = "America/Chicago")
-source('R/environment.R')
-source('R/configuration.R')
+source('scripts/R/environment.R')
+source('scripts/R/configuration.R')
 
 library(tidyverse)
 library(rio)
