@@ -1,3 +1,4 @@
+COPY deploy/entrypoint.sh .
 COPY scripts/ scripts/
 
-ENTRYPOINT ["Rscript"]
+ENTRYPOINT ["./entrypoint.sh"]
