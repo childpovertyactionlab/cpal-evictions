@@ -1,7 +1,6 @@
 # Arguments:
 #
 # Environment (*=required, ?=optional, []=default):
-#  * GOOGLE_APPLICATION_CREDENTIALS: email|path/to/Google/Workspace/service-account/JSON
 #  ? ENV: [development]|production
 #  ? R_CONFIG_FILE: [./config.yml] Influenced by value of ENV
 #
@@ -23,10 +22,11 @@ data_dir <- list(
   filing = dpath('filing data'),
   geographies = dpath('geographies')
 )
+project_init_dirs(data_dir)
 
 ntep_long <- file.path(data_dir$filing, "NTEP_datadownload.csv")
 ntep_wide <- file.path(data_dir$filing, "NTEP_datadownload_wide.csv")
-eviction_cases <- "NTEP_eviction_cases.csv"
+eviction_cases <- dpath("NTEP_eviction_cases.csv")
 
 ntep_counties <- file.path(data_dir$demo, "NTEP_demographics_county.geojson")
 ntep_places <- file.path(data_dir$demo, "NTEP_demographics_place.geojson")
@@ -38,7 +38,7 @@ ntep_elem <- file.path(data_dir$geographies, "NTEP_demographics_elemschool.geojs
 ntep_midd <- file.path(data_dir$geographies, "NTEP_demographics_midschool.geojson")
 ntep_high <- file.path(data_dir$geographies, "NTEP_demographics_highschool.geojson")
 
-evictiondata <- config$evictiondata # sources for raw datasets
+evictiondata <- config$data$evictions # sources for raw datasets
 
 #### Generate dataframes with geometries #####
 counties <- c("Dallas County",
@@ -87,7 +87,7 @@ extractzip <- function(x) {
 
 #### Eviction data import and attribute selection Collin County #####
 #select only the necessary column types and rename them based on NTE data plan
-collin <- import(evictiondata$collin_ja, trust = TRUE) %>%
+collin <- import(evictiondata$collin, trust = TRUE) %>%
 #  select(case_number, location, date_filed, lon, lat, defendant_address) %>%
   select(case_number, date_filed, location, lon, lat, defendant_address, plaintiff_name, plaintiff_address) %>%
   rename(precinct_id = location,
@@ -106,7 +106,7 @@ unique(collin$precinct_id)
 
 #### Eviction data import and attribute selection Denton County #####
 #select only the necessary column types and rename them based on NTE data plan
-denton <- import(evictiondata$denton_ja, trust = TRUE) %>%
+denton <- import(evictiondata$denton, trust = TRUE) %>%
 #  select(case_number, date_filed, location, lon, lat, defendant_address) %>%
   select(case_number, date_filed, location, lon, lat, defendant_address, plaintiff_name, plaintiff_address) %>%
   rename(precinct_id = location,
@@ -126,7 +126,7 @@ unique(denton$precinct_id)
 
 #### Eviction data import and attribute selection Tarrant County #####
 #select only the necessary column types and rename them based on NTE data plan
-tarrant <- import(evictiondata$tarrant_ja, trust = TRUE) %>%
+tarrant <- import(evictiondata$tarrant, trust = TRUE) %>%
 #  select(case_number, date_filed, location, lon, lat, defendant_address) %>%
   select(case_number, date_filed, location, lon, lat, defendant_address, plaintiff_name, plaintiff_address) %>%
   rename(precinct_id = location,
