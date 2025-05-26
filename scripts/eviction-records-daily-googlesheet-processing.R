@@ -10,10 +10,6 @@
 #  RW config.data.root
 #
 
-Sys.setenv(TZ = "America/Chicago")
-source('scripts/R/environment.R')
-source('scripts/R/configuration.R')
-
 library(tidyverse)
 library(rio)
 library(sf)
@@ -25,20 +21,14 @@ library(stringdist)
 library(arrow) # parquet
 library(readxl)
 
+source('scripts/init.R')
+
 if (env_prod()) {
   options(gargle_oauth_cache = FALSE)
   options(gargle_verbosity = 'info')
 } else {
   options(gargle_verbosity = 'debug')
-  Sys.setenv(R_CONFIG_FILE = '../config.yml')
 }
-config <- load_configuration()
-dpath <- function (path = '') {
-  return(str_glue("{root}/{path}", root = config$data$root))
-}
-
-print(str_glue('[{env}] Configuration loaded', env = env()))
-print(str_glue('Data root: {root}', root = dpath()))
 
 # Copy a file from the DCAD source into 'to' (see file.copy for 'to' behavior).
 # Error is the source file does not exist or the copy cannot be completed.
@@ -69,33 +59,14 @@ dcad_list <- function () {
 
 # Create references to all pertinent directories and files.
 data_dir <- list(
-  master = dpath('Dallas County Eviction Master'),
   daily = dpath('Dallas County Daily Eviction Reports'),
   weekly = dpath('Dallas County Weekly Eviction Reports')
 )
 data_dir$dailyArchive <- file.path(data_dir$daily, "archive")
 data_dir$weeklyArchive <- file.path(data_dir$weekly, "archive")
+project_init_dirs(data_dir)
 
-for (dirName in names(data_dir)) {
-  if (!dir.exists(data_dir[[dirName]])) {
-    print(paste('Initializing directory', dirName, data_dir[[dirName]]))
-    dir.create(data_dir[[dirName]])
-  }
-}
-
-weeklyMasterFile <- file.path(data_dir$master, "EvictionRecords_WeeklyMaster")
-weeklyMasterFile <- list(
-  parquet = paste0(weeklyMasterFile, ".parquet"),
-  csv = paste0(weeklyMasterFile, ".csv")
-)
-
-masterFile <- file.path(data_dir$master, "EvictionRecords_Master")
-masterFile <- list(
-  parquet = paste0(masterFile, ".parquet"),
-  csv = paste0(masterFile, ".csv")
-)
-
-reviewGeoFile <- file.path(data_dir$master, "EvictionRecords_ReviewandGeocode.csv")
+reviewGeoFile <- file.path(project_dir$master, "EvictionRecords_ReviewandGeocode.csv")
 
 sheets <- list(
   report = config$sheet$report
@@ -228,12 +199,12 @@ if (lubridate::wday(today(), label=TRUE) == "Mon") {
               )
             )
 
-  weeklyMaster <- arrow::read_parquet(weeklyMasterFile$parquet) %>%
+  weeklyMaster <- arrow::read_parquet(project_file$master$weekly$parquet) %>%
     bind_rows(weeklyJoint) %>%
     distinct(.keep_all = TRUE)
   
-  arrow::write_parquet(weeklyMaster, weeklyMasterFile$parquet)
-  write_csv(weeklyMaster, weeklyMasterFile$csv)
+  arrow::write_parquet(weeklyMaster, project_file$master$weekly$parquet)
+  write_csv(weeklyMaster, project_file$master$weekly$csv)
   
   for (weeklyFile in weeklyFiles) {
     oldName <- basename(weeklyFile)
@@ -352,7 +323,7 @@ print(paste0("! Moved new files to archive"))
 # Additional mutates have to occur when importing in order to join with new records.
 # Otherwise errors will occur during join.
 
-master <- read_parquet(masterFile$parquet) %>%
+master <- read_parquet(project_file$master$daily$parquet) %>%
   mutate(across(c(filed_date, appearance_date), as.Date, format = "%m/%d/%Y"),
          across(c(pl_phone, amount, monthly_rent, amount_filed, df_zip, attorney_fee, subsidy_govt), as.character),
          pl_zip = ifelse(pl_zip == 0, df_zip, as.character(pl_zip)),
@@ -487,10 +458,10 @@ print(paste0("! Wrote dockets to GS"))
 ### EXPORT BACK TO MASTER
 
 # parquet (immune to strange characters)
-write_parquet(df, masterFile$parquet)
+write_parquet(df, project_file$master$daily$parquet)
 
 # csv (easier to access)
-export(df, masterFile$csv)
+export(df, project_file$master$daily$csv)
 
 print(paste0("! Exported updated master"))
 
