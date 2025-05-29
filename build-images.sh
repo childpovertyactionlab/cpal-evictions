@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 
 DOCKER_CMD="docker"
@@ -25,7 +25,7 @@ usage() {
   echo
   echo "Environment (optional):"
   echo "  TUMBLR_PATH: [${TUMBLR_PATH_default}] Path to tumblR project."
-  echo "  IMAGE_REPO:  [${IMAGE_REPO_default}] alternate container image repository"
+  echo "  IMAGE_REPO:  [${IMAGE_REPO_default}] Alternate container image repository"
 }
 
 while [ $# -gt 0 ]; do
