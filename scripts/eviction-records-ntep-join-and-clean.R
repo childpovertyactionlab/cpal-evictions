@@ -34,9 +34,9 @@ ntep_zcta <- file.path(data_dir$demo, "NTEP_demographics_zip.geojson")
 ntep_tracts <- file.path(data_dir$demo, "NTEP_demographics_tract.geojson")
 ntep_council <- file.path(data_dir$demo, "NTEP_demographics_council.geojson")
 
-ntep_elem <- file.path(data_dir$geographies, "NTEP_demographics_elemschool.geojson")
-ntep_midd <- file.path(data_dir$geographies, "NTEP_demographics_midschool.geojson")
-ntep_high <- file.path(data_dir$geographies, "NTEP_demographics_highschool.geojson")
+ntep_elem <- file.path(data_dir$geographies, "elem_boundaries.geojson")
+ntep_midd <- file.path(data_dir$geographies, "midd_boundaries.geojson")
+ntep_high <- file.path(data_dir$geographies, "high_boundaries.geojson")
 
 evictiondata <- config$data$evictions # sources for raw datasets
 
