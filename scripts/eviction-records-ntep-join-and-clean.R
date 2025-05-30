@@ -26,7 +26,8 @@ project_init_dirs(data_dir)
 
 ntep_long <- file.path(data_dir$filing, "NTEP_datadownload.csv")
 ntep_wide <- file.path(data_dir$filing, "NTEP_datadownload_wide.csv")
-eviction_cases <- dpath("NTEP_eviction_cases.csv")
+
+eviction_cases <- "NTEP_eviction_cases.csv"
 
 ntep_counties <- file.path(data_dir$demo, "NTEP_demographics_county.geojson")
 ntep_places <- file.path(data_dir$demo, "NTEP_demographics_place.geojson")
@@ -443,11 +444,9 @@ eviction_export %>%
 # Data export to repo folder #####
 eviction_export %>%
   select(-NAME, -ntx_tracts) %>%
-  export(., file.path(data_dir, eviction_cases))
+  export(., dpath(eviction_cases))
 
-eviction_export %>%
-  select(-NAME, -ntx_tracts) %>%
-  export(., file.path(data_dir$filing, eviction_cases))
+file.copy(from = eviction_cases, to = file.path(data_dir$filing, eviction_cases))
 
 # Data Prep for Long and Wide Format Export#####
 long_city <- eviction_export %>%
