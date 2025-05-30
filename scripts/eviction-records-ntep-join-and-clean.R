@@ -35,7 +35,7 @@ ntep_tracts <- file.path(data_dir$demo, "NTEP_demographics_tract.geojson")
 ntep_council <- file.path(data_dir$demo, "NTEP_demographics_council.geojson")
 
 ntep_elem <- file.path(data_dir$geographies, "elem_boundaries.geojson") # future us review why for the school boundaries we're pulling data from a different file name structure than other geography types.
-ntep_midd <- file.path(data_dir$geographies, "midd_boundaries.geojson")
+ntep_midd <- file.path(data_dir$geographies, "mid_boundaries.geojson")
 ntep_high <- file.path(data_dir$geographies, "high_boundaries.geojson")
 
 evictiondata <- config$data$evictions # sources for raw datasets
