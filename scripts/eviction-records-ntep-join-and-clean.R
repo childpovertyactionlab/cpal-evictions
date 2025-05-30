@@ -446,7 +446,9 @@ eviction_export %>%
   select(-NAME, -ntx_tracts) %>%
   export(., dpath(eviction_cases_file_name))
 
-file.copy(from = dpath(eviction_cases_file_name), to = file.path(data_dir$filing, eviction_cases_file_name))
+file.copy(from = dpath(eviction_cases_file_name), 
+          to = file.path(data_dir$filing, eviction_cases_file_name),
+          overwrite = TRUE)
 
 # Data Prep for Long and Wide Format Export#####
 long_city <- eviction_export %>%
