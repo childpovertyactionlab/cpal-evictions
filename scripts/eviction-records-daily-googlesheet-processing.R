@@ -151,70 +151,70 @@ tryCatch({
   stop("An error occurred: ", e$message)
 })
 
-if (lubridate::wday(today(), label=TRUE) == "Mon") {
-  ### WEEKLY ### denoted by the Sunday on which it's uploaded
-  dcadWeekly <- dcad_list() %>%
-    filter(str_detect(name, "Weekly"), !t3 %in% 2000:year(today())) %>%
-    ## !!! CORRECT THIS WHEN DCAD FILE TIMESTAMP IS FIXED
-    mutate(
-      year = ifelse(t1 %in% c("Nov", "Dec"), 2023, 2024),
-      date = mdy(paste(t1, t2, year)),
-      writeName = paste0("Eviction_Data_Weekly_", date, ".xls")
-    )
-
-  archivedWeeklyFiles <- list.files(path = data_dir$weeklyArchive, pattern = "Eviction_Data_Weekly_\\d{4}-\\d{2}-\\d{2}", full.names = TRUE)
-  datesFromWeeklyFiles <- ymd(gsub("Eviction_Data_Weekly_", "", basename(archivedWeeklyFiles)))
-  pullDates <- setdiff(dcadWeekly$date, datesFromWeeklyFiles)
-  
-    
-  for (pullDate in pullDates) {
-    
-    # string together the file name to be pulled,
-    weeklyPull <- dcadWeekly %>%
-      filter(date == pullDate) %>%
-      pull(name)
-    print(paste0("! Expecting weekly file ", weeklyPull))
-
-    # pull DCAD file into working directory
-    tryCatch({
-      if (dcad_fetch(weeklyPull, data_dir$weekly)) {
-        print(paste0("! Got daily file for ", format(as.Date(date), "%d %b")))
-      }
-    }, error = function(e) {
-      message("An error occurred: ", e$message)
-    })
-    
-  }  
-    
-  weeklyFiles <- list.files(data_dir$weekly, full.names = TRUE, pattern = "Eviction_Data_Weekly_")
-  
-  weeklyJoint <- weeklyFiles %>%
-    keep(~ file.size(.) >= 100000) %>% # ignore small files because they are corrupted
-    map_dfr(~ read_excel (.x) %>%
-              mutate(
-                `WRIT ISSUED DT` = as.character(`WRIT ISSUED DT`),
-                `WRIT SERVED DT` = as.character(`WRIT SERVED DT`),
-                `WRIT RETURNED DT` = as.character(`WRIT RETURNED DT`),
-                `WRIT RCVD BY CT` = as.character(`WRIT RCVD BY CT`),
-              )
-            )
-
-  weeklyMaster <- arrow::read_parquet(project_file$master$weekly$parquet) %>%
-    bind_rows(weeklyJoint) %>%
-    distinct(.keep_all = TRUE)
-  
-  arrow::write_parquet(weeklyMaster, project_file$master$weekly$parquet)
-  write_csv(weeklyMaster, project_file$master$weekly$csv)
-  
-  for (weeklyFile in weeklyFiles) {
-    oldName <- basename(weeklyFile)
-    newName <- dcadWeekly %>%
-      filter(name == oldName) %>%
-      pull(writeName)
-    newPath <- file.path(data_dir$weeklyArchive, newName)
-    file.rename(weeklyFile, newPath)
-  }
-}
+# if (lubridate::wday(today(), label=TRUE) == "Mon") {
+#   ### WEEKLY ### denoted by the Sunday on which it's uploaded
+#   dcadWeekly <- dcad_list() %>%
+#     filter(str_detect(name, "Weekly"), !t3 %in% 2000:year(today())) %>%
+#     ## !!! CORRECT THIS WHEN DCAD FILE TIMESTAMP IS FIXED
+#     mutate(
+#       year = ifelse(t1 %in% c("Nov", "Dec"), 2023, 2024),
+#       date = mdy(paste(t1, t2, year)),
+#       writeName = paste0("Eviction_Data_Weekly_", date, ".xls")
+#     )
+# 
+#   archivedWeeklyFiles <- list.files(path = data_dir$weeklyArchive, pattern = "Eviction_Data_Weekly_\\d{4}-\\d{2}-\\d{2}", full.names = TRUE)
+#   datesFromWeeklyFiles <- ymd(gsub("Eviction_Data_Weekly_", "", basename(archivedWeeklyFiles)))
+#   pullDates <- setdiff(dcadWeekly$date, datesFromWeeklyFiles)
+#   
+#     
+#   for (pullDate in pullDates) {
+#     
+#     # string together the file name to be pulled,
+#     weeklyPull <- dcadWeekly %>%
+#       filter(date == pullDate) %>%
+#       pull(name)
+#     print(paste0("! Expecting weekly file ", weeklyPull))
+# 
+#     # pull DCAD file into working directory
+#     tryCatch({
+#       if (dcad_fetch(weeklyPull, data_dir$weekly)) {
+#         print(paste0("! Got daily file for ", format(as.Date(date), "%d %b")))
+#       }
+#     }, error = function(e) {
+#       message("An error occurred: ", e$message)
+#     })
+#     
+#   }  
+#     
+#   weeklyFiles <- list.files(data_dir$weekly, full.names = TRUE, pattern = "Eviction_Data_Weekly_")
+#   
+#   weeklyJoint <- weeklyFiles %>%
+#     keep(~ file.size(.) >= 100000) %>% # ignore small files because they are corrupted
+#     map_dfr(~ read_excel (.x) %>%
+#               mutate(
+#                 `WRIT ISSUED DT` = as.character(`WRIT ISSUED DT`),
+#                 `WRIT SERVED DT` = as.character(`WRIT SERVED DT`),
+#                 `WRIT RETURNED DT` = as.character(`WRIT RETURNED DT`),
+#                 `WRIT RCVD BY CT` = as.character(`WRIT RCVD BY CT`),
+#               )
+#             )
+# 
+#   weeklyMaster <- arrow::read_parquet(project_file$master$weekly$parquet) %>%
+#     bind_rows(weeklyJoint) %>%
+#     distinct(.keep_all = TRUE)
+#   
+#   arrow::write_parquet(weeklyMaster, project_file$master$weekly$parquet)
+#   write_csv(weeklyMaster, project_file$master$weekly$csv)
+#   
+#   for (weeklyFile in weeklyFiles) {
+#     oldName <- basename(weeklyFile)
+#     newName <- dcadWeekly %>%
+#       filter(name == oldName) %>%
+#       pull(writeName)
+#     newPath <- file.path(data_dir$weeklyArchive, newName)
+#     file.rename(weeklyFile, newPath)
+#   }
+# }
 
 dailyFiles <- list.files(data_dir$daily, full.names = TRUE, pattern = "Eviction_Data_Daily_")
 
