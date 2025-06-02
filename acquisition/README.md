@@ -12,6 +12,15 @@ to this server and synchronize a local directory with the files relevant
 to this project (there is a filter embeded in the script as to what is
 considered for synchronization).
 
-# TODO
 
-- Define a Dockerfile to package the synchronization scripts.
+# Build
+
+Files within `src/` will be pushed into the root working directory of the image.
+
+`./build-images.sh acquisition`
+
+# Usage
+
+Reference any `src/` script as the argument to container execution.
+
+`docker run --rm cpal/ntep/acquisition:<version-tag> <src/*.sh>`
