@@ -1,11 +1,45 @@
-#### Load necessary libraries #####
+# Arguments:
+#
+# Environment (*=required, ?=optional, []=default):
+#  ? ENV: [development]|production
+#  ? R_CONFIG_FILE: [./config.yml] Influenced by value of ENV
+#
+# Files (RO=read only, RW=read/write, WO=write only):
+#  RO R_CONFIG_FILE: a YAML configuration file (see 'config' R package)
+#  RW config.data.root
+#
+
 library(tidyverse)
 library(rio)
 library(sf)
 
-#libDB <- "C:/Users/Michael/CPAL Dropbox/"
-libDB <- "/Users/anushachowdhury/CPAL Dropbox/"
-#libDB <- "C:/Users/erose/CPAL Dropbox/"
+source('scripts/init.R')
+
+# Create references to all pertinent directories and files.
+data_dir <- list(
+  demo = dpath('demo'),
+  bubble = dpath('bubble'),
+  filing = dpath('filing data'),
+  geographies = dpath('geographies')
+)
+project_init_dirs(data_dir)
+
+ntep_long <- file.path(data_dir$filing, "NTEP_datadownload.csv")
+ntep_wide <- file.path(data_dir$filing, "NTEP_datadownload_wide.csv")
+
+eviction_cases_file_name <- "NTEP_eviction_cases.csv"
+
+ntep_counties <- file.path(data_dir$demo, "NTEP_demographics_county.geojson")
+ntep_places <- file.path(data_dir$demo, "NTEP_demographics_place.geojson")
+ntep_zcta <- file.path(data_dir$demo, "NTEP_demographics_zip.geojson")
+ntep_tracts <- file.path(data_dir$demo, "NTEP_demographics_tract.geojson")
+ntep_council <- file.path(data_dir$demo, "NTEP_demographics_council.geojson")
+
+ntep_elem <- file.path(data_dir$geographies, "elem_boundaries.geojson") # future us review why for the school boundaries we're pulling data from a different file name structure than other geography types.
+ntep_midd <- file.path(data_dir$geographies, "mid_boundaries.geojson")
+ntep_high <- file.path(data_dir$geographies, "high_boundaries.geojson")
+
+evictiondata <- config$data$evictions # sources for raw datasets
 
 #### Generate dataframes with geometries #####
 counties <- c("Dallas County",
@@ -13,19 +47,19 @@ counties <- c("Dallas County",
               "Denton County",
               "Tarrant County")
 
-ntx_counties <- st_read("demo/NTEP_demographics_county.geojson") %>%
+ntx_counties <- st_read(ntep_counties) %>%
   select(name, id, geometry) %>%
   mutate(NAME = str_remove(name, " County, Texas")) %>%
   select(NAME, id,  geometry) %>%
   rename(county_id = id)
 
-ntx_places <- st_read("demo/NTEP_demographics_place.geojson") %>%
+ntx_places <- st_read(ntep_places) %>%
   select(name, id, geometry) %>%
   rename(city_id = id,
          NAME = name) %>%
   mutate(NAME = str_remove(NAME, ", Texas"))
 
-ntx_zcta <- st_read("demo/NTEP_demographics_zip.geojson") %>%
+ntx_zcta <- st_read(ntep_zcta) %>%
   select(id, geometry) %>%
   rename(zip_id = id)
 
@@ -54,7 +88,7 @@ extractzip <- function(x) {
 
 #### Eviction data import and attribute selection Collin County #####
 #select only the necessary column types and rename them based on NTE data plan
-collin <- import("https://evictions.s3.us-east-2.amazonaws.com/collin-county-tx-evictions.rds", trust = TRUE) %>%
+collin <- import(evictiondata$collin, trust = TRUE) %>%
 #  select(case_number, location, date_filed, lon, lat, defendant_address) %>%
   select(case_number, date_filed, location, lon, lat, defendant_address, plaintiff_name, plaintiff_address) %>%
   rename(precinct_id = location,
@@ -73,7 +107,7 @@ unique(collin$precinct_id)
 
 #### Eviction data import and attribute selection Denton County #####
 #select only the necessary column types and rename them based on NTE data plan
-denton <- import("https://evictions.s3.us-east-2.amazonaws.com/denton-county-tx-evictions.rds", trust = TRUE) %>%
+denton <- import(evictiondata$denton, trust = TRUE) %>%
 #  select(case_number, date_filed, location, lon, lat, defendant_address) %>%
   select(case_number, date_filed, location, lon, lat, defendant_address, plaintiff_name, plaintiff_address) %>%
   rename(precinct_id = location,
@@ -93,7 +127,7 @@ unique(denton$precinct_id)
 
 #### Eviction data import and attribute selection Tarrant County #####
 #select only the necessary column types and rename them based on NTE data plan
-tarrant <- import("https://evictions.s3.us-east-2.amazonaws.com/tarrant-evictions-2020.csv", trust = TRUE) %>%
+tarrant <- import(evictiondata$tarrant, trust = TRUE) %>%
 #  select(case_number, date_filed, location, lon, lat, defendant_address) %>%
   select(case_number, date_filed, location, lon, lat, defendant_address, plaintiff_name, plaintiff_address) %>%
   rename(precinct_id = location,
@@ -112,7 +146,7 @@ unique(tarrant$precinct_id)
 
 #### Eviction data import and attribute selection Dallas County #####
 #select only the necessary column types and rename them based on NTE data plan
-dallas <- import(paste0(libDB, "Data Library/Dallas County/Eviction Records/Data/Dallas County Eviction Master/EvictionRecords_Master.csv")) %>%
+dallas <- import(project_file$master$daily$csv) %>%
 #  select(case_number, court, df_city, df_zip, filed_date, amount, X, Y) %>%
   select(case_number, court, df_city, df_zip, filed_date, amount, X, Y, plaintiff_name, pl_address) %>%
   rename(date = filed_date,
@@ -360,30 +394,30 @@ eviction_sf <- evictioncases %>%
   mutate(NAME = trimws(NAME))
 
 #### Import tract geographies from tigris package #####
-ntx_tracts <- st_read("demo/NTEP_demographics_tract.geojson") %>%
+ntx_tracts <- st_read(ntep_tracts) %>%
   select(id) %>%
   rename(tract_id = id)
 
 #### Import council districts geographies #####
-dallascouncil <- st_read("demo/NTEP_demographics_council.geojson") %>%
+dallascouncil <- st_read(ntep_council) %>%
   select(id, geometry) %>%
   rename(council_id = id) %>%
   st_transform(crs = 4269)
 
 #### Import school district boundaries geographies #####
-eviction_elem <- st_read("data/geographies/elem_boundaries.geojson") %>%
+eviction_elem <- st_read(ntep_elem) %>%
   rename(elem_id = unique_id) %>%
   select(elem_id, geometry) %>%
   st_transform(crs = 4269) %>%
   st_make_valid()
 
-eviction_midd <- st_read("data/geographies/mid_boundaries.geojson") %>%
+eviction_midd <- st_read(ntep_midd) %>%
   rename(midd_id = unique_id) %>%
   select(midd_id, geometry) %>%
   st_transform(crs = 4269) %>%
   st_make_valid()
 
-eviction_high <- st_read("data/geographies/high_boundaries.geojson") %>%
+eviction_high <- st_read(ntep_high) %>%
   rename(high_id = unique_id) %>%
   select(high_id, geometry) %>%
   st_transform(crs = 4269) %>%
@@ -410,11 +444,11 @@ eviction_export %>%
 # Data export to repo folder #####
 eviction_export %>%
   select(-NAME, -ntx_tracts) %>%
-  export(., "data/NTEP_eviction_cases.csv")
+  export(., dpath(eviction_cases_file_name))
 
-eviction_export %>%
-  select(-NAME, -ntx_tracts) %>%
-  export(., "filing data/NTEP_eviction_cases.csv")
+file.copy(from = dpath(eviction_cases_file_name), 
+          to = file.path(data_dir$filing, eviction_cases_file_name),
+          overwrite = TRUE)
 
 # Data Prep for Long and Wide Format Export#####
 long_city <- eviction_export %>%
@@ -555,14 +589,6 @@ wide_export <- long_export %>%
   pivot_wider(names_from = Name,
               values_from = value)
 
-export(long_export, "filing data/NTEP_datadownload.csv")
-export(wide_export, "filing data/NTEP_datadownload_wide.csv")
-
-unique(eviction_export$precinct_id)
-unique(eviction_export$zip_id)
-unique(eviction_export$city_id)
-unique(eviction_export$county_id)
-unique(eviction_export$elem_id)
-unique(eviction_export$midd_id)
-unique(eviction_export$high_id)
+export(long_export, ntep_long)
+export(wide_export, ntep_wide)
 

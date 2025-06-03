@@ -1,0 +1,4 @@
+COPY deploy/entrypoint.sh .
+COPY scripts/ scripts/
+
+ENTRYPOINT ["./entrypoint.sh"]

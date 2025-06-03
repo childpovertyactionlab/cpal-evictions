@@ -17,3 +17,32 @@ Demographic data, at various geographic scales, which is used as part of the cho
 
 ## bubbles
 These GeoJSON files are the point centroids for the geographic scales mapped on our website. These are used, alongside the eviction filing data, to derive proportional symbols layered above the choropleth maps. 
+
+
+# Build
+
+Files within `scripts/` will be pushed into the root working directory of the image.
+
+`./build-images.sh analysis`
+
+# Usage
+
+Reference any `scripts/` script as the argument to container execution.
+
+`docker run --rm cpal/ntep/analysis:<version-tag> [scripts/*.R]`
+
+Or ignore the script argument to see available scripts, example:
+
+```
+$ docker run --rm cpal/ntep/analysis:<version-tag>
+Available scripts
+-----------------
+parsing-legislative-boundaries.R
+eviction-records-ntep-join-and-clean.R
+eviction-records-daily-googlesheet-processing.R
+geography-demographics-and-bubble.R
+data-review.R
+ARCHIVE-eviction-records-full.R
+eviction-records-add-additional-attributes-to-cases.R
+merge-district-boundaries.R
+```
