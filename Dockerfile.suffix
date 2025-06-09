@@ -1,3 +1,5 @@
+#FROM tumblr/rbase:Ubu22.04_R4.4.1_renv1.1.4_rsc1.4.1-20250609
+
 COPY deploy/entrypoint.sh .
 COPY scripts/ scripts/
 
