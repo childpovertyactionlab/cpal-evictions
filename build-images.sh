@@ -54,6 +54,7 @@ for subsys in ${subsystem:-${subsystems}}; do
   app_name="${app_image_prefix}/${subsys}"
   image_path="${IMAGE_REPO}/${app_name}"
   fq_image="${image_path}:${vcs_tag}"
+  fq_image_last="${image_path}:lastbuilt"
 
   echo "# Building ${subsys} as ${fq_image}..."
 
@@ -69,6 +70,7 @@ for subsys in ${subsystem:-${subsystems}}; do
         --progress plain \
         --platform "${CONTAINER_ARCH}" \
         -t "${fq_image}" \
+        -t "${fq_image_last}" \
         "${context}"
       ;;
   esac
