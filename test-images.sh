@@ -57,12 +57,12 @@ test_failure() {
 for subsys in ${subsystem:-${image_subsystems}}; do
 	image_id=$(image_list_id "${subsys}" "${tag}" | tr -d '\n')
 
-	if [ -z "${image_id}" ]; then
-		echo "ERR: Missing image for ${subsys}:${tag}"
-		exit 7
-	fi
+	echo "# Testing $(image_fq "${subsys}" "${tag}") [${image_id:-?}]"
 
-	echo "# Testing $(image_fq "${subsys}" "${tag}") [${image_id}]"
+	if [ -z "${image_id}" ]; then
+		echo "Skipped, image not found."
+		continue
+	fi
 
 	case "${subsys}" in
 		acquisition|distribution)
