@@ -11,7 +11,11 @@ usage() {
   echo "will be tagged with 'lastbuilt' and the short git commit correspinding"
   echo "to HEAD."
   echo
-  echo "Usage: $(basename $0) [subsystem]"
+  echo "Usage: $(basename $0) [subsystem] [options]"
+  echo
+  echo "Options:"
+  echo "  --cache-registry : Use build cache via IMAGE_REPO identified"
+  echo "    by <image path>-cache. Eg. IMAGE_REPO/some/path-cache"
   echo
   echo "Arguments:"
   echo "  subsystem: [${image_subsystems// /|}] Leave blank to build all."
@@ -26,11 +30,15 @@ usage() {
   usage_images_conf
 }
 
+opt_cache_registry=0
 while [ $# -gt 0 ]; do
   case "$1" in
   -h|--help )
     usage
     exit
+    ;;
+  --cache-registry )
+    opt_cache_registry=1
     ;;
   *)
     if [ -z "${subsystem}" ]; then
@@ -62,18 +70,32 @@ for subsys in ${subsystem:-${image_subsystems}}; do
   echo "# Building ${subsys} as ${fq_image}..."
 
   case ${subsys} in
+
     analysis)
+      cache_opts=''
+      if [ ${opt_cache_registry} -gt 0 ]; then
+        cache_opts='--cache-registry'
+      fi
       IMAGE_REPO="${IMAGE_REPO}" \
         IMAGE_APP_NAME="${app_name}" \
-        "${TUMBLR_PATH}/build-image.sh" "${SCRIPT_DIR}" lastbuilt
+        "${TUMBLR_PATH}/build-image.sh" "${SCRIPT_DIR}" lastbuilt ${cache_opts}
       ;;
+
     *)
+      cache_opts=''
+      if [ ${opt_cache_registry} -gt 0 ]; then
+        cache_opts="
+        --cache-to type=registry,ref=${image_path}-cache,mode=max
+        --cache-from type=registry,ref=${image_path}-cache
+        "
+      fi
       context="${subsys}"
       ${DOCKER_CMD} buildx build -f "${SCRIPT_DIR}/${subsys}/Dockerfile" \
         --progress plain \
         --platform "${CONTAINER_ARCH}" \
         -t "${fq_image}" \
         -t "${fq_image_last}" \
+        ${cache_opts} \
         "${context}"
       ;;
   esac
