@@ -36,13 +36,6 @@ pipeline {
 		stage('Checkout') {
 			steps {
 
-				// checkout scm.git(
-				// 	url: 'https://github.com/childpovertyactionlab/tumblR.git',
-				// 	branch: 'jenkins-pipeline',
-				// 	credentialsId: 'github-access',
-				// 	shallow: true // Enables a shallow clone (fetches only the last commit)
-				// )
-
 				checkout([
 					$class: 'GitSCM',
 					branches: [[name: 'jenkins-pipeline']],
@@ -59,24 +52,6 @@ pipeline {
 					// Consumed by build-images.sh
 					env.TUMBLR_PATH = "${env.WORKSPACE}/${TUMBLR_DIR}"
 				}
-
-				// checkout([
-				// 	$class: 'GitSCM',
-				// 	branches: [[name: "${env.GIT_BRANCH}"]],
-				// 	userRemoteConfigs: [[
-				// 		url: "${env.GIT_REPO}",
-				// 		credentialsId: "${env.GIT_CRED_ID}"
-				// 	]],
-				// 	extensions: [
-				// 		[$class: 'RelativeTargetDirectory', relativeTargetDir: 'tumblr']
-				// 	]
-				// ])
-
-				// dir ('tumblr') {
-				// 	git url: "${env.GIT_REPO}",
-				// 		branch: "${env.GIT_BRANCH}",
-				// 		credentialsId: "${env.GIT_CRED_ID}"
-				// }
 
 			}
 		}
