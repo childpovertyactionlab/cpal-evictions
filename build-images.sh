@@ -69,7 +69,7 @@ for subsys in ${subsystem:-${image_subsystems}}; do
       ;;
     *)
       context="${subsys}"
-      ${DOCKER_CMD} build -f "${SCRIPT_DIR}/${subsys}/Dockerfile" \
+      ${DOCKER_CMD} buildx build -f "${SCRIPT_DIR}/${subsys}/Dockerfile" \
         --progress plain \
         --platform "${CONTAINER_ARCH}" \
         -t "${fq_image}" \
