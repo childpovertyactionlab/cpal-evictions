@@ -65,7 +65,7 @@ for subsys in ${subsystem:-${image_subsystems}}; do
     analysis)
       IMAGE_REPO="${IMAGE_REPO}" \
         IMAGE_APP_NAME="${app_name}" \
-        "${TUMBLR_PATH}/build-image.sh" "${SCRIPT_DIR}"
+        "${TUMBLR_PATH}/build-image.sh" "${SCRIPT_DIR}" lastbuilt
       ;;
     *)
       context="${subsys}"
