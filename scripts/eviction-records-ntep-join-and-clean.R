@@ -8,12 +8,16 @@
 #  RO R_CONFIG_FILE: a YAML configuration file (see 'config' R package)
 #  RW config.data.root
 #
+options(warn = -1)  # Turn off warnings globally
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(rio)
+  library(sf)
+})
 
-library(tidyverse)
-library(rio)
-library(sf)
-
-source('scripts/init.R')
+print("Libraries loaded")
+suppressMessages(source('scripts/init.R'))
+print("Init script sourced")
 
 # Create references to all pertinent directories and files.
 data_dir <- list(
@@ -22,24 +26,31 @@ data_dir <- list(
   filing = dpath('filing data'),
   geographies = dpath('geographies')
 )
+print("Data directory paths set")
 project_init_dirs(data_dir)
+print("Project directories initialized")
 
 ntep_long <- file.path(data_dir$filing, "NTEP_datadownload.csv")
 ntep_wide <- file.path(data_dir$filing, "NTEP_datadownload_wide.csv")
 
 eviction_cases_file_name <- "NTEP_eviction_cases.csv"
+print("NTEP CSV file paths set")
+
 
 ntep_counties <- file.path(data_dir$demo, "NTEP_demographics_county.geojson")
 ntep_places <- file.path(data_dir$demo, "NTEP_demographics_place.geojson")
 ntep_zcta <- file.path(data_dir$demo, "NTEP_demographics_zip.geojson")
 ntep_tracts <- file.path(data_dir$demo, "NTEP_demographics_tract.geojson")
 ntep_council <- file.path(data_dir$demo, "NTEP_demographics_council.geojson")
+print("Demographic GeoJSON paths set")
 
 ntep_elem <- file.path(data_dir$geographies, "elem_boundaries.geojson") # future us review why for the school boundaries we're pulling data from a different file name structure than other geography types.
 ntep_midd <- file.path(data_dir$geographies, "mid_boundaries.geojson")
 ntep_high <- file.path(data_dir$geographies, "high_boundaries.geojson")
+print("School boundary file paths set")
 
 evictiondata <- config$data$evictions # sources for raw datasets
+print("Eviction config loaded")
 
 #### Generate dataframes with geometries #####
 counties <- c("Dallas County",
