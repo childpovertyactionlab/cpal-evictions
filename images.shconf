@@ -1,0 +1,49 @@
+DOCKER_CMD="docker"
+CONTAINER_ARCH="linux/amd64"
+
+IMAGE_REPO_default="cpal"
+IMAGE_REPO="${IMAGE_REPO:-${IMAGE_REPO_default}}"
+
+app_image_prefix="ntep"
+image_subsystems="acquisition distribution analysis"
+
+usage_images_conf() {
+	echo "(Common) Environment (optional):"
+	echo "  IMAGE_REPO:  [${IMAGE_REPO_default}] Alternate container image repository"
+}
+
+image_subsystem_valid() {
+	local subsystem="$1"
+	if [[ "${subsystem}" == '-' || " ${image_subsystems} " =~ " ${subsystem} " ]]; then
+		return 0
+	fi
+	return 1
+}
+
+image_fq() {
+	local subsystem="$1"
+	local tag="$2"
+	local fq="${IMAGE_REPO}/${app_image_prefix}/${subsystem}"
+	if [ -n "${tag}" ]; then
+		fq="${fq}:${tag}"
+	fi
+	echo "${fq}"
+}
+
+image_list_cmd() {
+	local subsystem="${1:-*}"
+	local tag="$2"
+	echo ${DOCKER_CMD} image ls -f "reference=$(image_fq ${subsystem} ${tag})"
+}
+
+image_list() {
+	local subsystem="$1"
+	local tag="$2"
+	$(image_list_cmd "${subsystem}" "${tag}")
+}
+
+image_list_id() {
+	local subsystem="$1"
+	local tag="$2"
+	$(image_list_cmd "${subsystem}" "${tag}") -q
+}
