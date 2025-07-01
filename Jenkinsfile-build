@@ -1,35 +1,25 @@
 pipeline {
 
 	agent {
-		label 'amd64 && linux && docker'
+		label 'docker-builder'
 	}
 
 	environment {
 		// IMAGE_REPO : Image repository domain and any required prefix.
-		// GITHUB_PAT_CPAL_READ : Token for R[renv] for GitHub rate limit removal and private repos.
+		// CRED_GITHUB_PAT_READ : Credential ID which contains a GitHub PAT to increase
+		//     rate limits and access private repos.
 		TUMBLR_DIR='tumblr'
+	}
+
+	libraries {
+		lib('cpal')
 	}
 
 	stages {
 
 		stage('Setup Environment') {
 			steps {
-				script {
-					configFileProvider([configFile(fileId: "${JOB_BASE_NAME}", targetLocation: '.jenkins-env')]) {
-						def envContent = readFile('.jenkins-env')
-						envContent.split('\n').each { line ->
-							def trimmedLine = line.trim()
-							if (trimmedLine && trimmedLine.contains('=')) {
-								def parts = trimmedLine.split('=', 2)
-								if (parts.size() == 2) {
-									def key = parts[0].trim()
-									def value = parts[1].trim()
-									env."${key}" = value
-								}
-							}
-						}
-					}
-				}
+				loadConfigsAsEnv "container-images tumblr-project ${JOB_BASE_NAME}"
 			}
 		}
 
@@ -38,7 +28,7 @@ pipeline {
 
 				checkout([
 					$class: 'GitSCM',
-					branches: [[name: 'jenkins-pipeline']],
+					branches: [[name: 'main']],
 					userRemoteConfigs: [[
 						url: "${env.TUMBLR_REPO}",
 						credentialsId: "${env.TUMBLR_REPO_CRED_ID}"
