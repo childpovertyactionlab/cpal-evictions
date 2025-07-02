@@ -67,7 +67,7 @@ for subsys in ${subsystem:-${image_subsystems}}; do
 	case "${subsys}" in
 		acquisition|distribution)
 
-			printf "=> Checking for existince of shell scripts..."
+			printf "=> Checking for existence of shell scripts..."
 			out=$(${DOCKER_CMD} run --rm "${image_id}" -c ls 2>/dev/null)
 			scripts=$(echo -e "${out}" | grep '.sh$' | wc -l)
 			if [ ${scripts} -eq 0 ]; then
@@ -80,7 +80,7 @@ for subsys in ${subsystem:-${image_subsystems}}; do
 		;;
 		analysis)
 
-			printf "=> Checking for existince of R scripts..."
+			printf "=> Checking for existence of R scripts..."
 			out=$(${DOCKER_CMD} run --rm "${image_id}" 2>/dev/null)
 			scripts=$(echo -e "${out}" | grep '.R$' | wc -l)
 			if [ ${scripts} -eq 0 ]; then
