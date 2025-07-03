@@ -1,0 +1,99 @@
+pipeline {
+
+	agent {
+		label 'docker-builder'
+	}
+
+	environment {
+		// IMAGE_REPO : Image repository domain and any required prefix.
+		// CRED_GITHUB_PAT_READ : Credential ID which contains a GitHub PAT to increase
+		//     rate limits and access private repos.
+		TUMBLR_DIR='tumblr'
+	}
+
+	libraries {
+		lib('cpal')
+	}
+
+	stages {
+
+		stage('Setup Environment') {
+			steps {
+				loadConfigsAsEnv "container-images tumblr-project ${JOB_BASE_NAME}"
+			}
+		}
+
+		stage('Checkout') {
+			steps {
+
+				checkout([
+					$class: 'GitSCM',
+					branches: [[name: 'main']],
+					userRemoteConfigs: [[
+						url: "${env.TUMBLR_REPO}",
+						credentialsId: "${env.TUMBLR_REPO_CRED_ID}"
+					]],
+					extensions: [
+						[$class: 'RelativeTargetDirectory', relativeTargetDir: "${TUMBLR_DIR}"]
+					]
+				])
+
+				script {
+					// Consumed by build-images.sh
+					env.TUMBLR_PATH = "${env.WORKSPACE}/${TUMBLR_DIR}"
+				}
+
+			}
+		}
+
+		stage('Build') {
+			environment {
+				// Consumed by build-images.sh
+				GITHUB_PAT_CPAL_READ = credentials("${env.CRED_GITHUB_PAT_READ}")
+			}
+			steps {
+				dir ('project') {
+					sh './build-images.sh --cache-registry'
+				}
+			}
+		}
+
+		stage('Test') {
+			steps {
+				dir ('project') {
+					sh './test-images.sh'
+				}
+			}
+		}
+
+		stage('Publish') {
+			steps {
+				dir ('project') {
+					// Push all tags for images identified by the 'lastbuilt' tag.
+					sh '''
+					for image_tag in $(./ls-images.sh path lastbuilt | tr '\n' ' '); do
+						docker push --all-tags "${image_tag}"
+					done
+					'''
+				}
+			}
+		}
+
+	}
+
+	post {
+		always {
+
+			echo "# Removing images from local docker reference"
+			dir ('project') {
+				sh '''
+				for image_tag in $(./ls-images.sh id lastbuilt | tr '\n' ' '); do
+					docker image rm -f "${image_tag}"
+				done
+				'''
+			}
+
+			cleanWs()
+		}
+	}
+}
