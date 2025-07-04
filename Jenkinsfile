@@ -164,7 +164,7 @@ pipeline {
 
 		always {
 			script {
-				withCredentials([secretText(
+				withCredentials([string(
 					credentialsId: "chat-webhook",
 					variable: 'GOOGLE_CHAT_WEBHOOK_URL'
 				)]) {
