@@ -214,19 +214,11 @@ pipeline {
 						]
 					]
 
-					try {
-						def response = httpRequest(
-							httpMode: 'POST',
-							url: env.GOOGLE_CHAT_WEBHOOK_URL,
-							contentType: 'APPLICATION_JSON',
-							requestBody: JsonOutput.toJson(jsonDocument),
-							validResponseCodes: '200:299'
-						)
-						echo "Response status ${response.status}"
-
-					} catch (Exception e) {
-						echo "Failed to send request: ${e.getMessage()}"
-					}
+					googlechatnotification(
+						url: env.GOOGLE_CHAT_WEBHOOK_URL,
+						messageFormat: 'card',
+						message: JsonOutput.toJson(jsonDocument)
+					)
 				}
 			}
 		}
