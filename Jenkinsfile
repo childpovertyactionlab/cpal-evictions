@@ -1,3 +1,5 @@
+import groovy.json.JsonOutput
+
 pipeline {
 
 	agent {
@@ -168,76 +170,63 @@ pipeline {
 					credentialsId: "chat-webhook",
 					variable: 'GOOGLE_CHAT_WEBHOOK_URL'
 				)]) {
-					def googleChatWebhook = "${env.GOOGLE_CHAT_WEBHOOK_URL}"
-
-					String buildResult = currentBuild.currentResult
 					def statusIcons = [
 						SUCCESS: 'https://emojis.slackmojis.com/emojis/images/1643514331/3045/jenkins-party.gif?1643514331',
 						UNSTABLE: 'https://emojis.slackmojis.com/emojis/images/1643511247/47419/jenkins-is-fine.gif?1643511247',
 						FAILURE: 'https://emojis.slackmojis.com/emojis/images/1659520601/60442/old_man_yells_at_jenkins.png?1659520601'
 					]
-					def colors = [SUCCESS: '#5DBCD2', UNSTABLE: '#aca620', FAILURE: '#ff0000']
-
-					String cardTitle = "`${env.JOB_NAME}`"
-
-					def buildStatusIcon = statusIcons[buildResult] ?: 'https://emojis.slackmojis.com/emojis/images/1643508777/51026/jenkins-worried.gif?1643508777'
-					def buildStatusTitle = "<b>${currentBuild.currentResult}</b>"
-
-					String buildVersion = "Version: <b>${env.APP_VERSION}</b>"
-					String buildRuntime = "Build number ${env.BUILD_ID} took ${currentBuild.durationString}"
-
-					sh """
-					curl -X POST -H 'Content-Type: application/json' -d '{
-						"cardsV2": [
-							{
-								"card": {
-									"header": {
-										"title": "${cardTitle} - ${buildStatusTitle}",
-										"imageUrl": "${buildStatusIcon}"
-									},
-									"sections": [
-										{
-											"header": "Runtime Information",
-											"widgets": [
-												{
-													"textParagraph": {
-														"text": "${buildVersion}"
-													}
-												},
-												{
-													"textParagraph": {
-														"text": "${buildRuntime}"
-													}
-												}
+					def buildStatusIcon = statusIcons[currentBuild.currentResult]
+						?: 'https://emojis.slackmojis.com/emojis/images/1643508777/51026/jenkins-worried.gif?1643508777'
+					def jsonDocument = [
+						cardsV2: [
+							[
+								card: [
+									header: [
+										title : "`${env.JOB_NAME}` #${env.BUILD_ID} - <b>${currentBuild.currentResult}</b>",
+										imageUrl: buildStatusIcon
+									],
+									sections: [
+										[
+											header : "Runtime Information",
+											widgets: [
+												[textParagraph: [text:
+													"Version: <b>${env.APP_VERSION}</b>"
+												]],
+												[textParagraph: [text:
+													"Took ${currentBuild.durationString}"
+												]]
 											]
-										}
+										]
 									]
-								}
-							}
+								]
+							]
 						],
-						"accessoryWidgets": [
-							{
-								"buttonList": {
-									"buttons": [
-										{
-											"text": "Build Details",
-											"icon": {
-												"materialIcon": {
-													"name": "link"
-												}
-											},
-											"onClick": {
-												"openLink": {
-													"url": "${env.BUILD_URL}"
-												}
-											}
-										}
+						accessoryWidgets: [
+							buttonList: [
+								buttons: [
+									[
+										text: "Build Details",
+										icon: [materialIcon: [name: "link"]],
+										onClick: [openLink: [url: env.BUILD_URL]]
 									]
-								}
-							}
+								]
+							]
 						]
-					}' ${googleChatWebhook}
-					"""
+					]
+
+					try {
+						def response = httpRequest(
+							httpMode: 'POST',
+							url: env.GOOGLE_CHAT_WEBHOOK_URL,
+							contentType: 'APPLICATION_JSON',
+							requestBody: JsonOutput.toJson(jsonDocument),
+							validResponseCodes: '200:299'
+						)
+						echo "Response status ${response.status}"
+
+					} catch (Exception e) {
+						echo "Failed to send request: ${e.getMessage()}"
+					}
 				}
 			}
 		}
