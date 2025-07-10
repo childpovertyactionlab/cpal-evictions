@@ -16,7 +16,7 @@ suppressPackageStartupMessages({
 })
 
 print("Libraries loaded")
-suppressMessages(source('scripts/init.R'))
+source('scripts/init.R')
 print("Init script sourced")
 
 # Create references to all pertinent directories and files.
@@ -58,21 +58,24 @@ counties <- c("Dallas County",
               "Denton County",
               "Tarrant County")
 
-ntx_counties <- st_read(ntep_counties) %>%
+ntx_counties <- st_read(ntep_counties, quiet = TRUE) %>%
   select(name, id, geometry) %>%
   mutate(NAME = str_remove(name, " County, Texas")) %>%
   select(NAME, id,  geometry) %>%
   rename(county_id = id)
+print("County geometries loaded")
 
-ntx_places <- st_read(ntep_places) %>%
+ntx_places <- st_read(ntep_places, quiet = TRUE) %>%
   select(name, id, geometry) %>%
   rename(city_id = id,
          NAME = name) %>%
   mutate(NAME = str_remove(NAME, ", Texas"))
+print("City and town geometry loaded")
 
-ntx_zcta <- st_read(ntep_zcta) %>%
+ntx_zcta <- st_read(ntep_zcta, quiet = TRUE) %>%
   select(id, geometry) %>%
   rename(zip_id = id)
+print("Zip code geometry loaded")
 
 #### Functions to extract the zip code and city name from address strings #####
 # extractcity function only does a partial fix of extracting city information.
@@ -114,7 +117,7 @@ collin <- import(evictiondata$collin, trust = TRUE) %>%
   select(-defendant_address)
 
 #names(collin)
-unique(collin$precinct_id)
+cat("Unique Collin County Precinct IDs:", paste(unique(collin$precinct_id), collapse = ", "), "\n")
 
 #### Eviction data import and attribute selection Denton County #####
 #select only the necessary column types and rename them based on NTE data plan
@@ -134,7 +137,7 @@ denton <- import(evictiondata$denton, trust = TRUE) %>%
   select(-defendant_address)
 
 #names(denton)
-unique(denton$precinct_id)
+cat("Unique Denton County Precinct IDs:", paste(unique(denton$precinct_id), collapse = ", "), "\n")
 
 #### Eviction data import and attribute selection Tarrant County #####
 #select only the necessary column types and rename them based on NTE data plan
@@ -153,7 +156,7 @@ tarrant <- import(evictiondata$tarrant, trust = TRUE) %>%
   select(-defendant_address)
 
 #names(tarrant)
-unique(tarrant$precinct_id)
+cat("Unique Tarrant County Precinct IDs:", paste(unique(tarrant$precinct_id), collapse = ", "), "\n")
 
 #### Eviction data import and attribute selection Dallas County #####
 #select only the necessary column types and rename them based on NTE data plan
@@ -175,13 +178,16 @@ dallas <- import(project_file$master$daily$csv) %>%
          zip_id = as.character(zip_id))
 
 #names(dallas)
-unique(dallas$precinct_id)
+cat("Unique Dallas County Precinct IDs:", paste(unique(dallas$precinct_id), collapse = ", "), "\n")
 
 #### Join all county data into singular dataframe #####
 # join all county datasets into one main dataset
 dallas %>%
-  group_by(lubridate::year(date)) %>%
-  summarize(count = n())
+  filter(!is.na(date)) %>%
+  mutate(year = lubridate::year(date)) %>%
+  count(year) %>%
+  arrange(year) %>%
+  knitr::kable(caption = "Dallas County Evictions by Year")
 
 evictioncases <- evictioncases <- bind_rows(dallas, collin, denton, tarrant) %>%
   relocate(case_number, date, amount, precinct_id, city_id, county_id, lon, lat) %>%
@@ -189,10 +195,16 @@ evictioncases <- evictioncases <- bind_rows(dallas, collin, denton, tarrant) %>%
                           ifelse(city_id == " ", NA, city_id))) %>%
   select(-plaintiff_address, -plaintiff_name)
 
+# Summary table of case counts by county
 evictioncases %>%
-  filter(county_id == "48113") %>%
-  group_by(lubridate::year(date)) %>%
-  summarize(count = n())
+  count(county_id, name = "case_count") %>%
+  arrange(desc(case_count)) %>%
+  knitr::kable(caption = "Number of Eviction Cases by County")
+# 
+# evictioncases %>%
+#   filter(county_id == "48113") %>%
+#   group_by(lubridate::year(date)) %>%
+#   summarize(count = n())
 
 #### Replace all incorrect/missing city names with NA #####
 city_small <- ntx_places %>%
@@ -309,10 +321,7 @@ evictioncases %>%
     total_count = n(),
     na_count = sum(is.na(lon)),
     na_percentage = (na_count / total_count)) %>%
-  ungroup() %>%
-  select(-na_count, -total_count) %>%
-  pivot_wider(names_from = county_id, values_from = c(na_percentage)) %>%
-  arrange(year)
+  knitr::kable(caption = "Percentage of Eviction Cases Missing Coordinates by County and Year")
 
 #### Create sf frame of all cases containing lon/lat coordinates #####
 eviction_sf <- evictioncases %>%
@@ -408,12 +417,14 @@ eviction_sf <- evictioncases %>%
 ntx_tracts <- st_read(ntep_tracts) %>%
   select(id) %>%
   rename(tract_id = id)
+print('Tract geographies imported')
 
 #### Import council districts geographies #####
 dallascouncil <- st_read(ntep_council) %>%
   select(id, geometry) %>%
   rename(council_id = id) %>%
   st_transform(crs = 4269)
+print('Council district geographies imported')
 
 #### Import school district boundaries geographies #####
 eviction_elem <- st_read(ntep_elem) %>%
@@ -433,6 +444,7 @@ eviction_high <- st_read(ntep_high) %>%
   select(high_id, geometry) %>%
   st_transform(crs = 4269) %>%
   st_make_valid()
+print('Elementary, middle, high school geographies imported')
 
 # Eviction data geography attribute  columns ##########
 eviction_export <- eviction_sf %>%
@@ -446,16 +458,19 @@ eviction_export <- eviction_sf %>%
   bind_rows(., eviction_NA) %>%
   mutate(zip_id = str_sub(zip_id, 1, 5)) %>%
   filter(date >= as.Date("2017-01-01"))
+print('Eviction data joined to tract, council, and school boundaries')
 
 eviction_export %>%
   filter(county_id == "48113") %>%
-  group_by(lubridate::year(date)) %>%
-  summarize(count = n())
+  group_by(year = lubridate::year(date)) %>%
+  summarize(count = n()) %>%
+  knitr::kable(caption = 'Number of Cases by Year for Dallas County')
 
 # Data export to repo folder #####
 eviction_export %>%
   select(-NAME, -ntx_tracts) %>%
   export(., dpath(eviction_cases_file_name))
+print('Eviction data exported to repo folder')
 
 file.copy(from = dpath(eviction_cases_file_name), 
           to = file.path(data_dir$filing, eviction_cases_file_name),
@@ -602,4 +617,5 @@ wide_export <- long_export %>%
 
 export(long_export, ntep_long)
 export(wide_export, ntep_wide)
+print('Long and wide data exported')
 
