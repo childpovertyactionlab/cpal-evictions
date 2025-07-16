@@ -65,6 +65,7 @@ data_dir <- list(
 data_dir$dailyArchive <- file.path(data_dir$daily, "archive")
 data_dir$weeklyArchive <- file.path(data_dir$weekly, "archive")
 project_init_dirs(data_dir)
+print('Data Directories Initialized')
 
 reviewGeoFile <- file.path(project_dir$master, "EvictionRecords_ReviewandGeocode.csv")
 
@@ -115,7 +116,8 @@ options(tigris_protocol = "ftp")
 tx_cities <- tigris::places(state="TX")$NAME %>% toupper()
 states <- c(state.name, state.abb) %>% toupper()
 
-print(paste0("!! Begin: Pulling data..."))
+# print(paste0("!! Begin: Pulling data..."))
+print("Tigris boundaries pulled.")
 
 ### DAILY DATA
 
@@ -250,6 +252,13 @@ if (length(dailyFiles) > 0) {
       }, 
       error = function(e){cat("Error importing file", file)}
     )
+    
+    cat(sprintf("Processed file: %s\n  ??? Extracted date: %s\n  ??? Renamed to: Eviction_Data_Daily_%s.xls\n  ??? Moved to: %s\n\n", 
+                basename(file), 
+                date_formatted, 
+                date_formatted, 
+                file.path(data_dir$dailyArchive, paste0("Eviction_Data_Daily_", date_formatted, ".xls"))))
+    
   }
   
   ## IMPORT DAILY FILE and clean ##
@@ -311,6 +320,16 @@ if (length(dailyFiles) > 0) {
            Y = ifelse(score < 96, NA_character_, lat))
   
   print(paste0("! Joined new files"))
+  cat(sprintf(
+    "??? Imported and cleaned %d files\n  ??? Total rows combined: %d\n  ??? Filing date range: %s to %s\n  ??? Geocoded rows with good score: %d\n  ??? Rows with missing coordinates: %d\n\n",
+    length(valid_files),
+    nrow(daily),
+    min(daily$filed_date, na.rm = TRUE),
+    max(daily$filed_date, na.rm = TRUE),
+    sum(!is.na(daily$X)),
+    sum(is.na(daily$X))
+  ))
+  
 }
 
 print(paste0("! Moved new files to archive"))
@@ -332,6 +351,8 @@ master <- read_parquet(project_file$master$daily$parquet) %>%
          appearance_time = as.character(appearance_time)) 
 
 print(paste0("! Got master file"))
+cat(sprintf("Most recent filed date in master: %s\n", max(master$filed_date, na.rm = TRUE)))
+
 
 # Pull case comments
 comments <- read_sheet(config$sheets$report, sheet = "Filings Last 4 Weeks") %>%
@@ -386,8 +407,10 @@ df <- daily %>%
   # Removing duplicates
   distinct(case_number, .keep_all = TRUE)
 
-print(paste0("! Joined new rows to master"))
+# print(paste0("! Joined new rows to master"))
+new_case_numbers <- setdiff(daily$case_number, master$case_number)
 
+cat(sprintf("??? Joined %d new rows to master\n", length(new_case_numbers)))
 
 ### SUMMARIZE TIME AND DATE
 
@@ -410,7 +433,12 @@ docket <- df %>%
   mutate(court = ifelse(duplicated(court), NA_character_, court)) %>%
   janitor::adorn_totals("row")
 
-print(paste0("! Created docket"))
+# print(paste0("! Created docket"))
+cat(sprintf("??? Docket created for %d future appearance dates across %d courts and %d unique appearance times.\n",
+            ncol(docket) - 2,  # subtracting 'court' and 'appearance_time'
+            df %>% filter(appearance_date >= today(), appearance_date < (today() + years(1))) %>% pull(court) %>% unique() %>% length(),
+            docket %>% filter(!appearance_time %in% c("Unassigned", "Total")) %>% pull(appearance_time) %>% unique() %>% length()))
+
 
 # CHECK FOR BAD ENTRIES
 # bad <- df %>%
@@ -460,8 +488,20 @@ print(paste0("! Wrote dockets to GS"))
 # parquet (immune to strange characters)
 write_parquet(df, project_file$master$daily$parquet)
 
+# appending 2010 and 2020 census tracts to .csv
+tracts10 <- st_read('data/geographies/2010 Census Tracts.geojson', quiet = TRUE) %>%
+  select(GEOID) %>%
+  rename(tract10 = GEOID)%>%
+  st_transform(crs = st_crs(df)) %>%
+  st_join(df)
+tracts20 <-st_read('data/geographies/2020 Census Tracts.geojson', quiet = TRUE)%>%
+  select(GEOID) %>%
+  rename(tract20 = GEOID) %>%
+  st_transform(crs = st_crs(df))%>%
+  st_join(tracts10)
+
 # csv (easier to access)
-export(df, project_file$master$daily$csv)
+export(tracts20, project_file$master$daily$csv)
 
 print(paste0("! Exported updated master"))
 
@@ -470,6 +510,7 @@ print(paste0("! Exported updated master"))
 errors <- daily %>%
   filter(score < 98) %>%
   select(c("case_number", "df_address", "df_city", "df_state", "df_zip", "lat", "long"))
+print(paste0('Number of cases with geocoding errors: ', nrow(errors)))
 
 
 geocode_review <- import(reviewGeoFile) %>%
@@ -484,4 +525,4 @@ export(geocode_review, reviewGeoFile)
 
 print(paste0("! Exported geocoding errors"))
 
-print("!! Success!")
+# print("!! Success!")

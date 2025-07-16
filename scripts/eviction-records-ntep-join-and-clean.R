@@ -200,11 +200,30 @@ evictioncases %>%
   count(county_id, name = "case_count") %>%
   arrange(desc(case_count)) %>%
   knitr::kable(caption = "Number of Eviction Cases by County")
+
+print(
+  evictioncases %>%
+    filter(date == Sys.Date() - 1) %>%
+    summarise(new_cases = n()) %>%
+    pull(new_cases) %>%
+    paste("Total number of new eviction cases from yesterday:", .)
+)
+
+print(
+  evictioncases %>%
+    filter(date == max(date, na.rm = TRUE)) %>%
+    summarise(new_cases = n(),
+              latest_date = max(date, na.rm = TRUE)) %>%
+    mutate(message = paste("Total number of new eviction cases from most recent date", latest_date, ":", new_cases)) %>%
+    pull(message)
+)
+
 # 
 # evictioncases %>%
 #   filter(county_id == "48113") %>%
 #   group_by(lubridate::year(date)) %>%
 #   summarize(count = n())
+
 
 #### Replace all incorrect/missing city names with NA #####
 city_small <- ntx_places %>%
