@@ -605,7 +605,7 @@ long_high <- eviction_export %>%
   mutate(amount = ifelse(amount == 0, NA, amount),
          year = lubridate::year(date),
          month = lubridate::month(date)) %>%
-  group_by(high_id, year, month) %>%
+  group_by(high_id, year, month) %>% 
   summarise(tot_evic = n(),
             med_amount = median(amount, na.rm = TRUE),
             mean_amount = mean(amount, na.rm = TRUE)
