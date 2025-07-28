@@ -41,7 +41,7 @@ anti <- jm49daily %>%
 print(paste0("Number of case numbers not present in Master: ", format(nrow(anti), big.mark= ',')))
 
 # duplicates
-jm49dup <- jm49daily %>%
+jm49dupCaseNum <- jm49daily %>%
   group_by(CASE_NUMBER) %>%
   summarise(n = n())
 jm49dup<- jm49daily %>%
@@ -50,10 +50,13 @@ jm49dup<- jm49daily %>%
   ungroup()
 print(paste0('Number of duplicate cases in new data: ', nrow(jm49dup)))
 
-# downloading 75216 for emily
-oakcliff <- tigris::zctas(year = 2020, class = 'sf') %>%
-  filter(ZCTA5CE20 == '75216')
 
+
+
+# downloading 75216 for emily
+# oakcliff <- tigris::zctas(year = 2020, class = 'sf') %>%
+#   filter(ZCTA5CE20 == '75216')
+# st_write(oakcliff, 'data/75216 Boundary.geojson')
 
 # doing it manually just to double check
 # jm49_17 <- rio::import('data/ORR Data/JM49_Eviction_Daily_2017.xlsx')
