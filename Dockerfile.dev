@@ -1,0 +1,38 @@
+# Development Dockerfile for cpal-evictions
+# This extends the tumblR base image for development and testing
+
+FROM tumblr/rbase:Ubu22.04_R4.4.1_renv1.1.4_rsc1.4.1-20250609
+
+# Set working directory
+WORKDIR /app
+
+# Copy the entrypoint script
+COPY deploy/entrypoint.sh ./
+RUN chmod +x ./entrypoint.sh
+
+# Copy scripts directory
+COPY scripts/ scripts/
+
+# Copy configuration files
+COPY config.yml ./
+COPY DESCRIPTION ./
+
+# Copy renv files for dependency management
+COPY renv.lock ./
+COPY renv/ renv/
+
+# Install R dependencies from renv.lock
+RUN Rscript -e "renv::restore()"
+
+# Set environment variables for development
+ENV ENV=development
+ENV R_CONFIG_FILE=/app/config.yml
+
+# Create data directories
+RUN mkdir -p /app/data /app/data/dcad-sync
+
+# Expose port for potential web services (if needed)
+EXPOSE 8080
+
+# Set entrypoint
+ENTRYPOINT ["./entrypoint.sh"]

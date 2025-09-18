@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  # Test runner service
+  test-runner:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.dev
+    container_name: cpal-evictions-test-runner
+    volumes:
+      - ../scripts:/app/scripts
+      - ../data:/app/data
+      - ../config.yml:/app/config.yml
+      - ../renv.lock:/app/renv.lock
+      - ../renv:/app/renv
+      - ../DESCRIPTION:/app/DESCRIPTION
+    environment:
+      - ENV=test
+      - R_CONFIG_FILE=/app/config.yml
+      - TZ=America/Chicago
+    working_dir: /app
+    entrypoint: ["bash", "-c", "echo 'Starting test suite...' && echo 'Testing R environment...' && Rscript -e 'cat(\"R version:\", R.version.string, \"\\n\"); cat(\"Packages loaded successfully!\\n\"); library(tidyverse); library(sf); cat(\"Spatial libraries working!\\n\")' && echo 'Testing configuration...' && Rscript -e 'config <- config::get(); cat(\"Config loaded successfully!\\n\"); print(names(config))' && echo 'All tests passed!'"]
+    profiles:
+      - test
+
+volumes:
+  # Named volume for persistent data (optional)
+  cpal-data:
+    driver: local

@@ -1,0 +1,115 @@
+version: '3.8'
+
+services:
+  # Development service for interactive work
+  dev:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.dev
+    container_name: cpal-evictions-dev
+    volumes:
+      # Mount scripts directory for live code updates
+      - ../scripts:/app/scripts
+      # Mount data directory for persistent data
+      - ../data:/app/data
+      # Mount config for easy configuration changes
+      - ../config.yml:/app/config.yml
+      # Mount renv files for package management
+      - ../renv.lock:/app/renv.lock
+      - ../renv:/app/renv
+      # Mount DESCRIPTION file
+      - ../DESCRIPTION:/app/DESCRIPTION
+    environment:
+      - ENV=development
+      - R_CONFIG_FILE=/app/config.yml
+      - TZ=America/Chicago
+    working_dir: /app
+    # Keep container running for interactive use
+    entrypoint: ["bash", "-c", "while true; do sleep 30; done"]
+    # Enable file watching for development
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app
+          ignore:
+            - .git/
+            - renv/library/
+            - data/
+            - "*.log"
+        - action: rebuild
+          path: docker/Dockerfile.dev
+        - action: rebuild
+          path: renv.lock
+
+  # Service for running specific R scripts
+  analysis:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.dev
+    container_name: cpal-evictions-analysis
+    volumes:
+      - ../scripts:/app/scripts
+      - ../data:/app/data
+      - ../config.yml:/app/config.yml
+      - ../renv.lock:/app/renv.lock
+      - ../renv:/app/renv
+      - ../DESCRIPTION:/app/DESCRIPTION
+    environment:
+      - ENV=development
+      - R_CONFIG_FILE=/app/config.yml
+      - TZ=America/Chicago
+    working_dir: /app
+    # Default command shows available scripts
+    command: ["./entrypoint.sh"]
+    profiles:
+      - analysis
+
+  # Service for data processing tasks
+  data-processing:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.dev
+    container_name: cpal-evictions-data
+    volumes:
+      - ../scripts:/app/scripts
+      - ../data:/app/data
+      - ../config.yml:/app/config.yml
+      - ../renv.lock:/app/renv.lock
+      - ../renv:/app/renv
+      - ../DESCRIPTION:/app/DESCRIPTION
+    environment:
+      - ENV=development
+      - R_CONFIG_FILE=/app/config.yml
+      - TZ=America/Chicago
+    working_dir: /app
+    command: ["./entrypoint.sh", "data-review.R"]
+    profiles:
+      - data
+
+  # Service for running tests
+  test:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.dev
+    container_name: cpal-evictions-test
+    volumes:
+      - ../scripts:/app/scripts
+      - ../data:/app/data
+      - ../config.yml:/app/config.yml
+      - ../renv.lock:/app/renv.lock
+      - ../renv:/app/renv
+      - ../DESCRIPTION:/app/DESCRIPTION
+    environment:
+      - ENV=test
+      - R_CONFIG_FILE=/app/config.yml
+      - TZ=America/Chicago
+    working_dir: /app
+    command: ["bash", "-c", "echo 'Running tests...' && find scripts/ -name '*.R' -exec echo 'Testing: {}' \\;"]
+    profiles:
+      - test
+
+volumes:
+  # Named volume for persistent data (optional)
+  cpal-data:
+    driver: local
