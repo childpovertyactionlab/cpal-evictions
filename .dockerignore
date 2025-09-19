@@ -13,7 +13,8 @@ Dockerfile*
 
 # Development files
 docker-dev.sh
-docker/
+docker/*
+!docker/run-tests.sh
 
 # IDE and editor files
 .vscode/
