@@ -6,3 +6,17 @@
 # MacOS noise
 .DS_Store
 ._*
+
+# Google service account credentials
+.gsuite-service.json
+
+# Live config files
+config.yml
+
+# Data files (should not be committed to repo)
+data/
+!data/.gitkeep
+
+# Credentials (should not be committed to repo)
+docker/credentials/sftp/evictionsuser
+!docker/credentials/README.md
