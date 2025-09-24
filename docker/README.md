@@ -23,18 +23,51 @@ The Docker Compose setup provides:
 - **Ubuntu-based containers** using the tumblR base image
 - **Interactive development** with shell access
 - **Script execution** for R analysis scripts
-- **RStudio IDE integration** for familiar development experience
+- **SFTP data sync** for accessing production data without local storage
+- **Jenkins pipeline replication** for local development
 
 ## Prerequisites
 
 - Docker and Docker Compose installed
 - Access to the tumblR base image: `tumblr/rbase:Ubu22.04_R4.4.1_renv1.1.4_rsc1.4.1-20250609` (hosted on AWS ECR)
 - Git repository cloned locally
+- SSH key for SFTP access (see [Credentials Setup](#credentials-setup))
 - RStudio IDE installed locally (for integration)
+
+## Credentials Setup
+
+Before using the development environment, you need to set up the required credentials:
+
+### SFTP Access Setup
+
+1. **Copy the SSH key file:**
+   ```bash
+   # Copy from your local credentials directory
+   cp /path/to/your/credentials/SFTP_keys/evictions/evictionsuser docker/credentials/sftp/evictionsuser
+   ```
+
+2. **Set proper permissions:**
+   ```bash
+   chmod 600 docker/credentials/sftp/evictionsuser
+   ```
+
+3. **Verify the file exists:**
+   ```bash
+   ls -la docker/credentials/sftp/evictionsuser
+   ```
+
+For more detailed instructions, see [credentials/README.md](credentials/README.md).
 
 ## Quick Start
 
-### 1. Start Development Environment
+### 1. Sync Data from SFTP
+
+```bash
+# Sync data from AWS SFTP server (one-time setup)
+./docker-dev.sh sftp-mount
+```
+
+### 2. Start Development Environment
 
 ```bash
 # Using the helper script (recommended)
@@ -44,158 +77,9 @@ The Docker Compose setup provides:
 docker-compose -f docker/docker-compose.yml up -d dev
 ```
 
-### 2. Access the Development Container
+### 3. Access the Development Container
 
 #### Option A: RStudio IDE Integration (Recommended for Interactive Development)
-
-Use your local RStudio IDE with Docker integration for the best development experience:
-
-```bash
-# Start the development environment
-./docker-dev.sh dev
-
-# Then configure RStudio to use the Docker container
-# See RStudio Integration section below for detailed setup
-```
-
-**Benefits:**
-- Use familiar RStudio GUI
-- Live code synchronization
-- Same environment as production
-- No server overhead
-
-#### Option B: Command Line Shell
-
-```bash
-# Open an interactive shell
-./docker-dev.sh shell
-
-# Or directly
-docker-compose -f docker/docker-compose.yml exec dev bash
-```
-
-### 3. Run Tests
-
-```bash
-# Run the full test suite
-./docker-dev.sh test
-
-# Or using docker-compose
-docker-compose -f docker/docker-compose.test.yml up --abort-on-container-exit test-runner
-```
-
-## RStudio Integration
-
-This section shows how to use your local RStudio IDE with the Docker development environment.
-
-### Overview
-
-With this setup, developers can:
-- Use their familiar RStudio GUI locally
-- Run R code inside the Docker container
-- Have live code synchronization with Docker Compose
-- Maintain the same environment as production
-
-### Setup Instructions
-
-#### 1. Start the Development Environment
-
-```bash
-# Start the development container
-./docker-dev.sh dev
-
-# Verify it's running
-./docker-dev.sh status
-```
-
-#### 2. Configure RStudio for Docker Integration
-
-##### Option A: Using RStudio's Built-in Docker Support (Recommended)
-
-1. **Open RStudio IDE**
-2. **Go to Tools → Global Options → General**
-3. **Click on "Change..." next to "R version"**
-4. **Select "Docker" as the R version source**
-5. **Configure the Docker connection:**
-   - **Image**: `docker-dev:latest` (or the name of your built image)
-   - **Container**: `cpal-evictions-dev`
-   - **Working Directory**: `/app`
-
-##### Option B: Using RStudio's Terminal Integration
-
-1. **Open RStudio IDE**
-2. **Go to Tools → Terminal → New Terminal**
-3. **In the terminal, run:**
-   ```bash
-   # Access the Docker container
-   ./docker-dev.sh shell
-   
-   # Now you're inside the container
-   # You can run R commands directly
-   R
-   ```
-
-### Working with Files
-
-#### Live Code Synchronization
-
-The Docker Compose setup includes file watching, so:
-- **Edit files in your local RStudio**
-- **Changes are automatically synced to the container**
-- **Run code in the container environment**
-
-#### File Locations
-
-- **Local RStudio**: Edit files in your project directory
-- **Container**: Files are mounted at `/app/`
-- **Scripts**: Available at `/app/scripts/`
-- **Data**: Available at `/app/data/`
-
-### Running R Scripts
-
-#### From RStudio Terminal
-
-```bash
-# Access container shell
-./docker-dev.sh shell
-
-# Run R scripts
-Rscript scripts/data-review.R
-Rscript scripts/eviction-records-ntep-join-and-clean.R
-```
-
-#### From RStudio R Console
-
-```r
-# Set working directory to match container
-setwd("/path/to/your/project")
-
-# Source the environment setup
-source("scripts/R/environment.R")
-
-# Run your analysis
-source("scripts/data-review.R")
-```
-
-### Package Management
-
-The container uses `renv` for package management:
-
-```r
-# In RStudio R Console
-# Install new packages (they'll be added to renv.lock)
-install.packages("new_package")
-
-# Update renv.lock
-renv::snapshot()
-
-# Restore packages in container
-renv::restore()
-```
-
-### Development Workflow
-
-#### Typical Workflow
 
 1. **Start development environment:**
    ```bash
@@ -216,6 +100,19 @@ renv::restore()
    ./docker-dev.sh test
    ```
 
+#### Option B: Direct Container Access
+
+```bash
+# Access container shell
+./docker-dev.sh shell
+
+# Run a specific script
+./docker-dev.sh script eviction-records-daily-googlesheet-processing.R
+
+# Run tests
+./docker-dev.sh test
+```
+
 #### File Synchronization
 
 - **Local changes** → **Container** (automatic via Docker Compose volumes)
@@ -227,7 +124,7 @@ renv::restore()
 This folder contains:
 
 - **`Dockerfile.dev`** - Development Docker image that extends the tumblR base image
-- **`docker-compose.yml`** - Main development environment with multiple services
+- **`docker-compose.yml`** - Main development environment with SFTP data sync
 - **`docker-compose.test.yml`** - Testing environment with automated test suites
 - **`docker-dev.sh`** - Helper script for common development tasks
 - **`run-tests.sh`** - Comprehensive test runner script
@@ -245,50 +142,72 @@ This folder contains:
 
 #### `analysis` - Script Execution
 - **Purpose**: Run specific R analysis scripts
-- **Access**: One-time script execution
+- **Access**: One-time script execution with SFTP data access
 - **Command**: `./docker-dev.sh script <script-name>`
-
-#### `data-processing` - Data Processing
-- **Purpose**: Run data processing tasks
-- **Access**: Automated data processing workflows
-- **Command**: `./docker-dev.sh script data-processing.R`
 
 ### Testing Services
 
 #### `test-runner` - Test Execution
-- **Purpose**: Run automated test suites
+- **Purpose**: Run automated test suites with SFTP data access
 - **Access**: Comprehensive testing environment
 - **Command**: `./docker-dev.sh test`
 
-#### `test-data-setup` - Test Data Preparation
-- **Purpose**: Set up test data and environments
-- **Access**: Automated test data preparation
-- **Command**: Part of test suite
+### Data Pipeline Services
+
+#### `sftp-sync` - AWS SFTP Data Sync
+- **Purpose**: Sync data from AWS SFTP server to local cache
+- **Access**: Downloads all data from `/evictions` folder on SFTP server
+- **Command**: `./docker-dev.sh sftp-mount`
+- **Mimics**: Jenkins "Connect to Data" stage
+- **Data Includes**:
+  - Dallas County Eviction Master/ (with EvictionRecords_Master.parquet)
+  - Dallas County Daily Eviction Reports/ (with all archived files)
+  - Dallas County Weekly Eviction Reports/ (with all archived files)
+  - bubble/ folder (with updated geojson files)
+  - demo/ folder (with updated geojson files)
+  - filing data/ folder (with updated CSV files)
+  - geographies/ folder (with updated boundary files)
+  - All other files and folders from /evictions
+
+#### `dcad-sync` - DCAD SFTP Data Sync
+- **Purpose**: Sync additional DCAD data from SFTP server
+- **Access**: Downloads fresh eviction data from DCAD
+- **Command**: `./docker-dev.sh sync`
+- **Mimics**: Jenkins "Synchronize with DCAD" stage
+
+#### `analysis` - R Script Processing
+- **Purpose**: Process eviction data with R scripts
+- **Access**: Runs R analysis scripts on synced data
+- **Command**: `./docker-dev.sh script <script-name>`
+- **Mimics**: Jenkins "Process New Evictions" stage
 
 ## Usage Examples
 
 ### Basic Development Workflow
 
 ```bash
-# 1. Start development environment
+# 1. Sync data from SFTP (one-time setup)
+./docker-dev.sh sftp-mount
+
+# 2. Start development environment
 ./docker-dev.sh dev
 
-# 2. Access container shell
+# 3. Access container shell
 ./docker-dev.sh shell
 
-# 3. Run a specific script
+# 4. Run a specific script
 ./docker-dev.sh script data-review.R
 
-# 4. Run tests
+# 5. Run tests
 ./docker-dev.sh test
 
-# 5. Check container status
+# 6. Check container status
 ./docker-dev.sh status
 
-# 6. View logs
+# 7. View logs
 ./docker-dev.sh logs
 
-# 7. Clean up when done
+# 8. Clean up when done
 ./docker-dev.sh clean
 ```
 
@@ -299,10 +218,10 @@ This folder contains:
 ./docker-dev.sh script
 
 # Run a specific script
-./docker-dev.sh script eviction-records-ntep-join-and-clean.R
+./docker-dev.sh script eviction-records-daily-googlesheet-processing.R
 
 # Run with custom arguments
-docker-compose -f docker/docker-compose.yml run --rm analysis your-script.R
+docker-compose -f docker/docker-compose.yml --profile sftp run --rm analysis your-script.R
 ```
 
 ### Testing Workflow
@@ -312,163 +231,291 @@ docker-compose -f docker/docker-compose.yml run --rm analysis your-script.R
 ./docker-dev.sh test
 
 # Run specific test
-docker-compose -f docker/docker-compose.test.yml run --rm test-runner
+docker-compose -f docker/docker-compose.test.yml --profile sftp run --rm test-runner
 
 # Check test results
 ./docker-dev.sh logs
 ```
 
-## Configuration
+### Data Pipeline Workflow (Mimics Jenkins Pipeline)
 
-### Environment Variables
+The data pipeline workflow exactly replicates the Jenkins pipeline for local development:
+
+#### Step 1: Sync Data from SFTP
+```bash
+# Sync data from AWS SFTP server
+./docker-dev.sh sftp-mount
+
+# This mimics Jenkins "Connect to Data" stage
+# Downloads ALL files from /evictions folder on AWS SFTP to local /data
+# Data is cached locally for faster access
+```
+
+#### Step 2: Sync Additional DCAD Data from SFTP
+```bash
+# Sync fresh eviction data from DCAD SFTP server
+./docker-dev.sh sync
+
+# This mimics Jenkins "Synchronize with DCAD" stage
+# Downloads new daily/weekly eviction files
+```
+
+#### Step 3: Process Data with R Scripts
+```bash
+# Run R scripts to process the synced data
+./docker-dev.sh script eviction-records-daily-googlesheet-processing.R
+
+# This mimics Jenkins "Process New Evictions" stage
+# Processes eviction data and updates Google Sheets
+```
+
+#### Complete Pipeline (All Steps)
+```bash
+# Run the complete pipeline in one command
+./docker-dev.sh pipeline
+
+# This runs: SFTP sync → DCAD sync → R processing
+# Equivalent to running all Jenkins stages sequentially
+```
+
+#### Individual Data Sync Steps
+```bash
+# Run complete data sync (SFTP + DCAD) without processing
+./docker-dev.sh full-sync
+
+# This runs: SFTP sync → DCAD sync (no R processing)
+```
+
+#### Data Pipeline Order of Operations
+
+1. **SFTP Data Sync** (`sftp-mount`)
+   - Connects to AWS SFTP server
+   - Downloads all historical data from `/evictions` folder
+   - Caches data locally for faster access
+
+2. **DCAD Data Sync** (`sync`)
+   - Connects to DCAD SFTP server
+   - Downloads fresh daily/weekly eviction files
+   - Updates local data cache
+
+3. **R Script Processing** (`script`)
+   - Runs R analysis scripts on synced data
+   - Processes eviction data
+   - Updates Google Sheets
+
+### Advanced Usage
+
+#### Custom Docker Compose Commands
+
+```bash
+# Run specific service
+docker-compose -f docker/docker-compose.yml --profile sftp up sftp-sync
+
+# Run with specific profile
+docker-compose -f docker/docker-compose.yml --profile sftp --profile sync up
+
+# Run in background
+docker-compose -f docker/docker-compose.yml up -d
+
+# View logs
+docker-compose -f docker/docker-compose.yml logs -f
+
+# Stop all services
+docker-compose -f docker/docker-compose.yml down
+```
+
+#### Environment Variables
 
 The following environment variables are available:
 
-- **`ENV`**: Environment type (`development`, `test`, `production`)
-- **`R_CONFIG_FILE`**: Path to configuration file (`/app/config.yml`)
-- **`TZ`**: Timezone (`America/Chicago`)
+- `ENV`: Environment mode (development, test, production)
+- `R_CONFIG_FILE`: Path to R configuration file
+- `GOOGLE_APPLICATION_CREDENTIALS`: Path to Google service account credentials
+- `TZ`: Timezone setting
 
-### Volume Mounts
+#### Volume Mounts
 
-The following directories are mounted:
+- `../scripts:/app/scripts` - R scripts directory
+- `../data:/app/data` - Data directory (app access)
+- `../data:/data` - Data directory (R script access)
+- `../config.yml:/app/config.yml` - Configuration file
+- `../.gsuite-service.json:/var/run/secrets/google` - Google credentials
+- `../data/dcad-sync:/dcad-sync` - DCAD sync directory
 
-- **`../scripts:/app/scripts`** - R scripts for live editing
-- **`../data:/app/data`** - Data directory for persistent storage
-- **`../config.yml:/app/config.yml`** - Configuration file
-- **`../renv.lock:/app/renv.lock`** - Package lock file
-- **`../renv:/app/renv`** - Package cache
-- **`../DESCRIPTION:/app/DESCRIPTION`** - R package description
+## Configuration
 
-### Build Context
+### Google Service Account Setup
 
-All Docker Compose files are configured to build from the project root directory (`context: ..`) while keeping the Docker files organized in this folder. This allows:
+1. **Place credentials file:**
+   ```bash
+   # Copy your Google service account JSON file
+   cp /path/to/your/gsuite-service.json .gsuite-service.json
+   ```
 
-- Access to all project files (scripts, data, config, etc.)
-- Clean organization of Docker-related files
-- Easy maintenance and updates
+2. **Verify file is mounted:**
+   ```bash
+   ./docker-dev.sh shell
+   ls -la /var/run/secrets/google
+   ```
+
+### SFTP Access Setup
+
+1. **Verify SSH key exists:**
+   ```bash
+   ls -la /Users/drew/Documents/CPAL/creds/SFTP_keys/evictions/evictionsuser
+   ```
+
+2. **Test SFTP connection:**
+   ```bash
+   ./docker-dev.sh sftp-mount
+   ```
+
+### Data Directory Structure
+
+After running `sftp-mount`, your local `data/` directory will contain:
+
+```
+data/
+├── Dallas County Eviction Master/
+│   ├── EvictionRecords_Master.parquet
+│   ├── EvictionRecords_Master.csv
+│   └── ...
+├── Dallas County Daily Eviction Reports/
+│   ├── archive/
+│   └── ...
+├── Dallas County Weekly Eviction Reports/
+│   ├── archive/
+│   └── ...
+├── bubble/
+├── demo/
+├── filing data/
+├── geographies/
+├── dcad-sync/
+└── NTEP_eviction_cases.csv
+```
 
 ## Testing
-
-### Test Structure
-
-The testing environment includes:
-
-- **R Environment Tests**: Verify R version and package loading
-- **Spatial Library Tests**: Test GEOS, GDAL, PROJ functionality
-- **Configuration Tests**: Verify config file loading
-- **Script Discovery Tests**: Test entrypoint script functionality
-- **Data Directory Tests**: Verify data directory setup
 
 ### Running Tests
 
 ```bash
-# Run all tests
+# Run full test suite
 ./docker-dev.sh test
 
-# Run specific test service
-docker-compose -f docker/docker-compose.test.yml up test-runner
+# Run specific test
+docker-compose -f docker/docker-compose.test.yml --profile sftp run --rm test-runner
 
-# Check test logs
-docker-compose -f docker/docker-compose.test.yml logs test-runner
+# Check test results
+./docker-dev.sh logs
 ```
 
-### Test Results
+### Test Coverage
 
-Tests verify:
-- ✅ **R Environment**: R 4.4.1 with all required packages
-- ✅ **Spatial Libraries**: GEOS 3.10.2, GDAL 3.4.1, PROJ 8.2.1
-- ✅ **Configuration**: Config file loading and parsing
-- ✅ **Script Discovery**: Entrypoint script and R script discovery
-- ✅ **Package Management**: renv package restoration
+The test suite includes:
+- R environment validation
+- Package loading verification
+- Configuration file testing
+- Data access validation
+- SFTP connection testing
 
 ## Troubleshooting
 
 ### Common Issues
 
-#### Container Not Running
+#### 1. SFTP Connection Failed
+```bash
+# Check SSH key exists and has proper permissions
+ls -la docker/credentials/sftp/evictionsuser
+
+# Fix permissions if needed
+chmod 600 docker/credentials/sftp/evictionsuser
+
+# Test SFTP connection manually
+./docker-dev.sh sftp-mount
+```
+
+#### 2. Data Not Found
+```bash
+# Verify data sync completed
+./docker-dev.sh sftp-mount
+
+# Check data directory
+ls -la data/
+```
+
+#### 3. R Script Errors
+```bash
+# Check container logs
+./docker-dev.sh logs
+
+# Access container shell for debugging
+./docker-dev.sh shell
+```
+
+#### 4. Google Sheets Authentication Failed
+```bash
+# Verify credentials file
+ls -la .gsuite-service.json
+
+# Check file is mounted in container
+./docker-dev.sh shell
+ls -la /var/run/secrets/google
+```
+
+### Debugging Commands
 
 ```bash
-# Check status
+# View container status
 ./docker-dev.sh status
 
-# Restart if needed
-./docker-dev.sh dev
-
-# Check logs
+# View logs
 ./docker-dev.sh logs
-```
 
-#### RStudio Can't Connect to Container
+# Access container shell
+./docker-dev.sh shell
 
-1. **Verify container is running:**
-   ```bash
-   docker ps | grep cpal-evictions
-   ```
-
-2. **Check container logs:**
-   ```bash
-   ./docker-dev.sh logs
-   ```
-
-3. **Restart container:**
-   ```bash
-   ./docker-dev.sh dev
-   ```
-
-#### Package Issues
-
-```bash
-# Rebuild container with updated packages
-./docker-dev.sh build
+# Clean up and restart
+./docker-dev.sh clean
 ./docker-dev.sh dev
 ```
 
-#### Base Image Issues
+### Performance Optimization
 
-If you encounter issues with the tumblR base image:
+#### Data Sync Optimization
+- Data is cached locally after first sync
+- Subsequent syncs only download new/changed files
+- Use `./docker-dev.sh sftp-mount` to refresh data
 
-1. **Authenticate with AWS ECR:**
-   ```bash
-   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 678154373696.dkr.ecr.us-east-1.amazonaws.com
-   ```
+#### Container Performance
+- Use `./docker-dev.sh dev` for interactive development
+- Use `./docker-dev.sh script` for one-time script execution
+- Clean up unused containers with `./docker-dev.sh clean`
 
-2. **Pull the base image:**
-   ```bash
-   docker pull 678154373696.dkr.ecr.us-east-1.amazonaws.com/tumblr/rbase:Ubu22.04_R4.4.1_renv1.1.4_rsc1.4.1-20250609
-   ```
+## Best Practices
 
-3. **Tag it for local use:**
-   ```bash
-   docker tag 678154373696.dkr.ecr.us-east-1.amazonaws.com/tumblr/rbase:Ubu22.04_R4.4.1_renv1.1.4_rsc1.4.1-20250609 tumblr/rbase:Ubu22.04_R4.4.1_renv1.1.4_rsc1.4.1-20250609
-   ```
+### Development Workflow
+1. **Always sync data first**: `./docker-dev.sh sftp-mount`
+2. **Use RStudio integration** for interactive development
+3. **Test scripts frequently**: `./docker-dev.sh script your-script.R`
+4. **Run tests before committing**: `./docker-dev.sh test`
+5. **Clean up when done**: `./docker-dev.sh clean`
 
-#### Platform Warnings
+### Data Management
+- **Don't commit data files** (they're in `.gitignore`)
+- **Use SFTP sync** for fresh data
+- **Cache data locally** for faster access
+- **Verify data integrity** before processing
 
-If you see platform warnings (linux/amd64 vs linux/arm64), this is normal when building AMD64 images on ARM64 Macs. The warnings are harmless and the images will work correctly for Linux deployment.
+### Container Management
+- **Use helper scripts** instead of raw docker-compose commands
+- **Monitor container status** with `./docker-dev.sh status`
+- **Clean up regularly** to free disk space
+- **Use profiles** for specific workflows
 
-### Getting Help
+## Support
 
-1. **Check container status**: `./docker-dev.sh status`
-2. **View logs**: `./docker-dev.sh logs`
-3. **Restart environment**: `./docker-dev.sh clean && ./docker-dev.sh dev`
-4. **Verify base image**: `docker images | grep tumblr`
-
-## Benefits of This Setup
-
-✅ **Familiar Interface**: Use RStudio GUI you're already comfortable with
-✅ **Consistent Environment**: Same R version and packages as production
-✅ **Live Synchronization**: Changes sync automatically between local and container
-✅ **Easy Testing**: Run scripts in container environment
-✅ **Package Management**: Use renv for reproducible package management
-✅ **No Server Overhead**: No need to run RStudio Server in container
-✅ **Clean Organization**: All Docker files in one folder
-✅ **Easy Maintenance**: Single comprehensive documentation
-
-## Next Steps
-
-1. **Start the development environment**: `./docker-dev.sh dev`
-2. **Configure RStudio for Docker integration** (see RStudio Integration section)
-3. **Begin development with live synchronization**
-4. **Use the testing environment for validation**
-
-The convenience script `docker-dev.sh` in the project root delegates to the actual scripts in this folder, so you can run commands from anywhere in the project.
+For issues or questions:
+1. Check this README for common solutions
+2. Review container logs: `./docker-dev.sh logs`
+3. Check Docker status: `./docker-dev.sh status`
+4. Clean and restart: `./docker-dev.sh clean && ./docker-dev.sh dev`

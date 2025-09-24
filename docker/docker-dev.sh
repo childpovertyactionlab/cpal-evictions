@@ -25,11 +25,24 @@ usage() {
     echo "  logs         Show logs from running containers"
     echo "  status       Show status of containers"
     echo ""
+    echo "Data Sync Commands (mimics Jenkins pipeline):"
+    echo "  sync         Sync DCAD data from SFTP"
+    echo "  full-sync    Run complete data sync (NFS + DCAD)"
+    echo "  process      Run R scripts with synced data"
+    echo "  pipeline     Run complete pipeline (NFS + DCAD + R scripts)"
+    echo ""
     echo "Examples:"
     echo "  $0 dev                    # Start development environment"
     echo "  $0 script data-review.R   # Run specific script"
     echo "  $0 test                   # Run all tests"
     echo "  $0 shell                  # Open interactive shell"
+    echo ""
+    echo "Data Pipeline Examples:"
+    echo "  $0 sftp-mount             # Download SFTP data into container (no local storage)"
+    echo "  $0 sync                   # Sync DCAD data from SFTP"
+    echo "  $0 full-sync              # Run complete data sync (SFTP + DCAD)"
+    echo "  $0 script <name>          # Run R scripts with data"
+    echo "  $0 pipeline               # Run complete pipeline"
     echo ""
 }
 
@@ -54,7 +67,7 @@ run_script() {
     fi
     
     echo "Running script: $1"
-    docker-compose -f docker/docker-compose.yml run --rm analysis "$1"
+    docker-compose -f docker/docker-compose.yml --profile sftp run --rm analysis "$1"
 }
 
 run_tests() {
@@ -84,6 +97,39 @@ clean_up() {
     echo "Cleanup complete."
 }
 
+# Data sync functions (mimics Jenkins pipeline)
+sync_dcad() {
+    echo "Syncing additional DCAD data from SFTP..."
+    docker-compose -f docker/docker-compose.yml --profile sftp --profile sync up --abort-on-container-exit dcad-sync
+    echo "DCAD data synced successfully."
+}
+
+full_sync() {
+    echo "Running complete data sync (SFTP + DCAD)..."
+    docker-compose -f docker/docker-compose.yml --profile sftp --profile sync up --abort-on-container-exit
+    echo "Complete data sync finished."
+}
+
+process_data() {
+    echo "Running R scripts with synced data..."
+    docker-compose -f docker/docker-compose.yml --profile analysis up --abort-on-container-exit analysis
+    echo "Data processing completed."
+}
+
+mount_sftp() {
+    echo "Downloading SFTP data into container (no local storage)..."
+    docker-compose -f docker/docker-compose.yml --profile sftp up --abort-on-container-exit sftp-sync
+    echo "SFTP data downloaded into container! Available at /data/ in containers."
+    echo "Data is stored in Docker container (no local SSD usage)."
+    echo "Run './docker-dev.sh dev' to start development environment."
+}
+
+run_pipeline() {
+    echo "Running complete pipeline (SFTP + DCAD + R scripts)..."
+    docker-compose -f docker/docker-compose.yml --profile sftp --profile sync --profile analysis up --abort-on-container-exit
+    echo "Complete pipeline finished."
+}
+
 # Main command handling
 case "${1:-}" in
     "dev")
@@ -110,6 +156,21 @@ case "${1:-}" in
         ;;
     "status")
         show_status
+        ;;
+    "sftp-mount")
+        mount_sftp
+        ;;
+    "sync")
+        sync_dcad
+        ;;
+    "full-sync")
+        full_sync
+        ;;
+    "process")
+        process_data
+        ;;
+    "pipeline")
+        run_pipeline
         ;;
     "help"|"-h"|"--help"|"")
         usage

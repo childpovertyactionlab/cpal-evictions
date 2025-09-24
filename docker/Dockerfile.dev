@@ -11,7 +11,7 @@ COPY deploy/entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 
 # Copy test script
-COPY run-tests.sh /app/run-tests.sh
+COPY docker/run-tests.sh /app/run-tests.sh
 RUN chmod +x /app/run-tests.sh
 
 # Copy scripts directory

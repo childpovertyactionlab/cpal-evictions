@@ -12,6 +12,10 @@ services:
       - ../scripts:/app/scripts
       # Mount data directory for persistent data
       - ../data:/app/data
+      # Mount data directory for R script access (config expects /data)
+      - ../data:/data
+      # Mount SFTP data for live access
+      - ../data/sftp-mount:/data/sftp-mount
       # Mount config for easy configuration changes
       - ../config.yml:/app/config.yml
       # Mount renv files for package management
@@ -19,9 +23,14 @@ services:
       - ../renv:/app/renv
       # Mount DESCRIPTION file
       - ../DESCRIPTION:/app/DESCRIPTION
+      # Mount Google service account credentials
+      - ../.gsuite-service.json:/var/run/secrets/google
+      # Mount DCAD sync directory
+      - ../data/dcad-sync:/dcad-sync
     environment:
       - ENV=development
       - R_CONFIG_FILE=/app/config.yml
+      - GOOGLE_APPLICATION_CREDENTIALS=/var/run/secrets/google
       - TZ=America/Chicago
     working_dir: /app
     # Keep container running for interactive use
@@ -50,66 +59,60 @@ services:
     container_name: cpal-evictions-analysis
     volumes:
       - ../scripts:/app/scripts
-      - ../data:/app/data
       - ../config.yml:/app/config.yml
       - ../renv.lock:/app/renv.lock
       - ../renv:/app/renv
       - ../DESCRIPTION:/app/DESCRIPTION
+      # Mount Google service account credentials
+      - ../.gsuite-service.json:/var/run/secrets/google
+      # Mount data from sftp-sync container
+      - sftp-data:/data
     environment:
       - ENV=development
       - R_CONFIG_FILE=/app/config.yml
+      - GOOGLE_APPLICATION_CREDENTIALS=/var/run/secrets/google
       - TZ=America/Chicago
     working_dir: /app
     # Default command shows available scripts
     command: ["./entrypoint.sh"]
+    depends_on:
+      - sftp-sync
     profiles:
       - analysis
 
-  # Service for data processing tasks
-  data-processing:
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile.dev
-    container_name: cpal-evictions-data
+  # Service to download SFTP data into container (no local storage)
+  sftp-sync:
+    image: alpine:3.21
+    container_name: cpal-evictions-sftp-sync
     volumes:
-      - ../scripts:/app/scripts
-      - ../data:/app/data
+      - ./credentials/sftp/evictionsuser:/root/.ssh/evictionsuser:ro
+      - sftp-data:/data
+    command: ["sh", "-c", "echo 'Downloading SFTP data into container...' && apk add --no-cache openssh-client && cp /root/.ssh/evictionsuser /tmp/evictionsuser && chmod 600 /tmp/evictionsuser && echo 'Cleaning up existing symlinks...' && rm -rf /data/Dallas* /data/bubble /data/demo /data/filing* /data/geographies /data/dcad-sync /data/sftp-mount && echo 'Creating data subdirectories...' && mkdir -p /data/Dallas\\ County\\ Eviction\\ Master && mkdir -p /data/Dallas\\ County\\ Daily\\ Eviction\\ Reports/archive && mkdir -p /data/Dallas\\ County\\ Weekly\\ Eviction\\ Reports/archive && mkdir -p /data/bubble && mkdir -p /data/demo && mkdir -p /data/filing\\ data && mkdir -p /data/geographies && mkdir -p /data/dcad-sync && echo 'Downloading evictions data...' && echo 'get -r evictions/* /data/' | sftp -i /tmp/evictionsuser -o StrictHostKeyChecking=no data_team@s-99f83b3610f94e44a.server.transfer.us-east-1.amazonaws.com && echo 'Downloading dcad-sync data...' && echo 'get -r dcad-sync/* /data/dcad-sync/' | sftp -i /tmp/evictionsuser -o StrictHostKeyChecking=no data_team@s-99f83b3610f94e44a.server.transfer.us-east-1.amazonaws.com && echo 'SFTP data downloaded successfully into container! Data available at /data/' && echo 'Data sync complete'"]
+    profiles:
+      - sftp
+
+  # Service to sync DCAD data (mimicking Jenkins "Synchronize with DCAD" stage)
+  dcad-sync:
+    build:
+      context: ../acquisition
+      dockerfile: Dockerfile
+    container_name: cpal-evictions-dcad-sync
+    volumes:
       - ../config.yml:/app/config.yml
-      - ../renv.lock:/app/renv.lock
-      - ../renv:/app/renv
-      - ../DESCRIPTION:/app/DESCRIPTION
+      - ../data/dcad-sync:/dcad-sync
     environment:
       - ENV=development
-      - R_CONFIG_FILE=/app/config.yml
-      - TZ=America/Chicago
     working_dir: /app
-    command: ["./entrypoint.sh", "data-review.R"]
+    command: ["./sync-dcad-evictions.sh", "config.yml"]
+    depends_on:
+      - sftp-sync
     profiles:
-      - data
-
-  # Service for running tests
-  test:
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile.dev
-    container_name: cpal-evictions-test
-    volumes:
-      - ../scripts:/app/scripts
-      - ../data:/app/data
-      - ../config.yml:/app/config.yml
-      - ../renv.lock:/app/renv.lock
-      - ../renv:/app/renv
-      - ../DESCRIPTION:/app/DESCRIPTION
-    environment:
-      - ENV=test
-      - R_CONFIG_FILE=/app/config.yml
-      - TZ=America/Chicago
-    working_dir: /app
-    command: ["bash", "-c", "echo 'Running tests...' && find scripts/ -name '*.R' -exec echo 'Testing: {}' \\;"]
-    profiles:
-      - test
+      - sync
 
 volumes:
+  # Shared volume for SFTP data (no local storage)
+  sftp-data:
+    driver: local
   # Named volume for persistent data (optional)
   cpal-data:
     driver: local

@@ -1,0 +1,21 @@
+default:
+  data:
+    root: data
+    evictions:
+      # January Advisors bucket
+      tarrant: "https://evictions.s3.us-east-2.amazonaws.com/tarrant-evictions-2020.csv"
+      # January Advisors bucket
+      collin: "https://evictions.s3.us-east-2.amazonaws.com/collin-county-tx-evictions.rds"
+      # January Advisors bucket
+      denton: "https://evictions.s3.us-east-2.amazonaws.com/denton-county-tx-evictions.rds"
+  dcad:
+    # path to where files are synchronized
+    dest: data/dcad-sync
+    sftp:
+      host:
+      user:
+      pass:
+      hdir:
+  sheets:
+    # daily
+    report:
