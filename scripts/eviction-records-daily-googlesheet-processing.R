@@ -130,10 +130,10 @@ tryCatch({
   for (date in missingDates) {
     
     # Check what day it is and if a new file needs to be downloaded from Dallas County server,
-    dailyDate <- format(as.Date(date), format = "%m%d")
+    dailyDate <- format(as.Date(date), format = "%m%d%Y")
     
     # string together the file name to be pulled,
-    dailyPull <- paste0("Eviction_Data_Daily_", dailyDate, ".xls")
+    dailyPull <- paste0("JM049_Eviction_Data_Daily_", dailyDate, ".xlsx")
     print(paste0("! Expecting daily file ", dailyPull))
     
     # pull DCAD file into working directory
@@ -216,39 +216,38 @@ tryCatch({
 #   }
 # }
 
-dailyFiles <- list.files(data_dir$daily, full.names = TRUE, pattern = "Eviction_Data_Daily_")
+dailyFiles <- list.files(data_dir$daily, full.names = TRUE, pattern = "JM049_Eviction_Data_Daily_")
 
 valid_files <- c()
 
 if (length(dailyFiles) > 0) {
   
   for (file in dailyFiles) {
-    # Extract the mmdd part
-    dateFromFile <- gsub("Eviction_Data_Daily_(\\d+)\\.xls", "\\1", basename(file))
+    # Extract the MMDDYYYY part from the new format
+    dateFromFile <- gsub("JM049_Eviction_Data_Daily_(\\d+)\\.xlsx", "\\1", basename(file))
     
+    # Parse the date components from MMDDYYYY format
     file_month <- as.numeric(substr(dateFromFile, 1, 2))
+    file_day <- as.numeric(substr(dateFromFile, 3, 4))
+    file_year <- as.numeric(substr(dateFromFile, 5, 8))
     
-    # Determine the year based on file_month and current_month
-    current_month <- as.numeric(format(Sys.Date(), "%m"))
-    current_year <- as.numeric(format(Sys.Date(), "%Y"))
-    if (file_month > current_month) {
-      year <- current_year - 1
-    } else {
-      year <- current_year
-    }
+    # Convert to YYYY-MM-DD format
+    date_formatted <- sprintf("%04d-%02d-%02d", file_year, file_month, file_day)
     
-    # Convert it to yy-mm-dd format
-    date_formatted <- format(as.Date(paste0(year, dateFromFile), format = "%Y%m%d"), "%Y-%m-%d")
+    # Define the new archived filename (keeping the old naming convention for consistency)
+    archived_filename <- paste0("Eviction_Data_Daily_", date_formatted, ".xlsx")
+    archived_filepath <- file.path(data_dir$dailyArchive, archived_filename)
     
-    # Rename with year and move to archive
-    file.rename(file, file.path(data_dir$dailyArchive, paste0("Eviction_Data_Daily_", date_formatted, ".xls")))
+    # Rename with standardized format and move to archive
+    file.rename(file, archived_filepath)
     
+    # Verify the file can be read
     tryCatch(
       {
-        readxl::read_xls(file.path(data_dir$dailyArchive, paste0("Eviction_Data_Daily_", date_formatted, ".xls")))
-        valid_files <- c(valid_files, file.path(data_dir$dailyArchive, paste0("Eviction_Data_Daily_", date_formatted, ".xls")))
+        readxl::read_xlsx(archived_filepath)  # Changed from read_xls to read_xlsx
+        valid_files <- c(valid_files, archived_filepath)
       }, 
-      error = function(e){cat("Error importing file", file)}
+      error = function(e){cat("Error importing file", file, "\n")}
     )
   }
   
