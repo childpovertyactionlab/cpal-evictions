@@ -252,28 +252,43 @@ if (length(dailyFiles) > 0) {
   }
   
   ## IMPORT DAILY FILE and clean ##
-  daily <- bind_rows(lapply(valid_files, import)) %>%
-    # head() %>% # for testing (4 geocodes at a time)
-    janitor::clean_names()%>%
+  daily <- bind_rows(lapply(valid_files, function(file) {
+    data <- import(file)
+    data$CASE_NUMBER <- as.character(data$CASE_NUMBER)
+    data$FILE_DATE <- as.Date(data$FILE_DATE)
+    data$PL_LAST_NAME <- as.character(data$PL_LAST_NAME)
+    data$PL_FIRST_NAME <- as.character(data$PL_FIRST_NAME)
+    data$PL_MIDDLE_NAME <- as.character(data$PL_MIDDLE_NAME)
+    data$PLT_ADDRESS <- as.character(data$PLT_ADDRESS)
+    data$PL_CITY <- as.character(data$PL_CITY)
+    data$PL_STATE <- as.character(data$PL_STATE)
+    data$PL_PHONE <- as.character(data$PL_PHONE)
+    data$DF_LAST_NAME <- as.character(data$DF_LAST_NAME)
+    data$DF_FIRST_NAME <- as.character(data$DF_FIRST_NAME)
+    data$DF_MIDDLE_NAME <- as.character(data$DF_MIDDLE_NAME)
+    data$APPEAR_DATE <- as.Date(data$APPEAR_DATE)
+    data$APPEAR_TIME <- as.character(data$APPEAR_TIME)
+    data$NON_PYMNT_RENT_FLG <- as.character(data$NON_PYMNT_RENT_FLG)
+    data$PL_ZIP <- as.character(data$PL_ZIP)
+    data$DEF_ZIP <- as.character(data$DEF_ZIP)
+    return(data)
+  })) %>%
+    janitor::clean_names() %>%
     
     # Renaming daily columns to fit master
     rename(
       filed_date = file_date,
       appearance_date = appear_date,
       appearance_time = appear_time,
-      court = court,
-      monthly_rent = monthly_rent,
       non_payment_of_rent = non_pymnt_rent_flg,
-      subsidy_govt = subsidy_govt,
-      subsidy_tenant = subsidy_tenant,
       pl_address = plt_address,
       amount = monetary_amount,
       df_phone = def_phone,
       df_zip = def_zip,
       df_address = def_address1,
-      df_addnum = def_address2,
       df_city = def_city,
-      df_state = def_state
+      df_state = def_state,
+      df_addnum = def_address2
     ) %>%
     
     # Adjusting and consolidating to fit and prepare for master join
@@ -383,7 +398,7 @@ df <- daily %>%
            X, Y, case_number, rental_assistance_org, legal_assistance_org, outcome_notes) %>%
   
   # Removing duplicates
-  distinct(case_number, .keep_all = TRUE)
+  distinct()
 
 print(paste0("! Joined new rows to master"))
 
