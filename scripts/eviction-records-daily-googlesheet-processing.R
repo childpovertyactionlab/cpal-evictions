@@ -130,10 +130,10 @@ tryCatch({
   for (date in missingDates) {
     
     # Check what day it is and if a new file needs to be downloaded from Dallas County server,
-    dailyDate <- format(as.Date(date), format = "%m%d")
+    dailyDate <- format(as.Date(date), format = "%m%d%Y")
     
     # string together the file name to be pulled,
-    dailyPull <- paste0("Eviction_Data_Daily_", dailyDate, ".xls")
+    dailyPull <- paste0("JM049_Eviction_Data_Daily_", dailyDate, ".xlsx")
     print(paste0("! Expecting daily file ", dailyPull))
     
     # pull DCAD file into working directory
@@ -216,65 +216,82 @@ tryCatch({
 #   }
 # }
 
-dailyFiles <- list.files(data_dir$daily, full.names = TRUE, pattern = "Eviction_Data_Daily_")
+dailyFiles <- list.files(data_dir$daily, full.names = TRUE, pattern = "JM049_Eviction_Data_Daily_")
 
 valid_files <- c()
+
+# Initialize daily as empty data frame to prevent "object not found" error
+daily <- data.frame()
 
 if (length(dailyFiles) > 0) {
   
   for (file in dailyFiles) {
-    # Extract the mmdd part
-    dateFromFile <- gsub("Eviction_Data_Daily_(\\d+)\\.xls", "\\1", basename(file))
+    # Extract the MMDDYYYY part from the new format
+    dateFromFile <- gsub("JM049_Eviction_Data_Daily_(\\d+)\\.xlsx", "\\1", basename(file))
     
+    # Parse the date components from MMDDYYYY format
     file_month <- as.numeric(substr(dateFromFile, 1, 2))
+    file_day <- as.numeric(substr(dateFromFile, 3, 4))
+    file_year <- as.numeric(substr(dateFromFile, 5, 8))
     
-    # Determine the year based on file_month and current_month
-    current_month <- as.numeric(format(Sys.Date(), "%m"))
-    current_year <- as.numeric(format(Sys.Date(), "%Y"))
-    if (file_month > current_month) {
-      year <- current_year - 1
-    } else {
-      year <- current_year
-    }
+    # Convert to YYYY-MM-DD format
+    date_formatted <- sprintf("%04d-%02d-%02d", file_year, file_month, file_day)
     
-    # Convert it to yy-mm-dd format
-    date_formatted <- format(as.Date(paste0(year, dateFromFile), format = "%Y%m%d"), "%Y-%m-%d")
+    # Define the new archived filename (keeping the old naming convention for consistency)
+    archived_filename <- paste0("Eviction_Data_Daily_", date_formatted, ".xlsx")
+    archived_filepath <- file.path(data_dir$dailyArchive, archived_filename)
     
-    # Rename with year and move to archive
-    file.rename(file, file.path(data_dir$dailyArchive, paste0("Eviction_Data_Daily_", date_formatted, ".xls")))
+    # Rename with standardized format and move to archive
+    file.rename(file, archived_filepath)
     
+    # Verify the file can be read
     tryCatch(
       {
-        readxl::read_xls(file.path(data_dir$dailyArchive, paste0("Eviction_Data_Daily_", date_formatted, ".xls")))
-        valid_files <- c(valid_files, file.path(data_dir$dailyArchive, paste0("Eviction_Data_Daily_", date_formatted, ".xls")))
+        readxl::read_xlsx(archived_filepath)  # Changed from read_xls to read_xlsx
+        valid_files <- c(valid_files, archived_filepath)
       }, 
-      error = function(e){cat("Error importing file", file)}
+      error = function(e){cat("Error importing file", file, "\n")}
     )
   }
   
   ## IMPORT DAILY FILE and clean ##
-  daily <- bind_rows(lapply(valid_files, import)) %>%
-    # head() %>% # for testing (4 geocodes at a time)
-    janitor::clean_names()%>%
+  daily <- bind_rows(lapply(valid_files, function(file) {
+    data <- import(file)
+    data$CASE_NUMBER <- as.character(data$CASE_NUMBER)
+    data$FILE_DATE <- as.Date(data$FILE_DATE)
+    data$PL_LAST_NAME <- as.character(data$PL_LAST_NAME)
+    data$PL_FIRST_NAME <- as.character(data$PL_FIRST_NAME)
+    data$PL_MIDDLE_NAME <- as.character(data$PL_MIDDLE_NAME)
+    data$PLT_ADDRESS <- as.character(data$PLT_ADDRESS)
+    data$PL_CITY <- as.character(data$PL_CITY)
+    data$PL_STATE <- as.character(data$PL_STATE)
+    data$PL_PHONE <- as.character(data$PL_PHONE)
+    data$DF_LAST_NAME <- as.character(data$DF_LAST_NAME)
+    data$DF_FIRST_NAME <- as.character(data$DF_FIRST_NAME)
+    data$DF_MIDDLE_NAME <- as.character(data$DF_MIDDLE_NAME)
+    data$APPEAR_DATE <- as.Date(data$APPEAR_DATE)
+    data$APPEAR_TIME <- as.character(data$APPEAR_TIME)
+    data$NON_PYMNT_RENT_FLG <- as.character(data$NON_PYMNT_RENT_FLG)
+    data$PL_ZIP <- as.character(data$PL_ZIP)
+    data$DEF_ZIP <- as.character(data$DEF_ZIP)
+    return(data)
+  })) %>%
+    janitor::clean_names() %>%
     
     # Renaming daily columns to fit master
     rename(
       filed_date = file_date,
       appearance_date = appear_date,
       appearance_time = appear_time,
-      court = court,
-      monthly_rent = monthly_rent,
       non_payment_of_rent = non_pymnt_rent_flg,
-      subsidy_govt = subsidy_govt,
-      subsidy_tenant = subsidy_tenant,
       pl_address = plt_address,
       amount = monetary_amount,
       df_phone = def_phone,
       df_zip = def_zip,
       df_address = def_address1,
-      df_addnum = def_address2,
       df_city = def_city,
-      df_state = def_state
+      df_state = def_state,
+      df_addnum = def_address2
     ) %>%
     
     # Adjusting and consolidating to fit and prepare for master join
@@ -294,6 +311,7 @@ if (length(dailyFiles) > 0) {
     mutate(
       amount_filed = ifelse(amount %in% c(0, 0.00), "Not Non-Payment of Rent", as.character(amount)),
       non_payment_of_rent = NA_character_,
+      monthly_rent = NA_character_,
       pl_city = find_closest_match(pl_city, tx_cities, 3),
       pl_state = find_closest_match(pl_state, states),
       df_city = find_closest_match(df_city, tx_cities, 5),
@@ -343,10 +361,11 @@ print(paste0("! Pulled comments from GS"))
 
 ## JOINING WITH MASTER ##
 
-df <- daily %>% 
-  select(-c("df_complete", "lat", "long", "arcgis_address", "score", "location.x", "location.y", "extent.xmin", "extent.ymin", "extent.xmax", "extent.ymax")) %>%
-  select(-(attributes.Loc_name:attributes.StrucDet)) %>%
-  full_join(master) %>%
+if (nrow(daily) > 0) {
+  df <- daily %>% 
+    select(-c("df_complete", "lat", "long", "arcgis_address", "score", "location.x", "location.y", "extent.xmin", "extent.ymin", "extent.xmax", "extent.ymax")) %>%
+    select(-(attributes.Loc_name:attributes.StrucDet)) %>%
+    full_join(master) %>%
   
   # More adjustments
   mutate(
@@ -384,9 +403,14 @@ df <- daily %>%
            X, Y, case_number, rental_assistance_org, legal_assistance_org, outcome_notes) %>%
   
   # Removing duplicates
-  distinct(case_number, .keep_all = TRUE)
+  distinct()
 
-print(paste0("! Joined new rows to master"))
+  print(paste0("! Joined new rows to master"))
+} else {
+  # If no daily files, just use the master data
+  df <- master
+  print(paste0("! No new daily files to process, using existing master data"))
+}
 
 
 ### SUMMARIZE TIME AND DATE
