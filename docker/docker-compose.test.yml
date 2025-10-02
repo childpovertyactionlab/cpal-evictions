@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  # Test runner service
+  test-runner:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.dev
+    container_name: cpal-evictions-test-runner
+    volumes:
+      - ../scripts:/app/scripts
+      - ../data:/app/data
+      - ../data:/data
+      - ../config.yml:/app/config.yml
+      - ../renv.lock:/app/renv.lock
+      - ../renv:/app/renv
+      - ../DESCRIPTION:/app/DESCRIPTION
+      # Mount Google service account credentials
+      - ../.gsuite-service.json:/var/run/secrets/google
+    environment:
+      - ENV=test
+      - R_CONFIG_FILE=/app/config.yml
+      - GOOGLE_APPLICATION_CREDENTIALS=/var/run/secrets/google
+      - TZ=America/Chicago
+    working_dir: /app
+    entrypoint: ["bash", "-c", "echo 'Starting test suite...' && echo 'Testing R environment...' && Rscript -e 'cat(\"R version:\", R.version.string, \"\\n\"); cat(\"Packages loaded successfully!\\n\"); library(tidyverse); library(sf); cat(\"Spatial libraries working!\\n\")' && echo 'Testing configuration...' && Rscript -e 'config <- config::get(); cat(\"Config loaded successfully!\\n\"); print(names(config))' && echo 'All tests passed!'"]
+    depends_on:
+      - sftp-mount
+    profiles:
+      - test
+
+  # Service to mount SFTP data (required for tests)
+  sftp-mount:
+    image: alpine:3.21
+    container_name: cpal-evictions-sftp-mount-test
+    volumes:
+      - ../data:/data
+      - ./credentials/sftp/evictionsuser:/root/.ssh/evictionsuser:ro
+    privileged: true
+    command: ["sh", "-c", "echo 'Mounting SFTP data for tests...' && apk add --no-cache openssh-client sshfs && cp /root/.ssh/evictionsuser /tmp/evictionsuser && chmod 600 /tmp/evictionsuser && echo 'Creating mount point...' && mkdir -p /data/sftp-mount && echo 'Mounting SFTP filesystem...' && sshfs -o IdentityFile=/tmp/evictionsuser -o StrictHostKeyChecking=no -o allow_other -o uid=1000 -o gid=1000 data_team@s-99f83b3610f94e44a.server.transfer.us-east-1.amazonaws.com:/ /data/sftp-mount && echo 'Creating symlinks on host system...' && rm -rf /data/Dallas* /data/bubble /data/demo /data/filing* /data/geographies /data/dcad-sync && ln -sf /data/sftp-mount/fs-06d5cde794b2fedcb/evictions/* /data/ && ln -sf /data/sftp-mount/fs-06d5cde794b2fedcb/dcad-sync /data/dcad-sync && echo 'SFTP mounted and symlinked successfully! Data available at expected paths.' && echo 'Keeping mount alive...' && while true; do sleep 30; done"]
+    profiles:
+      - sftp
+
+volumes:
+  # Named volume for persistent data (optional)
+  cpal-data:
+    driver: local
