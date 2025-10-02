@@ -220,6 +220,9 @@ dailyFiles <- list.files(data_dir$daily, full.names = TRUE, pattern = "JM049_Evi
 
 valid_files <- c()
 
+# Initialize daily as empty data frame to prevent "object not found" error
+daily <- data.frame()
+
 if (length(dailyFiles) > 0) {
   
   for (file in dailyFiles) {
@@ -308,6 +311,7 @@ if (length(dailyFiles) > 0) {
     mutate(
       amount_filed = ifelse(amount %in% c(0, 0.00), "Not Non-Payment of Rent", as.character(amount)),
       non_payment_of_rent = NA_character_,
+      monthly_rent = NA_character_,
       pl_city = find_closest_match(pl_city, tx_cities, 3),
       pl_state = find_closest_match(pl_state, states),
       df_city = find_closest_match(df_city, tx_cities, 5),
@@ -357,10 +361,11 @@ print(paste0("! Pulled comments from GS"))
 
 ## JOINING WITH MASTER ##
 
-df <- daily %>% 
-  select(-c("df_complete", "lat", "long", "arcgis_address", "score", "location.x", "location.y", "extent.xmin", "extent.ymin", "extent.xmax", "extent.ymax")) %>%
-  select(-(attributes.Loc_name:attributes.StrucDet)) %>%
-  full_join(master) %>%
+if (nrow(daily) > 0) {
+  df <- daily %>% 
+    select(-c("df_complete", "lat", "long", "arcgis_address", "score", "location.x", "location.y", "extent.xmin", "extent.ymin", "extent.xmax", "extent.ymax")) %>%
+    select(-(attributes.Loc_name:attributes.StrucDet)) %>%
+    full_join(master) %>%
   
   # More adjustments
   mutate(
@@ -400,7 +405,12 @@ df <- daily %>%
   # Removing duplicates
   distinct()
 
-print(paste0("! Joined new rows to master"))
+  print(paste0("! Joined new rows to master"))
+} else {
+  # If no daily files, just use the master data
+  df <- master
+  print(paste0("! No new daily files to process, using existing master data"))
+}
 
 
 ### SUMMARIZE TIME AND DATE

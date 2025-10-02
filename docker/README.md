@@ -60,11 +60,11 @@ For more detailed instructions, see [credentials/README.md](credentials/README.m
 
 ## Quick Start
 
-### 1. Sync Data from SFTP
+### 1. Sync Data from SFTP and DCAD
 
 ```bash
-# Sync data from AWS SFTP server (one-time setup)
-./docker-dev.sh sftp-mount
+# Sync data from AWS SFTP server and DCAD (one-time setup)
+./docker-dev.sh data-sync
 ```
 
 ### 2. Start Development Environment
@@ -154,11 +154,11 @@ This folder contains:
 
 ### Data Pipeline Services
 
-#### `sftp-sync` - AWS SFTP Data Sync
-- **Purpose**: Sync data from AWS SFTP server to local cache
-- **Access**: Downloads all data from `/evictions` folder on SFTP server
-- **Command**: `./docker-dev.sh sftp-mount`
-- **Mimics**: Jenkins "Connect to Data" stage
+#### `data-sync` - Combined Data Sync (SFTP + DCAD)
+- **Purpose**: Sync data from both AWS SFTP server and DCAD SFTP server
+- **Access**: Downloads all data from `/evictions` folder and fresh DCAD data
+- **Command**: `./docker-dev.sh data-sync`
+- **Mimics**: Jenkins "Connect to Data" + "Synchronize with DCAD" stages
 - **Data Includes**:
   - Dallas County Eviction Master/ (with EvictionRecords_Master.parquet)
   - Dallas County Daily Eviction Reports/ (with all archived files)
@@ -167,13 +167,14 @@ This folder contains:
   - demo/ folder (with updated geojson files)
   - filing data/ folder (with updated CSV files)
   - geographies/ folder (with updated boundary files)
+  - dcad-sync/ folder (with latest daily/weekly eviction files)
   - All other files and folders from /evictions
 
-#### `dcad-sync` - DCAD SFTP Data Sync
-- **Purpose**: Sync additional DCAD data from SFTP server
+#### `sync` - Legacy DCAD Sync (Deprecated)
+- **Purpose**: Legacy command for DCAD data sync only
 - **Access**: Downloads fresh eviction data from DCAD
-- **Command**: `./docker-dev.sh sync`
-- **Mimics**: Jenkins "Synchronize with DCAD" stage
+- **Command**: `./docker-dev.sh sync` (redirects to data-sync)
+- **Note**: Use `data-sync` instead for complete data synchronization
 
 #### `analysis` - R Script Processing
 - **Purpose**: Process eviction data with R scripts
@@ -186,8 +187,8 @@ This folder contains:
 ### Basic Development Workflow
 
 ```bash
-# 1. Sync data from SFTP (one-time setup)
-./docker-dev.sh sftp-mount
+# 1. Sync data from SFTP and DCAD (one-time setup)
+./docker-dev.sh data-sync
 
 # 2. Start development environment
 ./docker-dev.sh dev
@@ -221,7 +222,7 @@ This folder contains:
 ./docker-dev.sh script eviction-records-daily-googlesheet-processing.R
 
 # Run with custom arguments
-docker-compose -f docker/docker-compose.yml --profile sftp run --rm analysis your-script.R
+docker-compose -f docker/docker-compose.yml --profile data run --rm analysis your-script.R
 ```
 
 ### Testing Workflow
@@ -231,7 +232,7 @@ docker-compose -f docker/docker-compose.yml --profile sftp run --rm analysis you
 ./docker-dev.sh test
 
 # Run specific test
-docker-compose -f docker/docker-compose.test.yml --profile sftp run --rm test-runner
+docker-compose -f docker/docker-compose.test.yml --profile data run --rm test-runner
 
 # Check test results
 ./docker-dev.sh logs
@@ -241,26 +242,18 @@ docker-compose -f docker/docker-compose.test.yml --profile sftp run --rm test-ru
 
 The data pipeline workflow exactly replicates the Jenkins pipeline for local development:
 
-#### Step 1: Sync Data from SFTP
+#### Step 1: Complete Data Sync (SFTP + DCAD)
 ```bash
-# Sync data from AWS SFTP server
-./docker-dev.sh sftp-mount
+# Sync data from both AWS SFTP server and DCAD SFTP server
+./docker-dev.sh data-sync
 
-# This mimics Jenkins "Connect to Data" stage
+# This mimics Jenkins "Connect to Data" + "Synchronize with DCAD" stages
 # Downloads ALL files from /evictions folder on AWS SFTP to local /data
+# Downloads fresh daily/weekly eviction files from DCAD
 # Data is cached locally for faster access
 ```
 
-#### Step 2: Sync Additional DCAD Data from SFTP
-```bash
-# Sync fresh eviction data from DCAD SFTP server
-./docker-dev.sh sync
-
-# This mimics Jenkins "Synchronize with DCAD" stage
-# Downloads new daily/weekly eviction files
-```
-
-#### Step 3: Process Data with R Scripts
+#### Step 2: Process Data with R Scripts
 ```bash
 # Run R scripts to process the synced data
 ./docker-dev.sh script eviction-records-daily-googlesheet-processing.R
@@ -274,31 +267,31 @@ The data pipeline workflow exactly replicates the Jenkins pipeline for local dev
 # Run the complete pipeline in one command
 ./docker-dev.sh pipeline
 
-# This runs: SFTP sync → DCAD sync → R processing
+# This runs: SFTP sync + DCAD sync → R processing
 # Equivalent to running all Jenkins stages sequentially
 ```
 
-#### Individual Data Sync Steps
+#### Legacy Individual Steps (Deprecated)
 ```bash
-# Run complete data sync (SFTP + DCAD) without processing
-./docker-dev.sh full-sync
+# Legacy: Run SFTP sync only (deprecated)
+./docker-dev.sh sftp-mount
 
-# This runs: SFTP sync → DCAD sync (no R processing)
+# Legacy: Run DCAD sync only (deprecated)
+./docker-dev.sh sync
+
+# Note: Use 'data-sync' instead for complete data synchronization
 ```
 
 #### Data Pipeline Order of Operations
 
-1. **SFTP Data Sync** (`sftp-mount`)
+1. **Combined Data Sync** (`data-sync`)
    - Connects to AWS SFTP server
    - Downloads all historical data from `/evictions` folder
-   - Caches data locally for faster access
-
-2. **DCAD Data Sync** (`sync`)
    - Connects to DCAD SFTP server
    - Downloads fresh daily/weekly eviction files
-   - Updates local data cache
+   - Caches all data locally for faster access
 
-3. **R Script Processing** (`script`)
+2. **R Script Processing** (`script`)
    - Runs R analysis scripts on synced data
    - Processes eviction data
    - Updates Google Sheets
@@ -309,10 +302,10 @@ The data pipeline workflow exactly replicates the Jenkins pipeline for local dev
 
 ```bash
 # Run specific service
-docker-compose -f docker/docker-compose.yml --profile sftp up sftp-sync
+docker-compose -f docker/docker-compose.yml --profile data up data-sync
 
 # Run with specific profile
-docker-compose -f docker/docker-compose.yml --profile sftp --profile sync up
+docker-compose -f docker/docker-compose.yml --profile data up
 
 # Run in background
 docker-compose -f docker/docker-compose.yml up -d
@@ -422,7 +415,7 @@ The test suite includes:
 
 ### Common Issues
 
-#### 1. SFTP Connection Failed
+#### 1. Data Sync Failed
 ```bash
 # Check SSH key exists and has proper permissions
 ls -la docker/credentials/sftp/evictionsuser
@@ -430,14 +423,14 @@ ls -la docker/credentials/sftp/evictionsuser
 # Fix permissions if needed
 chmod 600 docker/credentials/sftp/evictionsuser
 
-# Test SFTP connection manually
-./docker-dev.sh sftp-mount
+# Test data sync manually
+./docker-dev.sh data-sync
 ```
 
 #### 2. Data Not Found
 ```bash
 # Verify data sync completed
-./docker-dev.sh sftp-mount
+./docker-dev.sh data-sync
 
 # Check data directory
 ls -la data/
@@ -494,7 +487,7 @@ ls -la /var/run/secrets/google
 ## Best Practices
 
 ### Development Workflow
-1. **Always sync data first**: `./docker-dev.sh sftp-mount`
+1. **Always sync data first**: `./docker-dev.sh data-sync`
 2. **Use RStudio integration** for interactive development
 3. **Test scripts frequently**: `./docker-dev.sh script your-script.R`
 4. **Run tests before committing**: `./docker-dev.sh test`
@@ -502,7 +495,7 @@ ls -la /var/run/secrets/google
 
 ### Data Management
 - **Don't commit data files** (they're in `.gitignore`)
-- **Use SFTP sync** for fresh data
+- **Use data-sync** for fresh data from both SFTP and DCAD
 - **Cache data locally** for faster access
 - **Verify data integrity** before processing
 

@@ -76,38 +76,21 @@ services:
     # Default command shows available scripts
     command: ["./entrypoint.sh"]
     depends_on:
-      - sftp-sync
+      - data-sync
     profiles:
       - analysis
 
-  # Service to download SFTP data into container (no local storage)
-  sftp-sync:
+  # Combined service to download SFTP data and sync DCAD data
+  data-sync:
     image: alpine:3.21
-    container_name: cpal-evictions-sftp-sync
+    container_name: cpal-evictions-data-sync
     volumes:
       - ./credentials/sftp/evictionsuser:/root/.ssh/evictionsuser:ro
       - sftp-data:/data
-    command: ["sh", "-c", "echo 'Downloading SFTP data into container...' && apk add --no-cache openssh-client && cp /root/.ssh/evictionsuser /tmp/evictionsuser && chmod 600 /tmp/evictionsuser && echo 'Cleaning up existing data...' && rm -rf /data/Dallas* /data/bubble /data/demo /data/filing* /data/geographies /data/dcad-sync /data/sftp-mount && echo 'Creating data subdirectories...' && mkdir -p /data/Dallas\\ County\\ Eviction\\ Master && mkdir -p /data/Dallas\\ County\\ Daily\\ Eviction\\ Reports/archive && mkdir -p /data/Dallas\\ County\\ Weekly\\ Eviction\\ Reports/archive && mkdir -p /data/bubble && mkdir -p /data/demo && mkdir -p /data/filing\\ data && mkdir -p /data/geographies && mkdir -p /data/dcad-sync && echo 'Downloading evictions data...' && echo 'get -r evictions/* /data/' | sftp -i /tmp/evictionsuser -o StrictHostKeyChecking=no data_team@s-99f83b3610f94e44a.server.transfer.us-east-1.amazonaws.com && echo 'Downloading dcad-sync data...' && echo 'get -r dcad-sync/* /data/dcad-sync/' | sftp -i /tmp/evictionsuser -o StrictHostKeyChecking=no data_team@s-99f83b3610f94e44a.server.transfer.us-east-1.amazonaws.com && echo 'SFTP data downloaded successfully into container! Data available at /data/' && echo 'Data sync complete' && echo 'Keeping container alive for data access...' && while true; do sleep 30; done"]
+      - ../config.yml:/tmp/config.yml
+    command: ["sh", "-c", "echo '=== Starting Data Sync Process ===' && echo 'Installing required packages...' && apk add --no-cache openssh-client rclone && echo 'Setting up SSH credentials...' && cp /root/.ssh/evictionsuser /tmp/evictionsuser && chmod 600 /tmp/evictionsuser && echo 'Cleaning up existing data...' && rm -rf /data/Dallas* /data/bubble /data/demo /data/filing* /data/geographies /data/dcad-sync /data/sftp-mount && echo 'Creating data subdirectories...' && mkdir -p /data/Dallas\\ County\\ Eviction\\ Master && mkdir -p /data/Dallas\\ County\\ Daily\\ Eviction\\ Reports/archive && mkdir -p /data/Dallas\\ County\\ Weekly\\ Eviction\\ Reports/archive && mkdir -p /data/bubble && mkdir -p /data/demo && mkdir -p /data/filing\\ data && mkdir -p /data/geographies && mkdir -p /data/dcad-sync && echo '=== Step 1: Downloading SFTP data... ===' && echo 'Downloading evictions data...' && echo 'get -r evictions/* /data/' | sftp -i /tmp/evictionsuser -o StrictHostKeyChecking=no data_team@s-99f83b3610f94e44a.server.transfer.us-east-1.amazonaws.com && echo 'Downloading dcad-sync data...' && echo 'get -r dcad-sync/* /data/dcad-sync/' | sftp -i /tmp/evictionsuser -o StrictHostKeyChecking=no data_team@s-99f83b3610f94e44a.server.transfer.us-east-1.amazonaws.com && echo 'SFTP data downloaded successfully!' && echo '=== Step 2: Syncing DCAD data... ===' && echo 'Copying DCAD sync script...' && wget -q https://raw.githubusercontent.com/childpovertyactionlab/cpal-evictions/main/acquisition/src/sync-dcad-evictions.sh -O /tmp/sync-dcad-evictions.sh && chmod +x /tmp/sync-dcad-evictions.sh && echo 'Running DCAD sync...' && sh /tmp/sync-dcad-evictions.sh /tmp/config.yml && echo '=== Data Sync Complete! ===' && echo 'Data available at /data/' && echo 'Keeping container alive for data access...' && while true; do sleep 30; done"]
     profiles:
-      - sftp
-
-  # Service to sync DCAD data (mimicking Jenkins "Synchronize with DCAD" stage)
-  dcad-sync:
-    build:
-      context: ../acquisition
-      dockerfile: Dockerfile
-    container_name: cpal-evictions-dcad-sync
-    volumes:
-      - ../config.yml:/app/config.yml
-      - ../data/dcad-sync:/dcad-sync
-    environment:
-      - ENV=development
-    working_dir: /app
-    command: ["./sync-dcad-evictions.sh", "config.yml"]
-    depends_on:
-      - sftp-sync
-    profiles:
-      - sync
+      - data
 
 volumes:
   # Shared volume for SFTP data (no local storage)

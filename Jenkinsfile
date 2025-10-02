@@ -15,7 +15,7 @@ pipeline {
 		//    CRED_ID_AWS_S3 : ID in the credential store to use for AWS S3 access
 
 		// The tag of the containers to execute. Change this to perform a production deployment.
-		APP_VERSION = 'e098f5f'
+		APP_VERSION = 'f64cbdb'
 
 		APP_CONFIG_PATH = "${env.WORKSPACE}/.config-prod.yml"
 		GACCT_PATH = "${env.WORKSPACE}/.gsuite-service.json"
