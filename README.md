@@ -19,6 +19,40 @@ Demographic data, at various geographic scales, which is used as part of the cho
 These GeoJSON files are the point centroids for the geographic scales mapped on our website. These are used, alongside the eviction filing data, to derive proportional symbols layered above the choropleth maps. 
 
 
+# Development
+
+For local development and testing, this project provides Docker Compose environments with helpful scripts:
+
+## Quick Start - Development
+
+```bash
+# Mac/Linux/WSL2
+./docker-dev.sh data-sync  # Sync data from SFTP
+./docker-dev.sh dev        # Start development environment
+./docker-dev.sh script <script-name>  # Run a specific script
+
+# Windows PowerShell
+.\docker-dev.ps1 data-sync
+.\docker-dev.ps1 dev
+.\docker-dev.ps1 script <script-name>
+```
+
+## Documentation
+
+- **General Development**: See [docker/README.md](docker/README.md) for comprehensive development documentation
+- **Credentials Setup**: See [credentials/README.md](credentials/README.md) for SFTP and service account configuration
+
+## Available Commands
+
+| Command | Description |
+|---------|-------------|
+| `dev` | Start development environment |
+| `data-sync` | Sync data from SFTP and DCAD |
+| `script <name>` | Run specific R script |
+| `test` | Run test suite |
+| `shell` | Open interactive shell |
+| `pipeline` | Run complete data pipeline |
+
 # Build
 
 Files within `scripts/` will be pushed into the root working directory of the image.

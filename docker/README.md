@@ -58,22 +58,59 @@ Before using the development environment, you need to set up the required creden
 
 For more detailed instructions, see [credentials/README.md](credentials/README.md).
 
+## Windows Setup
+
+This project provides both bash and PowerShell scripts for cross-platform compatibility.
+
+### Option 1: PowerShell (Recommended for Windows)
+
+Use the PowerShell script for native Windows support:
+
+```powershell
+.\docker-dev.ps1 data-sync
+.\docker-dev.ps1 dev
+.\docker-dev.ps1 script your-script.R
+```
+
+### Option 2: Bash (Git Bash or WSL2)
+
+Use the bash script if you have WSL2 or Git Bash:
+
+```bash
+./docker-dev.sh data-sync
+./docker-dev.sh dev
+```
+
+**Note**: The `.gitattributes` file ensures bash scripts use correct line endings. If you cloned before this was added, you may need to pull the latest changes and reset line endings:
+
+```bash
+git pull
+git rm --cached -r .
+git reset --hard
+```
+
 ## Quick Start
 
 ### 1. Sync Data from SFTP and DCAD
 
 ```bash
-# Sync data from AWS SFTP server and DCAD (one-time setup)
+# Mac/Linux/WSL
 ./docker-dev.sh data-sync
+
+# Windows PowerShell
+.\docker-dev.ps1 data-sync
 ```
 
 ### 2. Start Development Environment
 
 ```bash
-# Using the helper script (recommended)
+# Mac/Linux/WSL
 ./docker-dev.sh dev
 
-# Or using docker-compose directly
+# Windows PowerShell
+.\docker-dev.ps1 dev
+
+# Or using docker-compose directly (any platform)
 docker-compose -f docker/docker-compose.yml up -d dev
 ```
 
@@ -414,6 +451,25 @@ The test suite includes:
 ## Troubleshooting
 
 ### Common Issues
+
+#### 0. Windows: Script Errors or "Command does not exist"
+
+**Problem**: Errors running bash scripts on Windows.
+
+**Solution**: Use the PowerShell script instead:
+
+```powershell
+.\docker-dev.ps1 data-sync
+```
+
+Or if using Git Bash/WSL2, ensure you have the latest line endings:
+
+```bash
+git pull
+git rm --cached -r .
+git reset --hard
+./docker-dev.sh data-sync
+```
 
 #### 1. Data Sync Failed
 ```bash
