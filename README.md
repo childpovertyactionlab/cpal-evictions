@@ -35,6 +35,9 @@ For local development and testing, this project provides Docker Compose environm
 .\docker-dev.ps1 data-sync
 .\docker-dev.ps1 dev
 .\docker-dev.ps1 script <script-name>
+
+# If you get "running scripts is disabled" error, use:
+powershell -ExecutionPolicy Bypass -File .\docker-dev.ps1 data-sync
 ```
 
 ## Documentation

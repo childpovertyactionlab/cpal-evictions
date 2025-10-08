@@ -72,6 +72,16 @@ Use the PowerShell script for native Windows support:
 .\docker-dev.ps1 script your-script.R
 ```
 
+**If you get "running scripts is disabled" error:**
+
+```powershell
+# Option 1: Bypass for single command (no admin needed)
+powershell -ExecutionPolicy Bypass -File .\docker-dev.ps1 data-sync
+
+# Option 2: Change policy (requires admin)
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
 ### Option 2: Bash (Git Bash or WSL2)
 
 Use the bash script if you have WSL2 or Git Bash:
@@ -454,16 +464,21 @@ The test suite includes:
 
 #### 0. Windows: Script Errors or "Command does not exist"
 
-**Problem**: Errors running bash scripts on Windows.
+**Problem**: Errors running scripts on Windows.
 
-**Solution**: Use the PowerShell script instead:
+**Solutions**:
 
+For "running scripts is disabled" error:
+```powershell
+powershell -ExecutionPolicy Bypass -File .\docker-dev.ps1 data-sync
+```
+
+For bash script errors, use PowerShell script instead:
 ```powershell
 .\docker-dev.ps1 data-sync
 ```
 
 Or if using Git Bash/WSL2, ensure you have the latest line endings:
-
 ```bash
 git pull
 git rm --cached -r .
