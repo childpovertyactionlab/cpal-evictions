@@ -454,7 +454,7 @@ range_write(data = df %>%
               arrange(desc(filed_date)),
             ss = sheets$report,
             sheet = "Filings Last 4 Weeks",
-            range = "A2:10000",
+            range = "A2:45000",
             col_names = FALSE)
 
 print(paste0("! Wrote recent filings to GS"))
