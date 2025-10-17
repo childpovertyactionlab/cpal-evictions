@@ -124,18 +124,18 @@ archivedDailyFiles <- list.files(path = data_dir$dailyArchive, pattern = "Evicti
 datesFromDailyFiles <- as.Date(gsub("Eviction_Data_Daily_", "", basename(archivedDailyFiles)), format = "%Y-%m-%d")
 
 tryCatch({
-  
+
   missingDates <- seq(from = max(datesFromDailyFiles, na.rm = TRUE) + 1, to = lubridate::today() - 1, by = "days")
-  
+
   for (date in missingDates) {
-    
+
     # Check what day it is and if a new file needs to be downloaded from Dallas County server,
     dailyDate <- format(as.Date(date), format = "%m%d%Y")
-    
+
     # string together the file name to be pulled,
     dailyPull <- paste0("JM049_Eviction_Data_Daily_", dailyDate, ".xlsx")
     print(paste0("! Expecting daily file ", dailyPull))
-    
+
     # pull DCAD file into working directory
     tryCatch({
       if (dcad_fetch(dailyPull, data_dir$daily)) {
@@ -144,9 +144,9 @@ tryCatch({
     }, error = function(e) {
       message("An error occurred: ", e$message)
     })
-    
-  }  
-  
+
+  }
+
 }, error = function(e) {
   stop("An error occurred: ", e$message)
 })
@@ -276,6 +276,25 @@ if (length(dailyFiles) > 0) {
     data$DEF_ZIP <- as.character(data$DEF_ZIP)
     return(data)
   })) %>%
+    # removing exact duplicates
+    distinct(.keep_all = TRUE) %>%
+    # multiple defendants
+    mutate(
+      DEF_FULLNAME = paste(DF_FIRST_NAME, DF_MIDDLE_NAME, DF_LAST_NAME),
+      PL_FULLNAME = paste(PL_FIRST_NAME, PL_MIDDLE_NAME, PL_LAST_NAME)
+    ) %>%
+    group_by(CASE_NUMBER) %>%
+    summarise(
+      DEF_NAMES = paste(unique(DEF_FULLNAME), collapse = ", "),
+      NUM_DEFENDANTS = n_distinct(DEF_FULLNAME),
+      PL_NAMES = paste(unique(PL_FULLNAME), collapse = ", "),
+      NUM_PLAINTIFFS = n_distinct(PL_FULLNAME),
+      across(-c(#DF_FIRST_NAME, DF_MIDDLE_NAME, DF_LAST_NAME,
+                #PL_FIRST_NAME, PL_MIDDLE_NAME, PL_LAST_NAME,
+                DEF_FULLNAME, PL_FULLNAME),
+             ~ first(.x)),  # keep one value from other columns
+      .groups = "drop"
+    ) %>%
     janitor::clean_names() %>%
     
     # Renaming daily columns to fit master
@@ -355,7 +374,16 @@ print(paste0("! Got master file"))
 comments <- read_sheet(config$sheets$report, sheet = "Filings Last 4 Weeks") %>%
   janitor::clean_names(.) %>%
   select(case_number, rental_assistance_org:outcome_notes) %>%
-  mutate(case_number = as.character(case_number))
+  mutate(case_number = as.character(case_number)) %>%
+  group_by(case_number) %>%
+  summarise(
+    across(
+      everything(),
+      ~ paste(unique(na.omit(.x)), collapse = " | "),
+      .names = "{.col}"
+    ),
+    .groups = "drop"
+  )
 
 print(paste0("! Pulled comments from GS"))
 
@@ -383,7 +411,7 @@ if (nrow(daily) > 0) {
                  df_address, 
                  df_city), 
             str_to_title) %>%
-  
+    
   # Add commentary (assistance orgs/notes)
   left_join(comments, by = "case_number", suffix = c("", ".upd")) %>%
   mutate(
